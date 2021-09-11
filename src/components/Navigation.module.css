@@ -1,0 +1,96 @@
+.navigation-container {
+  display: flex;
+  align-items: stretch;
+  padding: 4px 16px 8px 4px;
+  height: 70px;
+}
+
+.navigation-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 4px 16px 8px 4px;
+}
+
+.mobile-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  background-image: var(--extended-logo-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  height: 60px;
+  min-width: 190px;
+  margin-top: -4px;
+}
+
+.button-section {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.button-section-mobile {
+  align-items: stretch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-200);
+  }
+  to {
+    opacity: 1;
+    transform: translateY();
+  }
+}
+
+.link {
+  color: var(--content-primary);
+  margin-left: 32px;
+}
+
+@media only screen and (max-width: 1224px) {
+  .link {
+    margin: 8px;
+    margin-left: 16px;
+  }
+}
+
+.button-link {
+  border-radius: var(--border-radius);
+  display: flex;
+  background-color: var(--accent);
+  color: white;
+  padding: 8px 12px 8px 12px;
+}
+
+.button-link:hover {
+  background-color: var(--accent-light);
+  color: white;
+  text-decoration: none;
+}
+
+.button-icon {
+  color: white;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.menu-icon {
+  color: var(--content-primary);
+  width: 24px;
+  height: 24px;
+  flex: 1;
+}

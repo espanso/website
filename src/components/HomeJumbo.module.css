@@ -1,0 +1,54 @@
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-image: url("/static/img/jumbo-decorations.svg");
+  background-position: top;
+}
+
+.headline {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 87px;
+  min-height: 30vh;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.get-started-button {
+  margin-top: 60px;
+}
+
+.subtitle {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1224px) {
+  .headline {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 50px;
+  }
+  .get-started-button {
+    margin-top: 20px;
+  }
+}

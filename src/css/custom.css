@@ -4,16 +4,39 @@
  * work well for content-centric websites.
  */
 
+@import "~@fontsource/inter/700.css";
+@import "~@fontsource/inter/400.css";
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #00a595;
+  --ifm-color-primary-dark: #009586;
+  --ifm-color-primary-darker: #008c7f;
+  --ifm-color-primary-darkest: #007468;
+  --ifm-color-primary-light: #00b5a4;
+  --ifm-color-primary-lighter: #00beab;
+  --ifm-color-primary-lightest: #00d6c2;
   --ifm-code-font-size: 95%;
+
+  --border-radius: 8px;
+  --border-radius-large: 16px;
+
+  --accent: #00a595;
+  --accent-light: #00b5a4;
+
+  --content-primary: #1a1a1a;
+  --content-primary-inverted: #ffffff;
+  --extended-logo-url: url(/static/img/extended-logo-light.svg);
+}
+
+html[data-theme="dark"] {
+  --content-primary: #ffffff;
+  --content-primary-inverted: #1a1a1a;
+  --extended-logo-url: url(/static/img/extended-logo-dark.svg);
+}
+
+body {
+  font-family: "Inter", sans-serif;
 }
 
 .docusaurus-highlight-code-line {
@@ -23,6 +46,6 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }

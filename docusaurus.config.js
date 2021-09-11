@@ -15,10 +15,10 @@ module.exports = {
   trailingSlash: true,
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Espanso',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Espanso Logo',
+        src: 'img/logo.png',
       },
       items: [
         {

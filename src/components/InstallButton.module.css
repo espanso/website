@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--accent);
+  border-radius: var(--border-radius-large);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29px;
+  padding: 20px 40px 20px 40px;
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--content-primary);
+  margin-top: 16px;
+}
