@@ -1,0 +1,85 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+
+  color: var(--content-primary);
+}
+
+.container h3 {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 0;
+}
+
+.container p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  color: var(--accent-dark);
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.highlight {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.description {
+  text-align: left;
+}
+
+.feature {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 100px;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.feature-card {
+  background-color: var(--background-primary);
+  border-radius: var(--border-radius-large);
+  filter: var(--big-shadow);
+  padding: 16px;
+  margin: 8px 48px 8px 48px;
+  flex: 1;
+  text-align: left;
+  min-height: 200px;
+}
+
+.entry {
+  flex: 1;
+  display: flex;
+}
+
+@media only screen and (max-width: 1224px) {
+  .feature {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .entry {
+    flex: none;
+  }
+
+  .feature-card {
+    margin: 0px 8px 48px 8px;
+  }
+}

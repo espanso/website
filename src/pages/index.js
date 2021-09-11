@@ -10,6 +10,7 @@ import HomeJumbo from "../components/HomeJumbo";
 import HomeHowItWorks from "../components/HomeHowItWorks";
 import Fade from "react-reveal/Fade";
 import HomeTestimonials from "../components/HomeTestimonials";
+import HomeFeatures from "../components/HomeFeatures";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -23,6 +24,7 @@ export default function Home() {
         </Fade>
         <HomeTestimonials />
       </div>
+      <HomeFeatures />
     </div>
   );
 }

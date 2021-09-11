@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./HomeTestimonials.module.css";
-import TypeIt from "typeit-react";
 import Fade from "react-reveal/Fade";
 import { ThumbUpIcon } from "@heroicons/react/outline";
 
 export default function HomeTestimonials() {
   return (
     <div className={styles.container}>
-      <h3>
-        <ThumbUpIcon className={styles.icon} />
-        What people say about Espanso
-      </h3>
+      <Fade bottom>
+        <h3>
+          <ThumbUpIcon className={styles.icon} />
+          What people say about Espanso
+        </h3>
+      </Fade>
       <div className={styles.testimonials}>
         <Testimonial
           person={"Sébastien Dubois"}

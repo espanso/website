@@ -12,6 +12,7 @@
   font-weight: bold;
   line-height: 29px;
   padding: 20px 40px 20px 40px;
+  filter: var(--small-shadow);
 }
 
 .subtitle {
