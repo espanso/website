@@ -1,3 +1,12 @@
 .home {
   color: var(--content-primary);
 }
+
+.dark-area {
+  background-image: url("/static/img/dark-background.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  margin-top: -80px;
+}

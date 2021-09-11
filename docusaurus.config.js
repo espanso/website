@@ -1,81 +1,80 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Espanso',
-  tagline: 'A Privacy-first, Cross-platform Text Expander',
-  url: 'https://espanso.org',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  title: "Espanso",
+  tagline: "A Privacy-first, Cross-platform Text Expander",
+  url: "https://espanso.org",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
   organizationName: "federico-terzi", // Usually your GitHub org/user name.
-  projectName: 'espanso', // Usually your repo name.
+  projectName: "espanso", // Usually your repo name.
   trailingSlash: true,
   themeConfig: {
     navbar: {
-      title: 'Espanso',
+      title: "Espanso",
       logo: {
-        alt: 'Espanso Logo',
-        src: 'img/logo.png',
+        alt: "Espanso Logo",
+        src: "img/logo.png",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'get-started',
-          position: 'left',
-          label: 'Tutorial',
+          type: "doc",
+          docId: "get-started",
+          position: "left",
+          label: "Tutorial",
         },
         {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
           dropdownActiveClassDisabled: true,
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/facebook/docusaurus",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/',
+              label: "Tutorial",
+              to: "/docs/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/docusaurus",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: "Discord",
+              href: "https://discordapp.com/invite/docusaurus",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: "Twitter",
+              href: "https://twitter.com/docusaurus",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
-           
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "GitHub",
+              href: "https://github.com/facebook/docusaurus",
             },
           ],
         },
@@ -86,14 +85,17 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/espanso/website/edit/main/',
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: "https://github.com/espanso/website/edit/main/",
           versions: {
             current: {
               label: `2.0.0-alpha 🚧`,
@@ -101,7 +103,7 @@ module.exports = {
           },
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

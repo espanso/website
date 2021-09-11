@@ -11,6 +11,17 @@
 
   background-image: url("/static/img/jumbo-decorations.svg");
   background-position: top;
+  background-repeat: no-repeat;
+  animation: expand 60s;
+}
+
+@keyframes expand {
+  from {
+    background-size: 50%;
+  }
+  to {
+    background-size: 110%;
+  }
 }
 
 .headline {
@@ -46,7 +57,7 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    margin-top: 50px;
+    margin-top: 10px;
   }
   .get-started-button {
     margin-top: 20px;

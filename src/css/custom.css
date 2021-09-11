@@ -21,8 +21,12 @@
   --border-radius: 8px;
   --border-radius-large: 16px;
 
+  --content-light: #ffffff;
+  --content-dark: #1a1a1a;
+
   --accent: #00a595;
   --accent-light: #00b5a4;
+  --secondary-accent: #ccff72;
 
   --content-primary: #1a1a1a;
   --content-primary-inverted: #ffffff;

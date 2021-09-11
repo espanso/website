@@ -1,0 +1,66 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+
+  color: var(--content-light);
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: var(--secondary-accent);
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.heading {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial {
+  text-align: left;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.testimonial h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.testimonial p {
+  font-size: 16px;
+}
+
+.testimonial span {
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 1224px) {
+  .heading {
+    display: flex;
+    margin-bottom: 10px;
+  }
+}
