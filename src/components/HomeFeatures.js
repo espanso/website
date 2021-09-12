@@ -327,6 +327,7 @@ export default function HomeFeatures() {
           icon={
             <DocumentDuplicateIcon className={styles["small-feature-icon"]} />
           }
+          delay={100}
         >
           <p>
             Espanso follows a Unix-like configuration philosophy, using simple
@@ -336,12 +337,14 @@ export default function HomeFeatures() {
         <SmallFeature
           title="Open-source license"
           icon={<CodeIcon className={styles["small-feature-icon"]} />}
+          delay={200}
         >
           <p>Espanso is open-source, licensed under the GPL-3 license.</p>
         </SmallFeature>
         <SmallFeature
           title="Cross-platform support"
           icon={<ViewGridIcon className={styles["small-feature-icon"]} />}
+          delay={300}
         >
           <p>Espanso supports Windows, Linux and macOS.</p>
         </SmallFeature>
@@ -380,12 +383,14 @@ const Feature = ({ main, description, reversed }) => {
   );
 };
 
-const SmallFeature = ({ title, icon, children }) => {
+const SmallFeature = ({ title, icon, children, delay }) => {
   return (
-    <div className={styles["small-feature"]}>
-      {icon}
-      <h4>{title}</h4>
-      {children}
-    </div>
+    <Fade bottom delay={delay ?? 0}>
+      <div className={styles["small-feature"]}>
+        {icon}
+        <h4>{title}</h4>
+        {children}
+      </div>
+    </Fade>
   );
 };

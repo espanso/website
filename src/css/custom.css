@@ -21,7 +21,7 @@
   --border-radius: 8px;
   --border-radius-large: 16px;
 
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.2);
   --big-shadow: drop-shadow(0px 10px 10px var(--shadow-color));
   --small-shadow: drop-shadow(0px 4px 4px var(--shadow-color));
 
@@ -32,6 +32,9 @@
   --accent-light: #00b5a4;
   --accent-dark: #02766b;
   --secondary-accent: #ccff72;
+  --red: #af0000;
+  --paypal: #e89b29;
+  --github-sponsors: #e20188;
 
   --content-primary: #1a1a1a;
   --content-primary-inverted: #ffffff;
@@ -50,10 +53,6 @@ html[data-theme="dark"] {
   --search-bar-url: url(/static/img/searchbar-dark.png);
   --packages-url: url(/static/img/packages-dark.svg);
   --form-url: url(/static/img/form-dark.png);
-}
-
-body {
-  font-family: "Inter", sans-serif;
 }
 
 h1,

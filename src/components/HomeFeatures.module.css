@@ -6,6 +6,8 @@
   text-align: center;
 
   color: var(--content-primary);
+  max-width: 1224px;
+  margin: auto;
 }
 
 .container h3 {

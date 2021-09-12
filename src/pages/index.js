@@ -11,6 +11,9 @@ import HomeHowItWorks from "../components/HomeHowItWorks";
 import Fade from "react-reveal/Fade";
 import HomeTestimonials from "../components/HomeTestimonials";
 import HomeFeatures from "../components/HomeFeatures";
+import HomeKnowMore from "../components/HomeKnowMore";
+import DonateSection from "../components/DonateSection";
+import Contributing from "../components/Contributing";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -46,6 +49,9 @@ export default function Home() {
         <HomeTestimonials />
       </div>
       <HomeFeatures />
+      <HomeKnowMore />
+      <DonateSection />
+      <Contributing />
     </div>
   );
 }

@@ -1,0 +1,109 @@
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.heading h2 {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  max-width: 900px;
+  text-align: left;
+}
+
+.picture {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-left: 40px;
+}
+
+.call-to-action {
+  font-size: 20px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  color: var(--red);
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.button-section {
+  display: flex;
+}
+
+.button {
+  border-radius: var(--border-radius-large);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 29px;
+  padding: 15px 30px 15px 30px;
+  margin-top: 10px;
+  filter: var(--small-shadow);
+  margin-right: 20px;
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}
+
+.paypal {
+  background-color: var(--paypal);
+}
+
+.sponsors {
+  background-color: var(--github-sponsors);
+}
+
+.container h5 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+}
+
+.thanks {
+  margin-top: 90px;
+}
+
+.thanks p {
+  margin-top: 8px;
+}
+
+@media only screen and (max-width: 1224px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text {
+    margin-left: 0px;
+  }
+
+  .button-section {
+    flex-direction: column;
+  }
+}
