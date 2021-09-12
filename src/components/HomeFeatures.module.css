@@ -14,6 +14,12 @@
   margin: 0;
 }
 
+.container h2 {
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0;
+}
+
 .container p {
   font-weight: normal;
   font-size: 18px;
@@ -41,12 +47,14 @@
 
 .description {
   text-align: left;
+  max-width: 550px;
 }
 
 .feature {
   display: flex;
-  align-items: stretch;
-  margin-bottom: 100px;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .reversed {
@@ -61,7 +69,8 @@
   margin: 8px 48px 8px 48px;
   flex: 1;
   text-align: left;
-  min-height: 200px;
+  min-height: 230px;
+  min-width: 400px;
 }
 
 .entry {
@@ -69,10 +78,65 @@
   display: flex;
 }
 
+.search-bar-image {
+  width: 500px;
+  height: 350px;
+  background-image: var(--search-bar-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.packages-image {
+  width: 400px;
+  height: 350px;
+  margin-left: 60px;
+  background-image: var(--packages-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.form-image {
+  width: 500px;
+  height: 300px;
+  background-image: var(--form-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.more-features-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-feature {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 20px;
+}
+
+.small-feature p {
+  font-size: 14px;
+}
+
+.small-feature-icon {
+  color: var(--accent);
+  width: 120px;
+}
+
+.small-feature-icon > path {
+  stroke-width: 1;
+}
+
 @media only screen and (max-width: 1224px) {
   .feature {
     flex-direction: column;
     margin-bottom: 50px;
+    align-items: stretch;
   }
 
   .entry {
@@ -81,5 +145,32 @@
 
   .feature-card {
     margin: 0px 8px 48px 8px;
+    min-width: 40px;
+  }
+
+  .search-bar-image {
+    width: 90%;
+    height: 250px;
+    margin: auto;
+  }
+
+  .packages-image {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+  }
+
+  .form-image {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+  }
+
+  .more-features-container {
+    flex-direction: column;
+  }
+
+  .small-feature {
+    flex: none;
   }
 }

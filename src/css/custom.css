@@ -37,16 +37,31 @@
   --content-primary-inverted: #ffffff;
   --background-primary: #ffffff;
   --extended-logo-url: url(/static/img/extended-logo-light.svg);
+  --search-bar-url: url(/static/img/searchbar.png);
+  --packages-url: url(/static/img/packages-light.svg);
+  --form-url: url(/static/img/form-light.png);
 }
 
 html[data-theme="dark"] {
   --content-primary: #ffffff;
   --content-primary-inverted: #1a1a1a;
-  --background-primary: #1a1a1a;
+  --background-primary: #2c2c2c;
   --extended-logo-url: url(/static/img/extended-logo-dark.svg);
+  --search-bar-url: url(/static/img/searchbar-dark.png);
+  --packages-url: url(/static/img/packages-dark.svg);
+  --form-url: url(/static/img/form-dark.png);
 }
 
 body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Inter", sans-serif;
 }
 

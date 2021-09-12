@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -14,6 +14,27 @@ import HomeFeatures from "../components/HomeFeatures";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    const listener = (e) => {
+      // Override the theme only if the user didn't specify a preference
+      if (getStoredTheme() === null) {
+        const darkModeOn = e.matches;
+        document.documentElement.setAttribute(
+          "data-theme",
+          darkModeOn ? "dark" : "light"
+        );
+      }
+    };
+    darkModeMediaQuery.addEventListener("change", listener);
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", listener);
+    };
+  }, []);
+
   return (
     <div className={styles.home}>
       <Navigation />
@@ -27,4 +48,12 @@ export default function Home() {
       <HomeFeatures />
     </div>
   );
+}
+
+function getStoredTheme() {
+  var theme = null;
+  try {
+    theme = localStorage.getItem("theme");
+  } catch (err) {}
+  return theme;
 }

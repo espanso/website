@@ -1,27 +1,15 @@
 .container {
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 5vh;
-  padding-top: 10vh;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  background-image: url("/static/img/jumbo-decorations.svg");
-  background-position: top;
-  background-repeat: no-repeat;
-  animation: expand 60s;
 }
 
-@keyframes expand {
-  from {
-    background-size: 50%;
-  }
-  to {
-    background-size: 110%;
-  }
+.content {
+  padding-top: 15vh;
 }
 
 .headline {
@@ -43,6 +31,13 @@
   font-size: 24px;
   line-height: 29px;
   font-weight: 400;
+}
+
+.particles {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
 }
 
 @media only screen and (max-width: 1224px) {

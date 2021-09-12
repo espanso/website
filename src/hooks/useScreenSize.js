@@ -5,8 +5,6 @@ export const useScreenSize = () => {
     query: "(min-width: 1224px)",
   });
 
-  console.log(isDesktopOrLaptop);
-
   return {
     isLargeScreen: isDesktopOrLaptop,
   };
