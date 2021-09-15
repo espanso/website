@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
@@ -14,6 +13,7 @@ import HomeFeatures from "../components/HomeFeatures";
 import HomeKnowMore from "../components/HomeKnowMore";
 import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
+import Head from "@docusaurus/Head";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -40,6 +40,9 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      <Head>
+        <title>Espanso - A Privacy-first, Cross-platform Text Expander</title>
+      </Head>
       <Navigation />
       <HomeJumbo />
       <div className={styles["dark-area"]}>

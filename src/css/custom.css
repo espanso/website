@@ -38,21 +38,30 @@
 
   --content-primary: #1a1a1a;
   --content-primary-inverted: #ffffff;
+  --content-secondary: #707070;
   --background-primary: #ffffff;
   --extended-logo-url: url(/static/img/extended-logo-light.svg);
   --search-bar-url: url(/static/img/searchbar.png);
   --packages-url: url(/static/img/packages-light.svg);
   --form-url: url(/static/img/form-light.png);
+
+  --windows-url: url(/static/img/windows-light.svg);
+  --macos-url: url(/static/img/apple-light.svg);
+  --linux-url: url(/static/img/linux-light.svg);
 }
 
 html[data-theme="dark"] {
   --content-primary: #ffffff;
   --content-primary-inverted: #1a1a1a;
+  --content-secondary: #cfcfcf;
   --background-primary: #2c2c2c;
   --extended-logo-url: url(/static/img/extended-logo-dark.svg);
   --search-bar-url: url(/static/img/searchbar-dark.png);
   --packages-url: url(/static/img/packages-dark.svg);
   --form-url: url(/static/img/form-dark.png);
+  --windows-url: url(/static/img/windows-dark.svg);
+  --macos-url: url(/static/img/apple-dark.svg);
+  --linux-url: url(/static/img/linux-dark.svg);
 }
 
 h1,
@@ -73,4 +82,20 @@ h6 {
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  background-color: var(--accent);
+  border-radius: var(--border-radius-large);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 80px;
+  padding: 15px 20px 15px 20px;
+  filter: var(--small-shadow);
+}
+
+.btn:hover {
+  background-color: var(--accent-light);
+  color: white;
 }

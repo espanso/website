@@ -25,7 +25,7 @@ module.exports = {
           type: "doc",
           docId: "get-started",
           position: "left",
-          label: "Tutorial",
+          label: "Documentation",
         },
         {
           type: "docsVersionDropdown",
@@ -34,7 +34,7 @@ module.exports = {
           dropdownActiveClassDisabled: true,
         },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/federico-terzi/espanso",
           label: "GitHub",
           position: "right",
         },
