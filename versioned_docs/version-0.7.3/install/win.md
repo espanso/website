@@ -9,7 +9,7 @@ The easiest way to install espanso on Windows is by using the official installer
 Download the installer by clicking on the button below and follow the instructions.
 
 <div class="">
-<a class="btn btn-lg mybtn mb-4" href="https://github.com/federico-terzi/espanso/releases/latest/download/espanso-win-installer.exe" role="button">Download the Installer</a>
+<a class="btn btn-lg mybtn mb-4" href="https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-win-installer.exe" role="button">Download the Installer</a>
 </div>
 
 If you completed the installation procedure, you should have espanso running.

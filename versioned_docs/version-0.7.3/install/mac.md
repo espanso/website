@@ -33,7 +33,7 @@ At this point, you have to [Enable Accessibility](#enabling-accessibility) to us
 Download `espanso-mac.tar.gz` from the [Releases page](https://github.com/federico-terzi/espanso/releases):
 
 ```
-curl -sOL https://github.com/federico-terzi/espanso/releases/latest/download/espanso-mac.tar.gz
+curl -sOL https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-mac.tar.gz
 ```
 
 Extract the binary:

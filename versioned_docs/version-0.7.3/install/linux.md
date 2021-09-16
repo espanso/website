@@ -50,7 +50,7 @@ Espanso ships with a `.deb` package, which makes it pretty convenient to install
 Start by downloading the latest release:
 
 ```
-wget https://github.com/federico-terzi/espanso/releases/latest/download/espanso-debian-amd64.deb
+wget https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-debian-amd64.deb
 ```
 
 > If you want to verify the correctness of the archive, in the [Github Releases](https://github.com/federico-terzi/espanso/releases/) page you will find the **SHA256** hash in the file `espanso-debian-amd64-sha256.txt`.
@@ -86,7 +86,7 @@ sudo apt install libxtst6 libxdo3 xclip libnotify-bin
 
 You can now download the latest espanso release:
 ```
-curl -L https://github.com/federico-terzi/espanso/releases/latest/download/espanso-linux.tar.gz | tar -xz -C /tmp/
+curl -L https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-linux.tar.gz | tar -xz -C /tmp/
 ```
 
 > If you want to verify the correctness of the archive, in the [Github Releases](https://github.com/federico-terzi/espanso/releases/) page you will find the **SHA256** hash in the file `espanso-linux-sha256.txt`.
@@ -155,7 +155,7 @@ sudo pacman -S libxtst xdotool xclip libnotify
 
 You can now download the latest espanso release:
 ```
-curl -L https://github.com/federico-terzi/espanso/releases/latest/download/espanso-linux.tar.gz | tar -xz -C /tmp/
+curl -L https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-linux.tar.gz | tar -xz -C /tmp/
 ```
 
 > If you want to verify the correctness of the archive, in the [Github Releases](https://github.com/federico-terzi/espanso/releases/) page you will find the **SHA256** hash in the file `espanso-linux-sha256.txt`.
