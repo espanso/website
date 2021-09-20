@@ -93,6 +93,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   line-height: 80px;
   padding: 15px 20px 15px 20px;
   filter: var(--small-shadow);
+  margin-right: 10px;
 }
 
 .btn:hover {
