@@ -108,4 +108,16 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
+      "https://github.com/federico-terzi/espanso/releases/latest/download/Espanso-X11.AppImage",
+    MAC_INTEL_DOWNLOAD_URL:
+      "https://github.com/federico-terzi/espanso/releases/latest/download/espanso-mac-intel.zip",
+    MAC_M1_DOWNLOAD_URL:
+      "https://github.com/federico-terzi/espanso/releases/latest/download/espanso-mac-m1.zip",
+    WIN_INSTALLER_DOWNLOAD_URL:
+      "https://github.com/federico-terzi/espanso/releases/latest/download/espanso-win-installer-x64.exe",
+    WIN_PORTABLE_DOWNLOAD_URL:
+      "https://github.com/federico-terzi/espanso/releases/latest/download/espanso-win-portable-x64.exe",
+  },
 };

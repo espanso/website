@@ -8,7 +8,7 @@ export default function HomeKnowMore() {
     <div className={styles.container}>
       <Fade bottom>
         <h4>Do you want to know more?</h4>
-        <Link to="/docs">
+        <Link to="/docs/get-started">
           <div className={styles.button}>
             <span>Visit Documentation</span>
           </div>

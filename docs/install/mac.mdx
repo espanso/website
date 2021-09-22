@@ -6,9 +6,11 @@ Espanso currently support macOS 10.15 or greater on both Intel and Apple Silicon
 
 ### Download Espanso
 
-<div class="">
-<a class="btn btn-lg mybtn mb-4" href="https://github.com/federico-terzi/espanso/releases/latest/download/espanso-mac-intel.zip" role="button">Download Espanso (Intel)</a>
-<a class="btn btn-lg mybtn mb-4" href="https://github.com/federico-terzi/espanso/releases/latest/download/espanso-mac-m1.zip" role="button">Download Espanso (Apple Silicon M1)</a>
+import siteConfig from '/docusaurus.config.js';
+
+<div className="">
+<a className="btn btn-lg mybtn mb-4" href={siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL} role="button">Download Espanso (Intel)</a>
+<a className="btn btn-lg mybtn mb-4" href={siteConfig.customFields.MAC_M1_DOWNLOAD_URL} role="button">Download Espanso (Apple Silicon M1)</a>
 </div>
 
 

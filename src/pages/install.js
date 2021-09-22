@@ -25,17 +25,23 @@ export default function Install() {
         <div className={styles.targets}>
           <div className={styles.target}>
             <div className={styles.windows} />
-            <a className={styles.button}>Install on Windows</a>
+            <a className={styles.button} href="/docs/install/win">
+              Install on Windows
+            </a>
             <span>Version 0.7.3</span>
           </div>
           <div className={styles.target}>
             <div className={styles.macos} />
-            <a className={styles.button}>Install on macOS</a>
+            <a className={styles.button} href="/docs/install/mac">
+              Install on macOS
+            </a>
             <span>Version 0.7.3</span>
           </div>
           <div className={styles.target}>
             <div className={styles.linux} />
-            <a className={styles.button}>Install on Linux</a>
+            <a className={styles.button} href="/docs/install/linux">
+              Install on Linux
+            </a>
             <span>Version 0.7.3</span>
           </div>
         </div>
@@ -52,22 +58,79 @@ export default function Install() {
           <div className={styles.target}>
             <div className={styles.windows} />
             <h3>Windows</h3>
-            <a className={styles.button}>Installer (64-bit)</a>
-            <a className={styles.button}>Portable zip (64-bit)</a>
+            <a
+              className={styles.button}
+              href={siteConfig.customFields.WIN_INSTALLER_DOWNLOAD_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(siteConfig.customFields.WIN_INSTALLER_DOWNLOAD_URL);
+                window.location =
+                  "/docs/next/install/win#problems-you-may-experience";
+                window.focus();
+              }}
+            >
+              Installer (64-bit)
+            </a>
+            <a
+              className={styles.button}
+              href={siteConfig.customFields.WIN_PORTABLE_DOWNLOAD_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(siteConfig.customFields.WIN_PORTABLE_DOWNLOAD_URL);
+                window.location = "";
+                window.focus();
+              }}
+            >
+              Portable zip (64-bit)
+            </a>
             <span>Version 2.0.*</span>
           </div>
           <div className={styles.target}>
             <div className={styles.macos} />
             <h3>macOS</h3>
-            <a className={styles.button}>Intel</a>
-            <a className={styles.button}>M1 (Apple Silicon)</a>
+            <a
+              className={styles.button}
+              href={siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL);
+                window.location =
+                  "/docs/next/install/mac/#problems-you-may-experience";
+                window.focus();
+              }}
+            >
+              Intel
+            </a>
+            <a
+              className={styles.button}
+              href={siteConfig.customFields.MAC_M1_DOWNLOAD_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(siteConfig.customFields.MAC_M1_DOWNLOAD_URL);
+                window.location =
+                  "/docs/next/install/mac/#problems-you-may-experience";
+                window.focus();
+              }}
+            >
+              M1 (Apple Silicon)
+            </a>
             <span>Version 2.0.*</span>
           </div>
           <div className={styles.target}>
             <div className={styles.linux} />
             <h3>Linux</h3>
-            <a className={styles.button}>X11</a>
-            <a className={styles.button}>Wayland</a>
+            <a
+              className={styles.button}
+              href="/docs/next/install/linux/#install-on-x11"
+            >
+              X11
+            </a>
+            <a
+              className={styles.button}
+              href="/docs/next/install/linux/#install-on-wayland"
+            >
+              Wayland
+            </a>
             <Link to="/docs/next/install/linux/#choose-the-right-version">
               Which version should you choose?
             </Link>

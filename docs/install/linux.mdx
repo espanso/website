@@ -20,14 +20,18 @@ Now that you know your desktop environment, you can either follow the [X11](#ins
 
 > The preferred method to use Espanso on X11-based systems is the AppImage. If for whatever reason you don't like this option, you can also compile espanso from sources by following the [compilation instructions](https://github.com/federico-terzi/espanso/blob/dev-1.x/Compilation.md).
 
-To install the Espanso's AppImage, open a terminal and follow these steps:
+import siteConfig from '/docusaurus.config.js';
+
+export const CodeLink = () => <code>{siteConfig.customFields.LINUX_X11_APP_IMAGE_DOWNLOAD_URL}</code>;
+
+To install the Espanso's AppImage, open a terminal and follow these steps, replacing `{{DOWNLOAD_URL}}` with <CodeLink/>
 
 ```bash
 # Create the $HOME/opt destination folder
 mkdir -p ~/opt
 
 # Download the AppImage inside it
-wget -O ~/opt/Espanso.AppImage https://github.com/federico-terzi/espanso/releases/latest/download/Espanso-X11.AppImage
+wget -O ~/opt/Espanso.AppImage {{DOWNLOAD_URL}}
 
 # Make it executable
 chmod u+x ~/opt/Espanso.AppImage
