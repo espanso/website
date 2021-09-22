@@ -2,7 +2,10 @@
 title: Configuration
 sidebar_position: 5
 ---
-Following a Unix-like philosophy, **espanso uses files to manage its configuration**
+
+TODO
+
+<!-- Following a Unix-like philosophy, **espanso uses files to manage its configuration**
 instead of GUIs. This has many advantages, such as the capability to easily sync your
 configurations between machines using [Git](https://git-scm.com/) or cloud services
 such as [Dropbox](https://www.dropbox.com/) or [Google Drive](https://www.google.com/drive/).
@@ -222,5 +225,5 @@ Option | Description | Possible Values | Default | App-Specific
 `show_icon` | Show/Hide the icon in the status bar on macOS and Windows | `true`/`false` | `true` | No
 `show_notifications` | Show/Hide the notifications| `true`/`false` | `true` | No
 `undo_backspace` | Enable/Disable the Backspace-To-Undo feature | `true`/`false` | `true`| Yes
-`fast_inject` |  Use a faster injection mechanism (Linux only). It uses XSendEvent API rather than XTestFakeKeyEvent API, which is faster but incompatible with some applications.| `true`/`false` | `true`| Yes
+`fast_inject` |  Use a faster injection mechanism (Linux only). It uses XSendEvent API rather than XTestFakeKeyEvent API, which is faster but incompatible with some applications.| `true`/`false` | `true`| Yes -->
 

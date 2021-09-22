@@ -56,4 +56,71 @@ You are now ready to read the [Getting Started](../../get-started) tutorial!
 
 > Wayland support is currently experimental, therefore some features might be missing or not working well yet. If you encounter any strange behavior, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues).
 
-TODO
+Currently, the only way to install Espanso on Wayland is to compile it yourself. Things are rapidly evolving, so expect more user-friendly methods to come in the near future.
+
+#### Manual compilation
+
+##### Prerequisites
+
+These are the basic tools required to build espanso:
+
+* A recent Rust compiler. You can install it following these instructions: https://www.rust-lang.org/tools/install
+* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). On Ubuntu/Debian systems, you can install them with `sudo apt install build-essential`
+
+* Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
+steps. You can install it by running:
+
+```
+cargo install --force cargo-make
+```
+
+##### Compiling Espanso
+
+Once you've got all the prerequisites, you can:
+
+```bash
+# Clone the Espanso repository
+git clone https://github.com/federico-terzi/espanso
+
+# Checkout the new alpha version
+git checkout -b dev-1.x
+
+# Compile espanso in release mode
+# NOTE: this will take a while (~5/10 minutes)
+cargo make build-binary --profile release --env NO_X11=true
+```
+
+At this point, you should have the `espanso` binary available in the `target/release/` directory.
+
+##### Adding the required Capabilities
+
+Espanso requires access to the `/dev/input/eventX` and `/dev/uinput` interfaces to detect triggers and inject expansions respectively. 
+Although you could run it as root to grant the necessary permissions, Espanso supports a safer alternative
+that consists in adding the `CAP_DAC_OVERRIDE` capability to the binary's set of **Permitted** ones. To do so, run the following command:
+
+```
+sudo setcap "cap_dac_override+p" target/release/espanso
+```
+
+> **Explanation**
+>
+> In a nutshell, this capability grants the process the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
+>
+> To limit the attack surface, Espanso performs the following steps:
+* When started, the `CAP_DAC_OVERRIDE` capability is contained in the `Permitted` set. At this point, **Espanso CANNOT access arbitrary files in the system, as this is only possible once the `CAP_DAC_OVERRIDE` is moved to the `Effective` set**.
+* After a partial initialization of the various modules, Espanso moves the `CAP_DAC_OVERRIDE` permission to the `Effective` set and opens the necessary interfaces to the `/dev/input/eventX` and `/dev/uinput` files.
+* Immediately after, the `Permitted` and `Effective` sets are cleared, meaning Espanso cannot access privileged files anymore. Moreover, because the `Permitted` set was cleared as well, the process won't be able to grant the permission again.
+>
+> In short, Espanso uses the `CAP_DAC_OVERRIDE` permission only when opening the `/dev/input*` interfaces, and ungrant that permission immediately after.
+>
+> For more information on Linux capabilities, see: https://man7.org/linux/man-pages/man7/capabilities.7.html
+
+##### Installing Espanso
+
+Once you've compiled Espanso and granted it the necessary capabilities, you can move it into the final location. A good option would be the `/usr/local/bin` folder:
+
+```
+mv target/release/espanso /usr/local/bin/espanso
+```
+
+Now run `espanso --version`. If you see the version appear, Espanso was installed correctly and you are now ready for the [Getting Started](../../get-started) tutorial!

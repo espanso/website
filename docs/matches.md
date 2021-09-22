@@ -5,7 +5,9 @@ title: Matches
 
 Matches are the espanso's core component and define the substitutions that will take place.
 
-### Static Matches
+TODO divide into Basics, Forms, Regex Triggers and Advanced Topics
+
+<!-- ### Static Matches
 
 In their most basic form, **Matches are pairs that associate a *trigger* with a *replaced text***.
 
@@ -647,4 +649,4 @@ matches:
 ```
 
 
-The key element here is the `global` type, which tells espanso to evaluate variable `reversed` only at that point, and not before `varname`.
+The key element here is the `global` type, which tells espanso to evaluate variable `reversed` only at that point, and not before `varname`. -->

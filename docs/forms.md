@@ -3,13 +3,15 @@ sidebar_position: 3
 title: Forms
 ---
 
-Since version 0.7.0, espanso is capable of creating arbitrarily complex input forms:
+Espanso is capable of creating arbitrarily complex input forms:
 
 ![Espanso Form](/img/docs/macform.png)
 
 These open up a world of possibilities, allowing the user to create matches with many arguments, as well as injecting those values into custom Scripts or Shell commands.
 
-### Prerequisites
+TODO
+
+<!-- ### Prerequisites
 
 In order to use forms, espanso requires [modulo](https://github.com/federico-terzi/modulo) to be installed. 
 If you are a Windows or macOS user, then modulo is most likely already installed with recent versions of espanso, but if you are using Linux, you'll need to [install it manually](/install/linux/#installing-modulo).
@@ -227,4 +229,4 @@ By default, on macOS the Tab key can only be used to change focus between Text f
 3. Open the *Keyboard Shortcuts* tab
 4. Near the bottom of the dialog, select "All controls".
 
-Then you should be able to use the Tab key to navigate between form controls.
+Then you should be able to use the Tab key to navigate between form controls. -->

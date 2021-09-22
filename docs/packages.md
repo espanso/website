@@ -2,7 +2,10 @@
 title: Packages
 sidebar_position: 5
 ---
-**Packages** make it easy to reuse *Matches* created by other people or **share** yours with the world. Thanks
+
+TODO
+
+<!-- **Packages** make it easy to reuse *Matches* created by other people or **share** yours with the world. Thanks
 to [espanso hub](https://hub.espanso.org/), the official **espanso package repository**, and the **built-in
 package manager**, using them is a breeze.
 
@@ -114,4 +117,4 @@ allowed)
 After following all these steps, you can request to publish your package to [espanso hub](http://hub.espanso.org)
 by opening an [Issue](https://github.com/federico-terzi/espanso-hub/issues) with the following information:
 
-* The repository **url**
+* The repository **url** -->

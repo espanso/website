@@ -2,7 +2,10 @@
 title: Synchronization
 sidebar_position: 8
 ---
-After using espanso for a while, you may need to synchronize your configuration between devices. Luckly for you, the espanso
+
+TODO
+
+<!-- After using espanso for a while, you may need to synchronize your configuration between devices. Luckly for you, the espanso
 file-based configuration makes it pretty easy to accomplish using a Cloud Storage service (such as Dropbox, Google Drive, ecc)
 or even GitHub!
 
@@ -81,4 +84,4 @@ Now you need to create a **symbolic link**. Open the Terminal and type the follo
 ln -s "/home/user/Dropbox/espanso" "/home/user/.config/espanso"
 ```
 
-Now restart espanso and you should be ready to go!
+Now restart espanso and you should be ready to go! -->
