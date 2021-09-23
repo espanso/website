@@ -76,6 +76,8 @@ matches:
     replace: "Works only on chrome!"
 ```
 
+TODO: explain how we used to "split" files and refactor the next sentence
+
 Moreover, the legacy version supported a clumsy mechanism to split the configuration over multiple files by using
 the `parent` option.
 
