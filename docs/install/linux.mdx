@@ -106,18 +106,21 @@ that consists in adding the `CAP_DAC_OVERRIDE` capability to the binary's set of
 sudo setcap "cap_dac_override+p" target/release/espanso
 ```
 
-> **Explanation**
->
-> In a nutshell, this capability grants the process the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
->
-> To limit the attack surface, Espanso performs the following steps:
+:::info Security considerations
+
+
+ In a nutshell, this capability grants the process the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
+
+ To limit the attack surface, Espanso performs the following steps:
 * When started, the `CAP_DAC_OVERRIDE` capability is contained in the `Permitted` set. At this point, **Espanso CANNOT access arbitrary files in the system, as this is only possible once the `CAP_DAC_OVERRIDE` is moved to the `Effective` set**.
 * After a partial initialization of the various modules, Espanso moves the `CAP_DAC_OVERRIDE` permission to the `Effective` set and opens the necessary interfaces to the `/dev/input/eventX` and `/dev/uinput` files.
 * Immediately after, the `Permitted` and `Effective` sets are cleared, meaning Espanso cannot access privileged files anymore. Moreover, because the `Permitted` set was cleared as well, the process won't be able to grant the permission again.
->
-> In short, Espanso uses the `CAP_DAC_OVERRIDE` permission only when opening the `/dev/input*` interfaces, and ungrant that permission immediately after.
->
-> For more information on Linux capabilities, see: https://man7.org/linux/man-pages/man7/capabilities.7.html
+
+ In short, Espanso uses the `CAP_DAC_OVERRIDE` permission only when opening the `/dev/input*` interfaces, and ungrant that permission immediately after.
+
+ For more information on Linux capabilities, see: https://man7.org/linux/man-pages/man7/capabilities.7.html
+
+:::
 
 ##### Installing Espanso
 
