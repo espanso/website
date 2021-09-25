@@ -6,11 +6,8 @@ sidebar_position: 2
 Although the v2 strives to be backward compatible, the configuration format has slightly changed. 
 Luckily, Espanso comes with an automatic migration tool that makes the switch almost painless.
 
-Before diving into the tool, we are going to explore the main configuration changes.
-
-## TLDR
-
-If you don't really care about an in-depth explanation, here are the main takeaways:
+Before diving into the tool though, we are going to explore the main changes.
+### New configuration format
 
 Previously, configurations and matches were defined in the same file (usually the `default.yml` file).
 In v2, the two have been split:
@@ -43,68 +40,62 @@ backend: Clipboard
 Espanso comes with an automatic migration tool, simply launch it and the wizard will ask you to migrate the configurations
 automatically.
 
-## New configuration format
+For a deeper walkthrough on the new configuration format, please read the [Configuration changes section](../configuration_changes).
 
-If you are coming from the legacy version, the concept of `default.yml` file will be familiar to you.
-That file represents the "main" configuration, or in other words, the one that applies to all
-applications by default. For example, the following `default.yml` defines a snippet that replaces `:espanso`
-with `Hi there!` and forces Espanso to always use the `Clipboard` backend.
+### Search bar
 
-```yml title="$CONFIG/default.yml"
-backend: Clipboard
+Espanso now comes with a search bar. You can open it typing `jkj` or by pressing `ALT+SPACE` (or `OPTION+SPACE` on macOS).
+You can customize the shortcut with these options (you should add them into the `default.yml` file):
 
-matches:
-  - trigger: ":espanso"
-    replace: "Hi there!"
+```yaml
+search_trigger: "jkj"
+search_shortcut: "ALT+SPACE"
 ```
 
-If you wanted to use a different configuration, or a different set of matches, on a specific application, 
-you would have defined an [App-specific configuration](/docs/configuration/#application-specific-configurations).
-These files are defined in the `$CONFIG/user` directory and are very similar in structure to the `default.yml`, 
-with the only exception being they define a _filter_.
+### Regex triggers
 
-For example, the following configuration is activated only while using Chrome. It increases the injection delay
-while also defining a new snippet `:test`.
+You can now write full-blown regex triggers with named groups:
 
-```yml title="$CONFIG/user/chrome.yml"
-filter_exec: "chrome.exe"
-
-inject_delay: 100
-
-matches:
-  - trigger: ":test"
-    replace: "Works only on chrome!"
+```yaml
+  - regex: ":hi\\((?P<name>.*?)\\)"
+    replace: "Hey {{name}}!"
 ```
 
-TODO: explain how we used to "split" files and refactor the next sentence
+The named group name is injected as a variable.
 
-Moreover, the legacy version supported a clumsy mechanism to split the configuration over multiple files by using
-the `parent` option.
+> Only use Regex triggers when necessary, as their performance is significantly slower than
+> regular triggers.
 
-### Problems
+> Currently there is a limit of 30-chars in the regex trigger (including the argument) due to performance reasons.
+> We are working to make this limit configurable, but we are not yet there.
 
-The legacy format, while working for simple use-cases, had some severe limitations. For instance, it was difficult to share
-snippets between app-specific configs or selectively disable some snippets.
+### Distribution format
 
-Some common use-cases that were difficult (or impossible) to achieve in the previous version:
+Espanso v2 slightly changes the preferred distribution format on some platforms.
 
-* Define a set of code snippets and enable them while using `VSCode` and `IntelliJ Idea`, but not while using other apps.
-* Disable the `all-emojis` package while coding on `VSCode`.
+#### macOS
 
-The new configuration format solves all these problems.
+Espanso is now a regular App Bundle on macOS, currently available for both Intel and M1 architectures.
 
-### Splitting responsibilities
+#### Linux
 
-TODO: talk about split between match and config files
-TODO: explain _underscored.yml and normal.yml filename resolution
-TODO: explain imports, include and excludes
+Espanso now ships as an AppImage by default for X11 systems. We are still deciding the optimal distribution format for
+Wayland systems.
 
+#### Windows
 
+You can now use the official installer or the **Portable** mode to use Espanso on Windows.
 
+### New Package system
 
+Espanso v2 ships with a new and improved package system. We are still working out the last details, so
+**currently is not possible to install a package from the Espanso Hub**, but we are working
+to make this available as soon as possible.
 
-### Automatic migration
+Among the new features, you can now:
+* Install a package from private git repositories
+* Install a package from GitLab repositories
+### Other changes
 
-![Migration wizard](/img/migration-wizard.png)
-
-TODO: also explain cli tool
+Espanso v2 ships with many changes that were not documented in this section yet. We are in the process of rewriting the
+docs, so please be patient :)

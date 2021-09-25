@@ -5,6 +5,13 @@ title: Getting Started
 In this section, we will cover the basics of espanso to get you started immediately.
 Make sure to [install espanso](/install) before diving into the next sections.
 
+:::info For legacy users
+
+If you are coming from a previous Espanso version, please read the [Migration](../migration/overview) section
+to quickly get started.
+
+:::
+
 TODO
 
 <!-- ### Starting espanso
