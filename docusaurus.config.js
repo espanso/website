@@ -22,21 +22,46 @@ module.exports = {
       },
       items: [
         {
+          href: "/",
+          label: "Home",
+          position: "left",
+        },
+        {
+          href: "/install",
+          label: "Installation",
+          position: "left",
+        },
+        {
           type: "doc",
           docId: "get-started",
           position: "left",
           label: "Documentation",
         },
         {
-          type: "docsVersionDropdown",
-          position: "right",
-          dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
-          dropdownActiveClassDisabled: true,
+          href: "https://hub.espanso.org",
+          label: "Packages",
+          position: "left",
+        },
+        {
+          href: "https://www.reddit.com/r/espanso/",
+          label: "Community",
+          position: "left",
         },
         {
           href: "https://github.com/federico-terzi/espanso",
           label: "GitHub",
+          position: "left",
+        },
+        {
+          href: "/donate",
+          label: "Donate ❤",
           position: "right",
+        },
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
+          dropdownActiveClassDisabled: true,
         },
       ],
     },
