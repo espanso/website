@@ -95,7 +95,18 @@ to make this available as soon as possible.
 Among the new features, you can now:
 * Install a package from private git repositories
 * Install a package from GitLab repositories
+
+### Experimental Wayland support
+
+Espanso v2 ships with experimental Wayland support. There are still some rough edges to be solved before
+considering the experience stable, but it should be quite usable already.
+
+Please report any bug that you experience on GitHub! :)
+
 ### Other changes
 
-Espanso v2 ships with many changes that were not documented in this section yet. We are in the process of rewriting the
+* The GUI layer _modulo_ is now built-in into Espanso, and does not require a separate binary.
+* Espanso now uses native notifications on Windows.
+
+Espanso v2 ships with many other changes that were not documented in this section yet. We are in the process of rewriting the
 docs, so please be patient :)
