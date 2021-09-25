@@ -3,7 +3,7 @@
 }
 
 .dark-area {
-  background-image: url("/static/img/dark-background.svg");
+  background-image: url("/img/dark-background.svg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
