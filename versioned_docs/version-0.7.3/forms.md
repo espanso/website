@@ -12,7 +12,7 @@ These open up a world of possibilities, allowing the user to create matches with
 ### Prerequisites
 
 In order to use forms, espanso requires [modulo](https://github.com/federico-terzi/modulo) to be installed. 
-If you are a Windows or macOS user, then modulo is most likely already installed with recent versions of espanso, but if you are using Linux, you'll need to [install it manually](/install/linux/#installing-modulo).
+If you are a Windows or macOS user, then modulo is most likely already installed with recent versions of espanso, but if you are using Linux, you'll need to [install it manually](../install/linux/#installing-modulo).
 
 ### Getting started
 
