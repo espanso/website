@@ -17,11 +17,10 @@ import {
 } from "@heroicons/react/outline";
 import Link from "@docusaurus/Link";
 import { useOS } from "../hooks/useOS";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function HomeFeatures() {
-  const { os } = useOS();
-
   const today = new Date().toLocaleDateString();
   const twoHours = new Date(
     new Date().getTime() + 1000 * 60 * 60 * 2
@@ -116,9 +115,12 @@ export default function HomeFeatures() {
             <p>
               Don’t remember a shortcut? No worries.
               <br />
-              <br /> Just press {os === "mac" ? "⌥" : "ALT"}+Space and Espanso’s{" "}
-              <span className={styles.highlight}>search bar</span> will open,
-              letting you search for the perfect snippet.
+              <br /> Just press{" "}
+              <BrowserOnly fallback={<>ALT+Space</>}>
+                {() => <SearchShortcut />}
+              </BrowserOnly>{" "}
+              and Espanso’s <span className={styles.highlight}>search bar</span>{" "}
+              will open, letting you search for the perfect snippet.
             </p>
           </FeatureDescription>
         }
@@ -393,4 +395,10 @@ const SmallFeature = ({ title, icon, children, delay }) => {
       </div>
     </Fade>
   );
+};
+
+const SearchShortcut = () => {
+  const { os } = useOS();
+
+  return <> {os === "mac" ? "⌥" : "ALT"}+Space </>;
 };

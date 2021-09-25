@@ -1,9 +1,10 @@
 import React, { useMemo } from "react";
 import styles from "./InstallButton.module.css";
 import Link from "@docusaurus/Link";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useOS } from "../hooks/useOS";
 
-export default function InstallButton() {
+function InstallButton() {
   const { os } = useOS();
 
   const { link, text, subtitle } = useMemo(() => {
@@ -48,3 +49,13 @@ export default function InstallButton() {
     </div>
   );
 }
+
+const Wrapper = () => {
+  return (
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => InstallButton()}
+    </BrowserOnly>
+  );
+};
+
+export default Wrapper;
