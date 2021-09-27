@@ -6,7 +6,8 @@
 }
 
 .navigation-container-mobile {
-  display: flex;
+  display: none;
+
   flex-direction: column;
   align-items: stretch;
   padding: 4px 16px 8px 4px;
@@ -64,6 +65,14 @@
   .link {
     margin: 8px;
     margin-left: 16px;
+  }
+
+  .navigation-container {
+    display: none;
+  }
+
+  .navigation-container-mobile {
+    display: flex;
   }
 }
 

@@ -5,42 +5,30 @@ import { HeartIcon, MenuIcon } from "@heroicons/react/solid";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function Navigation() {
-  const { isLargeScreen } = useScreenSize();
-  if (isLargeScreen) {
-    return <DesktopNavigation />;
-  } else {
-    return <MobileNavigation />;
-  }
-}
-
-function DesktopNavigation() {
-  return (
-    <div className={styles["navigation-container"]}>
-      <Link className={styles.logo} to="/" />
-
-      <Buttons />
-    </div>
-  );
-}
-
-function MobileNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className={styles["navigation-container-mobile"]}>
-      <div className={styles["mobile-top-bar"]}>
+    <>
+      <div className={styles["navigation-container"]}>
         <Link className={styles.logo} to="/" />
-        <Link
-          onClick={() => {
-            setMobileMenuOpen(!mobileMenuOpen);
-          }}
-        >
-          <MenuIcon className={styles["menu-icon"]} />
-        </Link>
-      </div>
 
-      {mobileMenuOpen && <Buttons mobile={true} />}
-    </div>
+        <Buttons />
+      </div>
+      <div className={styles["navigation-container-mobile"]}>
+        <div className={styles["mobile-top-bar"]}>
+          <Link className={styles.logo} to="/" />
+          <Link
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
+          >
+            <MenuIcon className={styles["menu-icon"]} />
+          </Link>
+        </div>
+
+        {mobileMenuOpen && <Buttons mobile={true} />}
+      </div>
+    </>
   );
 }
 
