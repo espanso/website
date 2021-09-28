@@ -19,6 +19,6 @@
       "source": "/docs/",
       "destination": "/docs/get-started/", 
       "permanent": true
-    },
+    }
   ]
 }
