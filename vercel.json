@@ -14,6 +14,11 @@
       "source": "/install/linux/",
       "destination": "/docs/install/linux/", 
       "permanent": true
-    }
+    },
+    { 
+      "source": "/docs/",
+      "destination": "/docs/get-started/", 
+      "permanent": true
+    },
   ]
 }
