@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    { 
+      "source": "/install/win/",
+      "destination": "/docs/install/win/", 
+      "permanent": true
+    },
+    { 
+      "source": "/install/mac/",
+      "destination": "/docs/install/mac/", 
+      "permanent": true
+    },
+    { 
+      "source": "/install/linux/",
+      "destination": "/docs/install/linux/", 
+      "permanent": true
+    }
+  ]
+}
