@@ -16,6 +16,7 @@ export default function Install() {
         <title>
           Installation - Espanso - A Privacy-first, Cross-platform Text Expander
         </title>
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
       </Head>
       <Navigation />
 

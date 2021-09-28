@@ -35,6 +35,7 @@ export default function Donate() {
         <title>
           Donate - Espanso - A Privacy-first, Cross-platform Text Expander
         </title>
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
       </Head>
       <Navigation />
       <DonateSection />
