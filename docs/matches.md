@@ -5,6 +5,17 @@ title: Matches
 
 Matches are the espanso's core component and define the substitutions that will take place.
 
+TODO: might make sense to divide into:
+* Overview
+* Basics
+* Advanced
+  * Causes
+  * Effects
+  * Extensions
+  * Imports
+  * Forms
+* Examples
+
 TODO divide into Basics, Forms, Regex Triggers and Advanced Topics
 
 <!-- ### Static Matches

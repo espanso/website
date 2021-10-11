@@ -2,13 +2,77 @@
 sidebar_position: 2
 title: Getting Started
 ---
-In this section, we will cover the basics of espanso to get you started immediately.
-Make sure to [install espanso](/install) before diving into the next sections.
+In this section, we will cover the basics of espanso to quickly get you started.
+Make sure to [install Espanso](/install) before diving into the next sections.
 
 :::info For legacy users
 
-If you are coming from a previous Espanso version, please read the [Migration](../migration/overview) section
-to quickly get started.
+If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](../migration/overview) section
+first.
+
+:::
+
+If you followed the installation correctly, Espanso should be running on your computer.
+For macOS and Windows users, you should now see the Espanso icon on the status bar:
+
+![Espanso icon on Windows](/img/docs/tray_explain_image_windows.png)
+![Espanso icon on macOS](/img/docs/icon_explain_image_macos.png)
+
+Linux users can check if Espanso is running by opening a Terminal and running:
+
+```
+espanso status
+```
+
+At this point, you are ready to use Espanso! Open any typing application (like Notepad or TextEdit) and
+type `:espanso`, you should see `Hi there!` appear. If you don't see it, please read the troubleshooting
+section below.
+
+:::info Troubleshooting
+
+If you don't see the Espanso icon on macOS or Windows, or if `espanso status` returned `espanso is not running`
+on Linux, it means Espanso is not currently running on your machine.
+
+Firstly, try starting Espanso again:
+* **For Windows users**: click Espanso from the Start Menu, or click `START_ESPANSO.bat` for
+Portable mode users.
+* **For macOS users**: click on the Espanso app again. If you see a security warning, please follow the steps
+described in the [macOS installation](../install/mac/#problems-you-may-experience) section.
+* **For Linux users**: open a terminal and run `espanso start`
+
+If none of these steps worked, please reinstall Espanso and try again.
+
+:::
+
+## Understanding Matches
+
+In its most basic form, Espanso detects when you type a **keyword** and **replaces** it while you are typing.
+These keywords, known as _triggers_, are defined as simple strings. For example, `:date`, `e'`,
+`signature` and `>>up` are all valid triggers.
+
+![Espanso replaces a trigger with some other text](/img/docs/new_match_1.png)
+
+The _rule_ that associates a trigger with the replaced text is called **Match** and is a core concept of Espanso.
+Matches are very flexible and capable of solving complex tasks. You can learn all about matches in their [documentation](../matches)
+page.
+
+![Espanso's Match](/img/docs/new_match_2.png)
+
+Espanso ships with very few built-in matches to give you the maximum flexibility, 
+but you can expand its capabilities in two ways: **creating your own custom matches** or **installing packages**. 
+Both of these options are introduced below.
+
+:::tip
+
+Although matches are similar to the concept of _snippets_ and _templates_ found in other applications,
+they are not limited to text replacements.
+
+Espanso's matches are more general, associating a _cause_ with an _effect_. In their basic form,
+the cause is the user typing a keyword and the effect is Espanso inserting the replacement.
+But a match could also be triggered with the search bar or a keyboard shortcut*, and the effect
+could be inserting an image, executing a custom script and many others.
+
+\* This is not currently supported, but it's on the roadmap.
 
 :::
 
