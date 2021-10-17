@@ -1,22 +1,36 @@
 ---
-sidebar_position: 2
-title: Matches
+sidebar_position: 0
+title: Basics
 ---
 
 Matches are the espanso's core component and define the substitutions that will take place.
 
 TODO: might make sense to divide into:
-* Overview
 * Basics
-* Advanced
-  * Causes
-  * Effects
-  * Extensions
-  * Imports
+  * Static matches
+  * Multiline
+  * Dynamic matches
+  * Global variables
+  * Word triggers
+  * Case propagation
+  * Cursor hints
+  * Multiple triggers
+  * Image matches
+  * Nested matches
   * Forms
+  * Causes and Effects
+* Extensions
+  * Shell extension
+  * Script extension
+  * Date extension
+  * Random extension
+  * Clipboard extension
+  * Form extension
+* Organizing matches
+  * Imports
+* Regex triggers
+* Advanced topics
 * Examples
-
-TODO divide into Basics, Forms, Regex Triggers and Advanced Topics
 
 <!-- ### Static Matches
 

@@ -53,7 +53,7 @@ These keywords, known as _triggers_, are defined as simple strings. For example,
 ![Espanso replaces a trigger with some other text](/img/docs/new_match_1.png)
 
 The _rule_ that associates a trigger with the replaced text is called **Match** and is a core concept of Espanso.
-Matches are very flexible and capable of solving complex tasks. You can learn all about matches in their [documentation](../matches)
+Matches are very flexible and capable of solving complex tasks. You can learn all about matches in their [documentation](../matches/basics)
 page.
 
 ![Espanso's Match](/img/docs/new_match_2.png)
@@ -123,7 +123,7 @@ The `match/base.yml` file is where you might want to start adding your matches, 
 following sections. As the number of snippets grows, you might want to _split_ your matches
 over multiple files to make it easier to manage. For example, you might create the `match/emails.yml`
 file with the snippets you use while writing emails. You can learn all about matches in the
-[Matches section](../matches).
+[Matches section](../matches/basics).
 
 * **The files contained in the `config` directory define _HOW_ Espanso should perform its expansions.**
 In other words, this is were you should specify all Espanso's parameters and options.
