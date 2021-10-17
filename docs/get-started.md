@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Getting Started
 ---
-In this section, we will cover the basics of espanso to quickly get you started.
+In this section, we will cover the basics of Espanso to quickly get you started.
 Make sure to [install Espanso](/install) before diving into the next sections.
 
 :::info For legacy users
@@ -70,62 +70,22 @@ they are not limited to text replacements.
 Espanso's matches are more general, associating a _cause_ with an _effect_. In their basic form,
 the cause is the user typing a keyword and the effect is Espanso inserting the replacement.
 But a match could also be triggered with the search bar or a keyboard shortcut*, and the effect
-could be inserting an image, executing a custom script and many others.
+could be inserting an image, executing a custom script and much more.
 
 \* This is not currently supported, but it's on the roadmap.
 
 :::
 
-TODO
 
-<!-- ### Starting espanso
+## Configuration
 
-If you followed the installation correctly, 
-**espanso will be automatically started** when you power up your computer. There are times, 
-however, when you may need to start espanso explicitly.
-
-It's very easy to check if espanso is currently running: if you're using **MacOS** or **Windows**, 
-you should see the **icon in the status bar**. If you don't see it, or if you're using **Linux**, 
-another way to check it is to **open a terminal** and type:
-
-```bash
-espanso status
-```
-
-If you see "`espanso is not running`", then you'll need to start espanso manually with the following command:
-
-```bash
-espanso start
-```
-
-At this point you are ready to use espanso. Open any typing application and type `:espanso`, 
-you should see `Hi there!` appear.
-
-If you don't see it, make sure espanso is currently running. You could also try to repeat the installation procedure.
-
-### Understanding Matches
-
-espanso works by **detecting** your keypresses and **replacing** them when they match a specific keyword, called *trigger*.
-
-![How espanso works](/img/docs/match1.png)
-
-The rule that associate the *trigger* with the *replaced text* is called **Match** and is a core concept of espanso.
-Matches are very flexible and powerful to solve many tasks. 
-You can learn all about Matches in their [documentation](/docs/matches/) page.
-
-![Match](/img/docs/match2.png)
-
-espanso ships with very few built-in Matches to give you the maximum flexibility, but you can expand its capabilities
-in two ways: creating your own **custom matches** or **installing packages**. 
-Both of these possibilities are introduced below.
-
-### Configuration
-
-espanso uses a **file-based configuration** approach, following the Unix philosophy. All configuration files
+Espanso uses a **file-based configuration** approach, following the Unix philosophy. All configuration files
 reside in the `espanso` directory, whose location depends on the current OS:
 
 * Linux: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/user/.config/espanso`)
-* macOS: `$HOME/Library/Preferences/espanso` (e.g. `/Users/user/Library/Preferences/espanso`)
+* macOS: `$HOME/Library/Application Support/espanso` (e.g. `/Users/user/Library/Application Support/espanso`)
+  * NOTE: when migrating from the previous 0.7.3 version, the configuration directory will be located in
+  `$HOME/Library/Preferences/espanso` for compatibility purposes.
 * Windows: `{FOLDERID_RoamingAppData}\espanso` (e.g. `C:\Users\user\AppData\Roaming\espanso`)
 
 A quick way to find the path of your configuration folder is by using the following command:
@@ -134,21 +94,53 @@ A quick way to find the path of your configuration folder is by using the follow
 espanso path
 ```
 
-> By default, configuration folder is hidden in most systems. To open it, copy path of your configuration folder and paste it in the address bar (aka path bar) of your file manager/explorer.
+> By default, the configuration folder is hidden on most systems. To open it, copy path of your configuration folder and paste it in the address bar (aka path bar) of your file manager/explorer.
 
-While this folder may contain many different files, let's focus on the most important one: `default.yml`.
+:::info
 
-The `default.yml` file contain the **main espanso configuration** and uses the widely
-spread [YAML](https://en.wikipedia.org/wiki/YAML) syntax.
-It can be used to change various settings as well as **creating custom matches**.
-You can learn all about espanso's configuration by visiting the [documentation](/docs/configuration).
+From now on, we'll refer to the configuration directory as `$CONFIG`. For example, on Windows you'll
+have `$CONFIG=C:\Users\user\AppData\Roaming\espanso`.
 
-### Creating your own Match
+:::
 
-That's enough theory for now, let's start with some action! Let's say you write a lot of emails, and you're
+While this folder may contain multiple files, let's now focus on the most important ones.
+After a fresh installation, the `$CONFIG` directory should be structured as follows:
+
+```
+$CONFIG/
+  config/
+    default.yml
+  match/
+    base.yml
+```
+
+As you can see, there are two sub-folders, `config` and `match`, which in turn contain two files,
+`default.yml` and `base.yml` respectively. 
+Each of them serves a specific purpose:
+* **The files contained in the `match` directory define _WHAT_ Espanso should do.**
+In other words, this is were you should specify all the custom snippets and actions (aka Matches).
+The `match/base.yml` file is where you might want to start adding your matches, as shown in the
+following sections. As the number of snippets grows, you might want to _split_ your matches
+over multiple files to make it easier to manage. For example, you might create the `match/emails.yml`
+file with the snippets you use while writing emails. You can learn all about matches in the
+[Matches section](../matches).
+
+* **The files contained in the `config` directory define _HOW_ Espanso should perform its expansions.**
+In other words, this is were you should specify all Espanso's parameters and options.
+The `config/default.yml` file defines the options that will be applied to _all applications by default_,
+unless an _app-specific configuration_ is present for the current app. 
+For example, you might want to enable emoji snippets for all apps in the `config/default.yml` file,
+but disable them when using Slack in the `config/slack.yml` file.
+You can learn all about configurations in the [Configuration section](../configuration).
+
+All these files are defined using the widely popular [YAML](https://en.wikipedia.org/wiki/YAML) format.
+
+## Creating your own Matches
+
+That's enough theory for now, let's start with some action! Let's say you write a lot of emails and you're
 tired of writing the greetings at the end, so you decide to speed up the process.
 
-We will configure espanso so that every time you type `:br`, it will be expanded to:
+We will configure Espanso so that every time you type `:br`, it will be expanded to:
 
 ```bash
 Best Regards,
@@ -157,23 +149,23 @@ Jon Snow
 
 By now you should know that we need to **define a Match**.
 
-With your favourite text editor, open the `espanso/default.yml` file, introduced previously in the 
+With your favourite text editor, open the `$CONFIG/match/base.yml` file, introduced previously in the 
 [Configuration](#configuration) section. You should see something like:
 
-```yml
-# espanso configuration file
+```yml title="$CONFIG/match/base.yml"
+# espanso match file
 
-# This is the default configuration file, change it as you like it
-# You can refer to the official documentation:
-# https://espanso.org/docs/
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
 
-# Matches are the substitution rules, when you type the "trigger" string
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
   - trigger: ":espanso"
     replace: "Hi there!"
-
 ...
 ```
 
@@ -184,16 +176,23 @@ We need to define a new Match, so in the `matches:` section, add the following c
     replace: "Best Regards,\nJon Snow"
 ```
 
-**Make sure to include the indentation**, otherwise it won't be valid YAML syntax. You should get something like:
+:::warning Important
 
-```yml
-# espanso configuration file
+**Make sure to include the indentation**, otherwise it won't be valid YAML syntax. Also, prefer spaces to tabs if possible.
 
-# This is the default configuration file, change it as you like it
-# You can refer to the official documentation:
-# https://espanso.org/docs/
+:::
 
-# Matches are the substitution rules, when you type the "trigger" string
+You should get something like:
+
+```yml title="$CONFIG/match/base.yml"
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
@@ -202,91 +201,108 @@ matches:
 
   - trigger: ":br"
     replace: "Best Regards,\nJon Snow"
-
 ...
 ```
 
-We're almost there! After every configuration change, **espanso must be restarted**. Recent versions **automatically restart when a file change is detected**, but if you disabled that option, you'll need to do so manually by opening a terminal and typing:
-
-```bash
-espanso restart
-```
+All right! After saving the file, Espanso should automatically detect the change and reload your configuration.
 
 Now try to type `:br` anywhere. If you did everything correctly, you should see `Best Regards` appear!
 
-##### macOS remarks
+:::tip Quick Editing
 
-If are using built-in macOS text replacement (System Preferences > Keyboard > Text - note that these will sync from iDevices if you have iCloud sync enabled), and have any triggers that overlap with espanso (the Replace column in System Preferences), you may find that you get double expansions. Starting your espanso trigger with `/` will prevent macOS text replacement from triggering as well (ex: `/br` instead of `:br`).
-
-#### Quick Editing
-
-If you are comfortable using the terminal to edit your configs, you can also use the much quicker:
+If you are comfortable using the terminal to edit your configurations, you can also run this command:
 
 ```
 espanso edit
 ```
 
-command in the terminal, which spawns an instance of the system-default text editor and automatically restarts espanso on exit.
+which spawns an instance of the system-default text editor.
 
-By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](/docs/configuration/#quick-editing) for more information.
+By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/#quick-editing) for more information.
 
-### Understanding Packages
+:::
 
-Custom matches are amazing, but sometimes it can be tedious to define Matches for every common operation,
-and even more when you want to **share them with other people**.
+## Understanding Packages
 
-espanso offers an easy way to **share and reuse matches** with other people, **packages**. In fact,
-they are so important that espanso includes a **build-in package manager** and a **store**,
-the [espanso hub](https://hub.espanso.org/).
+:::caution
+
+Packages are not available yet in the new v2.0.x-alpha version. We are working hard to
+bring them back, sorry for the inconvenience!
+
+:::
+
+Custom matches are amazing, but sometimes it can be tedious to define them for every common operation,
+especially when you want to **share them with other people**.
+
+Espanso offers an easy way to **share and reuse matches** with other people, **packages**. In fact,
+they are so important that Espanso includes a **built-in package manager** and a **store**,
+the [Espanso Hub](https://hub.espanso.org/).
 
 If you are lucky enough, someone might have already written a **package** to include the matches you need!
-Otherwise, you can create a package and publish it on the hub, for more information check out the
-[Packages](/docs/packages/) documentation.
+Otherwise, you can create a package and publish it on the Hub, for more information check out the
+[Packages](../packages/) documentation.
 
 ### Installing a Package
 
-Let's say you want to **add some emojis** to espanso, such that when you type `:ok` it gets expanded to 👍.
+Let's say you want to **add some emojis** to Espanso, such that when you type `:ok` it gets expanded to 👍.
 
 A solution would be to install the [Basic Emojis](https://hub.espanso.org/packages/basic-emojis/) package from the
-[espanso hub](https://hub.espanso.org/) store. Open a terminal and type:
+[Espanso Hub](https://hub.espanso.org/) store. Open a terminal and type:
 
 ```bash
 espanso install basic-emojis
 ```
 
-At this point, as we did with custom matches, we need to **restart espanso**. We can do so with the command:
+Espanso should detect the change and reload the configuration automatically. 
+If you now type `:ook` into any text field, you should see 👍👍👍👍 appear!
+
+:::info Troubleshooting
+
+Espanso should automatically reload the configuration after you install a package. If that doesn't
+happen, please open a terminal and run:
 
 ```bash
 espanso restart
 ```
+:::
 
-If you now type `:ook` into any text field, you should see 👍👍👍👍 appear!
+## Useful shortcuts
 
-### Useful shortcuts
+Let's conclude this introduction with the most important shortcuts Espanso offers, the **toggle shortcut**
+the **search-bar shortcut** and the **backspace undo**.
 
-Let's conclude this introduction with the most important shortcuts espanso offers, the **toggle shortcut** and the **backspace undo**.
+### Toggle Key
 
-#### Toggle Key
+Sometimes you might want to **disable Espanso to avoid an unwanted expansion**. This can be
+easily accomplished by quickly **double pressing the `ALT` key** ( Option on MacOS ).
+On Windows and macOS you should see the status icon change, on Linux you should see an "Espanso disabled"
+notification.
 
-There are times when you may want to **disable espanso to avoid an unwanted expansion**. This can be
-easily accomplished by quickly **double pressing the `ALT` key** ( Option on MacOS ). You should then 
-see a notification showing "Espanso disabled".
+At this point, Espanso is disabled and will not expand any match. 
+To **re-enable** it, double press the `ALT` key again.
 
-At this point, espanso will be disabled and will not expand any match. To **re-enable** it, double press the `ALT` key again.
+:::tip customizing or disabling the toggle key
+If you want to disable or change the toggle key, please take a look at [Customizing the Toggle Key](../configuration/#customizing-the-toggle-key)
 
-**You can disable or change the toggle key**. Take a look at [Customizing the Toggle Key](/docs/configuration/#customizing-the-toggle-key)
+:::
 
+### Search-bar
 
-#### Backspace Undo
+Espanso comes with a powerful _Search-bar_ to quickly find and insert your matches.
+You can open the search bar in two ways:
+* By pressing `ALT+SPACE` (Option+Space on macOS)
+* By typing `jkj`
 
-> This feature was introduced in version 0.7.0, so make sure to have an up-to-date version.
+Both of them can be configured or disabled, please check out the [customizing the Search bar](../configuration/#customizing-the-search-bar) section if you are interested.
 
-It might happen to accidentally trigger an expansion, even though that was not intended. If you immediately press the `BACKSPACE` key after the expansion, the action is reverted and the trigger recovered.
+### Backspace Undo
 
-You can also disable this behavior by adding the following line on your `default.yml` file:
+Sometimes you might accidentally trigger an expansion. If you immediately press the `BACKSPACE` key after the expansion, the action is reverted and the trigger recovered.
+
+You can also disable this behavior by adding the following line on your `config/default.yml` file:
 
 ```yaml
 undo_backspace: false
 ```
 
-> Note that backspace undo is not available for every match, namely the ones that specify a [Cursor Hint](/docs/matches/#cursor-hints) -->
+> Note that backspace undo might not be always available.
