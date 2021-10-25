@@ -22,8 +22,7 @@ Linux users can check if Espanso is running by opening a Terminal and running:
 
 ```
 espanso status
-```
-
+```A
 At this point, you are ready to use Espanso! Open any typing application (like Notepad or TextEdit) and
 type `:espanso`, you should see `Hi there!` appear. If you don't see it, please read the troubleshooting
 section below.
@@ -60,7 +59,18 @@ page.
 
 Espanso ships with very few built-in matches to give you the maximum flexibility, 
 but you can expand its capabilities in two ways: **creating your own custom matches** or **installing packages**. 
-Both of these options are introduced below.
+Both of these options are you can _include_ all your code snippets in an app-specific configuration:
+
+```yaml title=$CONFIG/config/vscode.yml
+filter_title: "Visual Studio Code"
+
+extra_includes:
+  - "../match/_code_snippets.yml"
+```
+
+Because the `$CONFIG/match/_code_snippets.yml` file imports both JS and CSS snippets, you will be
+able to use both of them in VSCode, even though you haven't included the `$CONFIG/match/_js_snippets.yml`
+and `$CONFIG/match/_css_snippets.yml` directly.
 
 :::tip
 
@@ -131,7 +141,7 @@ The `config/default.yml` file defines the options that will be applied to _all a
 unless an _app-specific configuration_ is present for the current app. 
 For example, you might want to enable emoji snippets for all apps in the `config/default.yml` file,
 but disable them when using Slack in the `config/slack.yml` file.
-You can learn all about configurations in the [Configuration section](../configuration).
+You can learn all about configurations in the [Configuration section](../configuration/basics).
 
 All these files are defined using the widely popular [YAML](https://en.wikipedia.org/wiki/YAML) format.
 
@@ -218,7 +228,7 @@ espanso edit
 
 which spawns an instance of the system-default text editor.
 
-By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/#quick-editing) for more information.
+By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/basics/#quick-editing) for more information.
 
 :::
 
@@ -282,7 +292,7 @@ At this point, Espanso is disabled and will not expand any match.
 To **re-enable** it, double press the `ALT` key again.
 
 :::tip customizing or disabling the toggle key
-If you want to disable or change the toggle key, please take a look at [Customizing the Toggle Key](../configuration/#customizing-the-toggle-key)
+If you want to disable or change the toggle key, please take a look at [Customizing the Toggle Key](../configuration/options/#customizing-the-toggle-key)
 
 :::
 
@@ -293,7 +303,7 @@ You can open the search bar in two ways:
 * By pressing `ALT+SPACE` (Option+Space on macOS)
 * By typing `jkj`
 
-Both of them can be configured or disabled, please check out the [customizing the Search bar](../configuration/#customizing-the-search-bar) section if you are interested.
+Both of them can be configured or disabled, please check out the [customizing the Search bar](../configuration/options/#customizing-the-search-bar) section if you are interested.
 
 ### Backspace Undo
 
