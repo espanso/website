@@ -3,7 +3,7 @@ title: Install on Linux
 layout: docs
 ---
 
-### Find the right version
+## Find the right version
 
 To use Espanso on Linux, you first need to determine whether your system is running a X11 or Wayland desktop environment.
 If you are unsure, please open a terminal and run the following command:
@@ -16,13 +16,16 @@ echo $XDG_SESSION_TYPE
 
 Now that you know your desktop environment, you can either follow the [X11](#install-on-x11) or [Wayland](#install-on-wayland) installation instructions.
 
-### Install on X11
+## Install on X11
 
-> The preferred method to use Espanso on X11-based systems is the AppImage. If for whatever reason you don't like this option, you can also compile espanso from sources by following the [compilation instructions](https://github.com/federico-terzi/espanso/blob/dev-1.x/Compilation.md).
+> The preferred method to use Espanso on X11-based systems is the AppImage. 
+If for whatever reason you don't like this option, there are other methods listed below.
 
 import siteConfig from '/docusaurus.config.js';
 
 export const CodeLink = () => <code>{siteConfig.customFields.LINUX_X11_APP_IMAGE_DOWNLOAD_URL}</code>;
+
+### Installing with AppImage
 
 To install the Espanso's AppImage, open a terminal and follow these steps, replacing `{{DOWNLOAD_URL}}` with <CodeLink/>
 
@@ -56,29 +59,48 @@ espanso start
 
 You are now ready to read the [Getting Started](../../get-started) tutorial!
 
-### Install on Wayland
+### Installing with Snap
 
-> Wayland support is currently experimental, therefore some features might be missing or not working well yet. If you encounter any strange behavior, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues).
+If you are using Ubuntu, you can also install Espanso by simply running this command:
 
-Currently, the only way to install Espanso on Wayland is to compile it yourself. Things are rapidly evolving, so expect more user-friendly methods to come in the near future.
+```bash
+sudo snap install espanso --classic --channel=latest/edge
+```
 
-#### Manual compilation
+Once the installation is completed, you can finish the configuration with these commands:
 
-##### Prerequisites
+```bash
+# Register espanso as a systemd service (required only once)
+espanso service register
+
+# Start espanso
+espanso start
+```
+
+> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
+
+You are now ready to read the [Getting Started](../../get-started) tutorial!
+
+### Compiling from sources {#x11-compile}
+
+#### Prerequisites
 
 These are the basic tools required to build espanso:
 
 * A recent Rust compiler. You can install it following these instructions: https://www.rust-lang.org/tools/install
-* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). On Ubuntu/Debian systems, you can install them with `sudo apt install build-essential`
+* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). 
+If you run the command specified in the next step, this will be included automatically.
 
+* Install the required linux packages:
+  * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git libx11-dev libxtst-dev libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
 * Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
 steps. You can install it by running:
 
 ```
-cargo install --force cargo-make
+cargo install --force cargo-make --version 0.34.0
 ```
 
-##### Compiling Espanso
+#### Compiling Espanso
 
 Once you've got all the prerequisites, you can:
 
@@ -86,30 +108,96 @@ Once you've got all the prerequisites, you can:
 # Clone the Espanso repository
 git clone https://github.com/federico-terzi/espanso
 
-# Checkout the new alpha version
-git checkout -b dev-1.x
+cd espanso
 
 # Compile espanso in release mode
-# NOTE: this will take a while (~5/10 minutes)
+# NOTE: this will take a while (~5/15 minutes)
+cargo make --profile release build-binary 
+```
+
+At this point, you should have the `espanso` binary available in the `target/release/` directory.
+
+#### Installing Espanso
+
+Once you've compiled Espanso, you can move it into the final location. A good option would be the `/usr/local/bin` folder:
+
+```
+sudo mv target/release/espanso /usr/local/bin/espanso
+```
+
+Now run `espanso --version`. If you see the version appear, it means Espanso was successfully installed!
+
+To complete the configuration, run these commands:
+
+```bash
+# Register espanso as a systemd service (required only once)
+espanso service register
+
+# Start espanso
+espanso start
+```
+
+> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
+
+You are now ready to read the [Getting Started](../../get-started) tutorial!
+
+## Install on Wayland
+
+> Wayland support is currently experimental, therefore some features might be missing or not working well yet. 
+> If you encounter a bug, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues).
+
+Currently, the only way to install Espanso on Wayland is to compile it yourself. 
+Things are rapidly evolving, so expect more user-friendly methods to come in the near future.
+
+### Compiling from sources
+
+#### Prerequisites
+
+These are the basic tools required to build espanso:
+
+* A recent Rust compiler. You can install it following these instructions: https://www.rust-lang.org/tools/install
+* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). 
+If you run the command specified in the next step, this will be included automatically.
+
+* Install the required linux packages:
+  * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
+* Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
+steps. You can install it by running:
+
+```
+cargo install --force cargo-make --version 0.34.0
+```
+
+#### Compiling Espanso
+
+Once you've got all the prerequisites, you can:
+
+```bash
+# Clone the Espanso repository
+git clone https://github.com/federico-terzi/espanso
+
+cd espanso
+
+# Compile espanso in release mode
+# NOTE: this will take a while (~5/15 minutes)
 cargo make --profile release --env NO_X11=true build-binary 
 ```
 
 At this point, you should have the `espanso` binary available in the `target/release/` directory.
 
-##### Adding the required Capabilities
+#### Adding the required Capabilities
 
 Espanso requires access to the `/dev/input/eventX` and `/dev/uinput` interfaces to detect triggers and inject expansions respectively. 
 Although you could run it as root to grant the necessary permissions, Espanso supports a safer alternative
 that consists in adding the `CAP_DAC_OVERRIDE` capability to the binary's set of **Permitted** ones. To do so, run the following command:
 
-```
+```bash
 sudo setcap "cap_dac_override+p" target/release/espanso
 ```
 
 :::info Security considerations
 
-
- In a nutshell, this capability grants the process the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
+ In a nutshell, this capability grants Espanso the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
 
  To limit the attack surface, Espanso performs the following steps:
 * When started, the `CAP_DAC_OVERRIDE` capability is contained in the `Permitted` set. At this point, **Espanso CANNOT access arbitrary files in the system, as this is only possible once the `CAP_DAC_OVERRIDE` is moved to the `Effective` set**.
@@ -122,12 +210,26 @@ sudo setcap "cap_dac_override+p" target/release/espanso
 
 :::
 
-##### Installing Espanso
+#### Installing Espanso
 
 Once you've compiled Espanso and granted it the necessary capabilities, you can move it into the final location. A good option would be the `/usr/local/bin` folder:
 
 ```
-mv target/release/espanso /usr/local/bin/espanso
+sudo mv target/release/espanso /usr/local/bin/espanso
 ```
 
-Now run `espanso --version`. If you see the version appear, Espanso was installed correctly and you are now ready for the [Getting Started](../../get-started) tutorial!
+Now run `espanso --version`. If you see the version appear, it means Espanso was successfully installed!
+
+To complete the configuration, run these commands:
+
+```bash
+# Register espanso as a systemd service (required only once)
+espanso service register
+
+# Start espanso
+espanso start
+```
+
+> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
+
+You are now ready to read the [Getting Started](../../get-started) tutorial!

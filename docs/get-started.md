@@ -22,7 +22,8 @@ Linux users can check if Espanso is running by opening a Terminal and running:
 
 ```
 espanso status
-```A
+```
+
 At this point, you are ready to use Espanso! Open any typing application (like Notepad or TextEdit) and
 type `:espanso`, you should see `Hi there!` appear. If you don't see it, please read the troubleshooting
 section below.
