@@ -91,7 +91,7 @@ git checkout -b dev-1.x
 
 # Compile espanso in release mode
 # NOTE: this will take a while (~5/10 minutes)
-cargo make build-binary --profile release --env NO_X11=true
+cargo make --profile release --env NO_X11=true build-binary 
 ```
 
 At this point, you should have the `espanso` binary available in the `target/release/` directory.
