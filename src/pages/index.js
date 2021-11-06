@@ -49,12 +49,12 @@ export default function Home() {
 	<meta property="og:url" content="https://espanso.org/"/>
 	<meta property="og:title" content="Espanso - A Privacy-first, Cross-platform Text Expander"/>
 	<meta property="og:description" content="Tired of typing the same sentences over and over? Discover the incredible power of a full-blown text expander."/>
-	<meta property="og:image" content="/assets/logo.png"/>
+	<meta property="og:image" content="/img/logo.png"/>
 	<meta property="twitter:card" content="summary_large_image"/>
 	<meta property="twitter:url" content="https://espanso.org/"/>
 	<meta property="twitter:title" content="Espanso - A Privacy-first, Cross-platform Text Expander"/>
 	<meta property="twitter:description" content="Tired of typing the same sentences over and over? Discover the incredible power of a full-blown text expander."/>
-	<meta property="twitter:image" content="/assets/logo.png"/>
+	<meta property="twitter:image" content="/img/logo.png"/>
       </Head>
       <Navigation />
       <HomeJumbo />
