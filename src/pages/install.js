@@ -13,13 +13,22 @@ export default function Install() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>
-          Installation - Espanso - A Privacy-first, Cross-platform Text Expander
-        </title>
+        <title>Espanso - A Privacy-first, Cross-platform Text Expander</title>
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+        <meta name="title" content="Espanso - A Privacy-first, Cross-platform Text Expander"/>
+        <meta name="description" content="Tired of typing the same sentences over and over? Discover the incredible power of a full-blown text expander."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://espanso.org/"/>
+        <meta property="og:title" content="Espanso - A Privacy-first, Cross-platform Text Expander"/>
+        <meta property="og:description" content="Tired of typing the same sentences over and over? Discover the incredible power of a full-blown text expander."/>
+        <meta property="og:image" content="/assets/logo.png"/>
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="https://espanso.org/"/>
+        <meta property="twitter:title" content="Espanso - A Privacy-first, Cross-platform Text Expander"/>
+        <meta property="twitter:description" content="Tired of typing the same sentences over and over? Discover the incredible power of a full-blown text expander."/>
+        <meta property="twitter:image" content="/assets/logo.png"/>
       </Head>
       <Navigation />
-
       <div className={styles["install-section"]}>
         <h1>Installation (Stable)</h1>
         <p>Select your operating system:</p>
