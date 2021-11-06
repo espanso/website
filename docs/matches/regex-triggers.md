@@ -176,9 +176,23 @@ work on that platform. You can still apply the concepts to other commands/script
 
 ## When NOT to use Regex triggers
 
-TODO
-- Note on performance/ When NOT to use regex triggers
+Although regex triggers could completely replace regular ones, you should only use them
+when necessary. In other words, **if a regular trigger (or a simple combination
+of them) could serve your needs, you should prefer them to regex ones**.
+
+That's because regex triggers, despite being more powerful, are also less efficient
+than regular ones. Their performance shouldn't be a problem unless you use thousands of them,
+but it's important to keep this in mind when defining matches.
 
 ## Limitations
 
-- 30 char limit / Rust regex syntax slightly different
+The current regex implementation is subject to a few limitations:
+
+* The maximum length of a "regex match" is set to 30 characters, including the captured named
+groups. For example, if your regex trigger is `:greet\\((?P<person>.*)\\)` and you type
+`:greet(Bob)`, you've consumed 11 out of 30 characters.
+This limitation has been placed to improve performance, but we are planning to make this
+configurable. Please open an issue on GitHub if this is limiting you :)
+
+* As explained in the previous sections, Espanso uses a Regex implementation that doesn't support
+all Regex features. For more information, please see the library documentation: https://docs.rs/regex/1.5.4/regex/
