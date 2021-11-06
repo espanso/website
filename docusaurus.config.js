@@ -94,14 +94,14 @@ module.exports = {
   ],
   customFields: {
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.4-alpha/Espanso-X11.AppImage",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-X11.AppImage",
     MAC_INTEL_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.4-alpha/Espanso-Mac-Intel.zip",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Mac-Intel.zip",
     MAC_M1_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.4-alpha/Espanso-Mac-M1.zip",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Mac-M1.zip",
     WIN_INSTALLER_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.4-alpha/Espanso-Win-Installer-x86_64.exe",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.4-alpha/Espanso-Win-Portable-x86_64.exe",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Win-Portable-x86_64.exe",
   },
 };
