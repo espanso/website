@@ -42,6 +42,31 @@ automatically.
 
 For a deeper walkthrough on the new configuration format, please read the [Configuration changes section](../configuration_changes).
 
+### New Form's control syntax
+
+In previous versions, you could define Form's controls with the same curly-bracket syntax as variables:
+
+```yaml
+  - trigger: ":greet"
+    form: |
+      Hey {{name}},
+      Happy Birthday!
+```
+
+Since version 2.1.0-alpha, you'll need to use double square-brackets to define controls instead, such as:
+
+```yaml
+  - trigger: ":greet"
+    form: |
+      Hey [[name]],
+      Happy Birthday!
+```
+
+This breaking change was needed to support the new variable injection mechanism, for which the
+curly-brackets syntax `{{name}}` is reserved.
+
+If you run the automatic migration tool, Espanso will take care of converting the syntax for you.
+
 ### Search bar
 
 Espanso now comes with a search bar. You can open it typing `jkj` or by pressing `ALT+SPACE` (or `OPTION+SPACE` on macOS).

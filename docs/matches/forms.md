@@ -22,7 +22,7 @@ With forms, you could achieve that with:
 ```yaml
   - trigger: ":greet"
     form: |
-      Hey {{name}},
+      Hey [[name]],
       Happy Birthday!
 ```
 
@@ -36,7 +36,7 @@ After entering the desired name, we can submit the form either by clicking "Subm
 The key here is to specify the `form` field rather than `replace`, which is a shorthand for the verbose syntax explained in the following sections.
 
 
-You can create as many fields as you want, just use the double-brackets `{{field_name}}` syntax.
+You can create as many fields as you want, just use the double-brackets `[[field_name]]` syntax.
 
 
 ## Controls
@@ -55,8 +55,8 @@ To do so, we can add a multiline text field:
 ```yaml
   - trigger: ":greet"
     form: |
-      Hey {{name}},
-      {{text}}
+      Hey [[name]],
+      [[text]]
       Happy Birthday!
     form_fields:
       text:
@@ -71,7 +71,7 @@ After saving and triggering the match, we would be prompted with a form like the
 Let's analyze the most important bits:
 
 
-1. Inside the `form` parameter we specified the `{{text}}` field. This name is arbitrary, you can put whatever you want there.
+1. Inside the `form` parameter we specified the `[[text]]` field. This name is arbitrary, you can put whatever you want there.
 2. In the `form_fields` parameter, we specified that the `text` field had property `multiline: true`
 
 
@@ -80,12 +80,12 @@ Each control has its own options, so let's see them separately:
 ### Text Fields
 
 
-Text Fields are the default control type. Anytime you specify a new field using the `{{field_name}}` syntax, that field is considered a text field, if not specified otherwise.
+Text Fields are the default control type. Anytime you specify a new field using the `[[field_name]]` syntax, that field is considered a text field, if not specified otherwise.
 
 | Property | Description | Default value |
 | ---------|-------------|---------------|
-| multiline | If `true`, the text field becomes a multiline text area | `false` |
-| default | Specify the default value of the field | `(empty)` |
+| `multiline` | If `true`, the text field becomes a multiline text area | `false` |
+| `default` | Specify the default value of the field | `(empty)` |
 
 
 
@@ -97,7 +97,7 @@ Choice boxes are fields that let you choose a value from a list. In order to use
 ```yaml
   - trigger: ":form"
     form: |
-      {{choices}}
+      [[choices]]
     form_fields:
       choices:
         type: choice
@@ -111,9 +111,28 @@ Which produces:
 
 ![Form example](/img/docs/form3.png)
 
+You can also specify the list of values as a multiline string:
+
+```yaml
+  - trigger: ":form"
+    form: |
+      [[choices]]
+    form_fields:
+      choices:
+        type: choice
+        values: |
+          First choice
+          Second choice
+```
+
+This is useful when you want to dinamically populate a list with the output of a shell
+command or script, as described in the [Advanced topics](../advanced-topics) section.
+
 | Property | Description | Default value |
 | ---------|-------------|---------------|
-| default | Specify the default value of the field | `(empty)` |
+| `values` | The list of values to choose from. This can be either a multiline string or an array of strings. | `[empty]` |
+| `default` | Specify the default value of the field. | `(empty)` |
+| `trim_string_values` | If you pass the values as a multiline string and this option is true, Espanso will trim the values and remove empty ones. | `true` |
 
 ### List Box
 
@@ -123,7 +142,7 @@ To use them, you will need to specify `type: list` rather than `type: choice`.
 ```yaml
   - trigger: ":form"
     form: |
-      {{choices}}
+      [[choices]]
     form_fields:
       choices:
         type: list
@@ -148,7 +167,7 @@ The first important thing to understand is that the following syntax:
 
 ```yaml
   - trigger: ":form"
-    form: "Hey {{name}}, how are you?"
+    form: "Hey [[name]], how are you?"
 ```
 
 is a shorthand for the following match:
@@ -160,7 +179,7 @@ is a shorthand for the following match:
       - name: "form1"
         type: form
         params:
-          layout: "Hey {{name}}, how are you?"
+          layout: "Hey [[name]], how are you?"
 ```
 
 In a nutshell, Espanso is generating a form with the given layout, 
@@ -168,7 +187,7 @@ and then injecting the resulting fields (`form1.name`) into the replacement text
 Some of you might have already understood that **forms are extensions as well**,
 just like the Date and Script ones.
 
-All right, but **how can we use forms with the shell extension**? 
+With that being said, let's see how can we use forms with the shell extension.
 
 Let's say that we want to create a match that prompts for user input, and then expands to the reverse of what the user inserted.
 That could be implemented with:
@@ -181,39 +200,22 @@ That could be implemented with:
       type: form
       params:
         layout: |
-          Reverse {{name}}
+          Reverse [[name]]
     - name: reversed
       type: shell
       params:
-       cmd: "echo $ESPANSO_FORM1_NAME | rev"
+       cmd: "echo '{{form1.name}}' | rev"
 ```
 
-The key aspect here is that the value of the form field is injected in the `shell` variable as an _environment
-variable_ called `ESPANSO_FORM1_NAME`. 
-The naming is pretty straightforward, as the form variable is called `form1` and the field is called `name`.
-
-To understand more about the variable injection mechanism, please read the [Advanced Topics](../advanced-topics) section.
+The key aspect here is that the value of the form field is injected in the shell's `cmd` field.
+To understand more about variable injections, please read the [Advanced Topics](../advanced-topics) section.
 
 
 :::caution A note for Windows users
 
 The previous example only works on Unix systems (Linux and macOS), because on Windows
 you don't have the `rev` command by default. 
-That said, these concepts are valid on Windows as well, with a couple of gotchas:
-
-In the previous example, we called `echo $ESPANSO_FORM1_NAME`. That's because in bash-like
-shells (which are common on Unix systems), you can read an environment variable by using the `$` operator.
-
-If you try running `echo $ESPANSO_FORM1_NAME` on Windows, you will soon discover that it doesn't work.
-That's because on Windows, Espanso uses **PowerShell** by default. With PowerShell, you have to use the `$env:NAME` operator
-to read environment variables.
-Moreover, Windows also supports the Command Prompt and WSL, and each of them 
-uses a different syntax. 
-
-To summarize, here's what you should use on Windows, depending on the shell:
-* **On Powershell** use `$env:NAME` to read a variable, like `echo $env:ESPANSO_FORM1_NAME`
-* **On Command prompt** use `%NAME%`, like `echo %ESPANSO_FORM1_NAME%`
-* **On WSL** use `$NAME`, like `echo $ESPANSO_FORM1_NAME`
+That said, these concepts are valid on Windows as well.
 
 :::
 
@@ -230,7 +232,7 @@ you will need to specify the `fields` parameter:
       - name: "form1"
         type: form
         params:
-          layout: "Name: {{name}} \nFruit: {{fruit}}"
+          layout: "Name: [[name]] \nFruit: [[fruit]]"
           fields:
             name:
               multiline: true
