@@ -6,8 +6,10 @@ title: Advanced topics
 TODO:
 
 * Variable injection
-* Disabling variable injection with `inject_vars: false`
+  * Disabling variable injection with `inject_vars: false`
+  * Evaluating global variables
 * More robust injection for shell and script extensions
+  * Difference between the two modes (one happens before calling the shell, the other )
 
 TODO:
 
@@ -16,6 +18,9 @@ TODO:
 The previous example only works on Unix systems (Linux and macOS), because on Windows
 you don't have the `rev` command by default. 
 That said, these concepts are valid on Windows as well, with a couple of gotchas:
+
+
+
 
 In the previous example, we called `echo $ESPANSO_FORM1_NAME`. That's because in bash-like
 shells (which are common on Unix systems), you can read an environment variable by using the `$` operator.
