@@ -102,6 +102,6 @@ module.exports = {
     WIN_INSTALLER_DOWNLOAD_URL:
       "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Win-Portable-x86_64.exe",
+      "https://github.com/federico-terzi/espanso/releases/download/v2.0.5-alpha/Espanso-Win-Portable-x86_64.zip",
   },
 };
