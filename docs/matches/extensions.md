@@ -16,13 +16,13 @@ found in the [official chrono documentation](https://docs.rs/chrono/0.3.1/chrono
 
 
 ```yaml
-- trigger: ":now"
-  replace: "It's {{mytime}}"
-  vars:
-    - name: mytime
-      type: date
-      params:
-        format: "%H:%M"
+  - trigger: ":now"
+    replace: "It's {{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
 ```
 
 
@@ -179,7 +179,7 @@ When triggering the shell command, Espanso also injects a few useful Environment
 
 * `CONFIG`: Points to the path of the espanso config directory
 * All the values of the previously evaluated match variables. 
-For more information, look at the [Advanced topics](../advanced-topics) section.
+For more information, check out the [Variables](../variables) section.
 
 ## Shell Extension
 
@@ -276,7 +276,7 @@ When triggering the shell command, espanso also injects a few useful Environment
 
 * `CONFIG`: Points to the path of the espanso config directory
 * All the values of the previously evaluated match variables. 
-For more information, look at the [Advanced topics](../advanced-topics) section.
+For more information, check out the [Variables](../variables) section.
 
 ### Using Linux commands on Windows
 
