@@ -147,7 +147,7 @@ For example, the following match outputs `hello {{var}}` when expanded:
           echo: world
 ```
 
-:::caution How many backspaces to use?
+:::caution How many backslashes to use?
 
 In the previous example, we escaped `{{var}}` with 4 backslashes `\\{\\{var\\}\\}`,
 but that's only because the replace value was surrounded by double quotes `"`.
@@ -181,10 +181,6 @@ For example, the following match will expand to `hello {{var}}` when triggered:
   - trigger: ":hello"
     replace: "hello {{output}}"
     vars:
-      - name: var
-        type: echo
-        params:
-          echo: world
       - name: output
         type: echo
         inject_vars: false
@@ -245,7 +241,7 @@ That's possible because we first define two global variables,
 
 In fact, you can also inject global variables inside other global variables.
 For example, we could slightly refactor the previous example to only use
-global variables. The end result is absolutely the same:
+global variables. The end result is:
 
 ```yaml
 global_vars:
@@ -267,7 +263,7 @@ matches:
     replace: "hello {{fullname}}"
 ```
 
-### Changing the evaluation order for global variables
+### Changing the evaluation order for global variables {#eval-order}
 
 While local variables are executed serially, with the first one
 being evaluated before the last one, global variables are less constrained.
@@ -352,8 +348,8 @@ This feature is especially useful if we want to control the order in which globa
 evaluated. 
 
 In the following example, we are forcing the global variable `two` to being evaluated **after**
-the global variable `one` by using the `depends_on` option, which accepts an array of variable
-names which should be evaluated beforehands:
+the global variable `one` by using the `depends_on` option, which accepts the list of variable
+names that should be evaluated beforehand:
 
 ```yaml
 global_vars:
@@ -374,21 +370,69 @@ matches:
 
 ### Alternatives to variable injection for Shell and Scripts
 
-TODO
+In the previous sections, we've seen how variable injection can be used
+to pass an extension's output as a parameter for another. 
+Under the hoods, Espanso replaces the injection with the variable's value
+before evaluating the extension. 
 
-* More robust injection for shell and script extensions
-  * Difference between the two modes (one happens before calling the shell, the other )
-  * Example of Python and Node scripts
-  * You might need to specify depends_on here
+For example, in the following snippet we define two variables, `injectedvar` and
+`myvar`, injecting the value of the former inside the parameters of the latter:
+
+```yaml
+  - name: injectedvar 
+    type: echo
+    params:
+      echo: "hello world"
+  - name: myvar
+    type: shell
+    params:
+      cmd: "echo '{{injectedvar}}'"
+```
+
+Before the evaluation of `myvar` takes place, Espanso replaces `{{injectedvar}}` with
+the value of `injectedvar`. Therefore, the shell extension would evaluate the command:
+
+```
+echo 'hello world'
+```
+
+Because this approach uses simple string replacements, there are times where it might
+prove limited and a more robust solution is needed.
+
+For this reason, both **the Shell and Script extensions _also_ pass the current scope as
+ad-hoc environment variables**. In other words, you can access variables' values inside
+those extensions by reading the proper environment variables.
+
+Let's discuss this further with an example:
+
+```yaml
+  - trigger: ":reversed"
+    replace: "Reversed {{myshell}}"
+    vars:
+      - name: myname
+        type: echo
+        params:
+          echo: "John"
+      - name: myshell
+        type: shell
+        params:
+          cmd: "echo $ESPANSO_MYNAME | rev"
+```
+
+In this case, we first evaluate the variable `myname`, assigning the value `John`.
+Then, when `myshell` is evaluated, Espanso also pass the current variables as
+environment variables. In particular, the `myname` variable is converted into
+the `ESPANSO_MYNAME` environment variable, which is being read by the shell and piped
+into the Unix `rev` command.
+
+The match output is `Reversed nhoJ`.
+
 
 :::caution A note for Windows users
 
 The previous example only works on Unix systems (Linux and macOS), because on Windows
 you don't have the `rev` command by default. 
 That said, these concepts are valid on Windows as well, with a couple of gotchas:
-
-
-
 
 In the previous example, we called `echo $ESPANSO_FORM1_NAME`. That's because in bash-like
 shells (which are common on Unix systems), you can read an environment variable by using the `$` operator.
@@ -405,3 +449,79 @@ To summarize, here's what you should use on Windows, depending on the shell:
 * **On WSL** use `$NAME`, like `echo $ESPANSO_FORM1_NAME`
 
 :::
+
+#### Environment variables naming scheme
+
+Espanso follows a simple logic to convert the variable name to the associated
+environment variable. For example:
+
+* `myname` is converted to `ESPANSO_MYNAME`
+* `form1.name` is converted to `ESPANSO_FORM1_NAME`
+
+#### Using enviornment variables with scripts
+
+In the previous example, we used the ad-hoc environment variables with the shell extension,
+but the same logic can be applied to the script one.
+You'll just need to use the appropriate methods to read the environment variables
+in your language of choice.
+
+For example, this is how you would use it with a Python script.
+We first define the match:
+
+```yaml
+  - trigger: ":pyscript"
+    replace: "{{output}}"
+    vars:
+      - name: myvar
+        type: echo
+        params:
+          echo: "my variable"
+      - name: output
+        type: script
+        params:
+          args:
+            - python
+            - /path/to/your/script.py
+```
+
+And then, inside the script:
+
+```py title=/path/to/your/script.py
+import os
+myvar = os.environ['ESPANSO_MYVAR']
+
+# Do whatever you want with the myvar variable
+```
+
+#### Specify the depends_on option when needed
+
+A final word of notice about this alternative method.
+When using the traditional variable injection mechanism, Espanso
+figures out the variable evaluation order automatically, making
+sure that a variable is being evaluated before it's injected.
+**But if you use the environment variables, Espanso won't be able to detect
+the dependency automatically**.
+
+If the variable you need is defined as a local variable and the
+shell/script extension that uses it is defined later, then there is no problem,
+because local variables are evaluated sequentially, as we described in [this section](#eval-order).
+
+In other cases, such as when using global variables, you'll need to explicitly
+declare the dependency with the `depends_on` option:
+
+```yaml
+global_vars:
+  - name: one
+    type: shell
+    params:
+      cmd: "echo one"
+  - name: two
+    type: shell
+    depends_on: ["one"]
+    params:
+      cmd: "echo $ESPANSO_ONE"
+
+matches:
+  - trigger: ":hello"
+    replace: "hello {{two}}"
+```
