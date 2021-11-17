@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Options
+sidebar_position: 3
+title: Include and Exclude rules
 ---
 
 TODO: think about structure
