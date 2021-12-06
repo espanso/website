@@ -83,7 +83,7 @@ At this point, we'll have the `:contact` snippet ready to be used on Chrome and 
 
 The filters used in the previous examples to detect Chrome and Firefox
 have been tested only on Windows, and might not be working on other platforms.
-Make sure to read the [Finding the right filters](/app-specific-configurations/#finding-the-right-filters)
+Make sure to read the [Finding the right filters](../app-specific-configurations/#finding-the-right-filters)
 section for more information.
 
 :::
