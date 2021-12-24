@@ -1,5 +1,6 @@
 .home {
   color: var(--content-primary);
+  font-family: "Inter", sans-serif;
 }
 
 .dark-area {
