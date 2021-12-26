@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
-title: Basics
+title: Configuration Basics
+sidebar_label: Basics
 ---
 
 At its core, **Espanso uses YAML files to manage its configuration**. 

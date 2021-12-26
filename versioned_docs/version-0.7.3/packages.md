@@ -75,8 +75,14 @@ espanso restart
 
 ### Creating a Package
 
-**Note:** espanso is in the alpha stage right now and sometimes things are not very polished. The current
-package creation process will be improved in the future.
+:::caution (deprecated) Don't use this process for new packages
+
+The process described in this section is being **deprecated** in favor of the new v2 format.
+
+Please refer to the [v2 reference](/docs/next/packages/creating-a-package/) if you are creating a new
+package today.
+
+:::
 
 In their basic form, Packages are just **configuration files**, very similar to 
 [those you've seen before](/docs/configuration), with a few *metadata* fields to describe them.

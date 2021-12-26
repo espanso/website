@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
-title: Basics
+title: Matches Basics
+sidebar_label: Basics
 ---
 
 Matches are one of the Espanso's core concepts and define the replacements that will take place.

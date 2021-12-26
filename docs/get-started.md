@@ -235,14 +235,7 @@ By default it uses Nano on Unix and Notepad on Windows, but you can customize it
 
 ## Understanding Packages
 
-:::caution
-
-Packages are not available yet in the new v2.0.x-alpha version. We are working hard to
-bring them back, sorry for the inconvenience!
-
-:::
-
-Custom matches are amazing, but sometimes it can be tedious to define them for every common operation,
+Custom matches are great, but sometimes it can be tedious to define them for every common operation,
 especially when you want to **share them with other people**.
 
 Espanso offers an easy way to **share and reuse matches** with other people, **packages**. In fact,
@@ -251,7 +244,7 @@ the [Espanso Hub](https://hub.espanso.org/).
 
 If you are lucky enough, someone might have already written a **package** to include the matches you need!
 Otherwise, you can create a package and publish it on the Hub, for more information check out the
-[Packages](../packages/) documentation.
+[Packages](../packages/basics/) documentation.
 
 ### Installing a Package
 
