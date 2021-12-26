@@ -3,30 +3,59 @@ title: Synchronization
 sidebar_position: 8
 ---
 
-TODO
+At some point, you might need to synchronize your configuration between devices. 
+Luckly, the Espanso file-based configuration makes it easy,
+letting you synchronize the config using any Cloud Storage service 
+(such as Dropbox, Google Drive, ecc) or even GitHub!
 
-<!-- After using espanso for a while, you may need to synchronize your configuration between devices. Luckly for you, the espanso
-file-based configuration makes it pretty easy to accomplish using a Cloud Storage service (such as Dropbox, Google Drive, ecc)
-or even GitHub!
+:::tip
 
-> From now on, I will only mention "Dropbox folder" for brevity, but you can apply the same procedure for every service.
+From now on, we'll only mention "Dropbox folder" for brevity, but you can apply the same process for every service.
+
+:::
 
 The general idea, which applies to all operating systems, is the following:
 
-* Move the espanso configuration folder inside your Dropbox folder (also a subdirectory is perfectly fine)
+* Move the Espanso configuration folder inside your Dropbox folder (also a subdirectory is perfectly fine)
 * Create a **symbolic link** in the original position, pointing to the synced folder.
 
-The specific commands depend on you OS:
+Before diving in the actual process, you'll need to determine the current Espanso's configuration path
+used on your system.
+To do so, open a terminal and type:
+
+```
+espanso path config
+```
+
+The command's output is the configuration path, make sure to note it somewhere as you'll need it later.
+From now on, **we'll refer to this path as `$CONFIG`**.
+
+The specific commands are explained in the following sections, depending on your OS.
+
+:::caution Make sure to replace `$CONFIG`!
+
+In the following sections, we'll refer to the current configuration path as `$CONFIG`.
+Make sure to replace it with the actual path, determined in the previous section.
+
+For example, if you see this command:
+
+```
+mklink /J "$CONFIG" "C:\Users\user\Dropbox\espanso"
+```
+
+You should run something like:
+
+```
+mklink /J "C:\Users\user\AppData\Roaming\espanso" "C:\Users\user\Dropbox\espanso"
+```
+
+:::
+
 
 ### Windows
 
-By default, the espanso configuration folder resides in this folder (change "user" with your username):
 
-```
-C:\Users\user\AppData\Roaming\espanso
-```
-
-The first step is moving this folder in your Dropbox folder, for example in:
+The first step is moving the `$CONFIG` folder inside your Dropbox directory, for example in:
 
 ```
 C:\Users\user\Dropbox\espanso
@@ -35,20 +64,14 @@ C:\Users\user\Dropbox\espanso
 Now you need to create a **symbolic link**. Open the Command Prompt and type the following command, making sure you specify the correct paths:
 
 ```
-mklink /J "C:\Users\user\AppData\Roaming\espanso" "C:\Users\user\Dropbox\espanso"
+mklink /J "$CONFIG" "C:\Users\user\Dropbox\espanso"
 ```
 
-Now restart espanso and you should be ready to go!
+Now restart Espanso and you should be ready to go!
 
 ### macOS
 
-By default, the espanso configuration folder resides in this folder
-
-```
-$HOME/Library/Preferences/espanso
-```
-
-The first step is moving this folder in your Dropbox folder, for example in:
+The first step is moving the `$CONFIG` folder inside your Dropbox directory, for example in:
 
 ```
 $HOME/Dropbox/espanso
@@ -56,23 +79,17 @@ $HOME/Dropbox/espanso
 
 Now you need to create a **symbolic link**. Open the Terminal and type the following command, making sure you specify the correct paths:
 
-> Note: Before running the following command, make sure that there is no folder called `espanso` in the `Preferences` folder, as otherwise it will create another nested folder `espanso/espanso` (which is wrong).
+> Note: Before running the following command, make sure that there is no folder called `espanso` in the `Application Support` folder, as otherwise it will create another nested folder `espanso/espanso` (which is wrong).
 
 ```
-ln -s "$HOME/Dropbox/espanso" "$HOME/Library/Preferences/espanso"
+ln -s "$HOME/Dropbox/espanso" "$CONFIG"
 ```
 
 Now restart espanso and you should be ready to go!
 
 ### Linux
 
-By default, the espanso configuration folder resides in this folder (change "user" with your username):
-
-```
-/home/user/.config/espanso
-```
-
-The first step is moving this folder in your Dropbox folder, for example in:
+The first step is moving the `$CONFIG` folder inside your Dropbox directory, for example in:
 
 ```
 /home/user/Dropbox/espanso
@@ -81,7 +98,7 @@ The first step is moving this folder in your Dropbox folder, for example in:
 Now you need to create a **symbolic link**. Open the Terminal and type the following command, making sure you specify the correct paths:
 
 ```
-ln -s "/home/user/Dropbox/espanso" "/home/user/.config/espanso"
+ln -s "/home/user/Dropbox/espanso" "$CONFIG"
 ```
 
-Now restart espanso and you should be ready to go! -->
+Now restart espanso and you should be ready to go!
