@@ -9,8 +9,19 @@ but you'll also find a complete reference at the bottom for the advanced ones.
 
 ## Customizing the Toggle Key
 
-By default, Espanso can be temporarily disabled by double-pressing the Alt key (Option on macOS).
+If you often need to **quickly enable and disable Espanso** during regular use, you might want to customize
+the _Toggle Key_.
+When double pressed, the Toggle Key disables Espanso, preventing any expansion.
 Double-pressing Alt again will re-enable it. 
+
+:::info Changes in version 2.1.2
+
+Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key` by default.
+That was a major source of confusion, as many users accidentally pressed it during
+normal use.
+For this reason, Espanso now ships with the `toggle_key` _disabled_ by default.
+
+:::
 
 If you'd like to customize the key, simply add the `toggle_key` parameter to your
 `$CONFIG/config/default.yml` configuration and set it to one of the available options:
@@ -20,6 +31,13 @@ If you'd like to customize the key, simply add the `toggle_key` parameter to you
 | `CTRL`       | `ALT`       | `SHIFT`       | `META`       | `OFF`
 | `LEFT_CTRL`  | `LEFT_ALT`  | `LEFT_SHIFT`  | `LEFT_META`  |
 | `RIGHT_CTRL` | `RIGHT_ALT` | `RIGHT_SHIFT` | `RIGHT_META` |
+
+For example, if you want to use the Right Control key to toggle Espanso, you can add the
+following to your configuration:
+
+```yaml title="$CONFIG/config/default.yml"
+toggle_key: RIGHT_CTRL
+```
 
 :::tip About the META key
 
@@ -115,7 +133,7 @@ Option | Description | Possible Values | Default | App-Specific
 --- | --- | --- | --- | ---
 `backend` |  The mechanism used to perform the injection. Espanso can either inject text by simulating keypresses (`Inject` backend) or by using the clipboard (`Clipboard` backend). Both of them have pros and cons, so the `Auto` backend is used by default to automatically choose the most appropriate one based on the situation. If for whatever reason the `Auto` backend is not appropriate, you can change this option to override it. | `Clipboard`, `Inject` or `Auto` | `Auto` | Yes
 `enable` | If false, Espanso will be disabled for the current configuration. This option can be used to selectively disable espanso when using a specific application (by creating an app-specific config). | `true`/`false` | `true` | Yes
-`toggle_key` | Defines the key that disables/enables espanso when double pressed | See the [customizing the Toggle Key](#customizing-the-toggle-key) section | ALT | No
+`toggle_key` | Defines the key that disables/enables espanso when double pressed | See the [customizing the Toggle Key](#customizing-the-toggle-key) section | OFF | No
 `inject_delay` | Number of milliseconds between text injection events. Increase if the target application is missing some characters. | `number` of milliseconds | Between 0 and 1, depending on the platform and application. | Yes
 `key_delay` | Number of milliseconds between key injection events. Increase if the target application is missing some key events. For example, increasing might help if the trigger is not deleted completely. | `number` of milliseconds | Between 0 and 1, depending on platform and application | Yes
 `clipboard_threshold` | Number of chars after which a match is injected with the clipboard backend instead of the default one. This is done for efficiency reasons, as injecting a long match through separate events becomes slow for long strings. This is only relevant if the backend is set to `Auto` | `number` | 100 | Yes

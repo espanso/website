@@ -272,23 +272,8 @@ espanso restart
 
 ## Useful shortcuts
 
-Let's conclude this introduction with the most important shortcuts Espanso offers, the **toggle shortcut**
-the **search-bar shortcut** and the **backspace undo**.
-
-### Toggle Key
-
-Sometimes you might want to **disable Espanso to avoid an unwanted expansion**. This can be
-easily accomplished by quickly **double pressing the `ALT` key** ( Option on MacOS ).
-On Windows and macOS you should see the status icon change, on Linux you should see an "Espanso disabled"
-notification.
-
-At this point, Espanso is disabled and will not expand any match. 
-To **re-enable** it, double press the `ALT` key again.
-
-:::tip customizing or disabling the toggle key
-If you want to disable or change the toggle key, please take a look at [Customizing the Toggle Key](../configuration/options/#customizing-the-toggle-key)
-
-:::
+Let's conclude this introduction with the most important shortcuts Espanso offers, 
+the **search-bar shortcut**, the **backspace undo** and the **toggle shortcut**.
 
 ### Search-bar
 
@@ -310,3 +295,12 @@ undo_backspace: false
 ```
 
 > Note that backspace undo might not be always available.
+
+### Toggle Key
+
+Sometimes you might want to **disable Espanso to avoid an unwanted expansion**. 
+This can be accomplished in many ways, including the icon menu:
+
+![Icon Menu](/img/docs/icon-menu.png)
+
+If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](../configuration/options/#customizing-the-toggle-key).
