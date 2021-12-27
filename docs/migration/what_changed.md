@@ -117,7 +117,8 @@ Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key
 That was a major source of confusion, as many users accidentally pressed it during normal use.
 For this reason, Espanso now ships with the toggle_key disabled by default.
 
-If you want to keep using it, you can explicitly specify it in your configuration, as described here: https://espanso.org/docs/next/configuration/options/#customizing-the-toggle-key
+If you want to keep using it, you can explicitly specify it in your configuration, 
+as [described here](../../configuration/options/#customizing-the-toggle-key).
 
 ### New Package system
 
