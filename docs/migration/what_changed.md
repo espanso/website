@@ -111,6 +111,14 @@ Wayland systems.
 
 You can now use the official installer or the **Portable** mode to use Espanso on Windows.
 
+### Toggle key disabled by default
+
+Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key` by default. 
+That was a major source of confusion, as many users accidentally pressed it during normal use.
+For this reason, Espanso now ships with the toggle_key disabled by default.
+
+If you want to keep using it, you can explicitly specify it in your configuration, as described here: https://espanso.org/docs/next/configuration/options/#customizing-the-toggle-key
+
 ### New Package system
 
 Espanso v2 ships with a new and improved package system. We are still working out the last details, so
@@ -132,6 +140,7 @@ Please report any bug that you experience on GitHub! :)
 
 * The GUI layer _modulo_ is now built-in into Espanso, and does not require a separate binary.
 * Espanso now uses native notifications on Windows.
+* New Choice Extension
 
 Espanso v2 ships with many other changes that were not documented in this section yet. We are in the process of rewriting the
 docs, so please be patient :)
