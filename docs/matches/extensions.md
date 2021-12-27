@@ -25,6 +25,93 @@ found in the [official chrono documentation](https://docs.rs/chrono/0.3.1/chrono
           format: "%H:%M"
 ```
 
+## Choice Extension
+
+:::info New in version 2.1.2
+
+The Choice extension was introduced in version 2.1.2. 
+
+:::
+
+The _Choice extension_ can be used to open a selection dialog, letting you choose 
+the right value from a list.
+For example, lets consider the following snippet:
+
+```yaml
+  - trigger: ":quote"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: choice
+        params:
+          values:
+            - "Every moment is a fresh beginning."
+            - "Everything you can imagine is real."
+            - "Whatever you do, do it well."
+```
+
+
+In this case, typing `:quote` will open the Search bar, letting you choose the right
+value:
+
+![Choice Extension](/img/docs/choice-extension.png)
+
+:::info Difference with Match Disambiguation
+
+If your goal is to choose between different replacements starting from a single trigger,
+you should prefer the built-in _match disambiguation_ feature.
+
+In a nutshell, Espanso automatically shows a selection dialog after typing a trigger
+that's shared between multiple matches.
+For example, the previous example is functionally equivalent to adding these 3 matches:
+
+```yaml
+  - trigger: ":quote"
+    replace: "Every moment is a fresh beginning."
+  - trigger: ":quote"
+    replace: "Everything you can imagine is real."
+  - trigger: ":quote"
+    replace: "Whatever you do, do it well."
+```
+
+Because all three matches share the same trigger, Espanso will let you choose the right
+one after typing `:quote`.
+
+At this point, you might be wondering why the Choice extension was needed in the first place.
+The answer is that for some advanced use-cases (including scripts and other transformations),
+having an extension that lets you choose a value comes handy.
+
+:::
+
+### Advanced use with IDs
+
+Using the Choice extension as shown in the previous section is enough for most use-cases,
+but it has one significant limitation: the label shown in the list and the final value are the same.
+
+For example, if you select "Every moment is a fresh beginning." from the search bar, the value
+of `output` will be "Every moment is a fresh beginning."
+
+For advanced use-cases, you might want to differentiate between the label (the text shown
+in the selection dialog), with the actual value of the item:
+
+```yaml
+matches:
+  - trigger: ":quote"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: choice
+        params:
+          values:
+            - label: "Every moment is a fresh beginning."
+              id: "bar"
+            - label: "Everything you can imagine is real."
+              id: "foo"
+            - label: "Whatever you do, do it well."
+              id: "foobar"
+```
+
+In this case, typing `:quote` and selecting "Every moment is a fresh beginning" will insert `bar` instead.
 
 ## Random Extension
 
