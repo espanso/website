@@ -13,8 +13,8 @@ In their most basic form, **Matches are pairs that associate a *trigger* with a 
 For example, we can define a match that will expand every occurrence of `hello` with `world` while we are typing. Using the [YAML](https://en.wikipedia.org/wiki/YAML) syntax, it can be expressed as:
 
 ```yml
-- trigger: "hello"
-  replace: "world"
+  - trigger: "hello"
+    replace: "world"
 ```
 
 These kind of expansions are simple text replacements and can be considered *static*.
@@ -24,8 +24,8 @@ These kind of expansions are simple text replacements and can be considered *sta
 To replace the original text with a multi-line expansion, we can either use the `\n` line terminator character, such as:
 
 ```yml
-- trigger: "hello"
-  replace: "line1\nline2"
+  - trigger: "hello"
+    replace: "line1\nline2"
 ```
 > Notice that when using `\n` as the line terminator character, quotes are needed.
 
@@ -33,18 +33,18 @@ Or values can span multiple lines using  `|` or `>`. Spanning multiple lines usi
 
 
 ```yml
-- trigger: "include newlines"
-  replace: |
-            exactly as you see
-            will appear these three
-            lines of poetry
+  - trigger: "include newlines"
+    replace: |
+              exactly as you see
+              will appear these three
+              lines of poetry
 ```
 ```yml
-- trigger: "fold newlines"
-  replace: >
-            this is really a
-            single line of text
-            despite appearances
+  - trigger: "fold newlines"
+    replace: >
+              this is really a
+              single line of text
+              despite appearances
 ```
 
 > As you can see, no quotes are needed in this case.
@@ -289,8 +289,8 @@ Because of this, Espanso supports *multi-trigger* matches, which allows the user
 To use the feature, simply specify a list of triggers in the `triggers` field (instead of `trigger`):
 
 ```yml
-- triggers: ["hello", "hi"]
-  replace: "world"
+  - triggers: ["hello", "hi"]
+    replace: "world"
 ```
 
 Now typing either `hello` or `hi` will be expanded to `world`.

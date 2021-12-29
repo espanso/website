@@ -346,14 +346,14 @@ excess spaces/newlines. You can optionally disable the `trim` option:
 
 
 ```yml
-- trigger: ":localip"
-  replace: "{{output}}"
-  vars:
-    - name: output
-      type: shell
-      params:
-        cmd: "ip a | grep 'inet 192' | awk '{ print $2 }'"
-        trim: false
+  - trigger: ":localip"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "ip a | grep 'inet 192' | awk '{ print $2 }'"
+          trim: false
 ```
 
 
