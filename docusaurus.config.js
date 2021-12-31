@@ -104,4 +104,23 @@ module.exports = {
     WIN_PORTABLE_DOWNLOAD_URL:
       "https://github.com/federico-terzi/espanso/releases/download/v2.1.2-alpha/Espanso-Win-Portable-x86_64.zip",
   },
+  plugins: [
+    function pluginGoogleAnalytics(context) {
+      return {
+        name: "cloudflare-analytics",
+
+        injectHtmlTags() {
+          return {
+            postBodyTags: [
+              {
+                tagName: "div",
+                innerHTML:
+                  "<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"4103df9978fb402f87bbdeaf2e0529e6\"}'></script><!-- End Cloudflare Web Analytics -->",
+              },
+            ],
+          };
+        },
+      };
+    },
+  ],
 };
