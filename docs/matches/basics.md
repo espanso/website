@@ -282,6 +282,68 @@ If you now type `:div`, you get the `<div></div>` expansion, with the cursor bet
 
 :::
 
+## Search Labels
+
+When using the Search Bar, matches are displayed with 
+their replacement text as description by default.
+While this works for basic use-cases, the resulting description might
+become less intuitive as you start including variables.
+
+For example, given these two matches:
+
+```yaml
+  - trigger: ":tomorrow"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%v"
+          offset: 86400
+
+  - trigger: ":yesterday"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%v"
+          offset: -86400
+```
+
+the Search bar would display them with `{{mytime}}` as description, which might not be very intuitive:
+
+![Matches being displayed in the Search Bar without label](/img/docs/matchwithoutlabel.png)
+
+For this reason, Espanso supports the `label` match field to override the default description,
+making the search UI more intuitive. For example, adding the labels to our previous example:
+
+```yaml
+  - trigger: ":tomorrow"
+    replace: "{{mytime}}"
+    label: "Insert tomorrow's date, such as 5-Jan-2022"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%v"
+          offset: 86400
+
+  - trigger: ":yesterday"
+    replace: "{{mytime}}"
+    label: "Insert yesterday's date, such as 5-Jan-2022"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%v"
+          offset: -86400
+```
+
+would be displayed as follows in the Search bar:
+
+![Matches being displayed in the Search Bar with labels](/img/docs/matchwithlabel.png)
+
 ## Multiple triggers
 
 Sometimes it's useful to expand a snippet using various aliases.
