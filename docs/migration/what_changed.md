@@ -69,11 +69,12 @@ If you run the automatic migration tool, Espanso will take care of converting th
 
 ### Search bar
 
-Espanso now comes with a search bar. You can open it typing `jkj` or by pressing `ALT+SPACE` (or `OPTION+SPACE` on macOS).
-You can customize the shortcut with these options (you should add them into the `default.yml` file):
+Espanso now comes with a search bar. You can open it by 
+clicking on the Espanso icon > Open Search bar (currently not available on Linux) 
+or by pressing `ALT+SPACE` (or `OPTION+SPACE` on macOS).
+You can customize the shortcut with this option (you should add them into the `default.yml` file):
 
 ```yaml
-search_trigger: "jkj"
 search_shortcut: "ALT+SPACE"
 ```
 

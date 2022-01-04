@@ -279,10 +279,10 @@ the **search-bar shortcut**, the **backspace undo** and the **toggle shortcut**.
 
 Espanso comes with a powerful _Search-bar_ to quickly find and insert your matches.
 You can open the search bar in two ways:
-* By pressing `ALT+SPACE` (Option+Space on macOS)
-* By typing `jkj`
+* By pressing `ALT+SPACE` (Option+Space on macOS).
+* By clicking on the status icon and then selecting "Open Search bar" (currently not available on Linux).
 
-Both of them can be configured or disabled, please check out the [customizing the Search bar](../configuration/options/#customizing-the-search-bar) section if you are interested.
+If you want to customize the shortcut, please check out the [customizing the Search bar](../configuration/options/#customizing-the-search-bar) section.
 
 ### Backspace Undo
 

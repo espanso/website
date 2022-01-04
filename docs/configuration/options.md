@@ -61,9 +61,8 @@ toggle_key: OFF
 The Search bar is one of the most useful features, letting you choose the right snippet 
 without having to remember the trigger.
 
-By default, the search bar can be opened in three ways:
+By default, the search bar can be opened in two ways:
 * By pressing ALT+Space (Option + Space on macOS)
-* By typing `jkj`
 * By clicking on the status icon and then selecting "Open Search bar" (currently not available on Linux)
 
 If for whatever reason you don't like the default shortcuts, you can customize them as follows:
@@ -93,11 +92,12 @@ search_shortcut: off
 
 ### Customizing the search trigger
 
-By default, Espanso also opens the search bar after typing "jkj". 
-If you don't like this behavior, you can either change the trigger with:
+The search bar can also be configured to be shown after typing a trigger.
+For example, you might tune it to be displayed after typing `.search` by
+adding this option:
 
 ```yaml title="$CONFIG/config/default.yml"
-search_trigger: anothertrigger
+search_trigger: ".search"
 ```
 
 Or disable it entirely with:
@@ -139,7 +139,7 @@ Option | Description | Possible Values | Default | App-Specific
 `clipboard_threshold` | Number of chars after which a match is injected with the clipboard backend instead of the default one. This is done for efficiency reasons, as injecting a long match through separate events becomes slow for long strings. This is only relevant if the backend is set to `Auto` | `number` | 100 | Yes
 `paste_shortcut` | Customize the keyboard shortcut used to paste an expansion. This should follow this format: CTRL+SHIFT+V | Keys separated by the `+` plus sign. The available keys are defined [here](https://github.com/federico-terzi/espanso/blob/283b85818b6cc27f1d545337b99effa847b380eb/espanso-inject/src/keys.rs#L237-L323) | Usually `CTRL+V`, but many built-in patches change this behavior | Yes
 `search_shortcut` | Hotkey used to show the Search UI | See the [Customizing the Search bar](#customizing-the-search-bar) section | `ALT+Space` | No
-`search_trigger` | Trigger used to show the Search UI | See the [Customizing the Search bar](#customizing-the-search-bar) section | `jkj` | No
+`search_trigger` | Trigger used to show the Search UI | See the [Customizing the Search bar](#customizing-the-search-bar) section | `off` | No
 `pre_paste_delay` |  Delay (in ms) that espanso should wait to trigger the paste shortcut after copying the content in the clipboard. This is needed because if we trigger a "paste" shortcut before the content is actually copied in the clipboard, the operation will fail. If you see previous contents of the clipboard being inserted instead of the correct replacement, increase this value | `number` of milliseconds | 300 | Yes
 `disable_x11_fast_inject` | NOTE: This is only relevant on Linux under X11 environments. Switch to a slower (but sometimes more supported) way of injecting key events based on XTestFakeKeyEvent instead of XSendEvent. From my experiements, disabling fast inject becomes particularly slow when using the Gnome desktop environment. | `true`/`false` | false | Yes
 `paste_shortcut_event_delay` | Number of milliseconds between keystrokes when simulating the Paste shortcut. For example: CTRL + (wait 5ms) + V + (wait 5ms) + release V + (wait 5ms) + release CTRL. This is needed as sometimes (for example on macOS), without a delay some keystrokes were not registered correctly. | `number` of milliseconds | 10 | Yes
