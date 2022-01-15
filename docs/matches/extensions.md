@@ -59,7 +59,7 @@ value:
 :::info Difference with Match Disambiguation
 
 If your goal is to choose between different replacements starting from a single trigger,
-you should prefer the built-in _match disambiguation_ feature.
+you should prefer the built-in [Match Disambiguation](../basics/#match-disambiguation) feature.
 
 In a nutshell, Espanso automatically shows a selection dialog after typing a trigger
 that's shared between multiple matches.

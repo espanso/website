@@ -282,6 +282,54 @@ If you now type `:div`, you get the `<div></div>` expansion, with the cursor bet
 
 :::
 
+## Match Disambiguation
+
+By defining the following match, Espanso will inject
+"Every moment is a fresh beginning." as soon as you type `:quote`
+
+```yaml
+  - trigger: ":quote"
+    replace: "Every moment is a fresh beginning."
+```
+
+This mechanism works as long as you provide a unique trigger to each match, but
+what happens if multiple matches share the same trigger?
+In such cases, Espanso will use _match disambiguation_ to
+let you choose the appropriate one.
+
+For example, let's expand the previous example by adding two more matches
+with `:quote` as trigger:
+
+```yaml
+  - trigger: ":quote"
+    replace: "Every moment is a fresh beginning."
+  - trigger: ":quote"
+    replace: "Everything you can imagine is real."
+  - trigger: ":quote"
+    replace: "Whatever you do, do it well."
+```
+
+As you can see, all three matches share the same trigger.
+If you now type `:quote`, **Espanso will display a selection dialog
+to let you choose the desired one**:
+
+![Match disambiguation](/img/docs/match-disambiguation.png)
+
+This feature is particularly useful when multiple choices are needed for the same trigger.
+For example, you might define multiple snippets for your signatures and then use match disambiguation
+to choose between them:
+
+```yaml
+  - trigger: ":sig"
+    replace: |
+      Best Regards,
+      John
+  - trigger: ":sig"
+    replace: |
+      All the best,
+      John
+```
+
 ## Search Labels
 
 When using the Search Bar, matches are displayed with 
