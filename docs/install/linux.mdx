@@ -3,6 +3,11 @@ title: Install on Linux
 layout: docs
 ---
 
+import siteConfig from '/docusaurus.config.js';
+import CodeBlock from '@theme/CodeBlock';
+import X11AfterInstall from "./linux/_x11-after-install.mdx";
+import WaylandFinalSteps from "./linux/_wayland-final-steps.mdx";
+
 ## Find the right version
 
 To use Espanso on Linux, you first need to determine whether your system is running a X11 or Wayland desktop environment.
@@ -14,20 +19,55 @@ echo $XDG_SESSION_TYPE
 
 > If the above command doesn't output anything, please try [with this method](https://unix.stackexchange.com/a/325972).
 
-Now that you know your desktop environment, you can either follow the [X11](#install-on-x11) or [Wayland](#install-on-wayland) installation instructions.
+Now that you know your desktop environment, you're ready to choose the right method in the following section.
+
+## Choosing the right install method
+
+There are multiple installation methods on Linux.
+This table summarizes them based on distribution and desktop environment:
+
+| Distribution | X11 | Wayland |
+|---|---|---|
+| Ubuntu/Debian | **[DEB package](#deb-x11) (recommended)**, [AppImage](#appimage-x11), [Snap package](#snap-x11), [Manual compilation](#x11-compile) | **[DEB package](#deb-wayland) (recommended)**, [Manual compilation](#wayland-compile) |
+| Fedora | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Arch/Manjaro | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Other distros | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+
+We are continously improving the installation process, so expect more user-friendly methods soon.
 
 ## Install on X11
 
-> The preferred method to use Espanso on X11-based systems is the AppImage. 
-If for whatever reason you don't like this option, there are other methods listed below.
+### Installing with DEB package (Ubuntu/Debian) {#deb-x11}
 
-import siteConfig from '/docusaurus.config.js';
+Espanso ships with a `.deb` package, making the installation convenient on Debian-based systems.
 
-export const CodeLink = () => <code>{siteConfig.customFields.LINUX_X11_APP_IMAGE_DOWNLOAD_URL}</code>;
+Start by downloading the package by running the following command inside a terminal:
 
-### Installing with AppImage
+export const DebX11CodeLink = () => <CodeBlock>wget {siteConfig.customFields.LINUX_X11_DEB_DOWNLOAD_URL}</CodeBlock>;
 
-To install the Espanso's AppImage, open a terminal and follow these steps, replacing `{{DOWNLOAD_URL}}` with <CodeLink/>
+<DebX11CodeLink />
+
+:::info Verifying package checksum
+
+If you want to verify the correctness of the archive, in the Github Releases page you will find the SHA256 hash 
+in the file `espanso-debian-x11-amd64-sha256.txt`
+
+:::
+
+You can now install the package using:
+
+```
+sudo apt install ./espanso-debian-x11-amd64.deb
+```
+
+<X11AfterInstall />
+
+### Installing with AppImage (all distros) {#appimage-x11}
+
+export const AppImageCodeLink = () => <code>{siteConfig.customFields.LINUX_X11_APP_IMAGE_DOWNLOAD_URL}</code>;
+
+To install the Espanso's AppImage, open a terminal and follow these steps, replacing `{{DOWNLOAD_URL}}` with <AppImageCodeLink/>
+
 
 ```bash
 # Create the $HOME/opt destination folder
@@ -43,23 +83,9 @@ chmod u+x ~/opt/Espanso.AppImage
 sudo ~/opt/Espanso.AppImage env-path register
 ```
 
-From now on, you should have the `espanso` command available in the terminal (you can verify by running `espanso --version`).
+<X11AfterInstall />
 
-At this point, you are ready to use espanso by registering it first as a Systemd service and then starting it with:
-
-```bash
-# Register espanso as a systemd service (required only once)
-espanso service register
-
-# Start espanso
-espanso start
-```
-
-> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
-
-You are now ready to read the [Getting Started](../../get-started) tutorial!
-
-### Installing with Snap
+### Installing with Snap {#snap-x11}
 
 If you are using Ubuntu, you can also install Espanso by simply running this command:
 
@@ -67,19 +93,7 @@ If you are using Ubuntu, you can also install Espanso by simply running this com
 sudo snap install espanso --classic --channel=latest/edge
 ```
 
-Once the installation is completed, you can finish the configuration with these commands:
-
-```bash
-# Register espanso as a systemd service (required only once)
-espanso service register
-
-# Start espanso
-espanso start
-```
-
-> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
-
-You are now ready to read the [Getting Started](../../get-started) tutorial!
+<X11AfterInstall />
 
 ### Compiling from sources {#x11-compile}
 
@@ -125,21 +139,7 @@ Once you've compiled Espanso, you can move it into the final location. A good op
 sudo mv target/release/espanso /usr/local/bin/espanso
 ```
 
-Now run `espanso --version`. If you see the version appear, it means Espanso was successfully installed!
-
-To complete the configuration, run these commands:
-
-```bash
-# Register espanso as a systemd service (required only once)
-espanso service register
-
-# Start espanso
-espanso start
-```
-
-> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
-
-You are now ready to read the [Getting Started](../../get-started) tutorial!
+<X11AfterInstall />
 
 ## Install on Wayland
 
@@ -157,10 +157,35 @@ You are now ready to read the [Getting Started](../../get-started) tutorial!
 > If you encounter a bug, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues),
 > any help is greatly appreciated! :)
 
-Currently, the only way to install Espanso on Wayland is to compile it yourself. 
-Things are rapidly evolving, so expect more user-friendly methods to come in the future.
 
-### Compiling from sources
+### Installing with DEB package (Ubuntu/Debian) {#deb-wayland}
+
+Espanso ships with a `.deb` package, making the installation convenient on Debian-based systems.
+
+Start by downloading the package by running the following command inside a terminal:
+
+export const DebWaylandCodeLink = () => <CodeBlock>wget {siteConfig.customFields.LINUX_WAYLAND_DEB_DOWNLOAD_URL}</CodeBlock>;
+
+<DebWaylandCodeLink />
+
+:::info Verifying package checksum
+
+If you want to verify the correctness of the archive, in the Github Releases page you will find the SHA256 hash 
+in the file `espanso-debian-wayland-amd64-sha256.txt`
+
+:::
+
+You can now install the package using:
+
+```
+sudo apt install ./espanso-debian-wayland-amd64.deb
+```
+
+The process is almost complete, you just need to grant the required capabilities.
+
+<WaylandFinalSteps />
+
+### Compiling from sources {#wayland-compile}
 
 #### Prerequisites
 
@@ -197,64 +222,15 @@ cargo make --profile release --env NO_X11=true build-binary
 
 At this point, you should have the `espanso` binary available in the `target/release/` directory.
 
-#### Adding the required Capabilities
-
-Espanso requires access to the `/dev/input/eventX` and `/dev/uinput` interfaces to detect triggers and inject expansions respectively. 
-Although you could run it as root to grant the necessary permissions, Espanso supports a safer alternative
-that consists in adding the `CAP_DAC_OVERRIDE` capability to the binary's set of **Permitted** ones. To do so, run the following command:
-
-```bash
-sudo setcap "cap_dac_override+p" target/release/espanso
-```
-
-:::info Security considerations
-
- In a nutshell, this capability grants Espanso the permissions to read and write to any file in the system, **but only when explicitly activated by the binary itself**.
-
- To limit the attack surface, Espanso performs the following steps:
-* When started, the `CAP_DAC_OVERRIDE` capability is contained in the `Permitted` set. At this point, **Espanso CANNOT access arbitrary files in the system, as this is only possible once the `CAP_DAC_OVERRIDE` is moved to the `Effective` set**.
-* After a partial initialization of the various modules, Espanso moves the `CAP_DAC_OVERRIDE` permission to the `Effective` set and opens the necessary interfaces to the `/dev/input/eventX` and `/dev/uinput` files.
-* Immediately after, the `Permitted` and `Effective` sets are cleared, meaning Espanso cannot access privileged files anymore. Moreover, because the `Permitted` set was cleared as well, the process won't be able to grant the permission again.
-
- In short, Espanso uses the `CAP_DAC_OVERRIDE` permission only when opening the `/dev/input*` interfaces, and ungrant that permission immediately after.
-
- For more information on Linux capabilities, see: https://man7.org/linux/man-pages/man7/capabilities.7.html
-
-:::
-
 #### Installing Espanso
 
-Once you've compiled Espanso and granted it the necessary capabilities, you can move it into the final location. A good option would be the `/usr/local/bin` folder:
+Once you've compiled Espanso, you can move it into the final location. 
+A good option would be the `/usr/local/bin` folder:
 
 ```
 sudo mv target/release/espanso /usr/local/bin/espanso
 ```
 
-Now run `espanso --version`. If you see the version appear, it means Espanso was successfully installed!
+The process is almost complete, you just need to grant the required capabilities.
 
-To complete the configuration, run these commands:
-
-```bash
-# Register espanso as a systemd service (required only once)
-espanso service register
-
-# Start espanso
-espanso start
-```
-
-> If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
-
-:::caution A note for non-US users
-
-If you are using a non-US keyboard layout, you'll need to specify its "code" into
-the `$CONFIG/config/default.yml` file as follows:
-
-```yaml
-# For example, this is what I use for the Italian layout
-keyboard_layout:
-  layout: "it"
-```
-
-:::
-
-You are now ready to read the [Getting Started](../../get-started) tutorial!
+<WaylandFinalSteps />
