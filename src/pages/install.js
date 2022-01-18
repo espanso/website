@@ -120,19 +120,19 @@ export default function Install() {
           <div className={styles.target}>
             <div className={styles.linux} />
             <h3>Linux</h3>
-            <a
+            <Link
               className={styles.button}
-              href="/docs/next/install/linux/#install-on-x11"
+              to="/docs/next/install/linux/#choosing-the-right-install-method"
             >
               X11
-            </a>
-            <a
+            </Link>
+            <Link
               className={styles.button}
-              href="/docs/next/install/linux/#install-on-wayland"
+              to="/docs/next/install/linux/#choosing-the-right-install-method"
             >
               Wayland
-            </a>
-            <Link to="/docs/next/install/linux/#choose-the-right-version">
+            </Link>
+            <Link to="/docs/next/install/linux/#find-the-right-version">
               Which version should you choose?
             </Link>
             <span>Version 2.0.*</span>
