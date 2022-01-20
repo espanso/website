@@ -421,7 +421,7 @@ At this point, if you type `:nested` you'll see `This is a nested match appear`.
 
 ## Forms
 
-Espanso is capable of creating arbirarly complex input forms.
+Espanso is capable of creating arbitrarily complex input forms.
 
 ![Espanso Form](/img/docs/macform.png)
 
