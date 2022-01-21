@@ -23,7 +23,7 @@ These makes it a breeze to control espanso from your desktop environment or othe
 
 ### Listing Matches
 
-When integrating espanso with a script, it might be useful to list the available matches. You can so so with the following command:
+When integrating espanso with a script, it might be useful to list the available matches. You can do so with the following command:
 
 ```
 espanso match list

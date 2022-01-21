@@ -317,7 +317,7 @@ At this point, if you type `:nested` you'll see `This is a nested match appear`.
 
 ### Forms
 
-Since version 0.7.0, espanso is capable of creating arbirarly complex input forms.
+Since version 0.7.0, espanso is capable of creating arbitrarily complex input forms.
 
 ![Espanso Form](/img/docs/macform.png)
 
