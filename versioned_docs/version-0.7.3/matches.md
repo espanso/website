@@ -555,7 +555,7 @@ You can use this feature by declaring a variable of type `random` and then passi
 ```
 
 
-In this case, typing `:quote` will expand randomly to one of the tree quotes.
+In this case, typing `:quote` will expand randomly to one of the three quotes.
 
 ### Clipboard Extension
 
