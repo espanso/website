@@ -22,13 +22,18 @@
     },
     { 
       "source": "/legacy/uninstall",
-      "destination": "/docs/next/migration/uninstalling_legacy/", 
+      "destination": "/docs/migration/uninstalling_legacy/", 
       "permanent": false 
     },
     { 
       "source": "/migration",
-      "destination": "/docs/next/migration/overview/", 
+      "destination": "/docs/migration/overview/", 
       "permanent": false 
+    },
+    {
+      "source": "/docs/next/:path(.*)",
+      "destination": "/docs/:path*",
+      "permanent": true
     }
   ]
 }
