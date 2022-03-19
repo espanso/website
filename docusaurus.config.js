@@ -1,6 +1,8 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+const CURRENT_STABLE_VERSION = "v2.1.4-beta";
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "Espanso",
@@ -80,9 +82,14 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/espanso/website/edit/main/",
+          lastVersion: "current",
           versions: {
             current: {
-              label: `2.0.0-alpha 🚧`,
+              label: CURRENT_STABLE_VERSION,
+            },
+            "0.7.3": {
+              label: "v0.7.3 (Legacy)",
+              path: "legacy",
             },
           },
         },
@@ -93,20 +100,21 @@ module.exports = {
     ],
   ],
   customFields: {
+    CURRENT_STABLE_VERSION,
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/Espanso-X11.AppImage",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
     LINUX_X11_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/espanso-debian-x11-amd64.deb",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-x11-amd64.deb",
     LINUX_WAYLAND_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/espanso-debian-wayland-amd64.deb",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-wayland-amd64.deb",
     MAC_INTEL_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/Espanso-Mac-Intel.zip",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
     MAC_M1_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/Espanso-Mac-M1.zip",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
     WIN_INSTALLER_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/Espanso-Win-Installer-x86_64.exe",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/v2.1.3-alpha/Espanso-Win-Portable-x86_64.zip",
+      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Portable-x86_64.zip",
   },
   plugins: [
     function pluginGoogleAnalytics(context) {

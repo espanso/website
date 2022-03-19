@@ -16,7 +16,7 @@ If you completed the installation procedure, you should have espanso running.
 A good way to find out is by going on any text field and typing `:espanso`. 
 You should see "Hi there!" appear.
 
-At this point, you are ready to read the [Getting Started](/docs/get-started/) tutorial.
+At this point, you are ready to read the [Getting Started](../../get-started/) tutorial.
 
 ### Problems you may experience
 

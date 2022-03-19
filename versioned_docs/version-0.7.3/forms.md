@@ -183,7 +183,7 @@ That could be implemented with:
 
 The key aspect here is that the value of the form field is injected in the shell variable as `ESPANSO_FORM1_NAME`. The naming is pretty straightforward, as the form variable is called `form1` and the field is called `name`.
 
-To understand more about the variable injection mechanism, please read the [Advanced Topics](/docs/matches/#advanced-topics) section.
+To understand more about the variable injection mechanism, please read the [Advanced Topics](../matches/#advanced-topics) section.
 
 
 #### Controls with the Verbose syntax

@@ -3,7 +3,7 @@ title: Overview
 sidebar_position: 0
 ---
 
-Espanso v2 (alpha) is finally here! This tutorial will help you to quickly get started with the new version, starting from the installation and later diving into the main architectural differences.
+Espanso v2 is finally here! This tutorial will help you to quickly get started with the new version, starting from the installation and later diving into the main architectural differences.
 
 The tutorial is divided in steps. You can navigate through them using the "next" button at the bottom right or by using the navigation bar on the left.
 

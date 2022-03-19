@@ -223,5 +223,5 @@ makepkg -si
 ```
 
 
-At this point, you are ready to read the [Getting Started](/docs/get-started/) tutorial.
+At this point, you are ready to read the [Getting Started](../../get-started/) tutorial.
 

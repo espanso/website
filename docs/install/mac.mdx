@@ -13,11 +13,11 @@ You can install Espanso both as a traditional app bundle or by using [Homebrew](
 The easiest way to install Espanso is by downloading the appropriate app bundle. 
 Make sure to choose the right version based on your processor.
 
-import siteConfig from '/docusaurus.config.js';
+import {getStableDownloadLink} from '/src/utils/versionUtils.js';
 
 <div className="">
-<a className="btn btn-lg mybtn mb-4" href={siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL} role="button">Download Espanso (Intel)</a>
-<a className="btn btn-lg mybtn mb-4" href={siteConfig.customFields.MAC_M1_DOWNLOAD_URL} role="button">Download Espanso (Apple Silicon M1)</a>
+<a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")} role="button">Download Espanso (Intel)</a>
+<a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")} role="button">Download Espanso (Apple Silicon M1)</a>
 </div>
 
 After you've downloaded the archive, uncompress it and move it into your `/Applications` folder.

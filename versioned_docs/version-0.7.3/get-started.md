@@ -38,7 +38,7 @@ espanso works by **detecting** your keypresses and **replacing** them when they 
 
 The rule that associate the *trigger* with the *replaced text* is called **Match** and is a core concept of espanso.
 Matches are very flexible and powerful to solve many tasks. 
-You can learn all about Matches in their [documentation](/docs/matches/) page.
+You can learn all about Matches in their [documentation](../matches/) page.
 
 ![Match](/img/docs/match2.png)
 
@@ -68,7 +68,7 @@ While this folder may contain many different files, let's focus on the most impo
 The `default.yml` file contain the **main espanso configuration** and uses the widely
 spread [YAML](https://en.wikipedia.org/wiki/YAML) syntax.
 It can be used to change various settings as well as **creating custom matches**.
-You can learn all about espanso's configuration by visiting the [documentation](/docs/configuration).
+You can learn all about espanso's configuration by visiting the [documentation](../configuration).
 
 ### Creating your own Match
 
@@ -155,7 +155,7 @@ espanso edit
 
 command in the terminal, which spawns an instance of the system-default text editor and automatically restarts espanso on exit.
 
-By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](/docs/configuration/#quick-editing) for more information.
+By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/#quick-editing) for more information.
 
 ### Understanding Packages
 
@@ -168,7 +168,7 @@ the [espanso hub](https://hub.espanso.org/).
 
 If you are lucky enough, someone might have already written a **package** to include the matches you need!
 Otherwise, you can create a package and publish it on the hub, for more information check out the
-[Packages](/docs/packages/) documentation.
+[Packages](../packages/) documentation.
 
 ### Installing a Package
 
@@ -201,7 +201,7 @@ see a notification showing "Espanso disabled".
 
 At this point, espanso will be disabled and will not expand any match. To **re-enable** it, double press the `ALT` key again.
 
-**You can disable or change the toggle key**. Take a look at [Customizing the Toggle Key](/docs/configuration/#customizing-the-toggle-key)
+**You can disable or change the toggle key**. Take a look at [Customizing the Toggle Key](../configuration/#customizing-the-toggle-key)
 
 
 #### Backspace Undo
@@ -216,4 +216,4 @@ You can also disable this behavior by adding the following line on your `default
 undo_backspace: false
 ```
 
-> Note that backspace undo is not available for every match, namely the ones that specify a [Cursor Hint](/docs/matches/#cursor-hints)
+> Note that backspace undo is not available for every match, namely the ones that specify a [Cursor Hint](../matches/#cursor-hints)
