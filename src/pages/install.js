@@ -6,6 +6,7 @@ import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
+import { getStableVersion, getStableDownloadLink } from "../utils/versionUtils";
 
 export default function Install() {
   const { siteConfig } = useDocusaurusContext();
@@ -21,50 +22,20 @@ export default function Install() {
       <Navigation />
 
       <div className={styles["install-section"]}>
-        <h1>Installation (Stable)</h1>
+        <h1>Installation (Beta)</h1>
         <p>Select your operating system:</p>
-        <div className={styles.targets}>
-          <div className={styles.target}>
-            <div className={styles.windows} />
-            <a className={styles.button} href="/docs/install/win">
-              Install on Windows
-            </a>
-            <span>Version 0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.macos} />
-            <a className={styles.button} href="/docs/install/mac">
-              Install on macOS
-            </a>
-            <span>Version 0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.linux} />
-            <a className={styles.button} href="/docs/install/linux">
-              Install on Linux
-            </a>
-            <span>Version 0.7.3</span>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles["install-section"]}>
-        <h1>Installation (Alpha)</h1>
-        <p>
-          The new espanso release brings several new features and improvements,
-          but might not be as stable as the previous version. Therefore, this
-          release is only recommended to early adopters and power users.
-        </p>
         <div className={styles.targets}>
           <div className={styles.target}>
             <div className={styles.windows} />
             <h3>Windows</h3>
             <a
               className={styles.button}
-              href={siteConfig.customFields.WIN_INSTALLER_DOWNLOAD_URL}
+              href={getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(siteConfig.customFields.WIN_INSTALLER_DOWNLOAD_URL);
+                window.open(
+                  getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL")
+                );
                 window.location =
                   "/docs/next/install/win#problems-you-may-experience";
                 window.focus();
@@ -74,27 +45,27 @@ export default function Install() {
             </a>
             <a
               className={styles.button}
-              href={siteConfig.customFields.WIN_PORTABLE_DOWNLOAD_URL}
+              href={getStableDownloadLink("WIN_PORTABLE_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(siteConfig.customFields.WIN_PORTABLE_DOWNLOAD_URL);
+                window.open(getStableDownloadLink("WIN_PORTABLE_DOWNLOAD_URL"));
                 window.location = "";
                 window.focus();
               }}
             >
               Portable zip (64-bit)
             </a>
-            <span>Version 2.0.*</span>
+            <span>Version {getStableVersion()}</span>
           </div>
           <div className={styles.target}>
             <div className={styles.macos} />
             <h3>macOS</h3>
             <a
               className={styles.button}
-              href={siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL}
+              href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(siteConfig.customFields.MAC_INTEL_DOWNLOAD_URL);
+                window.open(getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL"));
                 window.location =
                   "/docs/next/install/mac/#problems-you-may-experience";
                 window.focus();
@@ -104,10 +75,10 @@ export default function Install() {
             </a>
             <a
               className={styles.button}
-              href={siteConfig.customFields.MAC_M1_DOWNLOAD_URL}
+              href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(siteConfig.customFields.MAC_M1_DOWNLOAD_URL);
+                window.open(getStableDownloadLink("MAC_M1_DOWNLOAD_URL"));
                 window.location =
                   "/docs/next/install/mac/#problems-you-may-experience";
                 window.focus();
@@ -115,7 +86,7 @@ export default function Install() {
             >
               M1 (Apple Silicon)
             </a>
-            <span>Version 2.0.*</span>
+            <span>Version {getStableVersion()}</span>
           </div>
           <div className={styles.target}>
             <div className={styles.linux} />
@@ -135,7 +106,39 @@ export default function Install() {
             <Link to="/docs/next/install/linux/#find-the-right-version">
               Which version should you choose?
             </Link>
-            <span>Version 2.0.*</span>
+            <span>Version {getStableVersion()}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles["install-section"]}>
+        <h1>Installation (Legacy)</h1>
+        <p>
+          This is the legacy edition of Espanso. Given that this version is no
+          longer in active development, we recommend users to choose the new
+          version instead, which comes with many new improvements and features.
+        </p>
+        <div className={styles.targets}>
+          <div className={styles.target}>
+            <div className={styles.windows} />
+            <a className={styles.button} href="/docs/install/win">
+              Install on Windows
+            </a>
+            <span>Version v0.7.3</span>
+          </div>
+          <div className={styles.target}>
+            <div className={styles.macos} />
+            <a className={styles.button} href="/docs/install/mac">
+              Install on macOS
+            </a>
+            <span>Version v0.7.3</span>
+          </div>
+          <div className={styles.target}>
+            <div className={styles.linux} />
+            <a className={styles.button} href="/docs/install/linux">
+              Install on Linux
+            </a>
+            <span>Version v0.7.3</span>
           </div>
         </div>
       </div>

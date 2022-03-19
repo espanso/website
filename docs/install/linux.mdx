@@ -4,6 +4,7 @@ layout: docs
 ---
 
 import siteConfig from '/docusaurus.config.js';
+import {getStableDownloadLink} from '/src/utils/versionUtils.js';
 import CodeBlock from '@theme/CodeBlock';
 import X11AfterInstall from "./linux/_x11-after-install.mdx";
 import WaylandFinalSteps from "./linux/_wayland-final-steps.mdx";
@@ -43,7 +44,7 @@ Espanso ships with a `.deb` package, making the installation convenient on Debia
 
 Start by downloading the package by running the following command inside a terminal:
 
-export const DebX11CodeLink = () => <CodeBlock>wget {siteConfig.customFields.LINUX_X11_DEB_DOWNLOAD_URL}</CodeBlock>;
+export const DebX11CodeLink = () => <CodeBlock>wget {getStableDownloadLink("LINUX_X11_DEB_DOWNLOAD_URL")}</CodeBlock>;
 
 <DebX11CodeLink />
 
@@ -64,24 +65,20 @@ sudo apt install ./espanso-debian-x11-amd64.deb
 
 ### Installing with AppImage (all distros) {#appimage-x11}
 
-export const AppImageCodeLink = () => <code>{siteConfig.customFields.LINUX_X11_APP_IMAGE_DOWNLOAD_URL}</code>;
-
-To install the Espanso's AppImage, open a terminal and follow these steps, replacing `{{DOWNLOAD_URL}}` with <AppImageCodeLink/>
-
-
-```bash
-# Create the $HOME/opt destination folder
+export const AppImageCodeLink= () => <CodeBlock className="language-bash">
+{`# Create the $HOME/opt destination folder
 mkdir -p ~/opt
-
 # Download the AppImage inside it
-wget -O ~/opt/Espanso.AppImage {{DOWNLOAD_URL}}
-
+wget -O ~/opt/Espanso.AppImage '${getStableDownloadLink("LINUX_X11_APP_IMAGE_DOWNLOAD_URL")}'
 # Make it executable
 chmod u+x ~/opt/Espanso.AppImage
-
 # Create the "espanso" command alias
 sudo ~/opt/Espanso.AppImage env-path register
-```
+`}</CodeBlock>;
+
+To install the Espanso's AppImage, open a terminal and follow these steps:
+
+<AppImageCodeLink/>
 
 <X11AfterInstall />
 
@@ -164,7 +161,7 @@ Espanso ships with a `.deb` package, making the installation convenient on Debia
 
 Start by downloading the package by running the following command inside a terminal:
 
-export const DebWaylandCodeLink = () => <CodeBlock>wget {siteConfig.customFields.LINUX_WAYLAND_DEB_DOWNLOAD_URL}</CodeBlock>;
+export const DebWaylandCodeLink = () => <CodeBlock>wget {getStableDownloadLink("LINUX_WAYLAND_DEB_DOWNLOAD_URL")}</CodeBlock>;
 
 <DebWaylandCodeLink />
 
