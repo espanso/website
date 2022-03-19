@@ -1,8 +1,7 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-// TODO: update once released
-const CURRENT_STABLE_VERSION = "v2.1.3-alpha";
+const CURRENT_STABLE_VERSION = "v2.1.4-beta";
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
