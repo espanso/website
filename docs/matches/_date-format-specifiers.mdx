@@ -1,0 +1,100 @@
+### Date specifiers
+
+| **Option** | Example  | Description                                                                |
+|-------|----------|----------------------------------------------------------------------------|
+| **`%Y`** | _2001_   | The full proleptic Gregorian year, zero-padded to 4 digits.           |
+| **`%C`** | _20_     | The proleptic Gregorian year divided by 100, zero-padded to 2 digits. |
+| **`%y`** | _01_     | The proleptic Gregorian year modulo 100, zero-padded to 2 digits.     |
+|       |          |                                                                            |
+| **`%m`** | _07_     | Month number (01--12), zero-padded to 2 digits.                            |
+| **`%b`** | _Jul_    | Abbreviated month name. Always 3 letters.                                  |
+| **`%B`** | _July_   | Full month name. Also accepts corresponding abbreviation in parsing.       |
+| **`%h`** | _Jul_    | Same as `%b`.                                                              |
+|       |          |                                                                            |
+| **`%d`** | _08_     | Day number (01--31), zero-padded to 2 digits.                              |
+| **`%e`** | _ 8_     | Same as `%d` but space-padded. Same as `%_d`.                              |
+|       |          |                                                                            |
+| **`%a`** | _Sun_    | Abbreviated weekday name. Always 3 letters.                                |
+| **`%A`** | _Sunday_ | Full weekday name. Also accepts corresponding abbreviation in parsing.     |
+| **`%w`** | _0_      | Sunday = 0, Monday = 1, ..., Saturday = 6.                                 |
+| **`%u`** | _7_      | Monday = 1, Tuesday = 2, ..., Sunday = 7. (ISO 8601)                       |
+|       |          |                                                                            |
+| **`%U`** | _28_     | Week number starting with Sunday (00--53), zero-padded to 2 digits.   |
+| **`%W`** | _27_     | Same as `%U`, but week 1 starts with the first Monday in that year instead.|
+|       |          |                                                                            |
+| **`%G`** | _2001_   | Same as `%Y` but uses the year number in ISO 8601 week date.          |
+| **`%g`** | _01_     | Same as `%y` but uses the year number in ISO 8601 week date.          |
+| **`%V`** | _27_     | Same as `%U` but uses the week number in ISO 8601 week date (01--53). |
+|       |          |                                                                            |
+| **`%j`** | _189_    | Day of the year (001--366), zero-padded to 3 digits.                       |
+|       |          |                                                                            |
+| **`%D`** | _07/08/01_    | Month-day-year format. Same as `%m/%d/%y`.                            |
+| **`%x`** | _07/08/01_    | Locale's date representation (e.g., 12/31/99).                        |
+| **`%F`** | _2001-07-08_  | Year-month-day format (ISO 8601). Same as `%Y-%m-%d`.                 |
+| **`%v`** | _ 8-Jul-2001_ | Day-month-year format. Same as `%e-%b-%Y`.                            |
+|       |          |                                                                            |
+
+### Time specifiers
+
+| **Option** | Example  | Description                                                                |
+|-------|----------|----------------------------------------------------------------------------|
+| **`%H`** | _00_     | Hour number (00--23), zero-padded to 2 digits.                             |
+| **`%k`** | _ 0_     | Same as `%H` but space-padded. Same as `%_H`.                              |
+| **`%I`** | _12_     | Hour number in 12-hour clocks (01--12), zero-padded to 2 digits.           |
+| **`%l`** | _12_     | Same as `%I` but space-padded. Same as `%_I`.                              |
+|       |          |                                                                            |
+| **`%P`** | _am_     | `am` or `pm` in 12-hour clocks.                                            |
+| **`%p`** | _AM_     | `AM` or `PM` in 12-hour clocks.                                            |
+|       |          |                                                                            |
+| **`%M`** | _34_     | Minute number (00--59), zero-padded to 2 digits.                           |
+| **`%S`** | _60_     | Second number (00--60), zero-padded to 2 digits.                      |
+| **`%f`** | _026490000_   | The fractional seconds (in nanoseconds) since last whole second. |
+| **`%.f`** | _.026490_| Similar to `.%f` but left-aligned. These all consume the leading dot. |
+| **`%.3f`** | _.026_        | Similar to `.%f` but left-aligned but fixed to a length of 3.    |
+| **`%.6f`** | _.026490_     | Similar to `.%f` but left-aligned but fixed to a length of 6.    |
+| **`%.9f`** | _.026490000_  | Similar to `.%f` but left-aligned but fixed to a length of 9.    |
+| **`%3f`** | _026_         | Similar to `%.3f` but without the leading dot.                   |
+| **`%6f`** | _026490_      | Similar to `%.6f` but without the leading dot.                   |
+| **`%9f`** | _026490000_   | Similar to `%.9f` but without the leading dot.                   |
+|       |               |                                                                       |
+| **`%R`** | _00:34_       | Hour-minute format. Same as `%H:%M`.                                  |
+| **`%T`** | _00:34:60_    | Hour-minute-second format. Same as `%H:%M:%S`.                        |
+| **`%X`** | _00:34:60_    | Locale's time representation (e.g., 23:13:48).                        |
+| **`%r`** | _12:34:60 AM_ | Hour-minute-second format in 12-hour clocks. Same as `%I:%M:%S %p`.   |
+|       |          |                                                                            |
+
+### Time zone specifiers
+
+| **Option** | Example  | Description                                                                |
+|-------|----------|----------------------------------------------------------------------------|
+| **`%Z`** | _ACST_   | Local time zone name. Skips all non-whitespace characters during parsing. |
+| **`%z`** | _+0930_  | Offset from the local time to UTC (with UTC being `+0000`).                |
+| **`%:z`** | _+09:30_ | Same as `%z` but with a colon.                                             |
+| **`%#z`** | _+09_    | *Parsing only:* Same as `%z` but allows minutes to be missing or present.  |
+
+### Date & Time specifiers
+
+| **Option** | Example  | Description                                                                |
+|-------|----------|----------------------------------------------------------------------------|
+|`%c`|_Sun Jul  8 00:34:60 2001_|Locale's date and time (e.g., Thu Mar  3 23:05:25 2005).       |
+| **`%+`** | _2001-07-08T00:34:60.026490+09:30_ | ISO 8601 / RFC 3339 date & time format.     |
+|       |               |                                                                       |
+| **`%s`** | _994518299_   | UNIX timestamp, the number of seconds since 1970-01-01 00:00 UTC.|
+|       |          |                                                                            |
+
+### Special specifiers
+
+| **Option** | Example  | Description                                                                |
+|-------|----------|----------------------------------------------------------------------------|
+| **`%t`**  |          | Literal tab (`\t`).                                                        |
+| **`%n`**  |          | Literal newline (`\n`).                                                    |
+| **`%%`**  |          | Literal percent sign.                                                      |
+
+It is possible to override the default padding behavior of numeric specifiers `%?`.
+This is not allowed for other specifiers and will result in the `BAD_FORMAT` error.
+
+Modifier | Description
+-------- | -----------
+`%-?`    | Suppresses any padding including spaces and zeroes. (e.g. `%j` = `012`, `%-j` = `12`)
+`%_?`    | Uses spaces as a padding. (e.g. `%j` = `012`, `%_j` = ` 12`)
+`%0?`    | Uses zeroes as a padding. (e.g. `%e` = ` 9`, `%0e` = `09`)

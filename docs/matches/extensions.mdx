@@ -9,11 +9,7 @@ accomplish complex tasks.
 ## Date Extension
 
 The **Date Extension** can be used to include *date* and *time* information in a match. 
-
-The most important aspect to consider when using this extension is the `format` parameter,
-that specifies how the date will be rendered. A **list of all the possible options** can be
-found in the [official chrono documentation](https://docs.rs/chrono/0.3.1/chrono/format/strftime/index.html).
-
+For example, the following match will be expanded into `It's 09:30` if triggered at 9:30 am:
 
 ```yaml
   - trigger: ":now"
@@ -24,6 +20,88 @@ found in the [official chrono documentation](https://docs.rs/chrono/0.3.1/chrono
         params:
           format: "%H:%M"
 ```
+
+The most important aspect to consider is the `format` parameter,
+which specifies how the date will be rendered. 
+
+import DateFormatSpecifiers from "./_date-format-specifiers.mdx";
+
+<details>
+  <summary>To see a list of all the possible <b>formatting options</b>, click here.</summary>
+  
+  <DateFormatSpecifiers />
+  
+  <p>The list was taken from the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>, please follow the link for more information.</p>
+</details>
+
+### Future and past dates
+
+In the previous section, we discussed how to add the _current_ date to your matches, but
+you might also want to add **future and past** dates.
+
+Luckily, Espanso supports the concept of _offset_, that is, the number of seconds to be added to the
+current time when expanding a match.
+An example will surely make it easier to understand:
+
+Let's say we need tomorrow's date as part of a snippet. We could do that with:
+
+```yaml
+  - trigger: ":tomorrow"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%x"
+          offset: 86400
+```
+
+If you now type `:tomorrow`, you should see tomorrow's date appear (something like `03/20/2022`)!
+
+What made this possible was the `offset` parameter set to `86400`, which **equals to 24 hours in the future**,
+expressed in seconds (60 seconds x 60 minutes x 24 hours = 86400 seconds).
+
+If you need **past dates**, you can specify a _negative offset_ as well. Such as:
+
+```yaml
+  - trigger: ":yesterday"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%x"
+          offset: -86400
+```
+
+### Advanced: Localized dates 
+
+:::info
+
+Localized dates have been introduced in version v2.1.4-beta, so make sure to have an up-to-date release.
+
+:::
+
+Espanso automatically localize dates based on your system's country and language, 
+but advanced users might want to force a particular locale.
+
+For this reason, the Date extension supports the `locale` option to override your system preferences.
+For example, the following snippet always expand to the current date in US format:
+
+```yaml
+matches:
+  - trigger: ":today"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%x"
+          locale: "en-US"
+```
+
+The `locale` parameter must be specified in the BCP47 format. 
+You can find a list of the available locales [here](https://gist.github.com/federico-terzi/b6465dfcca47e86e9ef0eb597ff6f2e9).
 
 ## Choice Extension
 
