@@ -174,7 +174,7 @@ If you now type `:div`, you get the `<div></div>` expansion, with the cursor bet
 
 #### Things to keep in mind
 
-* You can only define **one cursor hint** per match. Multiple hints will be ignored. If you need multiple hints, a decent replacement would be to use [Forms](/docs/forms/)
+* You can only define **one cursor hint** per match. Multiple hints will be ignored. If you need multiple hints, a decent replacement would be to use [Forms](../forms/)
 * This feature should be used with care in **multiline** expansions, as it may yield
   **unexpected results** when using it in code editors that support **auto indenting**. 
   This is due to the way the feature is implemented: espanso simulates a series of `left arrow`
@@ -323,7 +323,7 @@ Since version 0.7.0, espanso is capable of creating arbitrarily complex input fo
 
 These open up a world of possibilities, allowing the user to create matches with many arguments, as well as injecting those values into custom Scripts or Shell commands.
 
-For more informations, visit the [Forms section](/docs/forms/).
+For more informations, visit the [Forms section](../forms/).
 
 ### Script Extension
 

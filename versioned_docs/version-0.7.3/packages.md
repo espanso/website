@@ -79,13 +79,13 @@ espanso restart
 
 The process described in this section is being **deprecated** in favor of the new v2 format.
 
-Please refer to the [v2 reference](/docs/next/packages/creating-a-package/) if you are creating a new
+Please refer to the [v2 reference](/docs/packages/creating-a-package/) if you are creating a new
 package today.
 
 :::
 
 In their basic form, Packages are just **configuration files**, very similar to 
-[those you've seen before](/docs/configuration), with a few *metadata* fields to describe them.
+[those you've seen before](../configuration), with a few *metadata* fields to describe them.
 
 Packages must be hosted on **GitHub repositories**. To create one, go ahead and 
 fork the [espanso package example](https://github.com/federico-terzi/espanso-package-example/) repo.

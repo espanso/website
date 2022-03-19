@@ -17,7 +17,7 @@ matches:
 ```
 
 If you wanted to use a different configuration, or a different set of matches, on a specific application, 
-you would have defined an [App-specific configuration](/docs/configuration/#application-specific-configurations).
+you would have defined an [App-specific configuration](/docs/configuration/app-specific-configurations).
 These files are placed in the `$CONFIG/user` directory and are very similar in structure to the `default.yml`, 
 with the only exception being they define a _filter_.
 

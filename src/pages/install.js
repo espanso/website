@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import React from "react";
 import styles from "./install.module.css";
 import Navigation from "../components/Navigation";
 import DonateSection from "../components/DonateSection";
@@ -9,8 +8,6 @@ import Link from "@docusaurus/Link";
 import { getStableVersion, getStableDownloadLink } from "../utils/versionUtils";
 
 export default function Install() {
-  const { siteConfig } = useDocusaurusContext();
-
   return (
     <div className={styles.container}>
       <Head>
@@ -37,7 +34,7 @@ export default function Install() {
                   getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL")
                 );
                 window.location =
-                  "/docs/next/install/win#problems-you-may-experience";
+                  "/docs/install/win#problems-you-may-experience";
                 window.focus();
               }}
             >
@@ -67,7 +64,7 @@ export default function Install() {
                 e.preventDefault();
                 window.open(getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL"));
                 window.location =
-                  "/docs/next/install/mac/#problems-you-may-experience";
+                  "/docs/install/mac/#problems-you-may-experience";
                 window.focus();
               }}
             >
@@ -80,7 +77,7 @@ export default function Install() {
                 e.preventDefault();
                 window.open(getStableDownloadLink("MAC_M1_DOWNLOAD_URL"));
                 window.location =
-                  "/docs/next/install/mac/#problems-you-may-experience";
+                  "/docs/install/mac/#problems-you-may-experience";
                 window.focus();
               }}
             >
@@ -93,17 +90,17 @@ export default function Install() {
             <h3>Linux</h3>
             <Link
               className={styles.button}
-              to="/docs/next/install/linux/#choosing-the-right-install-method"
+              to="/docs/install/linux/#choosing-the-right-install-method"
             >
               X11
             </Link>
             <Link
               className={styles.button}
-              to="/docs/next/install/linux/#choosing-the-right-install-method"
+              to="/docs/install/linux/#choosing-the-right-install-method"
             >
               Wayland
             </Link>
-            <Link to="/docs/next/install/linux/#find-the-right-version">
+            <Link to="/docs/install/linux/#find-the-right-version">
               Which version should you choose?
             </Link>
             <span>Version {getStableVersion()}</span>
