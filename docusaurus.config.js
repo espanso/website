@@ -1,6 +1,9 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+// TODO: update once released
+const CURRENT_STABLE_VERSION = "v2.1.3-alpha";
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "Espanso",
@@ -80,9 +83,14 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/espanso/website/edit/main/",
+          lastVersion: "current",
           versions: {
             current: {
-              label: `2.0.0-alpha 🚧`,
+              label: CURRENT_STABLE_VERSION,
+            },
+            "0.7.3": {
+              label: "0.7.3 (Legacy)",
+              path: "legacy",
             },
           },
         },
@@ -93,8 +101,7 @@ module.exports = {
     ],
   ],
   customFields: {
-    // TODO: update once released
-    CURRENT_STABLE_VERSION: "v2.1.3-alpha",
+    CURRENT_STABLE_VERSION,
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
       "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
     LINUX_X11_DEB_DOWNLOAD_URL:
