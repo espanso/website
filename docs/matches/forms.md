@@ -125,7 +125,7 @@ You can also specify the list of values as a multiline string:
           Second choice
 ```
 
-This is useful when you want to dinamically populate a list with the output of a shell
+This is useful when you want to dynamically populate a list with the output of a shell
 command or script, as described in the [Variables](../variables) section.
 
 | Property | Description | Default value |
