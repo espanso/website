@@ -105,7 +105,7 @@ A quick way to find the path of your configuration folder is by using the follow
 espanso path
 ```
 
-> By default, the configuration folder is hidden on most systems. To open it, copy path of your configuration folder and paste it in the address bar (aka path bar) of your file manager/explorer.
+> By default, the configuration folder is hidden on most systems. To open it, copy the path of your configuration folder and paste it in the address bar (aka path bar) of your file manager/explorer.
 
 :::info
 
