@@ -60,7 +60,7 @@ page.
 
 Espanso ships with very few built-in matches to give you the maximum flexibility, 
 but you can expand its capabilities in two ways: **creating your own custom matches** or **installing packages**. 
-Both of these options are you can _include_ all your code snippets in an app-specific configuration:
+Both of these options allow you to _include_ all your code snippets in an app-specific configuration:
 
 ```yaml title=$CONFIG/config/vscode.yml
 filter_title: "Visual Studio Code"
