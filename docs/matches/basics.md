@@ -465,7 +465,7 @@ and store all your images there. Let's say I stored the `cat.png` image. We can 
 ```
 
 
-At this point, if you type `:nested` you'll see `This is a nested match appear`.
+At this point, if you type `:nested` you'll see `This is a nested match` appear.
 
 ## Forms
 
@@ -475,4 +475,4 @@ Espanso is capable of creating arbitrarily complex input forms.
 
 These open up a world of possibilities, allowing the user to create matches with many arguments, as well as injecting those values into custom Scripts or Shell commands.
 
-For more informations, visit the [Forms section](../forms).
+For more information, visit the [Forms section](../forms).
