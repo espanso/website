@@ -192,7 +192,7 @@ we'll stop here to avoid going out of topic.
 >
 > If you want to know more,
 please read the TODO section (TODO: we are still in the process of 
-writing the docs, please be patent :) )
+writing the docs, please be patient :) )
 
 ### Automatic migration
 
