@@ -129,7 +129,7 @@ As you can see, there are two sub-folders, `config` and `match`, which in turn c
 `default.yml` and `base.yml` respectively. 
 Each of them serves a specific purpose:
 * **The files contained in the `match` directory define _WHAT_ Espanso should do.**
-In other words, this is were you should specify all the custom snippets and actions (aka Matches).
+In other words, this is where you should specify all the custom snippets and actions (aka Matches).
 The `match/base.yml` file is where you might want to start adding your matches, as shown in the
 following sections. As the number of snippets grows, you might want to _split_ your matches
 over multiple files to make it easier to manage. For example, you might create the `match/emails.yml`
