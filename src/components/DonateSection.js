@@ -32,11 +32,6 @@ export default function DonateSection() {
                 <span>Donate with PayPal </span>
               </div>
             </Link>
-            <Link to="https://github.com/sponsors/federico-terzi">
-              <div className={`${styles.button} ${styles.sponsors}`}>
-                <span>Become a GitHub Sponsor</span>
-              </div>
-            </Link>
           </div>
         </div>
       </div>
