@@ -250,7 +250,7 @@ Otherwise, you can create a package and publish it on the Hub, for more informat
 
 Let's say you want to **add some emojis** to Espanso, such that when you type `:ok` it gets expanded to 👍.
 
-A solution would be to install the [Basic Emojis](https://hub.espanso.org/packages/basic-emojis/) package from the
+A solution would be to install the [Basic Emojis](https://hub.espanso.org/basic-emojis) package from the
 [Espanso Hub](https://hub.espanso.org/) store. Open a terminal and type:
 
 ```bash
