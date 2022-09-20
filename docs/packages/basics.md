@@ -37,7 +37,7 @@ espanso install <package_name>
 
 with `<package_name>` being the identifier for your desired package.
 
-For example, if you want to install the [lorem](https://hub.espanso.org/packages/lorem/) package,
+For example, if you want to install the [lorem](https://hub.espanso.org/lorem) package,
 you can do so with:
 
 ```bash
