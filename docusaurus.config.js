@@ -74,6 +74,16 @@ module.exports = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    algolia: {
+      // The application ID provided by Algolia
+      appId: "51GAZM4GBC",
+
+      // Public API key: it is safe to commit it
+      apiKey: "dc17ed7f938bd80016738928e74844c6",
+
+      indexName: "espanso",
+      disableUserPersonalization: true,
+    },
   },
   presets: [
     [
