@@ -189,6 +189,9 @@ Before | After |
 Is ther anyone else? | Is there anyone else? | `ther` is converted to `there`
 I have other interests | I have other interests | `other` is left unchanged
 
+The [configuration option](/docs/configuration/options/) `word_separators` may
+be used to customize which characters qualify as word separators.
+
 ## Case propagation
 
 Espanso also supports *case-propagation*, which makes it possible to expand a match
