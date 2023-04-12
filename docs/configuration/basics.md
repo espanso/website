@@ -35,7 +35,7 @@ which Espanso creates its configuration, based on the operating system:
 
 * **Linux**: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/user/.config/espanso`)
 * **macOS**: `$HOME/Library/Application Support/espanso` (e.g. `/Users/user/Library/Application Support/espanso`)
-* **Windows**: `{FOLDERID_RoamingAppData}\espanso` (e.g. `C:\Users\user\AppData\Roaming\espanso`)
+* **Windows**: `{FOLDERID_RoamingAppData}\espanso` (e.g. `C:\Users\%username%\AppData\Roaming\espanso`)
 
 Keep in mind that these locations might be different in your case, especially if you are coming from a legacy version.
 
