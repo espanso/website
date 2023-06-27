@@ -50,7 +50,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/federico-terzi/espanso",
+          href: "https://github.com/espanso/espanso",
           label: "GitHub",
           position: "left",
         },
@@ -112,19 +112,19 @@ module.exports = {
   customFields: {
     CURRENT_STABLE_VERSION,
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
     LINUX_X11_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-x11-amd64.deb",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/espanso-debian-x11-amd64.deb",
     LINUX_WAYLAND_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-wayland-amd64.deb",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/espanso-debian-wayland-amd64.deb",
     MAC_INTEL_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
     MAC_M1_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
     WIN_INSTALLER_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Portable-x86_64.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Portable-x86_64.zip",
   },
   plugins: [
     function pluginGoogleAnalytics(context) {
