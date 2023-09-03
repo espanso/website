@@ -30,7 +30,7 @@ This table summarizes them based on distribution and desktop environment:
 | Distribution | X11 | Wayland |
 |---|---|---|
 | Ubuntu/Debian | **[DEB package](#deb-x11) (recommended)**, [AppImage](#appimage-x11), [Snap package](#snap-x11), [Manual compilation](#x11-compile) | **[DEB package](#deb-wayland) (recommended)**, [Manual compilation](#wayland-compile) |
-| Fedora | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Fedora | **[RPM package](#rpm-x11) (recommended)**, [AppImage](#appimage-x11) (recommended), [Manual compilation](#x11-compile) | **[RPM package](#rpm-wayland) (recommended)**, [Manual compilation](#wayland-compile) |
 | Arch/Manjaro | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
 | Other distros | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
 
@@ -59,6 +59,22 @@ You can now install the package using:
 
 ```
 sudo apt install ./espanso-debian-x11-amd64.deb
+```
+
+### Installing with RPM package (Fedora) {#rpm-x11}
+
+Espanso is available as a RPM on the [COPR website](https://copr.fedorainfracloud.org/coprs/eclipseo/espanso/) for Fedora.
+
+Start by enable the COPR repository by running the following command inside a terminal:
+
+```
+sudo dnf copr enable eclipseo/espanso
+```
+
+You can now install the package using:
+
+```
+sudo dnf install espanso
 ```
 
 <X11AfterInstall />
@@ -104,6 +120,7 @@ If you run the command specified in the next step, this will be included automat
 
 * Install the required linux packages:
   * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git libx11-dev libxtst-dev libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
+  * On **Fedora** run `sudo dnf install "pkgconfig(xcb)" "pkgconfig(x11)" "pkgconfig(xkbcommon)" "pkgconfig(xtst)" wxBase-devel  wxGTK-devel`
 * Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
 steps. You can install it by running:
 
@@ -182,6 +199,27 @@ The process is almost complete, you just need to grant the required capabilities
 
 <WaylandFinalSteps />
 
+### Installing with RPM package (Fedora) {#rpm-wayland}
+
+
+Espanso is available as a RPM on the [COPR website](https://copr.fedorainfracloud.org/coprs/eclipseo/espanso/) for Fedora.
+
+Start by enable the COPR repository by running the following command inside a terminal:
+
+```
+sudo dnf copr enable eclipseo/espanso
+```
+
+You can now install the package using:
+
+```
+sudo dnf install espanso-wayland
+```
+
+The process is almost complete, you just need to grant the required capabilities.
+
+<WaylandFinalSteps />
+
 ### Compiling from sources {#wayland-compile}
 
 #### Prerequisites
@@ -194,7 +232,7 @@ If you run the command specified in the next step, this will be included automat
 
 * Install the required linux packages:
   * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git wl-clipboard libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
-  * On **Fedora** run `sudo dnf install @development-tools gcc-c++ wl-clipboard libxkbcommon-devel dbus-devel wxGTK3-devel`
+  * On **Fedora** run `sudo dnf install @development-tools gcc-c++ wl-clipboard libxkbcommon-devel dbus-devel wxBase-devel wxGTK-devel`
 * Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
 steps. You can install it by running:
 
