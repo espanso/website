@@ -110,3 +110,5 @@ extra_includes:
 Because the `$CONFIG/match/_code_snippets.yml` file imports both JS and CSS snippets, you will be
 able to use both of them in VSCode, even though you haven't included the `$CONFIG/match/_js_snippets.yml`
 and `$CONFIG/match/_css_snippets.yml` directly.
+
+You can use `#detect#` as described here to find out what to write in `filter_title`.
