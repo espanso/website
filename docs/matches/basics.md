@@ -49,6 +49,19 @@ Or values can span multiple lines using  `|` or `>`. Spanning multiple lines usi
 
 > As you can see, no quotes are needed in this case.
 
+#### Suppressing New Line after multiline expansion
+
+By default, multiline expansions will end in a newline. If you do not want this to occur, use `|-` at the start of the replacement string. This creates a trigger without the newline, which is useful when the text is being output on websites, to a terminal, or in a cell in a spreadsheet application.
+
+##### Example
+```yml
+  - trigger: "text sans newline"
+    replace: |-
+            This text
+            will be printed without
+            a newline.
+```
+
 
 There are a number of characters that are special (or reserved) and cannot be used as the first character of an unquoted scalar: ``' "  [] {} > | * & ! % # ` @ ``
 
