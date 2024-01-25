@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./HomeHowItWorks.module.css";
 import TypeIt from "typeit-react";
-import Fade from "react-reveal/Fade";
-import { LightBulbIcon } from "@heroicons/react/outline";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function HomeHowItWorks() {
   return (

@@ -1,22 +1,45 @@
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+// @ts-check
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
+
+import {themes as prismThemes} from 'prism-react-renderer';
 
 const CURRENT_STABLE_VERSION = "v2.2.1";
 
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-module.exports = {
-  title: "Espanso",
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  title: 'Espanso',
   tagline: "A Privacy-first, Cross-platform Text Expander",
+  // Set the production url of your site here
   url: "https://espanso.org",
-  baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "federico-terzi", // Usually your GitHub org/user name.
-  projectName: "espanso", // Usually your repo name.
-  trailingSlash: true,
-  themeConfig: {
-    navbar: {
+  favicon: 'img/favicon.ico',
+
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    {
+      navbar: {
       title: "Espanso",
       logo: {
         alt: "Espanso Logo",
@@ -50,7 +73,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/federico-terzi/espanso",
+          href: "https://github.com/espanso/espanso",
           label: "GitHub",
           position: "left",
         },
@@ -68,9 +91,9 @@ module.exports = {
       ],
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
-    },
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -87,10 +110,11 @@ module.exports = {
   },
   presets: [
     [
-      "@docusaurus/preset-classic",
-      {
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: './sidebars.js',
           editUrl: "https://github.com/espanso/website/edit/main/",
           lastVersion: "current",
           versions: {
@@ -104,27 +128,26 @@ module.exports = {
           },
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: './src/css/custom.css',
         },
-      },
+      }),
     ],
   ],
   customFields: {
-    CURRENT_STABLE_VERSION,
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
     LINUX_X11_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-x11-amd64.deb",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/espanso-debian-x11-amd64.deb",
     LINUX_WAYLAND_DEB_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/espanso-debian-wayland-amd64.deb",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/espanso-debian-wayland-amd64.deb",
     MAC_INTEL_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
     MAC_M1_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
     WIN_INSTALLER_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
-      "https://github.com/federico-terzi/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Portable-x86_64.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Portable-x86_64.zip",
   },
   plugins: [
     function pluginGoogleAnalytics(context) {
@@ -146,3 +169,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

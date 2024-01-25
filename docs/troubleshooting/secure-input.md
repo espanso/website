@@ -73,6 +73,6 @@ in the picture below (first click on the Lock and then check all the checkboxes)
 :::info Auto-fix implementation
 
 If you're curious about the actual implementation details, you'll find the [auto-fix 
-source code on GitHub](https://github.com/federico-terzi/espanso/blob/master/espanso/src/cli/workaround/secure_input.rs).
+source code on GitHub](https://github.com/espanso/espanso/blob/master/espanso/src/cli/workaround/secure_input.rs).
 
 :::

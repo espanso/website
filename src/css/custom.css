@@ -4,8 +4,8 @@
  * work well for content-centric websites.
  */
 
-@import "~@fontsource/inter/700.css";
-@import "~@fontsource/inter/400.css";
+/* @import "~@fontsource/inter/700.css";
+@import "~@fontsource/inter/400.css"; */
 
 /* You can override the default Infima variables here. */
 :root {

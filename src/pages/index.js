@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
 import HomeJumbo from "../components/HomeJumbo";
 import HomeHowItWorks from "../components/HomeHowItWorks";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal"
 import HomeTestimonials from "../components/HomeTestimonials";
 import HomeFeatures from "../components/HomeFeatures";
 import HomeKnowMore from "../components/HomeKnowMore";

@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./DonateSection.module.css";
-import Fade from "react-reveal/Fade";
 import Link from "@docusaurus/Link";
-import { HeartIcon } from "@heroicons/react/solid";
+import { HeartIcon } from "@heroicons/react/24/solid";
 
 export default function DonateSection() {
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Contributing.module.css";
 import Link from "@docusaurus/Link";
-import { BeakerIcon } from "@heroicons/react/outline";
+import { BeakerIcon } from "@heroicons/react/24/outline";
 
 export default function Contributing() {
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Contributing() {
       </div>
       <p>
         Espanso is open source and{" "}
-        <Link to="https://github.com/federico-terzi/espanso">
+        <Link to="https://github.com/espanso/espanso">
           hosted on GitHub.
         </Link>
       </p>
@@ -33,17 +33,17 @@ export default function Contributing() {
       <div className={styles.github}>
         <a
           className="github-button"
-          href="https://github.com/federico-terzi/espanso"
+          href="https://github.com/espanso/espanso"
           data-size="large"
           data-show-count="true"
-          aria-label="Star federico-terzi/espanso on GitHub"
+          aria-label="Star espanso/espanso on GitHub"
         >
           Star
         </a>
       </div>
       <p className={styles.subtitle}>
         If you find a bug or have an idea for a new feature, please{" "}
-        <Link to="https://github.com/federico-terzi/espanso/issues">
+        <Link to="https://github.com/espanso/espanso/issues">
           open an issue on GitHub.
         </Link>
       </p>

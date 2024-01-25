@@ -1,20 +1,20 @@
 import React from "react";
 import styles from "./HomeFeatures.module.css";
 import TypeIt from "typeit-react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import {
-  LightBulbIcon,
-  SearchIcon,
+  LightBulbIcon, 
+  MagnifyingGlassIcon,
   CalendarIcon,
   ShareIcon,
-  ChipIcon,
-  TerminalIcon,
-  TemplateIcon,
-  DesktopComputerIcon,
+  CpuChipIcon,
+  CommandLineIcon,
+  RectangleGroupIcon,
+  ComputerDesktopIcon,
   DocumentDuplicateIcon,
-  CodeIcon,
-  ViewGridIcon,
-} from "@heroicons/react/outline";
+  CodeBracketIcon,
+  Squares2X2Icon,
+} from "@heroicons/react/24/outline";
 import Link from "@docusaurus/Link";
 import { useOS } from "../hooks/useOS";
 import BrowserOnly from "@docusaurus/BrowserOnly";
@@ -32,12 +32,14 @@ export default function HomeFeatures() {
         main={
           <div className={styles["feature-card"]}>
             <TypeIt
-              options={{ loop: true, waitUntilVisible: true, startDelay: 900 }}
+              options={{ 
+                loop: true,
+                waitUntilVisible: true,
+                startDelay: 900,
+                speed: 50,
+              }}
               getBeforeInit={(instance) => {
                 instance
-                  .options({
-                    speed: 50,
-                  })
                   .type("<b>email</b>")
                   .pause(400)
                   .options({
@@ -110,7 +112,7 @@ export default function HomeFeatures() {
         description={
           <FeatureDescription
             title="Every sentence, one search away"
-            icon={<SearchIcon className={styles.icon} />}
+            icon={<MagnifyingGlassIcon className={styles.icon} />}
           >
             <p>
               Don’t remember a shortcut? No worries.
@@ -229,7 +231,7 @@ export default function HomeFeatures() {
         }
       />
       <div className={styles.heading}>
-        <ChipIcon className={styles.icon} />
+        <CpuChipIcon className={styles.icon} />
         <h2>Advanced features</h2>
       </div>
       <Feature
@@ -276,7 +278,7 @@ export default function HomeFeatures() {
         description={
           <FeatureDescription
             title="Shell and Script support"
-            icon={<TerminalIcon className={styles.icon} />}
+            icon={<CommandLineIcon className={styles.icon} />}
           >
             <p>
               For advanced use-cases, you can extend Espanso’s snippets with{" "}
@@ -296,7 +298,7 @@ export default function HomeFeatures() {
         description={
           <FeatureDescription
             title="Form support"
-            icon={<TemplateIcon className={styles.icon} />}
+            icon={<RectangleGroupIcon className={styles.icon} />}
           >
             <p>
               Use <span className={styles.highlight}>forms</span> to handle
@@ -316,7 +318,7 @@ export default function HomeFeatures() {
         <SmallFeature
           title="System-wide integration"
           icon={
-            <DesktopComputerIcon className={styles["small-feature-icon"]} />
+            <ComputerDesktopIcon className={styles["small-feature-icon"]} />
           }
         >
           <p>
@@ -338,14 +340,14 @@ export default function HomeFeatures() {
         </SmallFeature>
         <SmallFeature
           title="Open-source license"
-          icon={<CodeIcon className={styles["small-feature-icon"]} />}
+          icon={<CodeBracketIcon className={styles["small-feature-icon"]} />}
           delay={200}
         >
           <p>Espanso is open-source, licensed under the GPL-3 license.</p>
         </SmallFeature>
         <SmallFeature
           title="Cross-platform support"
-          icon={<ViewGridIcon className={styles["small-feature-icon"]} />}
+          icon={<Squares2X2Icon className={styles["small-feature-icon"]} />}
           delay={300}
         >
           <p>Espanso supports Windows, Linux and macOS.</p>

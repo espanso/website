@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./HomeTestimonials.module.css";
-import Fade from "react-reveal/Fade";
-import { ThumbUpIcon } from "@heroicons/react/outline";
+import Fade from "react-awesome-reveal";
+import { HandThumbUpIcon } from "@heroicons/react/24/outline";
 
 export default function HomeTestimonials() {
   return (
     <div className={styles.container}>
       <Fade bottom>
         <h3>
-          <ThumbUpIcon className={styles.icon} />
+          <HandThumbUpIcon className={styles.icon} />
           What people say about Espanso
         </h3>
       </Fade>
