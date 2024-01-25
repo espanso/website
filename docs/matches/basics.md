@@ -124,6 +124,14 @@ In this case, we use the [Date Extension](../extensions/#date-extension).
 
 In the remaining lines we declared the **parameters** used by the extension, in this case the *date format*.
 
+## Injection mechanism
+
+Normally Espanso follows the `backend` settings specified in `default.yml`, the default for which (`Auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
+
+The `force_mode: keys` or `force_mode: clipboard` properties override this for an individual match, and may be useful in particular environments.
+
+If you find yourself needing them widely, however, an [app-specific configuration](../../configuration/app-specific-configurations), or a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml` may be more convenient.
+
 ## Global Variables
 
 *Global variables* are variables that can be used across multiple matches. 
@@ -188,6 +196,8 @@ Before | After |
 --- | ---
 Is ther anyone else? | Is there anyone else? | `ther` is converted to `there`
 I have other interests | I have other interests | `other` is left unchanged
+
+The related properties, `left_word: true` and `right_word: true` ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
 
 ## Case propagation
 
@@ -404,6 +414,18 @@ To use the feature, simply specify a list of triggers in the `triggers` field (i
 ```
 
 Now typing either `hello` or `hi` will be expanded to `world`.
+
+## Rich Text
+
+Rich text can now be specified as markdown and HTML replacements:
+
+```yml
+  - trigger: ":rich"
+    markdown: "This *text* is **very rich**!"
+
+  - trigger: ":ric2"
+    html: '<p>But <span style="color: #ce181e;"><span style="font-size: x-large;">this</span></span> one is <span style="color: #81d41a;"><span style="font-family: Arial, sans-serif;">even richer</span></span>!</p>'
+```
 
 ## Image Matches
 
