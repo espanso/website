@@ -17,7 +17,7 @@ For example, we can define a match that will expand every occurrence of `hello` 
     replace: "world"
 ```
 
-These kind of expansions are simple text replacements and can be considered *static*.
+These kind of expansions are simple text replacements and can be considered *static*. Quote-marks are not obligatory for `trigger` or `replace` in simple cases.
 
 ### Multi-line expansions
 
@@ -27,7 +27,7 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: "hello"
     replace: "line1\nline2"
 ```
-> Notice that when using `\n` as the line terminator character, quotes are needed.
+> Notice that when using `\n` as the line terminator character or `\t` for tab-spacing, and {{variables}} (see below), in `replace`, quotes _are_ needed.
 
 Or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
@@ -124,6 +124,8 @@ In this case, we use the [Date Extension](../extensions/#date-extension).
 
 In the remaining lines we declared the **parameters** used by the extension, in this case the *date format*.
 
+> The ":" prefix to triggers is useful to avoid unwanted triggering of expansions during typing, because it is unlikely to occur as a word prefix. It's not required, or may be changed to other character(s) at any position in the `trigger` item.
+
 ## Injection mechanism
 
 Normally Espanso follows the `backend` settings specified in `default.yml`, the default for which (`Auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
@@ -197,7 +199,20 @@ Before | After |
 Is ther anyone else? | Is there anyone else? | `ther` is converted to `there`
 I have other interests | I have other interests | `other` is left unchanged
 
-The related properties, `left_word: true` and `right_word: true` ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
+The related properties, `left_word: true` and `right_word: true`, ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
+
+## Characters
+
+`replace` can inject hex and Unicode characters with strings such as `"\xC4"`, `"\u0105"` and `"\U00000105"`, and combine them with plain text. For example:
+```yml
+  - trigger: :euro
+    replace: "\u20ac"
+```
+is equivalent to:
+```yml
+  - trigger: :euro
+    replace: €
+```
 
 ## Case propagation
 
