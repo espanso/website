@@ -346,6 +346,9 @@ When triggering the shell command, Espanso also injects a few useful Environment
 * All the values of the previously evaluated match variables. 
 For more information, check out the [Variables](../variables) section.
 
+### UTF-8 characters in Windows
+See the section at the bottom of **Shell Extension** below.
+
 ## Shell Extension
 
 The **Shell Extension** is similar to the [Script Extension](#script-extension), but instead of executing
@@ -466,6 +469,24 @@ Sometimes it's useful to understand what get's executed exactly, what are the re
 
 
 At this point, after triggering a match, the logs will be populated with useful information. Too see them, use the `espanso log` command.
+
+### UTF-8 characters in Windows
+
+BY default, Windows PowerShell doesn't return UTF-8, which can interfere with shell expansions generating foreign-language characters. The shell needs to be specifically configured to work with UTF-8 as in the following example:
+```yml
+ - trigger: ":pl"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
+```
+One equivalent solution for Python scripts in Windows is to include the following in the script:
+```py
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+```
 
 ## Form Extension
 

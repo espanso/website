@@ -27,9 +27,9 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: "hello"
     replace: "line1\nline2"
 ```
-> Notice that when using `\n` as the line terminator character or `\t` for tab-spacing, and {{variables}} (see below), in `replace`, quotes _are_ needed.
+> Note that `replace` using `\n` as the line terminator character, or `\t` for tab-spacing, or {{variables}} (see below), _does_ require quote-marks..
 
-Or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
+or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
 
 ```yml
@@ -65,7 +65,7 @@ Static matches are suitable for many tasks, but can be problematic when we need 
 
 **Variables** can be used in the **replace** clause of a Match to include the *output* of a dynamic component, the **extension**. To make things more clear, let's see an example:
 
-We want to create a match that everytime we type `:now` gets expanded to include the current time, like:
+We want to create a match that every time we type `:now` gets expanded to include the current time, like:
 
 ```
 It's 11:29
@@ -86,7 +86,7 @@ Let's add the following match to your configuration, such as the `match/base.yml
 
 After a while, Espanso should pick up the new configuration.
 
-At this point, everytime we type `:now`, we should see something like `It's 09:33` appear!
+At this point, every time we type `:now`, we should see something like `It's 09:33` appear!
 
 Let's analyze the match step by step:
 
@@ -130,7 +130,7 @@ In the remaining lines we declared the **parameters** used by the extension, in 
 
 Normally Espanso follows the `backend` settings specified in `default.yml`, the default for which (`Auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
 
-The `force_mode: keys` or `force_mode: clipboard` properties override this for an individual match, and may be useful in particular environments.
+The `force_mode: clipboard` or `force_mode: keys` properties override this for an individual match, and may be useful in particular environments.
 
 If you find yourself needing them widely, however, an [app-specific configuration](../../configuration/app-specific-configurations), or a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml` may be more convenient.
 
@@ -441,6 +441,7 @@ Rich text can now be specified as markdown and HTML replacements:
   - trigger: ":ric2"
     html: '<p>But <span style="color: #ce181e;"><span style="font-size: x-large;">this</span></span> one is <span style="color: #81d41a;"><span style="font-family: Arial, sans-serif;">even richer</span></span>!</p>'
 ```
+The `paragraph: true` option may be added to markdown replacements to avoid injecting a new-line and new paragraph.
 
 ## Image Matches
 
@@ -503,6 +504,16 @@ and store all your images there. Let's say I stored the `cat.png` image. We can 
 
 
 At this point, if you type `:nested` you'll see `This is a nested match` appear.
+
+## Keyboard Triggers
+
+Whilst Espanso is able to respond to CTRL-key triggers, it doesn't support combinations with ALT or META etc.. The following works:
+```yml
+  - trigger: "\x05" # <ctrl-e>
+    replace: testing
+    force_mode: keys
+```
+but CTRL-character combinations are likely to conflict with editor menu shortcuts. (The `force_mode: keys` property may be needed to prevent over-backspacing.)
 
 ## Forms
 

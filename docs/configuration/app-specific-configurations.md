@@ -171,3 +171,4 @@ For example, here's a configuration that would disable Espanso when the active p
 filter_title: YouTube
 enable: false
 ```
+> Note that in situations where more than one filter applies to the same program (e.g. a browser filter, and a tab filter) they are applied in alphabetical order. Name the filter files accordingly so that, for example, a `filter_title` file precedes a `filter_exec` file.
