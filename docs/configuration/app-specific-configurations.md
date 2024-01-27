@@ -13,6 +13,12 @@ In a nutshell, they are made of two important ingredients:
 * Some rules that define when the configuration should be active
 * The actual configuration options
 
+:::caution Wayland
+
+App-specific configurations are _not_ yet supported in Wayland.
+
+:::
+
 ### Disabling Espanso when using a certain app
 
 Let's start with a simple example. 
