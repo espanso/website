@@ -27,7 +27,7 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: "hello"
     replace: "line1\nline2"
 ```
-> Note that `replace` using `\n` as the line terminator character, or `\t` for tab-spacing, or {{variables}} (see below), _does_ require quote-marks..
+> Note that `replace` using `\n` as the line terminator character, or `\t` for tab-spacing, or {{variables}} (see below), _does_ require quote-marks.
 
 or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
@@ -201,7 +201,7 @@ I have other interests | I have other interests | `other` is left unchanged
 
 The related properties, `left_word: true` and `right_word: true`, ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
 
-## Characters
+## Special characters
 
 `replace` can inject hex and Unicode characters with strings such as `"\xC4"`, `"\u0105"` and `"\U00000105"`, and combine them with plain text. For example:
 ```yml
