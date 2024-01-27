@@ -450,6 +450,19 @@ When triggering the shell command, espanso also injects a few useful Environment
 * All the values of the previously evaluated match variables.
 For more information, check out the [Variables](../variables) section.
 
+### UTF-8 characters in PowerShell
+
+As with some scripts, Windows PowerShell doesn't return UTF-8 characters by default, interfering with shell expansions generating foreign-language letters. The command needs to be specifically configured to work with UTF-8 as in the following example:
+```yml
+ - trigger: ":pl"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
+```
+
 ### Using Linux commands on Windows
 
 As you might have understood from previous sections, Espanso supports the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) through the `shell: wsl` parameter.
@@ -473,19 +486,6 @@ Sometimes it's useful to understand what get's executed exactly, what are the re
 
 
 At this point, after triggering a match, the logs will be populated with useful information. Too see them, use the `espanso log` command.
-
-### UTF-8 characters in PowerShell
-
-Like scripts, Windows PowerShell doesn't return UTF-8 characters, interfering with shell expansions generating foreign-language letters. The command needs to be specifically configured to work with UTF-8 as in the following example:
-```yml
- - trigger: ":pl"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
-```
 
 
 ## Form Extension
