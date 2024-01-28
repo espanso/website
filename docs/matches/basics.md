@@ -507,13 +507,13 @@ At this point, if you type `:nested` you'll see `This is a nested match` appear.
 
 ## Keyboard Triggers
 
-Whilst Espanso is able to respond to CTRL-key triggers, it doesn't support combinations with ALT or META etc.. The following works:
+Whilst Espanso can respond to CTRL-key triggers, this may be platform-dependent. It doesn't support combinations with ALT or META etc.. The following example works in Linux and Windows 10:
 ```yml
   - trigger: "\x05" # <ctrl-e>
     replace: testing
     force_mode: keys
 ```
-but CTRL-character combinations are likely to conflict with editor menu shortcuts. (The `force_mode: keys` property may be needed to prevent over-backspacing.)
+However, CTRL-character combinations are likely to conflict with editor menu shortcuts and the `force_mode: keys` property may be needed to prevent over-backspacing.
 
 ## Forms
 
