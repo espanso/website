@@ -3,12 +3,12 @@ sidebar_position: 1
 title: Extensions
 ---
 
-Extensions are the heart of Espanso's dynamic matches and can be used to 
+Extensions are the heart of Espanso's dynamic matches and can be used to
 accomplish complex tasks.
 
 ## Date Extension
 
-The **Date Extension** can be used to include *date* and *time* information in a match. 
+The **Date Extension** can be used to include *date* and *time* information in a match.
 For example, the following match will be expanded into `It's 09:30` if triggered at 9:30 am:
 
 ```yaml
@@ -22,15 +22,15 @@ For example, the following match will be expanded into `It's 09:30` if triggered
 ```
 
 The most important aspect to consider is the `format` parameter,
-which specifies how the date will be rendered. 
+which specifies how the date will be rendered.
 
 import DateFormatSpecifiers from "./_date-format-specifiers.mdx";
 
 <details>
   <summary>To see a list of all the possible <b>formatting options</b>, click here.</summary>
-  
+
   <DateFormatSpecifiers />
-  
+
   <p>The list was taken from the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>, please follow the link for more information.</p>
 </details>
 
@@ -74,7 +74,7 @@ If you need **past dates**, you can specify a _negative offset_ as well. Such as
           offset: -86400
 ```
 
-### Advanced: Localized dates 
+### Advanced: Localized dates
 
 :::info
 
@@ -82,7 +82,7 @@ Localized dates have been introduced in version v2.1.4-beta, so make sure to hav
 
 :::
 
-Espanso automatically localize dates based on your system's country and language, 
+Espanso automatically localize dates based on your system's country and language,
 but advanced users might want to force a particular locale.
 
 For this reason, the Date extension supports the `locale` option to override your system preferences.
@@ -100,18 +100,18 @@ matches:
           locale: "en-US"
 ```
 
-The `locale` parameter must be specified in the BCP47 format. 
+The `locale` parameter must be specified in the BCP47 format.
 You can find a list of the available locales [here](https://gist.github.com/federico-terzi/b6465dfcca47e86e9ef0eb597ff6f2e9).
 
 ## Choice Extension
 
 :::info New in version 2.1.2
 
-The Choice extension was introduced in version 2.1.2. 
+The Choice extension was introduced in version 2.1.2.
 
 :::
 
-The _Choice extension_ can be used to open a selection dialog, letting you choose 
+The _Choice extension_ can be used to open a selection dialog, letting you choose
 the right value from a list.
 For example, lets consider the following snippet:
 
@@ -193,9 +193,9 @@ In this case, typing `:quote` and selecting "Every moment is a fresh beginning" 
 
 ## Random Extension
 
-The _Random Extension_ can be used to write non-deterministic replacement texts. In other words, 
+The _Random Extension_ can be used to write non-deterministic replacement texts. In other words,
 you can specify a set of possible expansions for a match and Espanso will choose a random
-one, useful to avoid repetitions. 
+one, useful to avoid repetitions.
 
 You can use this feature by declaring a variable of type `random` and then passing a number of `choices` as a parameter:
 
@@ -225,9 +225,9 @@ For example, let's imagine you want to create the ultimate HTML link shortcut:
 
 ```yaml
   - trigger: ":a"
-    replace: "<a href='{{clipboard}}' />$|$</a>"
+    replace: "<a href='{{clipb}}' />$|$</a>"
     vars:
-      - name: "clipboard"
+      - name: "clipb"
         type: "clipboard"
 ```
 
@@ -247,8 +247,8 @@ The _Echo extension_ makes it easy to create variables containing a fixed value.
   - trigger: ":greet"
     replace: "Hello {{myname}}"
     vars:
-      - name: myname 
-        type: echo 
+      - name: myname
+        type: echo
         params:
           echo: "John"
 ```
@@ -259,15 +259,15 @@ This extension is particularly useful to define common global variables, such as
 
 ```yaml
 global_vars:
-  - name: myname 
-    type: echo 
+  - name: myname
+    type: echo
     params:
       echo: "John"
 
 matches:
   - trigger: ":greet"
     replace: "Hello {{myname}}"
-  
+
   - trigger: ":sig"
     replace: "Best regards, {{myname}}"
 ```
@@ -343,8 +343,16 @@ any lag.
 When triggering the shell command, Espanso also injects a few useful Environment Variables that you can use:
 
 * `CONFIG`: Points to the path of the espanso config directory
-* All the values of the previously evaluated match variables. 
+* All the values of the previously evaluated match variables.
 For more information, check out the [Variables](../variables) section.
+
+### UTF-8 characters
+By default, some scripts don't return UTF-8 characters, which can interfere with shell expansions generating foreign-language letters. A solution for Python scripts is to include the following in the script:
+```py
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+```
+
 
 ## Shell Extension
 
@@ -369,7 +377,7 @@ IP from [ipify](https://www.ipify.org/).
 ```
 
 
-Now everytime you type `:ip`, it gets expanded to your public
+Now every time you type `:ip`, it gets expanded to your public
 IP address!
 
 ### Choosing the Shell
@@ -419,8 +427,7 @@ This extension also supports bash **pipes** as your shell does, such as:
 
 ### Trimming the output
 
-It's very common for commands to have outputs that also spawn a newline at the end. By default a trim option is enabled to remove any 
-excess spaces/newlines. You can optionally disable the `trim` option:
+It's very common for commands to have outputs that also spawn a newline at the end. By default a trim option is enabled to remove any excess spaces/newlines. You can optionally disable the `trim` option:
 
 
 ```yml
@@ -440,12 +447,25 @@ excess spaces/newlines. You can optionally disable the `trim` option:
 When triggering the shell command, espanso also injects a few useful Environment Variables that you can use:
 
 * `CONFIG`: Points to the path of the espanso config directory
-* All the values of the previously evaluated match variables. 
+* All the values of the previously evaluated match variables.
 For more information, check out the [Variables](../variables) section.
+
+### UTF-8 characters in PowerShell
+
+As with some scripts, Windows PowerShell doesn't return UTF-8 characters by default, interfering with shell expansions generating foreign-language letters. The command needs to be specifically configured to work with UTF-8 as in the following example:
+```yml
+ - trigger: ":pl"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
+```
 
 ### Using Linux commands on Windows
 
-As you might have understood from previous sections, Espanso supports the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) through the `shell: wsl` parameter. 
+As you might have understood from previous sections, Espanso supports the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) through the `shell: wsl` parameter.
 This allows Windows users to execute Linux commands from their machine.
 
 ### Debugging
@@ -467,6 +487,7 @@ Sometimes it's useful to understand what get's executed exactly, what are the re
 
 At this point, after triggering a match, the logs will be populated with useful information. Too see them, use the `espanso log` command.
 
+
 ## Form Extension
 
 Espanso's forms are implemented as extensions under the hood, and therefore you can use
@@ -474,7 +495,7 @@ them as you would do with any other extension.
 
 ![Espanso Form](/img/docs/macform.png)
 
-Besides regular expansions, you can also pass the values inserted inside the 
+Besides regular expansions, you can also pass the values inserted inside the
 form to other extensions, such as scripts, opening up a world of possibilities.
 
 For more information, please visit the [Forms section](../forms).

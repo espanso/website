@@ -38,6 +38,9 @@ The key here is to specify the `form` field rather than `replace`, which is a sh
 
 You can create as many fields as you want, just use the double-brackets `[[field_name]]` syntax.
 
+### Form sizes
+
+Standard forms are sized 100x100 pixels, but expand to fit the width of the longest line of text and its input-boxes, in the form layout.
 
 ## Controls
 
