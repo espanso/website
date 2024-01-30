@@ -509,7 +509,7 @@ At this point, if you type `:nested` you'll see `This is a nested match` appear.
 
 ## Keyboard Triggers
 
-Espanso can respond to CTRL-key triggers by using their hex-codes (but not ALT- or META-). The following example works:
+Espanso can respond to CTRL-key triggers by using their hex-codes (but not ALT- or META-). For example:
 ```yml
   - trigger: "\x05" # <ctrl-e>
     replace: testing

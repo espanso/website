@@ -89,7 +89,7 @@ $HOME/Dropbox/espanso
 
 Now you need to create a **symbolic link**. Open the Terminal and type the following command, making sure you specify the correct paths:
 
-> Note: Before running the following command, make sure that there is no folder called `espanso` in the `Application Support` folder, as otherwise it will create another nested folder `espanso/espanso` (which is wrong).
+> Note: Before running the following command, make sure that there is no folder called `espanso` in the `$CONFIG` folder, as otherwise it will create another nested folder `espanso/espanso` (which is wrong).
 
 ```
 ln -s "$HOME/Dropbox/espanso" "$CONFIG"
