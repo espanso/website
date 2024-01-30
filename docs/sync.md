@@ -51,6 +51,16 @@ mklink /J "C:\Users\user\Dropbox\espanso" "C:\Users\user\AppData\Roaming\espanso
 
 :::
 
+:::caution Stop Espanso first
+
+Before running any of the following, stop espanso with:
+```yml
+espanso stop
+```
+to prevent it trying to recreate the file structure during the process.
+
+:::
+
 
 ### Windows
 
