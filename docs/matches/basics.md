@@ -201,7 +201,7 @@ I have other interests | I have other interests | `other` is left unchanged
 
 The related properties, `left_word: true` and `right_word: true`, ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
 
-The [configuration option](docs/configuration/options/#options-reference) `word_separators` may be used to customise which characters qualify as word separators.
+The [configuration option](../../configuration/options/#options-reference) `word_separators` may be used to customise which characters qualify as word separators.
 
 ## Special characters
 
