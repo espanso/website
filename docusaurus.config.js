@@ -82,12 +82,6 @@ const config = {
           label: "Donate ❤",
           position: "right",
         },
-        {
-          type: "docsVersionDropdown",
-          position: "right",
-          dropdownItemsAfter: [{ to: "/versions", label: "All versions" }],
-          dropdownActiveClassDisabled: true,
-        },
       ],
     },
     prism: {
@@ -120,10 +114,6 @@ const config = {
           versions: {
             current: {
               label: CURRENT_STABLE_VERSION,
-            },
-            "0.7.3": {
-              label: "v0.7.3 (Legacy)",
-              path: "legacy",
             },
           },
         },
