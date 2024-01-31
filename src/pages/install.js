@@ -19,7 +19,7 @@ export default function Install() {
       <Navigation />
 
       <div className={styles["install-section"]}>
-        <h1>Installation (Beta)</h1>
+        <h1>Installation</h1>
         <p>Select your operating system:</p>
         <div className={styles.targets}>
           <div className={styles.target}>
