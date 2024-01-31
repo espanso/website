@@ -40,7 +40,7 @@ while using Telegram and the default one while using other applications.
 
 Inside the app-specific configuration you can define most of the options you would customize
 in your `config/default.yml` file, with a few exceptions. You'll find a list of
-customizable options in the [Options section](../options).
+customizable options in the [Options section](options.md).
 
 ### Enable or disable some matches while using a specific application
 
@@ -49,7 +49,7 @@ enable some matches while using a particular application**.
 For example, we might want to enable some code snippets while 
 using Visual Studio Code or IntelliJ Idea, but not inside other apps.
 
-This use-case is described in the [Include and Exclude rules](../include-and-exclude)
+This use-case is described in the [Include and Exclude rules](include-and-exclude.md)
 section.
 
 ## Understanding configuration inheritance

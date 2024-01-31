@@ -126,7 +126,7 @@ You can also specify the list of values as a multiline string:
 ```
 
 This is useful when you want to dynamically populate a list with the output of a shell
-command or script, as described in the [Variables](../variables) section.
+command or script, as described in the [Variables](variables.md) section.
 
 | Property | Description | Default value |
 | ---------|-------------|---------------|
@@ -208,7 +208,7 @@ That could be implemented with:
 ```
 
 The key aspect here is that the value of the form field is injected in the shell's `cmd` field.
-To understand more about variable injections, please read the [Variables](../variables) section.
+To understand more about variable injections, please read the [Variables](variables.md) section.
 
 
 :::caution A note for Windows users

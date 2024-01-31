@@ -32,7 +32,7 @@ If you wish to install private packages instead, please skip to the next section
 
 ### GitHub or GitLab repositories
 
-As long as the repository follows the [Package Specification](../package-specification/) format,
+As long as the repository follows the [Package Specification](package-specification.md) format,
 you can install a package from any GitHub and GitLab repository
 by specifying the `--git` option.
 
@@ -45,7 +45,7 @@ espanso install dummy-package --git https://github.com/espanso/dummy-repository 
 
 ### Git repositories
 
-As long as the repository follows the [Package Specification](../package-specification/) format,
+As long as the repository follows the [Package Specification](package-specification.md) format,
 you can install a package from any git repository
 by specifying the `--git` option.
 
@@ -76,7 +76,7 @@ want to share snippets with your team without publishing them on the Hub.
 
 ### Git repositories
 
-As long as the repository follows the [Package Specification](../package-specification/) format,
+As long as the repository follows the [Package Specification](package-specification.md) format,
 you can install a package from any git repository
 by specifying the `--git` option.
 

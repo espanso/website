@@ -3,11 +3,11 @@ sidebar_position: 2
 title: Getting Started
 ---
 In this section, we will cover the basics of Espanso to quickly get you started.
-Make sure to [install Espanso](/install) before diving into the next sections.
+Make sure to install Espanso before diving into the next sections.
 
 :::info For legacy users
 
-If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](../migration/overview) section
+If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](migration/overview.md) section
 first.
 
 :::
@@ -37,7 +37,7 @@ Firstly, try starting Espanso again:
 * **For Windows users**: click Espanso from the Start Menu, or click `START_ESPANSO.bat` for
 Portable mode users.
 * **For macOS users**: click on the Espanso app again. If you see a security warning, please follow the steps
-described in the [macOS installation](../install/mac/#problems-you-may-experience) section.
+described in the [macOS installation](install/mac.mdx) section.
 * **For Linux users**: open a terminal and run `espanso start`
 
 If none of these steps worked, please reinstall Espanso and try again.
@@ -53,7 +53,7 @@ These keywords, known as _triggers_, are defined as simple strings. For example,
 ![Espanso replaces a trigger with some other text](/img/docs/new_match_1.png)
 
 The _rule_ that associates a trigger with the replaced text is called **Match** and is a core concept of Espanso.
-Matches are very flexible and capable of solving complex tasks. You can learn all about matches in their [documentation](../matches/basics)
+Matches are very flexible and capable of solving complex tasks. You can learn all about matches in their [documentation](matches/basics.md)
 page.
 
 ![Espanso's Match](/img/docs/new_match_2.png)
@@ -134,7 +134,7 @@ The `match/base.yml` file is where you might want to start adding your matches, 
 following sections. As the number of snippets grows, you might want to _split_ your matches
 over multiple files to make it easier to manage. For example, you might create the `match/emails.yml`
 file with the snippets you use while writing emails. You can learn all about matches in the
-[Matches section](../matches/basics).
+[Matches section](matches/basics.md).
 
 * **The files contained in the `config` directory define _HOW_ Espanso should perform its expansions.**
 In other words, this is were you should specify all Espanso's parameters and options.
@@ -142,7 +142,7 @@ The `config/default.yml` file defines the options that will be applied to _all a
 unless an _app-specific configuration_ is present for the current app. 
 For example, you might want to enable emoji snippets for all apps in the `config/default.yml` file,
 but disable them when using Slack in the `config/slack.yml` file.
-You can learn all about configurations in the [Configuration section](../configuration/basics).
+You can learn all about configurations in the [Configuration section](configuration/basics.md).
 
 All these files are defined using the widely popular [YAML](https://en.wikipedia.org/wiki/YAML) format.
 
@@ -229,7 +229,7 @@ espanso edit
 
 which spawns an instance of the system-default text editor.
 
-By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/basics/#quick-editing) for more information.
+By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](configuration/basics.md) for more information.
 
 :::
 
@@ -244,7 +244,7 @@ the [Espanso Hub](https://hub.espanso.org/).
 
 If you are lucky enough, someone might have already written a **package** to include the matches you need!
 Otherwise, you can create a package and publish it on the Hub, for more information check out the
-[Packages](../packages/basics/) documentation.
+[Packages](packages/basics.md) documentation.
 
 ### Installing a Package
 
@@ -282,7 +282,7 @@ You can open the search bar in two ways:
 * By pressing `ALT+SPACE` (Option+Space on macOS).
 * By clicking on the status icon and then selecting "Open Search bar" (currently not available on Linux).
 
-If you want to customize the shortcut, please check out the [customizing the Search bar](../configuration/options/#customizing-the-search-bar) section.
+If you want to customize the shortcut, please check out the [customizing the Search bar](configuration/options.md/#customizing-the-search-bar) section.
 
 ### Backspace Undo
 
@@ -303,4 +303,4 @@ This can be accomplished in many ways, including the icon menu:
 
 ![Icon Menu](/img/docs/icon-menu.png)
 
-If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](../configuration/options/#customizing-the-toggle-key).
+If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](configuration/options.md/#customizing-the-toggle-key).

@@ -11,7 +11,7 @@ so make sure you are running an up-to-date version.
 :::
 
 Variables are one of the fundamental concepts of dynamic matches.
-As we've seen in the [Extensions](../extensions) section, they can
+As we've seen in the [Extensions](extensions.mdx) section, they can
 be used to insert the output of an Extension inside a match,
 but they can also be combined to produce complex workflows.
 

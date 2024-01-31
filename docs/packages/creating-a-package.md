@@ -5,7 +5,7 @@ title: Creating a Package
 At some point, you might want to share your snippets with others,
 and the best way to do so is by **creating a package!**.
 Luckily, **packages are regular match files with some metadata**.
-So if you already created some [custom matches](../../matches/basics), then
+So if you already created some [custom matches](../matches/basics), then
 you have the necessary skills to create a custom package!
 
 In this section, we are going to discuss the different ways in which
@@ -20,7 +20,7 @@ for example with your company's team.
 This guide assumes you are comfortable working with YAML match files,
 `git` and Markdown.
 If you are new to these concepts, we suggest these resources:
-* [Match Basics](../../matches/basics)
+* [Match Basics](../matches/basics.md)
 * [Git Basics by GitHub](https://docs.github.com/en/get-started/quickstart/hello-world)
 * [Markdown Basics](https://programminghistorian.org/en/lessons/getting-started-with-markdown)
 
@@ -30,7 +30,7 @@ If you are new to these concepts, we suggest these resources:
 
 Before diving into the different publishing opportunities,
 we'll first need to briefly introduce the structure of a simple package.
-The full specification can be found in the [Package Specification](../package-specification)
+The full specification can be found in the [Package Specification](package-specification.md)
 section.
 
 The simplest possible package is made of 3 files:
@@ -43,7 +43,7 @@ written using the [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax.
 
 The package can also include other files, such as a license or additional
 match files, but they won't be covered in this example.
-If you want to know more, please visit the [Package Specification](../package-specification)
+If you want to know more, please visit the [Package Specification](package-specification.md)
 section.
 
 ## Publish on the Hub (public)
@@ -94,7 +94,7 @@ Edit the `_manifest.yml` file to customize the package metadata:
   * `version` contains the version of your package. We suggest to keep it at `0.1.0` for new packages.
   * `author` contains the author name.
 
-There are also other possible fields, please visit the [Package Specification](../package-specification)
+There are also other possible fields, please visit the [Package Specification](package-specification.md)
 if you are interested.
 
 At this point, we should have a `_manifest.yml` similar to this:
@@ -111,7 +111,7 @@ author: Federico Terzi
 
 Once the metadata is ready, you can move to the `package.yml` file.
 That file contains the package snippets, and follow the same  format used
-for [regular match files](../../matches/basics).
+for [regular match files](../matches/basics).
 
 For example, in our case it could be:
 
@@ -193,7 +193,7 @@ Edit the `_manifest.yml` file to customize the package metadata:
   * `version` contains the version of your package. We suggest to keep it at `0.1.0` for new packages.
   * `author` contains the author name.
 
-There are also other possible fields, please visit the [Package Specification](../package-specification)
+There are also other possible fields, please visit the [Package Specification](package-specification.md)
 if you are interested.
 
 At this point, we should have a `_manifest.yml` similar to this:
@@ -210,7 +210,7 @@ author: Federico Terzi
 
 Once the metadata is ready, you can move to the `package.yml` file.
 That file contains the package snippets, and follow the same  format used
-for [regular match files](../../matches/basics).
+for [regular match files](../matches/basics).
 
 For example, in our case it could be:
 
@@ -240,4 +240,4 @@ After committing your changes and pushing them to your repository,
 you are ready to use the packages!
 
 For more information about the usage, visit the 
-[External packages](../external-packages/#git-repositories-1) section.
+[External packages](external-packages.md/#git-repositories-1) section.

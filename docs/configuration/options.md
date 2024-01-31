@@ -126,7 +126,7 @@ show_notifications: false
 ## Options reference
 
 Here's a list of all the available options. If the value of the `App-specific` column is `Yes`, then the option
-can be used inside an [App-specific configuration](../app-specific-configurations).
+can be used inside an [App-specific configuration](app-specific-configurations.md).
 Otherwise, the option can only be defined inside the `$CONFIG/config/default.yml` file.
 
 Option | Description | Possible Values | Default | App-Specific 

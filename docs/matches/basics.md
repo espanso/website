@@ -115,7 +115,7 @@ that will contain the output of the **extension** used below.
 
 In the following lines, we defined the `mytime` variable as type **date**. The type of a variable defines
 the **extension** that will be executed to calculate its value. 
-In this case, we use the [Date Extension](../extensions/#date-extension).
+In this case, we use the [Date Extension](extensions.mdx/#date-extension).
 
 ```yml
         params:
@@ -475,4 +475,4 @@ Espanso is capable of creating arbitrarily complex input forms.
 
 These open up a world of possibilities, allowing the user to create matches with many arguments, as well as injecting those values into custom Scripts or Shell commands.
 
-For more information, visit the [Forms section](../forms).
+For more information, visit the [Forms section](forms.md).
