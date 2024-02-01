@@ -3,4 +3,4 @@ title: Security
 sidebar_position: 11
 ---
 
-[Please see the project file](https://github.com/espanso/espanso/blob/dfd695b8e0173d0c8c71e17714c6074cf641b7bd/SECURITY.md)
+[Please see the project file](https://github.com/espanso/espanso/security)

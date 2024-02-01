@@ -59,7 +59,7 @@ espanso stop
 ```
 to prevent it trying to recreate the file structure during the process.
 
-Before running `mklink` or `ln` ensure the `/espanso` folder at the end of $CONFIG no longer exists, because it has been moved, or copied and renamed.
+Before running `mklink` or `ln` ensure the `espanso` folder at the end of $CONFIG no longer exists, because it has been moved, or copied and renamed.
 
 :::
 
