@@ -59,6 +59,8 @@ espanso stop
 ```
 to prevent it trying to recreate the file structure during the process.
 
+Before running `mklink` or `ln` ensure the `/espanso` folder at the end of $CONFIG no longer exists, because it has been moved, or copied and renamed.
+
 :::
 
 
@@ -88,8 +90,6 @@ $HOME/Dropbox/espanso
 ```
 
 Now you need to create a **symbolic link**. Open the Terminal and type the following command, making sure you specify the correct paths:
-
-> Note: Before running the following command, make sure that there is no folder called `espanso` in the `$CONFIG` folder, as otherwise it will create another nested folder `espanso/espanso` (which is wrong).
 
 ```
 ln -s "$HOME/Dropbox/espanso" "$CONFIG"
