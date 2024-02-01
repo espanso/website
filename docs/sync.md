@@ -57,7 +57,7 @@ Before running any of the following, stop espanso with:
 ```yml
 espanso stop
 ```
-to prevent it trying to recreate the file structure during the process.
+to prevent it trying to recreate the file structure during the process, and before running the respective `mklink` or `ln` command, ensure the /espanso folder at the end of $CONFIG no longer exists (because it's been moved, or copied & renamed).
 
 :::
 
