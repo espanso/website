@@ -419,6 +419,15 @@ would be displayed as follows in the Search bar:
 
 ![Matches being displayed in the Search Bar with labels](/img/docs/matchwithlabel.png)
 
+Additional words associated with a trigger and available to find using the Search Bar, may be defined with a list following the `search_terms` property, e.g.:
+```
+  - trigger: :meat
+    replace: 🥩
+    search_terms:
+      - steak
+      - t-bone
+```
+
 ## Multiple triggers
 
 Sometimes it's useful to expand a snippet using various aliases.
