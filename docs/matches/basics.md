@@ -201,6 +201,8 @@ I have other interests | I have other interests | `other` is left unchanged
 
 The related properties, `left_word: true` and `right_word: true`, ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
 
+The [configuration option](../../configuration/options/#options-reference) `word_separators` may be used to customise which characters qualify as word separators.
+
 ## Special characters
 
 `replace` can inject hex and Unicode characters with strings such as `"\xC4"`, `"\u0105"` and `"\U00000105"`, and combine them with plain text. For example:
@@ -417,6 +419,15 @@ would be displayed as follows in the Search bar:
 
 ![Matches being displayed in the Search Bar with labels](/img/docs/matchwithlabel.png)
 
+Additional words associated with a trigger and available to find using the Search Bar, may be defined with a list following the `search_terms` property, e.g.:
+```
+  - trigger: :meat
+    replace: 🥩
+    search_terms:
+      - steak
+      - t-bone
+```
+
 ## Multiple triggers
 
 Sometimes it's useful to expand a snippet using various aliases.
@@ -507,13 +518,13 @@ At this point, if you type `:nested` you'll see `This is a nested match` appear.
 
 ## Keyboard Triggers
 
-Whilst Espanso can respond to CTRL-key triggers, this may be platform-dependent. It doesn't support combinations with ALT or META etc.. The following example works in Linux and Windows 10:
+Espanso can respond to CTRL-key triggers by using their hex-codes (but not ALT- or META-). For example:
 ```yml
   - trigger: "\x05" # <ctrl-e>
     replace: testing
     force_mode: keys
 ```
-However, CTRL-character combinations are likely to conflict with editor menu shortcuts and the `force_mode: keys` property may be needed to prevent over-backspacing.
+However, CTRL-character combinations are likely to conflict with editor menu shortcuts, and the `force_mode: keys` property may be needed to prevent over-backspacing. A list of the hex-codes may be found at https://ss64.com/ascii.html
 
 ## Forms
 

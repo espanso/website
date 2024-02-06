@@ -38,10 +38,6 @@ The key here is to specify the `form` field rather than `replace`, which is a sh
 
 You can create as many fields as you want, just use the double-brackets `[[field_name]]` syntax.
 
-### Form sizes
-
-Standard forms are sized 100x100 pixels, but expand to fit the width of the longest line of text and its input-boxes, in the form layout.
-
 ## Controls
 
 In the previous example, we've seen how to use simple text fields, but Espanso supports many controls, such as:
@@ -158,6 +154,10 @@ To use them, you will need to specify `type: list` rather than `type: choice`.
 Which produces:
 
 ![Form example](/img/docs/form4.png)
+
+### Form sizes
+
+Input fields are 100 pixels wide, but if their line contains no other text they expand to fit the width of the longest line of text plus input-boxes, in the form layout.
 
 ## Using Forms with Script and Shell extensions
 
