@@ -12,7 +12,7 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "federico-terzi", // Usually your GitHub org/user name.
+  organizationName: "espanso", // Usually your GitHub org/user name.
   projectName: "espanso", // Usually your repo name.
   trailingSlash: true,
   themeConfig: {
