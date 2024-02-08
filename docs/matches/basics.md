@@ -17,7 +17,7 @@ For example, we can define a match that will expand every occurrence of `hello` 
     replace: "world"
 ```
 
-These kind of expansions are simple text replacements and can be considered *static*.
+These kind of expansions are simple text replacements and can be considered *static*. Quote-marks are not obligatory for `trigger` or `replace` in simple cases.
 
 ### Multi-line expansions
 
@@ -27,9 +27,9 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: "hello"
     replace: "line1\nline2"
 ```
-> Notice that when using `\n` as the line terminator character, quotes are needed.
+> Note that `replace` using `\n` as the line terminator character, or `\t` for tab-spacing, or {{variables}} (see below), _does_ require quote-marks.
 
-Or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
+or values can span multiple lines using  `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
 
 ```yml
@@ -65,7 +65,7 @@ Static matches are suitable for many tasks, but can be problematic when we need 
 
 **Variables** can be used in the **replace** clause of a Match to include the *output* of a dynamic component, the **extension**. To make things more clear, let's see an example:
 
-We want to create a match that everytime we type `:now` gets expanded to include the current time, like:
+We want to create a match that every time we type `:now` gets expanded to include the current time, like:
 
 ```
 It's 11:29
@@ -86,7 +86,7 @@ Let's add the following match to your configuration, such as the `match/base.yml
 
 After a while, Espanso should pick up the new configuration.
 
-At this point, everytime we type `:now`, we should see something like `It's 09:33` appear!
+At this point, every time we type `:now`, we should see something like `It's 09:33` appear!
 
 Let's analyze the match step by step:
 
@@ -123,6 +123,16 @@ In this case, we use the [Date Extension](../extensions/#date-extension).
 ```
 
 In the remaining lines we declared the **parameters** used by the extension, in this case the *date format*.
+
+> The ":" prefix to triggers is useful to avoid unwanted triggering of expansions during typing, because it is unlikely to occur as a word prefix. It's not required, or may be changed to other character(s) at any position in the `trigger` item.
+
+## Injection mechanism
+
+Normally Espanso follows the `backend` settings specified in `default.yml`, the default for which (`Auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
+
+The `force_mode: clipboard` or `force_mode: keys` properties override this for an individual match, and may be useful in particular environments.
+
+If you find yourself needing them widely, however, an [app-specific configuration](../../configuration/app-specific-configurations), or a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml` may be more convenient.
 
 ## Global Variables
 
@@ -188,6 +198,23 @@ Before | After |
 --- | ---
 Is ther anyone else? | Is there anyone else? | `ther` is converted to `there`
 I have other interests | I have other interests | `other` is left unchanged
+
+The related properties, `left_word: true` and `right_word: true`, ensure a match will only occur at the beginning or end of words respectively, and not in the middle.
+
+The [configuration option](../../configuration/options/#options-reference) `word_separators` may be used to customise which characters qualify as word separators.
+
+## Special characters
+
+`replace` can inject hex and Unicode characters with strings such as `"\xC4"`, `"\u0105"` and `"\U00000105"`, and combine them with plain text. For example:
+```yml
+  - trigger: :euro
+    replace: "\u20ac"
+```
+is equivalent to:
+```yml
+  - trigger: :euro
+    replace: €
+```
 
 ## Case propagation
 
@@ -392,6 +419,15 @@ would be displayed as follows in the Search bar:
 
 ![Matches being displayed in the Search Bar with labels](/img/docs/matchwithlabel.png)
 
+Additional words associated with a trigger and available to find using the Search Bar, may be defined with a list following the `search_terms` property, e.g.:
+```
+  - trigger: :meat
+    replace: 🥩
+    search_terms:
+      - steak
+      - t-bone
+```
+
 ## Multiple triggers
 
 Sometimes it's useful to expand a snippet using various aliases.
@@ -404,6 +440,19 @@ To use the feature, simply specify a list of triggers in the `triggers` field (i
 ```
 
 Now typing either `hello` or `hi` will be expanded to `world`.
+
+## Rich Text
+
+Rich text can now be specified as markdown and HTML replacements:
+
+```yml
+  - trigger: ":rich"
+    markdown: "This *text* is **very rich**!"
+
+  - trigger: ":ric2"
+    html: '<p>But <span style="color: #ce181e;"><span style="font-size: x-large;">this</span></span> one is <span style="color: #81d41a;"><span style="font-family: Arial, sans-serif;">even richer</span></span>!</p>'
+```
+The `paragraph: true` option may be added to markdown replacements to avoid injecting a new-line and new paragraph.
 
 ## Image Matches
 
@@ -466,6 +515,16 @@ and store all your images there. Let's say I stored the `cat.png` image. We can 
 
 
 At this point, if you type `:nested` you'll see `This is a nested match` appear.
+
+## Keyboard Triggers
+
+Espanso can respond to CTRL-key triggers by using their hex-codes (but not ALT- or META-). For example:
+```yml
+  - trigger: "\x05" # <ctrl-e>
+    replace: testing
+    force_mode: keys
+```
+However, CTRL-character combinations are likely to conflict with editor menu shortcuts, and the `force_mode: keys` property may be needed to prevent over-backspacing. A list of the hex-codes may be found at https://ss64.com/ascii.html
 
 ## Forms
 

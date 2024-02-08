@@ -48,7 +48,7 @@ inside the replacement text. This action is known as _variable injection_.
 
 ### Injecting variables inside variables
 
-In the previous section, we shown how to use variable injection inside 
+In the previous section, we showed how to use variable injection inside
 the replacement text, but **variable injection can also be used inside
 other variables**.
 
@@ -59,9 +59,9 @@ For example, you can use the output of an extension as a parameter for another:
     replace: "It's {{mytime}}"
     vars:
       - name: shellcmd
-        type: shell 
+        type: shell
         params:
-          cmd: echo "%H:%M" 
+          cmd: echo "%H:%M"
       - name: mytime
         type: date
         params:
@@ -101,7 +101,7 @@ would get expanded to the path of the selected file:
 
 In this case, we first get the list of files inside the Documents folder by using
 the Unix `find` command, saving its output inside the `files` variable.
-Then, we use the `files` variable to populate the Form's list's `values` using 
+Then, we use the `files` variable to populate the Form's list's `values` using
 variable injection.
 
 :::caution For Windows users
@@ -120,7 +120,7 @@ variables in the `name` or `type` fields. For example, you **can't** do the foll
 ```yaml
     vars:
       - name: {{var}}
-        type: {{type}} 
+        type: {{type}}
         params:
           format: "%H:%M"
 ```
@@ -134,7 +134,7 @@ For this reason, Espanso offers two ways to disable this behavior:
 
 #### Disabling variable injection by escaping brackets
 
-You can use backslashes to escape the curly brackets. 
+You can use backslashes to escape the curly brackets.
 For example, the following match outputs `hello {{var}}` when expanded:
 
 ```yaml
@@ -153,8 +153,8 @@ In the previous example, we escaped `{{var}}` with 4 backslashes `\\{\\{var\\}\\
 but that's only because the replace value was surrounded by double quotes `"`.
 In those cases, you need to **escape the backslashes** as well.
 
-That's not the case with [multiline YAML strings](https://yaml-multiline.info/),
-where escaping the backslashes is not needed. For example, the following 
+That's not the case with [plain scalars](https://yaml-multiline.info/),
+where escaping the backslashes is not needed. For example, the following
 match is valid:
 
 ```yaml
@@ -184,7 +184,7 @@ For example, the following match will expand to `hello {{var}}` when triggered:
       - name: output
         type: echo
         inject_vars: false
-        params: 
+        params:
           echo: "{{var}}"
 ```
 
@@ -299,7 +299,7 @@ Perhaps surprisingly, the answer is:
 2. `one`
 3. `two`
 
-One might expect the global variable `three` to be evaluated after `one` and `two` 
+One might expect the global variable `three` to be evaluated after `one` and `two`
 because it's the last one being defined, but that's not how Espanso works.
 
 When evaluating variables, Espanso uses a dependency resolution algorithm based on
@@ -345,7 +345,7 @@ explicitly specified the evaluation order for it.
 
 For advanced use-cases, you can also use the `depends_on` option to force a given execution order.
 This feature is especially useful if we want to control the order in which global variables are
-evaluated. 
+evaluated.
 
 In the following example, we are forcing the global variable `two` to being evaluated **after**
 the global variable `one` by using the `depends_on` option, which accepts the list of variable
@@ -371,15 +371,15 @@ matches:
 ### Alternatives to variable injection for Shell and Scripts
 
 In the previous sections, we've seen how variable injection can be used
-to pass an extension's output as a parameter for another. 
+to pass an extension's output as a parameter for another.
 Under the hoods, Espanso replaces the injection with the variable's value
-before evaluating the extension. 
+before evaluating the extension.
 
 For example, in the following snippet we define two variables, `injectedvar` and
 `myvar`, injecting the value of the former inside the parameters of the latter:
 
 ```yaml
-  - name: injectedvar 
+  - name: injectedvar
     type: echo
     params:
       echo: "hello world"
@@ -431,7 +431,7 @@ The match output is `Reversed nhoJ`.
 :::caution A note for Windows users
 
 The previous example only works on Unix systems (Linux and macOS), because on Windows
-you don't have the `rev` command by default. 
+you don't have the `rev` command by default.
 That said, these concepts are valid on Windows as well, with a couple of gotchas:
 
 In the previous example, we called `echo $ESPANSO_FORM1_NAME`. That's because in bash-like
@@ -440,8 +440,8 @@ shells (which are common on Unix systems), you can read an environment variable 
 If you try running `echo $ESPANSO_FORM1_NAME` on Windows, you will soon discover that it doesn't work.
 That's because on Windows, Espanso uses **PowerShell** by default. With PowerShell, you have to use the `$env:NAME` operator
 to read environment variables.
-Moreover, Windows also supports the Command Prompt and WSL, and each of them 
-uses a different syntax. 
+Moreover, Windows also supports the Command Prompt and WSL, and each of them
+uses a different syntax.
 
 To summarize, here's what you should use on Windows, depending on the shell:
 * **On Powershell** use `$env:NAME` to read a variable, like `echo $env:ESPANSO_FORM1_NAME`
