@@ -131,6 +131,12 @@ Among the new features, you can now:
 * Install a package from private git repositories
 * Install a package from GitLab repositories
 
+::: tip
+
+You will need to move your legacy `/packages` folder to `$CONFIG/match/packages`, to keep them working in v2.
+
+:::
+
 ### Experimental Wayland support
 
 Espanso v2 ships with experimental Wayland support. There are still some rough edges to be solved before
