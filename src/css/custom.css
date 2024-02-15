@@ -9,59 +9,59 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #00a595;
-  --ifm-color-primary-dark: #009586;
-  --ifm-color-primary-darker: #008c7f;
-  --ifm-color-primary-darkest: #007468;
-  --ifm-color-primary-light: #00b5a4;
-  --ifm-color-primary-lighter: #00beab;
-  --ifm-color-primary-lightest: #00d6c2;
-  --ifm-code-font-size: 95%;
+    --ifm-color-primary: #00a595;
+    --ifm-color-primary-dark: #009586;
+    --ifm-color-primary-darker: #008c7f;
+    --ifm-color-primary-darkest: #007468;
+    --ifm-color-primary-light: #00b5a4;
+    --ifm-color-primary-lighter: #00beab;
+    --ifm-color-primary-lightest: #00d6c2;
+    --ifm-code-font-size: 95%;
 
-  --border-radius: 8px;
-  --border-radius-large: 16px;
+    --border-radius: 8px;
+    --border-radius-large: 16px;
 
-  --shadow-color: rgba(0, 0, 0, 0.2);
-  --big-shadow: drop-shadow(0px 10px 10px var(--shadow-color));
-  --small-shadow: drop-shadow(0px 4px 4px var(--shadow-color));
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --big-shadow: drop-shadow(0px 10px 10px var(--shadow-color));
+    --small-shadow: drop-shadow(0px 4px 4px var(--shadow-color));
 
-  --content-light: #ffffff;
-  --content-dark: #1a1a1a;
+    --content-light: #ffffff;
+    --content-dark: #1a1a1a;
 
-  --accent: #00a595;
-  --accent-light: #00b5a4;
-  --accent-dark: #02766b;
-  --secondary-accent: #ccff72;
-  --red: #af0000;
-  --paypal: #e89b29;
-  --github-sponsors: #e20188;
+    --accent: #00a595;
+    --accent-light: #00b5a4;
+    --accent-dark: #02766b;
+    --secondary-accent: #ccff72;
+    --red: #af0000;
+    --paypal: #e89b29;
+    --github-sponsors: #e20188;
 
-  --content-primary: #1a1a1a;
-  --content-primary-inverted: #ffffff;
-  --content-secondary: #707070;
-  --background-primary: #ffffff;
-  --extended-logo-url: url(/img/extended-logo-light.svg);
-  --search-bar-url: url(/img/searchbar.png);
-  --packages-url: url(/img/packages-light.svg);
-  --form-url: url(/img/form-light.png);
+    --content-primary: #1a1a1a;
+    --content-primary-inverted: #ffffff;
+    --content-secondary: #707070;
+    --background-primary: #ffffff;
+    --extended-logo-url: url(/img/extended-logo-light.svg);
+    --search-bar-url: url(/img/searchbar.png);
+    --packages-url: url(/img/packages-light.svg);
+    --form-url: url(/img/form-light.png);
 
-  --windows-url: url(/img/windows-light.svg);
-  --macos-url: url(/img/apple-light.svg);
-  --linux-url: url(/img/linux-light.svg);
+    --windows-url: url(/img/windows-light.svg);
+    --macos-url: url(/img/apple-light.svg);
+    --linux-url: url(/img/linux-light.svg);
 }
 
 html[data-theme="dark"] {
-  --content-primary: #ffffff;
-  --content-primary-inverted: #1a1a1a;
-  --content-secondary: #cfcfcf;
-  --background-primary: #2c2c2c;
-  --extended-logo-url: url(/img/extended-logo-dark.svg);
-  --search-bar-url: url(/img/searchbar-dark.png);
-  --packages-url: url(/img/packages-dark.svg);
-  --form-url: url(/img/form-dark.png);
-  --windows-url: url(/img/windows-dark.svg);
-  --macos-url: url(/img/apple-dark.svg);
-  --linux-url: url(/img/linux-dark.svg);
+    --content-primary: #ffffff;
+    --content-primary-inverted: #1a1a1a;
+    --content-secondary: #cfcfcf;
+    --background-primary: #2c2c2c;
+    --extended-logo-url: url(/img/extended-logo-dark.svg);
+    --search-bar-url: url(/img/searchbar-dark.png);
+    --packages-url: url(/img/packages-dark.svg);
+    --form-url: url(/img/form-dark.png);
+    --windows-url: url(/img/windows-dark.svg);
+    --macos-url: url(/img/apple-dark.svg);
+    --linux-url: url(/img/linux-dark.svg);
 }
 
 h1,
@@ -70,33 +70,33 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+    background-color: rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
 }
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .btn {
-  background-color: var(--accent);
-  border-radius: var(--border-radius-large);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 80px;
-  padding: 15px 20px 15px 20px;
-  filter: var(--small-shadow);
-  margin-right: 10px;
+    background-color: var(--accent);
+    border-radius: var(--border-radius-large);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 80px;
+    padding: 15px 20px 15px 20px;
+    filter: var(--small-shadow);
+    margin-right: 10px;
 }
 
 .btn:hover {
-  background-color: var(--accent-light);
-  color: white;
+    background-color: var(--accent-light);
+    color: white;
 }
