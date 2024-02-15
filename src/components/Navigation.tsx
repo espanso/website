@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Navigation.module.css";
 import Link from "@docusaurus/Link";
-import { HeartIcon, MenuIcon } from "@heroicons/react/solid";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { Bars4Icon, HeartIcon } from "@heroicons/react/24/solid"
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +21,7 @@ export default function Navigation() {
               setMobileMenuOpen(!mobileMenuOpen);
             }}
           >
-            <MenuIcon className={styles["menu-icon"]} />
+            <Bars4Icon className={styles["menu-icon"]} />
           </Link>
         </div>
 
@@ -44,7 +43,7 @@ const Buttons = ({ mobile }) => {
       <NavbarLink to="https://hub.espanso.org" text="Packages" />
       <NavbarLink to="https://www.reddit.com/r/espanso/" text="Community" />
       <NavbarLink
-        to="https://github.com/federico-terzi/espanso"
+        to="https://github.com/espanso/espanso"
         text="GitHub"
       />
       <ButtonLink

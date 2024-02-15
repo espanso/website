@@ -3,8 +3,8 @@ title: Install on Linux
 layout: docs
 ---
 
-import siteConfig from '/docusaurus.config.js';
-import {getStableDownloadLink} from '/src/utils/versionUtils.js';
+import siteConfig from '/docusaurus.config.ts';
+import {getStableDownloadLink} from '/src/utils/versionUtils.ts';
 import CodeBlock from '@theme/CodeBlock';
 import X11AfterInstall from "./linux/_x11-after-install.mdx";
 import WaylandFinalSteps from "./linux/_wayland-final-steps.mdx";
@@ -117,7 +117,7 @@ Once you've got all the prerequisites, you can:
 
 ```bash
 # Clone the Espanso repository
-git clone https://github.com/federico-terzi/espanso
+git clone https://github.com/espanso/espanso
 
 cd espanso
 
@@ -151,7 +151,7 @@ sudo mv target/release/espanso /usr/local/bin/espanso
 > * If you connect a new keyboard, you will need to manually restart Espanso with `espanso restart`, otherwise
 > Espanso won't detect it.
 >
-> If you encounter a bug, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues),
+> If you encounter a bug, please [open an issue on GitHub](https://github.com/espanso/espanso/issues),
 > any help is greatly appreciated! :)
 
 
@@ -208,7 +208,7 @@ Once you've got all the prerequisites, you can:
 
 ```bash
 # Clone the Espanso repository
-git clone https://github.com/federico-terzi/espanso
+git clone https://github.com/espanso/espanso
 
 cd espanso
 

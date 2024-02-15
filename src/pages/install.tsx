@@ -19,7 +19,7 @@ export default function Install() {
       <Navigation />
 
       <div className={styles["install-section"]}>
-        <h1>Installation (Beta)</h1>
+        <h1>Installation</h1>
         <p>Select your operating system:</p>
         <div className={styles.targets}>
           <div className={styles.target}>
@@ -90,52 +90,20 @@ export default function Install() {
             <h3>Linux</h3>
             <Link
               className={styles.button}
-              to="/docs/install/linux/#choosing-the-right-install-method"
+              to="/docs/install/linux#choosing-the-right-install-method"
             >
               X11
             </Link>
             <Link
               className={styles.button}
-              to="/docs/install/linux/#choosing-the-right-install-method"
+              to="/docs/install/linux#choosing-the-right-install-method"
             >
               Wayland
             </Link>
-            <Link to="/docs/install/linux/#find-the-right-version">
+            <Link to="/docs/install/linux#find-the-right-version">
               Which version should you choose?
             </Link>
             <span>Version {getStableVersion()}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles["install-section"]}>
-        <h1>Installation (Legacy)</h1>
-        <p>
-          This is the legacy edition of Espanso. Given that this version is no
-          longer in active development, we recommend users to choose the new
-          version instead, which comes with many new improvements and features.
-        </p>
-        <div className={styles.targets}>
-          <div className={styles.target}>
-            <div className={styles.windows} />
-            <a className={styles.button} href="/docs/install/win">
-              Install on Windows
-            </a>
-            <span>Version v0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.macos} />
-            <a className={styles.button} href="/docs/install/mac">
-              Install on macOS
-            </a>
-            <span>Version v0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.linux} />
-            <a className={styles.button} href="/docs/install/linux">
-              Install on Linux
-            </a>
-            <span>Version v0.7.3</span>
           </div>
         </div>
       </div>

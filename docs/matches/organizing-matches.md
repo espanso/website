@@ -38,7 +38,7 @@ having all matches defined in the `$CONFIG/match/base.yml` file.
 :::caution An important exception (*)
 
 The previous statement has one important exception: **all files starting with an underscore _ are NOT loaded automatically**.
-This rule is necessary to support some advanced use-cases, such as [App-specific configurations](../../configuration/app-specific-configurations).
+This rule is necessary to support some advanced use-cases, such as [App-specific configurations](../configuration/app-specific-configurations.md).
 
 :::
 
@@ -64,12 +64,12 @@ In other words, `imports` can be used to load matches from outside your config d
 
 Another less common use-case would be to use `imports` to group some private match sets (aka match sets that start
 with an underscore, and thus are not loaded automatically).
-This becomes particularly useful for [App-specific configurations](../../configuration/app-specific-configurations), where
+This becomes particularly useful for [App-specific configurations](../configuration/app-specific-configurations.md), where
 we might want to split matches over multiple files, while making it easy to _include_ in some apps. 
 
 :::tip 
 
-This section assumes you already know what [App-specific configurations](../../configuration/app-specific-configurations) are. If you don't, you might want to read that
+This section assumes you already know what [App-specific configurations](../configuration/app-specific-configurations.md) are. If you don't, you might want to read that
 section first.
 
 :::

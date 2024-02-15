@@ -82,7 +82,7 @@ These are the supported keys:
 `ALT`, `CTRL`, `CMD`, `SHIFT`, `ENTER`, `TAB`, `SPACE`, `META`, `OPTION`, `INSERT`, `DOWN`, `LEFT`, `RIGHT`, `UP`, `END`, `HOME`, `PAGEDOWN`, `PAGEUP`, `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12`, `F13`, `F14`, `F15`, `F16`, `F17`, `F18`, `F19`, `F20`, `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `NUMPAD0`, `NUMPAD1`, `NUMPAD2`, `NUMPAD3`, `NUMPAD4`, `NUMPAD5`, `NUMPAD6`, `NUMPAD7`, `NUMPAD8`, `NUMPAD9`
 
 > Not all keyboard combinations have been tested. If you find a combination that's not working, please open
-> a bug report on [GitHub](https://github.com/federico-terzi/espanso/issues). Thanks!
+> a bug report on [GitHub](https://github.com/espanso/espanso/issues). Thanks!
 
 You can also disable this shortcut entirely by adding the following line:
 
@@ -126,7 +126,7 @@ show_notifications: false
 ## Options reference
 
 Here's a list of all the available options. If the value of the `App-specific` column is `Yes`, then the option
-can be used inside an [App-specific configuration](../app-specific-configurations).
+can be used inside an [App-specific configuration](app-specific-configurations.md).
 Otherwise, the option can only be defined inside the `$CONFIG/config/default.yml` file.
 
 Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific 

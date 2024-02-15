@@ -46,7 +46,7 @@ while using Telegram and the default one while using other applications.
 
 Inside the app-specific configuration you can define most of the options you would customize
 in your `config/default.yml` file, with a few exceptions. You'll find a list of
-customizable options in the [Options section](../options).
+customizable options in the [Options section](options.md).
 
 ### Enable or disable some matches while using a specific application
 
@@ -55,7 +55,7 @@ enable some matches while using a particular application**.
 For example, we might want to enable some code snippets while 
 using Visual Studio Code or IntelliJ Idea, but not inside other apps.
 
-This use-case is described in the [Include and Exclude rules](../include-and-exclude)
+This use-case is described in the [Include and Exclude rules](include-and-exclude.md)
 section.
 
 ## Understanding configuration inheritance
@@ -92,7 +92,7 @@ Filter | Description | Windows Support | MacOS Support | Linux Support
 `filter_class` | Filter based on the current window class. This is mostly relevant on Linux | Uses the application executable path instead | Uses the App identifier instead | Full support
 
 
-Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`, and may be usefully combined with [`extra_includes`](../include-and-exclude#difference-between-includes-and-extra_includes) to separate OS-specific [global variables](../../matches/variables/#injecting-global-variables) and local shell expansions etc., when the Espanso configuration files are [shared](../../sync) between different operating systems.
+Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`, and may be usefully combined with [`extra_includes`](/docs/configuration/include-and-exclude#difference-between-includes-and-extra_includes) to separate OS-specific [global variables](/docs/matches/variables#injecting-global-variables) and local shell expansions etc., when the Espanso configuration files are [shared](/docs/sync.md) between different operating systems.
 
 The `filter_title`, `filter_exec` and `filter_class` filters accept a **regex** as parameter, so make sure to escape the special characters properly.
 
