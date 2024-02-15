@@ -78,6 +78,13 @@ this schema:
 The key concept to remember is that **the app-specific configuration will be equivalent
 to the default one, except for the options it changes directly**.
 
+:::tip
+
+Espanso's currently active configuration for a program can be shown in a popup window by typing `#acfg#` from within it. Similarly, `#pacfg#` will paste the details into the program so use with care!
+
+:::
+
+
 ## Filters
 
 As said earlier, one of the key ingredients for app-specific configurations are
