@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "my-website",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -13,11 +13,12 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "argos-screenshot": "playwright test",
-    "argos-upload": "npx @argos-ci/cli upload ./screenshots"
+    "argos-upload": "npx @argos-ci/cli upload ./screenshots",
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.1.1",
-    "@docusaurus/preset-classic": "^3.1.1",
+    "@docusaurus/core": "3.1.1",
+    "@docusaurus/preset-classic": "3.1.1",
     "@emotion/react": "^11.11.3",
     "@heroicons/react": "^2.1.1",
     "@mdx-js/react": "^3.0.0",
@@ -34,10 +35,10 @@
   "devDependencies": {
     "@argos-ci/cli": "^1.0.8",
     "@argos-ci/playwright": "^1.7.1",
-    "@docusaurus/module-type-aliases": "^3.1.1",
-    "@docusaurus/types": "^3.1.1",
-    "@playwright/test": "^1.41.1",
-    "cheerio": "^1.0.0-rc.12"
+    "@docusaurus/module-type-aliases": "3.1.1",
+    "@docusaurus/tsconfig": "3.1.1",
+    "@docusaurus/types": "3.1.1",
+    "typescript": "~5.2.2"
   },
   "browserslist": {
     "production": [

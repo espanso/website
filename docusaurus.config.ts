@@ -1,15 +1,10 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
 const CURRENT_STABLE_VERSION = "v2.2.1";
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'Espanso',
   tagline: "A Privacy-first, Cross-platform Text Expander",
   // Set the production url of your site here
@@ -22,12 +17,12 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'espanso', // Usually your GitHub org/user name.
+  projectName: 'espanso', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  onBrokenAnchors: 'warn',
+  onBrokenAnchors: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -105,16 +100,15 @@ const config = {
       apiKey: "dc17ed7f938bd80016738928e74844c6",
 
       indexName: "espanso",
-      disableUserPersonalization: true,
     },
-  },
+  } satisfies Preset.ThemeConfig,
+
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: './sidebars.ts',
           editUrl: "https://github.com/espanso/website/edit/main/",
           lastVersion: "current",
           versions: {
@@ -126,9 +120,10 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-      }),
-    ],
+      } satisfies Preset.Options)
+    ]
   ],
+
   customFields: {
     LINUX_X11_APP_IMAGE_DOWNLOAD_URL:
       "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-X11.AppImage",
