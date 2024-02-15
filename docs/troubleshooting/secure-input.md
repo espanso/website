@@ -65,6 +65,7 @@ Follow the instructions on the right to try it out.
 
 Espanso includes an experimental "SecureInput auto-fixer" which tries to go
 through some of the workarounds explained in the previous section automatically.
+It probably only works in the Catalina, Big Sur, and Monterey versions of macOS.
 
 To launch it, you can click on the Espanso icon in the status bar on top, and
 then selecting "Launch SecureInput auto-fix".

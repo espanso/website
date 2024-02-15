@@ -71,8 +71,9 @@ With this match, every time you write `:greet1` or `:greet7`, you'll get
 :::caution Escaping regexes
 
 As you can see from the previous example, we had to write `:greet\\d` instead of
-`:greet\d`. That's because we need to escape backslashes for it to be valid
-YAML.
+`:greet\d`. That's because we need to escape backslashes for it to be a valid
+YAML double-quoted scalar. If the quote-marks around the string are omitted
+(plain scalar) this isn't necessary, which can make debugging easier.
 
 :::
 

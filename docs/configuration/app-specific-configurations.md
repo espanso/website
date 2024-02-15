@@ -14,6 +14,12 @@ nutshell, they are made of two important ingredients:
 -   Some rules that define when the configuration should be active
 -   The actual configuration options
 
+:::caution Wayland
+
+App-specific configurations are _not_ yet supported in Wayland.
+
+:::
+
 ### Disabling Espanso when using a certain app
 
 Let's start with a simple example. Let's say we would like to disable Espanso
@@ -84,6 +90,14 @@ These are the currently available filters:
 | `filter_title` | Filter based on the current window title.                                                          | Full support                                 | Full support                    | Full support    |
 | `filter_exec`  | Filter based on the current application's executable path. For example, `C:\Programs\Telegram.exe` | Full support                                 | Full support                    | Partial support |
 | `filter_class` | Filter based on the current window class. This is mostly relevant on Linux                         | Uses the application executable path instead | Uses the App identifier instead | Full support    |
+
+Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`,
+and may be usefully combined with
+[`extra_includes`](../include-and-exclude#difference-between-includes-and-extra_includes)
+to separate OS-specific
+[global variables](../../matches/variables/#injecting-global-variables) and
+local shell expansions etc., when the Espanso configuration files are
+[shared](../../sync) between different operating systems.
 
 The `filter_title`, `filter_exec` and `filter_class` filters accept a **regex**
 as parameter, so make sure to escape the special characters properly.
@@ -186,3 +200,8 @@ page is YouTube:
 filter_title: YouTube
 enable: false
 ```
+
+> Note that in situations where more than one filter applies to the same program
+> (e.g. a browser filter, and a tab filter) they are applied in alphabetical
+> order. Name the filter files accordingly so that, for example, a
+> `filter_title` file precedes a `filter_exec` file.

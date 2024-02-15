@@ -28,20 +28,13 @@ how the date will be rendered.
 import DateFormatSpecifiers from "./_date-format-specifiers.mdx";
 
 <details>
-  <summary>
-    To see a list of all the possible <b>formatting options</b>, click here.
-  </summary>
+  <summary>To see a list of all the possible <b>formatting options</b>, click here.</summary>
 
 {" "}
+
 <DateFormatSpecifiers />
 
-  <p>
-    The list was taken from the{" "}
-    <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">
-      official chrono documentation
-    </a>
-    , please follow the link for more information.
-  </p>
+  <p>The list was taken from the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>, please follow the link for more information.</p>
 </details>
 
 ### Future and past dates
@@ -96,7 +89,7 @@ have an up-to-date release.
 
 :::
 
-Espanso automatically localize dates based on your system's country and
+Espanso automatically localizes dates based on your system's country and
 language, but advanced users might want to force a particular locale.
 
 For this reason, the Date extension supports the `locale` option to override
@@ -219,6 +212,9 @@ Espanso will choose a random one, useful to avoid repetitions.
 You can use this feature by declaring a variable of type `random` and then
 passing a number of `choices` as a parameter:
 
+You can use this feature by declaring a variable of type `random` and then
+passing a number of `choices` as a parameter:
+
 ```yaml
 - trigger: ":quote"
   replace: "{{output}}"
@@ -243,9 +239,9 @@ For example, let's imagine you want to create the ultimate HTML link shortcut:
 
 ```yaml
 - trigger: ":a"
-  replace: "<a href='{{clipboard}}' />$|$</a>"
+  replace: "<a href='{{clipb}}' />$|$</a>"
   vars:
-      - name: "clipboard"
+      - name: "clipb"
         type: "clipboard"
 ```
 
@@ -368,6 +364,17 @@ Variables that you can use:
 -   All the values of the previously evaluated match variables. For more
     information, check out the [Variables](../variables) section.
 
+### UTF-8 characters
+
+By default, some scripts don't return UTF-8 characters, which can interfere with
+shell expansions generating foreign-language letters. A solution for Python
+scripts is to include the following in the script:
+
+```py
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+```
+
 ## Shell Extension
 
 The **Shell Extension** is similar to the [Script Extension](#script-extension),
@@ -391,7 +398,7 @@ match to fetch your public IP from [ipify](https://www.ipify.org/).
             cmd: "curl 'https://api.ipify.org'"
 ```
 
-Now everytime you type `:ip`, it gets expanded to your public IP address!
+Now every time you type `:ip`, it gets expanded to your public IP address!
 
 ### Choosing the Shell
 
@@ -462,6 +469,23 @@ Variables that you can use:
 -   `CONFIG`: Points to the path of the espanso config directory
 -   All the values of the previously evaluated match variables. For more
     information, check out the [Variables](../variables) section.
+
+### UTF-8 characters in PowerShell
+
+As with some scripts, Windows PowerShell doesn't return UTF-8 characters by
+default, interfering with shell expansions generating foreign-language letters.
+The command needs to be specifically configured to work with UTF-8 as in the
+following example:
+
+```yml
+ - trigger: ":pl"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
+```
 
 ### Using Linux commands on Windows
 

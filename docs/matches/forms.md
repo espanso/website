@@ -36,9 +36,6 @@ After entering the desired name, we can submit the form either by clicking
 The key here is to specify the `form` field rather than `replace`, which is a
 shorthand for the verbose syntax explained in the following sections.
 
-You can create as many fields as you want, just use the double-brackets
-`[[field_name]]` syntax.
-
 ## Controls
 
 In the previous example, we've seen how to use simple text fields, but Espanso
@@ -154,6 +151,12 @@ appearance. To use them, you will need to specify `type: list` rather than
 Which produces:
 
 ![Form example](/img/docs/form4.png)
+
+### Form sizes
+
+Input fields are 100 pixels wide, but if their line contains no other text they
+expand to fit the width of the longest line of text plus input-boxes, in the
+form layout.
 
 ## Using Forms with Script and Shell extensions
 

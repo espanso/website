@@ -56,6 +56,21 @@ mklink /J "C:\Users\user\Dropbox\espanso" "C:\Users\user\AppData\Roaming\espanso
 
 :::
 
+:::caution Stop Espanso first
+
+Before running any of the following, stop espanso with:
+
+```yml
+espanso stop
+```
+
+to prevent it trying to recreate the file structure during the process.
+
+Before running `mklink` or `ln` ensure the `espanso` folder at the end of
+$CONFIG no longer exists, because it has been moved, or copied and renamed.
+
+:::
+
 ### Windows
 
 The first step is moving the `$CONFIG` folder inside your Dropbox directory, for
@@ -85,10 +100,6 @@ $HOME/Dropbox/espanso
 
 Now you need to create a **symbolic link**. Open the Terminal and type the
 following command, making sure you specify the correct paths:
-
-> Note: Before running the following command, make sure that there is no folder
-> called `espanso` in the `Application Support` folder, as otherwise it will
-> create another nested folder `espanso/espanso` (which is wrong).
 
 ```
 ln -s "$HOME/Dropbox/espanso" "$CONFIG"
