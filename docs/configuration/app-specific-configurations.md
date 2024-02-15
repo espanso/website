@@ -19,7 +19,6 @@ App-specific configurations are _not_ yet supported in Wayland.
 
 :::
 
-
 ### Disabling Espanso when using a certain app
 
 Let's start with a simple example. 
@@ -78,12 +77,6 @@ this schema:
 
 The key concept to remember is that **the app-specific configuration will be equivalent
 to the default one, except for the options it changes directly**.
-
-::: tip
-
-Espanso's currently active configuration for a program can be shown in a popup window by typing `#acfg#` from within it.
-
-:::
 
 ## Filters
 
