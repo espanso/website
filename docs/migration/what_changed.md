@@ -119,7 +119,7 @@ That was a major source of confusion, as many users accidentally pressed it duri
 For this reason, Espanso now ships with the toggle_key disabled by default.
 
 If you want to keep using it, you can explicitly specify it in your configuration, 
-as [described here](../configuration/options.md/#customizing-the-toggle-key).
+as [described here](../configuration/options.md#customizing-the-toggle-key).
 
 ### New Package system
 

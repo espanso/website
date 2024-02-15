@@ -240,4 +240,4 @@ After committing your changes and pushing them to your repository,
 you are ready to use the packages!
 
 For more information about the usage, visit the 
-[External packages](external-packages.md/#git-repositories-1) section.
+[External packages](external-packages.md#git-repositories-1) section.

@@ -282,7 +282,7 @@ You can open the search bar in two ways:
 * By pressing `ALT+SPACE` (Option+Space on macOS).
 * By clicking on the status icon and then selecting "Open Search bar" (currently not available on Linux).
 
-If you want to customize the shortcut, please check out the [customizing the Search bar](configuration/options.md/#customizing-the-search-bar) section.
+If you want to customize the shortcut, please check out the [customizing the Search bar](configuration/options.md#customizing-the-search-bar) section.
 
 ### Backspace Undo
 
@@ -303,4 +303,4 @@ This can be accomplished in many ways, including the icon menu:
 
 ![Icon Menu](/img/docs/icon-menu.png)
 
-If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](configuration/options.md/#customizing-the-toggle-key).
+If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](configuration/options.md#customizing-the-toggle-key).

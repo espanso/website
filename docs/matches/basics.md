@@ -110,7 +110,7 @@ that will contain the output of the **extension** used below.
 
 In the following lines, we defined the `mytime` variable as type **date**. The type of a variable defines
 the **extension** that will be executed to calculate its value. 
-In this case, we use the [Date Extension](extensions.mdx/#date-extension).
+In this case, we use the [Date Extension](extensions.mdx#date-extension).
 
 ```yml
         params:
