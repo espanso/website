@@ -124,11 +124,12 @@ the current application, as that's what Espanso will use in the matching phase.
 
 1. Open the desired application (in this example, I've opened the macOS's TextEdit app).
 2. Inside the application, type `#detect#`
-   * In alternative, you can also open the Search bar, type `>` and then select `Show active application information (detect)`
-
+    * As an alternative, you can also open the Search bar, type `>` and then select `Show active application information (detect)`
 3. A window should open, displaying the information about the active application:
 
 ![Detecting the active app](/img/docs/detectwindow.png)
+
+`#pdetect#` can be used to paste the information directly into your application.
 
 These are the values of `title`, `exec` and `class` detected for the active application.
 
