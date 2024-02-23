@@ -1,13 +1,13 @@
 .home {
-  color: var(--content-primary);
-  font-family: "Inter", sans-serif;
+    color: var(--content-primary);
+    font-family: "Inter", sans-serif;
 }
 
 .dark-area {
-  background-image: url("/img/dark-background.svg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 100px;
-  margin-top: -80px;
+    background-image: url("/img/dark-background.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    margin-top: -80px;
 }
