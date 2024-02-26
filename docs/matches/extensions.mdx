@@ -347,7 +347,7 @@ When triggering the shell command, Espanso also injects a few useful Environment
 For more information, check out the [Variables](../variables) section.
 
 ### UTF-8 characters
-By default, some scripts don't return UTF-8 characters, which can interfere with shell expansions generating foreign-language letters. A solution for Python scripts is to include the following in the script:
+By default, some scripts and shell expansions don't return UTF-8 characters, which can interfere with those generating foreign-language letters. A solution for Python scripts is to include the following in the script:
 ```py
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
