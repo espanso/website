@@ -30,6 +30,8 @@ espanso path config
 The command's output is the configuration path, make sure to note it somewhere as you'll need it later.
 From now on, **we'll refer to this path as `$CONFIG`**.
 
+> Note: you do not need the final 'espano' folder when entering the path. For example if the path returned by `espanso path config` is `/Users/myname/Library/Application Support/espanso` your `$CONFIG` value should be `/Users/myname/Library/Application Support/`
+
 The specific commands are explained in the following sections, depending on your OS.
 
 :::caution Make sure to replace `$CONFIG`!
