@@ -108,7 +108,7 @@ search_trigger: off
 
 ## Hiding the Icon
 
-You can hide the Espanso status icon on macOS and Windows by adding the following option to 
+You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to 
 your `$CONFIG/config/default.yml` file:
 
 ```yaml title="$CONFIG/config/default.yml"
