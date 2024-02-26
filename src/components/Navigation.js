@@ -44,7 +44,7 @@ const Buttons = ({ mobile }) => {
       <NavbarLink to="https://hub.espanso.org" text="Packages" />
       <NavbarLink to="https://www.reddit.com/r/espanso/" text="Community" />
       <NavbarLink
-        to="https://github.com/federico-terzi/espanso"
+        to="https://github.com/espanso/espanso"
         text="GitHub"
       />
       <ButtonLink
