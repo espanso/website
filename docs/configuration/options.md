@@ -108,7 +108,7 @@ search_trigger: off
 
 ## Hiding the Icon
 
-You can hide the Espanso status icon on macOS and Windows by adding the following option to 
+You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to 
 your `$CONFIG/config/default.yml` file:
 
 ```yaml title="$CONFIG/config/default.yml"
@@ -161,4 +161,5 @@ Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific
 `pre_paste_delay` 	 | 	  Delay (in ms) that espanso should wait to trigger the paste shortcut after copying the content in the clipboard. This is needed because if we trigger a "paste" shortcut before the content is actually copied in the clipboard, the operation will fail. If you see previous contents of the clipboard being inserted instead of the correct replacement, increase this value. 	 | 	 `number` of milliseconds 	 | 	300	 | 	 Yes
 `restore_clipboard_`<br></br>`delay` 	 | 	 The number of milliseconds to wait before restoring the previous clipboard content after an expansion. This is needed as without this delay, sometimes the target application detects the previous clipboard content instead of the expansion content. 	 | 	 `number` of milliseconds 	 | 	300	 | 	 Yes
 `x11_use_xclip_backend` 	 | 	 If true, use the `xclip` command to implement the clipboard instead of the built-in native module on X11. You'll need to install the `xclip` command. Enable if the clipboard "get stuck" for some applications on Linux. 	 | 	 `true`/`false` 	 | 	 `false` 	 | 	 Yes
-`x11_use_xdotool_`<br></br>`backend` 	 | 	 If true, use the `xdotool` command to implement the clipboard. 	 | 	 `true`/`false` 	 | 	`false`	 | 	 Yes
+`x11_use_xdotool_backend` 	 | 	 If true, use the `xdotool` command to implement the clipboard. 	 | 	 `true`/`false` 	 | 	`false`	 | 	 Yes
+
