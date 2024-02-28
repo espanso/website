@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
 import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
-import Head from "@docusaurus/Head";
+import MetaDefinitions from "../components/MetaDefinitions";
 
 export default function Donate() {
   const { siteConfig } = useDocusaurusContext();
@@ -31,12 +31,7 @@ export default function Donate() {
 
   return (
     <div className={styles.home}>
-      <Head>
-        <title>
-          Donate - Espanso - A Privacy-first, Cross-platform Text Expander
-        </title>
-        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-      </Head>
+      <MetaDefinitions name="Donate" path="/donate" />
       <Navigation />
       <DonateSection />
       <Contributing />

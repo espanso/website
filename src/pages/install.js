@@ -3,19 +3,14 @@ import styles from "./install.module.css";
 import Navigation from "../components/Navigation";
 import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
-import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { getStableVersion, getStableDownloadLink } from "../utils/versionUtils";
+import MetaDefinitions from "../components/MetaDefinitions";
 
 export default function Install() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>
-          Installation - Espanso - A Privacy-first, Cross-platform Text Expander
-        </title>
-        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-      </Head>
+      <MetaDefinitions name="Installation" path="/install" />
       <Navigation />
 
       <div className={styles["install-section"]}>

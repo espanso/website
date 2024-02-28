@@ -13,7 +13,7 @@ import HomeFeatures from "../components/HomeFeatures";
 import HomeKnowMore from "../components/HomeKnowMore";
 import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
-import Head from "@docusaurus/Head";
+import MetaDefinitions from "../components/MetaDefinitions";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -40,10 +40,7 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      <Head>
-        <title>Espanso - A Privacy-first, Cross-platform Text Expander</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-      </Head>
+      <MetaDefinitions path="/" />
       <Navigation />
       <HomeJumbo />
       <div className={styles["dark-area"]}>
