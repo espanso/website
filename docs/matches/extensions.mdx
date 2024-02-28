@@ -338,6 +338,13 @@ any lag.
 
 :::
 
+Other notes:
+
+* Keep in mind that you can't pass arguments this way, so if your script relies on an `$ESPANSO_foo` environment variable
+    you need to read it from within your script instead of as an argument (e.g. in Python do `import os; os.environ['ESPANSO_NUM1']`
+    not `sys.argv[1:][0]`)
+* Even though it's possible to invoke your script from the Shell extension, prefer the script extension because it is faster.
+
 ### Useful Environment Variables
 
 When triggering the shell command, Espanso also injects a few useful Environment Variables that you can use:
