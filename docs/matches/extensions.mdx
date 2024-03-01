@@ -24,15 +24,8 @@ For example, the following match will be expanded into `It's 09:30` if triggered
 The most important aspect to consider is the `format` parameter,
 which specifies how the date will be rendered.
 
-import DateFormatSpecifiers from "./_date-format-specifiers.mdx";
+To see a list of all the possible <b>formatting options</b>, follow this link to refer to the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>.
 
-<details>
-  <summary>To see a list of all the possible <b>formatting options</b>, click here.</summary>
-
-  <DateFormatSpecifiers />
-
-  <p>The list was taken from the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>, please follow the link for more information.</p>
-</details>
 
 ### Future and past dates
 
@@ -324,6 +317,8 @@ That way, you can use the `%CONFIG%` wildcard to automatically replace the confi
           args:
             - python
             - "%CONFIG%/scripts/script.py"
+            - parameter_1
+            - parameter_2
 ```
 
 
@@ -331,11 +326,21 @@ This makes it easier to create matches that work across many machines.
 
 :::
 
+Additionally, scripts can be directly included in the expansion by changing the `args:`, e.g.:
+```yaml
+          args:
+            - python
+            - -c
+            - |
+              fruits = ["apple", "banana", "cherry"]
+              for x in fruits:
+                print(x)
+```
+but be aware that Windows has an 8191 character limit on these.
+
 :::caution a note about performance
 
-Because of the execution time, you should limit yourself to fast-running scripts to avoid
-any lag.
-
+Because of the execution time, you should limit yourself to fast-running scripts to avoid any lag.
 :::
 
 ### Useful Environment Variables
