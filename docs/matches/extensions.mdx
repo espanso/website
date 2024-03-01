@@ -326,7 +326,7 @@ This makes it easier to create matches that work across many machines.
 
 :::
 
-Additionally, scripts can be directly included in the expansion by changing the `args:`, e.g.:
+Additionally, scripts can be included inline within the expansion by changing the `args:`, e.g.:
 ```yaml
           args:
             - python
@@ -387,6 +387,8 @@ IP from [ipify](https://www.ipify.org/).
 
 Now every time you type `:ip`, it gets expanded to your public
 IP address!
+
+Like the Script extension, the Shell extension can call external shell scripts and run inline multiline code.
 
 ### Choosing the Shell
 
