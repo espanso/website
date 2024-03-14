@@ -35,6 +35,7 @@ espanso stop
 espanso unregister
 sudo rm $(which espanso)
 ```
+It may save trouble if you ensure Espanso is removed from the accessibility permissions list _before_ installing the new version.
 
 ### Uninstalling on Linux
 

@@ -85,3 +85,7 @@ You can also use a label so it's even more organized on the search bar. I usuall
 Observations: 
 - You can also just use the "search bar + label" instead of "regex + match disambiguation" to categorize. But I find easier to use regex so I can incrementally learn my triggers (also I don't need to press Alt + Space to open the search bar).
 - I don't use spaces in regex so I avoid accidental triggers, and I also prefer abbreviations. So instead of "code py all" I use "cdpyaa".
+
+
+### A list of all match options 
+may be found in the [Espanso repo](https://github.com/espanso/espanso/blob/master/espanso-config/src/matches/group/loader/yaml/parse.rs#L59-L137).
