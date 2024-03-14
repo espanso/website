@@ -24,15 +24,8 @@ For example, the following match will be expanded into `It's 09:30` if triggered
 The most important aspect to consider is the `format` parameter,
 which specifies how the date will be rendered.
 
-import DateFormatSpecifiers from "./_date-format-specifiers.mdx";
+To see a list of all the possible <b>formatting options</b>, follow this link to refer to the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>.
 
-<details>
-  <summary>To see a list of all the possible <b>formatting options</b>, click here.</summary>
-
-  <DateFormatSpecifiers />
-
-  <p>The list was taken from the <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">official chrono documentation</a>, please follow the link for more information.</p>
-</details>
 
 ### Future and past dates
 
@@ -275,7 +268,7 @@ matches:
 ## Script Extension
 
 There will be tasks for which espanso was not designed for. For those cases, espanso offers the
-**Script Extension**, that enables you to call an **external script**, written in **any language**,
+**Script Extension**, that enables you to call a **script**, written in **any language**,
  and use its output in a match.
 
 To better understand this feature, let's dive into an example:
@@ -324,6 +317,8 @@ That way, you can use the `%CONFIG%` wildcard to automatically replace the confi
           args:
             - python
             - "%CONFIG%/scripts/script.py"
+            - parameter_1
+            - parameter_2
 ```
 
 
@@ -331,11 +326,21 @@ This makes it easier to create matches that work across many machines.
 
 :::
 
+Additionally, scripts can be included inline within the expansion by changing the `args:`, e.g.:
+```py
+          args:
+            - python
+            - -c
+            - |
+              fruits = ["apple", "banana", "cherry"]
+              for x in fruits:
+                print(x)
+```
+but be aware that Windows has an 8191 character limit on these.
+
 :::caution a note about performance
 
-Because of the execution time, you should limit yourself to fast-running scripts to avoid
-any lag.
-
+Because of the execution time, you should limit yourself to fast-running scripts to avoid any lag.
 :::
 
 ### Useful Environment Variables
@@ -347,12 +352,15 @@ When triggering the shell command, Espanso also injects a few useful Environment
 For more information, check out the [Variables](../variables) section.
 
 ### UTF-8 characters
-By default, some scripts don't return UTF-8 characters, which can interfere with shell expansions generating foreign-language letters. A solution for Python scripts is to include the following in the script:
+By default, some scripts and shell expansions don't return UTF-8 characters, which can interfere with those generating foreign-language letters. A solution for Python scripts is to include the following in the script:
 ```py
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 ```
-
+For PowerShell:
+```powershell
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+```
 
 ## Shell Extension
 
@@ -379,6 +387,8 @@ IP from [ipify](https://www.ipify.org/).
 
 Now every time you type `:ip`, it gets expanded to your public
 IP address!
+
+Like the Script extension, the Shell extension can call external shell scripts and run inline multiline code.
 
 ### Choosing the Shell
 
@@ -449,19 +459,6 @@ When triggering the shell command, espanso also injects a few useful Environment
 * `CONFIG`: Points to the path of the espanso config directory
 * All the values of the previously evaluated match variables.
 For more information, check out the [Variables](../variables) section.
-
-### UTF-8 characters in PowerShell
-
-As with some scripts, Windows PowerShell doesn't return UTF-8 characters by default, interfering with shell expansions generating foreign-language letters. The command needs to be specifically configured to work with UTF-8 as in the following example:
-```yml
- - trigger: ":pl"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; echo 'ąśα'"
-```
 
 ### Using Linux commands on Windows
 
