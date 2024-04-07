@@ -17,7 +17,7 @@ For example, we can define a match that will expand every occurrence of `hello` 
     replace: world
 ```
 
-These kind of expansions are simple text replacements and can be considered *static*. Quote-marks are not obligatory for `trigger` or `replace` in simple cases.
+These kind of expansions are simple text replacements and can be considered *static*. Quote-marks are not necessary for `trigger` or `replace` in simple cases, but some people prefer to use them for consistency.
 
 ### Multi-line expansions
 
@@ -27,7 +27,7 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: hello
     replace: "line1\nline2"
 ```
-> Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a YAML special character (``' "  [] {} > | * & ! % # ` @ ``), _do_ require quote-marks.
+> Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a YAML special character (``' "  [] {} > | * & ! % # ` @ ``), *must* be quoted.
 
 or values can span multiple lines using `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
