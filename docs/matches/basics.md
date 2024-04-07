@@ -27,7 +27,7 @@ To replace the original text with a multi-line expansion, we can either use the 
   - trigger: hello
     replace: "line1\nline2"
 ```
-> Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a special (reserved) character (``' "  [] {} > | * & ! % # ` @ ``), _do_ require quote-marks.
+> Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a YAML special character (``' "  [] {} > | * & ! % # ` @ ``), _do_ require quote-marks.
 
 or values can span multiple lines using `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
