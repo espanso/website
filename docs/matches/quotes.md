@@ -5,7 +5,7 @@ title: Quotes
 
 ## To quote or not to quote
 
-When Espanso was released, the default method of expressing `trigger:` and `replace:` strings was to enclose them in double-quotes. Most people adopted this convention, and many prefer it for consistency. However, it isn't always necessary because the YAML used in Espanso treats most values as strings anyway.
+When Espanso was released, the default method of expressing `trigger:` and `replace:` strings was to enclose them in double-quotes. Most people adopted this convention, and many prefer it for consistency. However, it isn't always necessary because the YAML used in Espanso treats most values as strings anyway. You will have seen different methods used in the examples in this documentation.
 
 Whichever convention you adopt (and it's fine to mix them within Espanso files) you will need to be aware of the limitations. It's well worth having familiarity with https://yaml-multiline.info/ which outlines the differences succinctly.
 

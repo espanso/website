@@ -17,7 +17,7 @@ For example, we can define a match that will expand every occurrence of `hello` 
     replace: world
 ```
 
-These kind of expansions are simple text replacements and can be considered *static*. Quote-marks are not necessary for `trigger` or `replace` in simple cases, but some people prefer to use them for consistency.
+These kind of expansions are simple text replacements and can be considered *static*. [Quote-marks](../quotes) are not necessary for `trigger` or `replace` in simple cases, but some people prefer to use them for consistency.
 
 ### Multi-line expansions
 
