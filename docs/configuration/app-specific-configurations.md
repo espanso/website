@@ -188,4 +188,4 @@ For example, here's a configuration that would disable Espanso when the active p
 filter_title: YouTube
 enable: false
 ```
-> Note that in situations where more than one filter applies to the same program (e.g. a browser filter, and a tab filter) they are applied in alphabetical order. Name the filter files accordingly so that, for example, a `filter_title` file precedes a `filter_exec` file.
+> Note that, in addition to `default.yml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphabetically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.
