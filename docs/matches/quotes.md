@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
 title: Quotes
 ---
 
@@ -28,7 +28,7 @@ Again, most things will work, but you will need to remember the situations when 
   - trigger: ':test'
     replace: 'something'
 ```
-You will still need to use double-quotes around strings containing escape sequences. You won't quote multiline code, and will double-up single quotes required inside strings.
+You will still need to use double-quotes around strings containing escape sequences. You won't quote multiline code, and will have to double-up single quotes required *inside* strings.
 
 ### Conclusion
 As you can see, there is plenty of choice. To avoid difficulties with failing expansions and error messages, it is probably easiest to adopt *one* of the above, but, again, it is fine to mix them, so you *can* change your mind later.
