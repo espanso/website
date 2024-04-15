@@ -5,7 +5,7 @@ title: Quotes
 
 ## To quote or not to quote
 
-When Espanso was released, the default method of expressing `trigger:` and `replace:` strings was to enclose them in double-quotes. Most people adopted this convention, and many prefer it for consistency. However, it isn't always necessary because the YAML used in Espanso treats most values as strings anyway. You will have seen different methods used in the examples in this documentation.
+When Espanso was released, the default method of expressing `trigger:` and `replace:` etc. values, was to enclose them in double-quotes. Most people adopted this convention, and many prefer it for consistency. However, it isn't always necessary because the YAML used in Espanso treats most values as strings anyway. You will have seen different methods used in the examples in this documentation.
 
 Whichever convention you adopt (and it's fine to mix them within Espanso files) you will need to be aware of the limitations. It's well worth having familiarity with https://yaml-multiline.info/ which outlines the differences succinctly.
 
@@ -28,7 +28,7 @@ Again, most things will work, but you will need to remember the two situations w
   - trigger: ':test'
     replace: 'something'
 ```
-You will still need to use double-quotes around strings containing escape sequences. You won't quote multiline code, and will have to double-up (`''`) single quotes required *inside* strings.
+This is possibly the most flexible, as it allows reserved characters and doesn't interfere with regex values. You will have to double-up (`''`) single quotes appearing inside values, and still need to use double-quotes around strings containing escape sequences, however.
 
 ### Conclusion
 As you can see, there is plenty of choice. To avoid difficulties with failing expansions and error messages, it is probably easiest to adopt *one* of the above, but, again, it is fine to mix them, so you *can* change your mind later.
