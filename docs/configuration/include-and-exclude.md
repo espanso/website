@@ -166,7 +166,7 @@ The same considerations apply to the `excludes` and `extra_excludes` rules as we
 As an alternative to the above, one of the following:
 
 ```yml
-use_standard_includes: true | false
+use_standard_includes: true|false
 ```
  will either *load* or *exclude* the standard matches, regardless of whether you have used `includes:` or `extra_includes:`.
 
