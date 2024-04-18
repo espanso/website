@@ -63,7 +63,7 @@ extra_includes:
   - "../match/_email.yml"
 ```
 or
-```yml
+```yaml title="$CONFIG/config/chrome.yml"
 filter_exec: chrome
 
 extra_includes: [../match/_email.yml]
