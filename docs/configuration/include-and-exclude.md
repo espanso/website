@@ -62,6 +62,12 @@ filter_exec: "chrome"
 extra_includes:
   - "../match/_email.yml"
 ```
+or
+```yaml title="$CONFIG/config/chrome.yml"
+filter_exec: chrome
+
+extra_includes: [../match/_email.yml]
+```
 
 Let's discuss it step-by-step:
 1. Firstly, we specify the `filter_exec` option to enable this configuration **only** when using
@@ -154,3 +160,14 @@ includes:
 ```
 
 The same considerations apply to the `excludes` and `extra_excludes` rules as well.
+
+:::tip
+
+As an alternative to the above, one of the following:
+
+```yml
+use_standard_includes: true|false
+```
+ will either *load* or *exclude* the standard matches, regardless of whether you have used `includes:` or `extra_includes:`.
+
+:::
