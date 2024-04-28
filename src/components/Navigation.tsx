@@ -11,7 +11,7 @@ export default function Navigation() {
       <div className={styles["navigation-container"]}>
         <Link className={styles.logo} to="/" />
 
-        <Buttons />
+        <Buttons mobile={false}/>
       </div>
       <div className={styles["navigation-container-mobile"]}>
         <div className={styles["mobile-top-bar"]}>
@@ -31,12 +31,10 @@ export default function Navigation() {
   );
 }
 
-const Buttons = ({ mobile }) => {
+function Buttons({ mobile }) {
   return (
     <div
-      className={
-        mobile ? styles["button-section-mobile"] : styles["button-section"]
-      }
+      className={mobile ? styles["button-section-mobile"] : styles["button-section"]}
     >
       <NavbarLink to="/install" text="Installation" />
       <NavbarLink to="/docs/get-started" text="Documentation" />
@@ -44,30 +42,28 @@ const Buttons = ({ mobile }) => {
       <NavbarLink to="https://www.reddit.com/r/espanso/" text="Community" />
       <NavbarLink
         to="https://github.com/espanso/espanso"
-        text="GitHub"
-      />
+        text="GitHub" />
       <ButtonLink
         to="/donate"
         text="Donate"
-        icon={<HeartIcon className={styles["button-icon"]} />}
-      />
+        icon={<HeartIcon className={styles["button-icon"]} />} />
     </div>
   );
-};
+}
 
-const NavbarLink = ({ to, text }) => {
+function NavbarLink({ to, text }) {
   return (
     <Link className={styles.link} to={to}>
       {text}
     </Link>
   );
-};
+}
 
-const ButtonLink = ({ to, text, icon }) => {
+function ButtonLink({ to, text, icon }) {
   return (
     <Link className={`${styles["button-link"]} ${styles.link}`} to={to}>
       {icon}
       {text}
     </Link>
   );
-};
+}

@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
@@ -16,7 +13,7 @@ import Contributing from "../components/Contributing";
 import Head from "@docusaurus/Head";
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+  useDocusaurusContext();
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
@@ -47,7 +44,7 @@ export default function Home() {
       <Navigation />
       <HomeJumbo />
       <div className={styles["dark-area"]}>
-        <Fade bottom>
+        <Fade>
           <HomeHowItWorks />
         </Fade>
         <HomeTestimonials />

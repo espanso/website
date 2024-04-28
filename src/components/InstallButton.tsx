@@ -50,12 +50,12 @@ function InstallButton() {
   );
 }
 
-const Wrapper = () => {
+function Wrapper() {
   return (
     <BrowserOnly fallback={<div>Loading...</div>}>
       {() => InstallButton()}
     </BrowserOnly>
   );
-};
+}
 
 export default Wrapper;
