@@ -8,7 +8,7 @@ export default function HomeTestimonials() {
         <div className={styles.container}>
             <Fade bottom>
                 <h3>
-                    <ThumbUpIcon className={styles.icon} />
+                    <HandThumbUpIcon className={styles.icon} />
                     What people say about Espanso
                 </h3>
             </Fade>

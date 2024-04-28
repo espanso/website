@@ -48,14 +48,14 @@ export default function Home() {
                 />
             </Head>
             <Navigation />
-            <HomeJumbo />
-            <div className={styles["dark-area"]}>
+            {/* <HomeJumbo /> */}
+            {/* <div className={styles["dark-area"]}>
                 <Fade bottom>
                     <HomeHowItWorks />
                 </Fade>
                 <HomeTestimonials />
-            </div>
-            <HomeFeatures />
+            </div> */}
+            {/* <HomeFeatures /> */}
             <HomeKnowMore />
             <DonateSection />
             <Contributing />
@@ -67,6 +67,6 @@ function getStoredTheme() {
     var theme = null;
     try {
         theme = localStorage.getItem("theme");
-    } catch (err) {}
+    } catch (err) { }
     return theme;
 }
