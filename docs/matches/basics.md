@@ -21,9 +21,7 @@ with `world` while we are typing. Using the
   replace: "world"
 ```
 
-These kind of expansions are simple text replacements and can be considered
-_static_. Quote-marks are not obligatory for `trigger` or `replace` in simple
-cases.
+These kind of expansions are simple text replacements and can be considered *static*. [Quote-marks](../quotes) are not necessary for `trigger` or `replace` in simple cases, but some people prefer to use them for consistency.
 
 ### Multi-line expansions
 
@@ -34,9 +32,9 @@ To replace the original text with a multi-line expansion, we can either use the
 - trigger: "hello"
   replace: "line1\nline2"
 ```
+> Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a YAML special character (``' "  [] {} > | * & ! % # ` @ ``), *must* be quoted.
 
-> Note that `replace` using `\n` as the line terminator character, or `\t` for
-> tab-spacing, or {{variables}} (see below), _does_ require quote-marks.
+or values can span multiple lines using `|` or `>`. Spanning multiple lines using a *Literal Block Scalar* `|` will include the newlines and any trailing spaces. Using a *Folded Block Scalar* `>` will fold newlines to spaces; it’s used to make what would otherwise be a very long line easier to read and edit. In either case the indentation will be ignored. Examples are:
 
 or values can span multiple lines using `|` or `>`. Spanning multiple lines
 using a _Literal Block Scalar_ `|` will include the newlines and any trailing
@@ -51,24 +49,22 @@ used to make what would otherwise be a very long line easier to read and edit.
 In either case the indentation will be ignored. Examples are:
 
 ```yml
-- trigger: "include newlines"
-  replace: |
-      exactly as you see
-      will appear these three
-      lines of poetry
+  - trigger: include newlines
+    replace: |
+              exactly as you see
+              will appear these three
+              lines of poetry
 ```
 
 ```yml
-- trigger: "fold newlines"
-  replace: >
-      this is really a single line of text despite appearances
+  - trigger: fold newlines
+    replace: >
+              this is really a
+              single line of text
+              despite appearances
 ```
 
-> As you can see, no quotes are needed in this case.
-
-There are a number of characters that are special (or reserved) and cannot be
-used as the first character of an unquoted scalar:
-``' "  [] {} > | * & ! % # ` @ ``
+> As you can see, no quotes are needed in these cases.
 
 :::tip
 
@@ -98,9 +94,9 @@ Let's add the following match to your configuration, such as the
 `match/base.yml` file
 
 ```yaml title=$CONFIG/match/base.yml
-- trigger: ":now"
-  replace: "It's {{mytime}}"
-  vars:
+  - trigger: :now
+    replace: It's {{mytime}}
+    vars:
       - name: mytime
         type: date
         params:
@@ -115,14 +111,14 @@ At this point, every time we type `:now`, we should see something like
 Let's analyze the match step by step:
 
 ```yml
-- trigger: ":now"
+  - trigger: :now
 ```
 
 In the first line we declare the trigger `:now`, that must be typed by the user
 to expand the match.
 
 ```yml
-replace: "It's {{mytime}}"
+    replace: It's {{mytime}}
 ```
 
 In the second line, we declare the _replace text_ as usual, but this time we
@@ -177,21 +173,17 @@ For example, if you add the following into your `match/base.yml` file:
 
 ```yaml
 global_vars:
-    - name: "global1"
-      type: "shell"
-      params:
-          cmd: "echo global var"
-    - name: "greet"
-      type: "echo"
-      params:
-          echo: "Hey"
+  - name: greet
+    type: echo
+    params:
+      echo: Hey
 ```
 
-You can then use `global1` and `greet` in the following matches:
+You can then use `greet` in the following match:
 
 ```yaml
-- trigger: ":hello"
-  replace: "{{greet}} Jon"
+  - trigger: :hello
+    replace: "{{greet}} Jon"
 ```
 
 Typing `:hello` will result in `Hey Jon` to be expanded.
@@ -205,8 +197,8 @@ Let's say you occasionally type `ther` instead of `there`. Before the
 introduction of _word triggers_, you could have used espanso like this:
 
 ```yaml
-- trigger: "ther"
-  replace: "there"
+  - trigger: ther
+    replace: there
 ```
 
 This would correctly replace `ther` with `there`, but it would also expand
@@ -217,9 +209,9 @@ telling espanso to only trigger that match if surrounded by _word separators_ (
 such as _spaces_, _commas_ and _newlines_). So in this case it becomes:
 
 ```yaml
-- trigger: "ther"
-  replace: "there"
-  word: true
+  - trigger: ther
+    replace: there
+    word: true
 ```
 
 At this point, espanso will only expand `ther` into `there` when used as a
@@ -264,19 +256,19 @@ For example, imagine you want to speedup writing the word `although`. You can
 define a word match as:
 
 ```yml
-- trigger: "alh"
-  replace: "although"
-  word: true
+  - trigger: alh
+    replace: although
+    word: true
 ```
 
 As of now, this trigger will only be able to be expanded to the **lowercase**
 `although`. If we now add `propagate_case: true` to the match:
 
 ```yml
-- trigger: "alh"
-  replace: "although"
-  propagate_case: true
-  word: true
+  - trigger: alh
+    replace: although
+    propagate_case: true
+    word: true
 ```
 
 we are now able to propagate the case style to the match:
@@ -291,9 +283,9 @@ When using multi-word replacements, the default behavior is to only capitalize
 the first word. For example, the following match:
 
 ```yaml
-- trigger: ";ols"
-  replace: "ordinary least squares"
-  propagate_case: true
+  - trigger: ;ols
+    replace: ordinary least squares
+    propagate_case: true
 ```
 
 gets expanded to `Ordinary least squares` when typing `;Ols`.
@@ -302,10 +294,10 @@ If you want to **capitalize each word**, you can use the
 `uppercase_style: capitalize_words` option:
 
 ```yaml
-- trigger: ";ols"
-  replace: "ordinary least squares"
-  uppercase_style: "capitalize_words"
-  propagate_case: true
+  - trigger: ;ols
+    replace: ordinary least squares
+    uppercase_style: capitalize_words
+    propagate_case: true
 ```
 
 In this case, typing `;Ols` gets expanded to `Ordinary Least Squares`.
@@ -317,8 +309,8 @@ In this case, typing `;Ols` gets expanded to `Ordinary Least Squares`.
 Let's say you want to use espanso to expand some HTML code snippets, such as:
 
 ```yaml
-- trigger: ":div"
-  replace: "<div></div>"
+  - trigger: :div
+    replace: <div></div>
 ```
 
 With this match, any time you type `:div` you get the `<div></div>` expansion,
@@ -334,8 +326,8 @@ Using them is very simple, just insert `$|$` where you want the cursor to be
 positioned, in this case:
 
 ```yaml
-- trigger: ":div"
-  replace: "<div>$|$</div>"
+  - trigger: :div
+    replace: <div>$|$</div>
 ```
 
 If you now type `:div`, you get the `<div></div>` expansion, with the cursor
@@ -363,8 +355,8 @@ By defining the following match, Espanso will inject "Every moment is a fresh
 beginning." as soon as you type `:quote`
 
 ```yaml
-- trigger: ":quote"
-  replace: "Every moment is a fresh beginning."
+  - trigger: :quote
+    replace: Every moment is a fresh beginning.
 ```
 
 This mechanism works as long as you provide a unique trigger to each match, but
@@ -375,12 +367,12 @@ For example, let's expand the previous example by adding two more matches with
 `:quote` as trigger:
 
 ```yaml
-- trigger: ":quote"
-  replace: "Every moment is a fresh beginning."
-- trigger: ":quote"
-  replace: "Everything you can imagine is real."
-- trigger: ":quote"
-  replace: "Whatever you do, do it well."
+  - trigger: :quote
+    replace: Every moment is a fresh beginning.
+  - trigger: :quote
+    replace: Everything you can imagine is real.
+  - trigger: :quote
+    replace: Whatever you do, do it well.
 ```
 
 As you can see, all three matches share the same trigger. If you now type
@@ -394,12 +386,12 @@ same trigger. For example, you might define multiple snippets for your
 signatures and then use match disambiguation to choose between them:
 
 ```yaml
-- trigger: ":sig"
-  replace: |
+  - trigger: :sig
+    replace: |
       Best Regards,
       John
-- trigger: ":sig"
-  replace: |
+  - trigger: :sig
+    replace: |
       All the best,
       John
 ```
@@ -413,18 +405,18 @@ description might become less intuitive as you start including variables.
 For example, given these two matches:
 
 ```yaml
-- trigger: ":tomorrow"
-  replace: "{{mytime}}"
-  vars:
+  - trigger: :tomorrow
+    replace: "{{mytime}}"
+    vars:
       - name: mytime
         type: date
         params:
             format: "%v"
             offset: 86400
 
-- trigger: ":yesterday"
-  replace: "{{mytime}}"
-  vars:
+  - trigger: :yesterday
+    replace: "{{mytime}}"
+    vars:
       - name: mytime
         type: date
         params:
@@ -442,20 +434,20 @@ default description, making the search UI more intuitive. For example, adding
 the labels to our previous example:
 
 ```yaml
-- trigger: ":tomorrow"
-  replace: "{{mytime}}"
-  label: "Insert tomorrow's date, such as 5-Jan-2022"
-  vars:
+  - trigger: :tomorrow
+    replace: "{{mytime}}"
+    label: Insert tomorrow's date, such as 5-Jan-2022
+    vars:
       - name: mytime
         type: date
         params:
             format: "%v"
             offset: 86400
 
-- trigger: ":yesterday"
-  replace: "{{mytime}}"
-  label: "Insert yesterday's date, such as 5-Jan-2022"
-  vars:
+  - trigger: :yesterday
+    replace: "{{mytime}}"
+    label: Insert yesterday's date, such as 5-Jan-2022
+    vars:
       - name: mytime
         type: date
         params:
@@ -487,8 +479,8 @@ multiple triggers to expand the same match. To use the feature, simply specify a
 list of triggers in the `triggers` field (instead of `trigger`):
 
 ```yml
-- triggers: ["hello", "hi"]
-  replace: "world"
+  - triggers: [hello, hi]
+    replace: world
 ```
 
 Now typing either `hello` or `hi` will be expanded to `world`.
@@ -498,14 +490,16 @@ Now typing either `hello` or `hi` will be expanded to `world`.
 Rich text can now be specified as markdown and HTML replacements:
 
 ```yml
-- trigger: ":rich"
-  markdown: "This *text* is **very rich**!"
+  - trigger: :rich
+    markdown: This *text* is **very rich**!
 
-- trigger: ":ric2"
-  html:
-      '<p>But <span style="color: #ce181e;"><span style="font-size:
-      x-large;">this</span></span> one is <span style="color: #81d41a;"><span
-      style="font-family: Arial, sans-serif;">even richer</span></span>!</p>'
+  - trigger: :ric2
+    html: |
+      <p>
+      But <span style="color: #ce181e;"><span style="font-size: x-large;">
+      this</span></span> one is <span style="color: #81d41a;"><span
+      style="font-family: Arial, sans-serif;">even richer</span></span>!
+      </p>
 ```
 
 The `paragraph: true` option may be added to markdown replacements to avoid
@@ -522,8 +516,8 @@ The syntax is pretty similar to the standard one, except you have to specify
 `image_path` instead of `replace`. This will be the path to your image.
 
 ```yaml
-- trigger: ":cat"
-  image_path: "/path/to/image.png"
+  - trigger: :cat
+    image_path: "/path/to/image.png"
 ```
 
 :::caution Format remarks
@@ -551,8 +545,8 @@ which contains the `match` and `config` directories), and store all your images
 there. Let's say I stored the `cat.png` image. We can now create a Match with:
 
 ```yaml
-- trigger: ":cat"
-  image_path: "$CONFIG/images/cat.png"
+  - trigger: :cat
+    image_path: "$CONFIG/images/cat.png"
 ```
 
 ## Nested Matches
@@ -561,16 +555,16 @@ _Nested matches_ makes it possible to include the output of a match inside
 another one.
 
 ```yaml
-- trigger: ":one"
-  replace: "nested"
+  - trigger: :one
+    replace: nested
 
-- trigger: ":nested"
-  replace: "This is a {{output}} match"
-  vars:
+  - trigger: :nested
+    replace: This is a {{output}} match
+    vars:
       - name: output
         type: match
         params:
-            trigger: ":one"
+          trigger: :one
 ```
 
 At this point, if you type `:nested` you'll see `This is a nested match` appear.

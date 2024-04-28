@@ -48,6 +48,14 @@ If we type `:now`, Espanso will expand it to something like `It's 11:23`.
 In this example, we defined the variable `mytime` and then inserted its value
 inside the replacement text. This action is known as _variable injection_.
 
+
+:::caution Variable names
+
+Variable names can only include letters, numbers, and the underscore character. Special characters will prevent them from working.
+
+:::
+
+
 ### Injecting variables inside variables
 
 In the previous section, we showed how to use variable injection inside the

@@ -3,9 +3,8 @@ title: Install on macOS
 layout: docs
 ---
 
-Espanso currently support macOS 10.13 or greater on both Intel and Apple Silicon
-(M1) architectures. You can install Espanso both as a traditional app bundle or
-by using [Homebrew](https://brew.sh/).
+Espanso currently support macOS 10.13 or greater on both Intel and Apple Silicon architectures.
+You can install Espanso both as a traditional app bundle or by using [Homebrew](https://brew.sh/).
 
 ## Install as App Bundle
 
@@ -15,20 +14,8 @@ Make sure to choose the right version based on your processor.
 import { getStableDownloadLink } from "/src/utils/versionUtils.js";
 
 <div className="">
-    <a
-        className="btn btn-lg mybtn mb-4"
-        href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")}
-        role="button"
-    >
-        Download Espanso (Intel)
-    </a>
-    <a
-        className="btn btn-lg mybtn mb-4"
-        href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")}
-        role="button"
-    >
-        Download Espanso (Apple Silicon M1)
-    </a>
+<a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")} role="button">Download Espanso (Intel)</a>
+<a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")} role="button">Download Espanso (Apple Silicon)</a>
 </div>
 
 After you've downloaded the archive, uncompress it and move it into your
@@ -39,9 +26,7 @@ After you've downloaded the archive, uncompress it and move it into your
 Espanso can also be installed through [Homebrew](https://brew.sh/), a popular
 macOS package manager.
 
-Because Espanso is hosted outside the core homebrew repository, and to be sure
-of downloading the latest version, you may wish to first add the appropriate
-_tap_ by running the following command inside a terminal:
+However, because Espanso is hosted outside the core Homebrew repository, and to be sure of downloading the latest version, you may prefer to first add the project _tap_ by running the following command inside a terminal:
 
 ```
 brew tap espanso/espanso
