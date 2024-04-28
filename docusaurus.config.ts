@@ -1,11 +1,10 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const CURRENT_STABLE_VERSION = "v2.2.1";
 
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-module.exports = {
+const config: Config = {
     title: "Espanso",
     tagline: "A Privacy-first, Cross-platform Text Expander",
     url: "https://espanso.org",
@@ -76,8 +75,8 @@ module.exports = {
             ],
         },
         prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
         },
         colorMode: {
             respectPrefersColorScheme: true,

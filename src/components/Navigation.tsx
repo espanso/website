@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Navigation.module.css";
 import Link from "@docusaurus/Link";
-import { Bars4Icon, HeartIcon } from "@heroicons/react/24/solid"
+import { Bars4Icon, HeartIcon } from "@heroicons/react/24/solid";
 
 export default function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
