@@ -129,12 +129,12 @@ import Contributing from "../../components/Contributing";
 // }
 
 function Footer() {
-  return (
-    <>
-      <DonateSection />
-      <Contributing />
-    </>
-  );
+    return (
+        <>
+            <DonateSection />
+            <Contributing />
+        </>
+    );
 }
 
 export default Footer;
