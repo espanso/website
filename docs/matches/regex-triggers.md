@@ -176,7 +176,7 @@ you can use them inside the `shell` extension by reading the appropriate
 environment variables. In this case we are passing them to the `expr` command.
 
 If you want to know more about the variable injection logic, please read the
-[Variables](../variables) section.
+[Variables](variables.md) section.
 
 :::caution windows users
 

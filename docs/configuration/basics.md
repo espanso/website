@@ -83,7 +83,7 @@ profile from which the others derive.
 This mechanism becomes useful when you need to customize how Espanso behaves in
 a particular application. For example, you might want to disable Espanso when
 using Word, or slow it down when inside Chrome. For more information, please
-check out the [App-specific configurations](../app-specific-configurations)
+check out the [App-specific configurations](app-specific-configurations.md)
 section.
 
 **If you only need Espanso for basic use-cases, the `default.yml` file is where
@@ -98,7 +98,7 @@ snippet definitions (aka. _matches_), as well as global variables.
 should put all your snippets**.
 
 If you are interested, the `match` folder is explained in-depth in the
-[Organizing matches](../../matches/organizing-matches) section.
+[Organizing matches](../matches/organizing-matches) section.
 
 ## Editing CLI shortcut
 

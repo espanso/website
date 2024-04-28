@@ -22,7 +22,7 @@ with `world` while we are typing. Using the
 ```
 
 These kind of expansions are simple text replacements and can be considered
-_static_. [Quote-marks](../quotes) are not necessary for `trigger` or `replace`
+_static_. [Quote-marks](quotes.md) are not necessary for `trigger` or `replace`
 in simple cases, but some people prefer to use them for consistency.
 
 ### Multi-line expansions
@@ -129,7 +129,7 @@ vars:
 In the following lines, we defined the `mytime` variable as type **date**. The
 type of a variable defines the **extension** that will be executed to calculate
 its value. In this case, we use the
-[Date Extension](../extensions/#date-extension).
+[Date Extension](extensions.mdx#date-extension).
 
 ```yml
 params:
@@ -154,8 +154,8 @@ The `force_mode: clipboard` or `force_mode: keys` properties override this for
 an individual match, and may be useful in particular environments.
 
 If you find yourself needing them widely, however, an
-[app-specific configuration](../../configuration/app-specific-configurations),
-or a global [configuration](../../configuration/options/#options-reference)
+[app-specific configuration](../configuration/app-specific-configurations.md),
+or a global [configuration](../configuration/options.md#options-reference)
 change to the `backend` value in `default.yml` may be more convenient.
 
 ## Global Variables
@@ -221,7 +221,7 @@ The related properties, `left_word: true` and `right_word: true`, ensure a match
 will only occur at the beginning or end of words respectively, and not in the
 middle.
 
-The [configuration option](../../configuration/options/#options-reference)
+The [configuration option](../configuration/options.md#options-reference)
 `word_separators` may be used to customise which characters qualify as word
 separators.
 

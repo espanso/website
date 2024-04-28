@@ -6,13 +6,6 @@ title: Getting Started
 In this section, we will cover the basics of Espanso to quickly get you started.
 Make sure to install Espanso before diving into the next sections.
 
-:::info For legacy users
-
-If you are coming from a previous Espanso version (≤ 0.7.3), please read the
-[Migration](../migration/overview) section first.
-
-:::
-
 If you followed the installation correctly, Espanso should be running on your
 computer. For macOS and Windows users, you should now see the Espanso icon on
 the status bar:
@@ -42,7 +35,7 @@ Firstly, try starting Espanso again:
     `START_ESPANSO.bat` for Portable mode users.
 -   **For macOS users**: click on the Espanso app again. If you see a security
     warning, please follow the steps described in the
-    [macOS installation](../install/mac/#problems-you-may-experience) section.
+    [macOS installation](/docs/troubleshooting/secure-input.md) section.
 -   **For Linux users**: open a terminal and run `espanso start`
 
 If none of these steps worked, please reinstall Espanso and try again.
@@ -61,7 +54,7 @@ are all valid triggers.
 The _rule_ that associates a trigger with the replaced text is called **Match**
 and is a core concept of Espanso. Matches are very flexible and capable of
 solving complex tasks. You can learn all about matches in their
-[documentation](../matches/basics) page.
+[documentation](matches/basics.md) page.
 
 ![Espanso's Match](/img/docs/new_match_2.png)
 
@@ -106,9 +99,6 @@ location depends on the current OS:
 -   Linux: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/user/.config/espanso`)
 -   macOS: `$HOME/Library/Application Support/espanso` (e.g.
     `/Users/user/Library/Application Support/espanso`)
-    -   NOTE: when migrating from the previous 0.7.3 version, the configuration
-        directory will be located in `$HOME/Library/Preferences/espanso` for
-        compatibility purposes.
 -   Windows: `{FOLDERID_RoamingAppData}\espanso` (e.g.
     `C:\Users\user\AppData\Roaming\espanso`)
 
@@ -153,7 +143,7 @@ serves a specific purpose:
     As the number of snippets grows, you might want to _split_ your matches over
     multiple files to make it easier to manage. For example, you might create
     the `match/emails.yml` file with the snippets you use while writing emails.
-    You can learn all about matches in the [Matches section](../matches/basics).
+    You can learn all about matches in the [Matches section](matches/basics.md).
 
 -   **The files contained in the `config` directory define _HOW_ Espanso should
     perform its expansions.** In other words, this is were you should specify
@@ -163,7 +153,7 @@ serves a specific purpose:
     you might want to enable emoji snippets for all apps in the
     `config/default.yml` file, but disable them when using Slack in the
     `config/slack.yml` file. You can learn all about configurations in the
-    [Configuration section](../configuration/basics).
+    [Configuration section](configuration/basics.md).
 
 All these files are defined using the widely popular
 [YAML](https://en.wikipedia.org/wiki/YAML) format.
@@ -259,7 +249,7 @@ which spawns an instance of the system-default text editor.
 
 By default it uses Nano on Unix and Notepad on Windows, but you can customize it
 as you like. Take a look at
-[Quick Editing](../configuration/basics/#quick-editing) for more information.
+[Quick Editing](./configuration/basics.md#customizing-the-editor) for more information.
 
 :::
 
@@ -275,7 +265,7 @@ package manager** and a **store**, the [Espanso Hub](https://hub.espanso.org/).
 
 If you are lucky enough, someone might have already written a **package** to
 include the matches you need! Otherwise, you can create a package and publish it
-on the Hub, for more information check out the [Packages](../packages/basics/)
+on the Hub, for more information check out the [Packages](packages/basics.md)
 documentation.
 
 ### Installing a Package
@@ -321,7 +311,7 @@ matches. You can open the search bar in two ways:
     (currently not available on Linux).
 
 If you want to customize the shortcut, please check out the
-[customizing the Search bar](../configuration/options/#customizing-the-search-bar)
+[customizing the Search bar](configuration/options.md#customizing-the-search-bar)
 section.
 
 ### Backspace Undo
@@ -347,4 +337,4 @@ This can be accomplished in many ways, including the icon menu:
 ![Icon Menu](/img/docs/icon-menu.png)
 
 If you want a quicker way to toggle Espanso ON and OFF, you can also
-[Customize the Toggle Key](../configuration/options/#customizing-the-toggle-key).
+[Customize the Toggle Key](/configuration/options.md#customizing-the-toggle-key).
