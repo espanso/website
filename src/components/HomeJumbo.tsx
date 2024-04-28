@@ -44,7 +44,7 @@ export default function HomeJumbo() {
             />
             <div className={styles["content"]}>
                 <div className={styles.headline}>
-                    <TypeIt
+                    {/* <TypeIt
                         getBeforeInit={(instance) => {
                             instance
                                 .options({ speed: 100 })
@@ -86,7 +86,7 @@ export default function HomeJumbo() {
 
                             return instance;
                         }}
-                    />
+                    /> */}
                 </div>
                 <Fade bottom delay={2500}>
                     <p className={styles.subtitle}>

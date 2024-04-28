@@ -16,7 +16,11 @@ export default function HomeHowItWorks() {
             </p>
 
             <div className={styles.input}>
-                <TypeIt
+                {/* <TypeIt >
+                    today is :date
+                </TypeIt> */}
+
+                {/*                 <TypeIt
                     options={{
                         loop: true,
                         waitUntilVisible: true,
@@ -38,7 +42,7 @@ export default function HomeHowItWorks() {
                         // Remember to return it!
                         return instance;
                     }}
-                />
+                /> */}
             </div>
 
             <p>

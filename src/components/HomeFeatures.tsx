@@ -234,7 +234,7 @@ export default function HomeFeatures() {
                         icon={<ShareIcon className={styles.icon} />}
                     >
                         <p>
-                            Extend Espanso’s capabilities with{" "}
+                            Extend Espanso's capabilities with{" "}
                             <span className={styles.highlight}>packages</span>,
                             or create your owns and share them with the
                             community on the{" "}
@@ -412,7 +412,13 @@ const FeatureDescription = ({ title, icon, children }) => {
     );
 };
 
-const Feature = ({ main, description, reversed }) => {
+interface FeatureProps {
+    main: any,
+    description: any,
+    reversed?: boolean
+}
+
+function Feature({ main, description, reversed }: FeatureProps) {
     const { isLargeScreen } = useScreenSize();
     const shouldReverse = isLargeScreen && reversed;
 
@@ -428,9 +434,16 @@ const Feature = ({ main, description, reversed }) => {
             </Fade>
         </div>
     );
-};
+}
 
-const SmallFeature = ({ title, icon, children, delay }) => {
+interface SmallFeatureProps {
+    title: string,
+    icon: any,
+    children: any
+    delay?: number
+}
+
+function SmallFeature({ title, icon, children, delay }: SmallFeatureProps) {
     return (
         <Fade bottom delay={delay ?? 0}>
             <div className={styles["small-feature"]}>
@@ -440,10 +453,10 @@ const SmallFeature = ({ title, icon, children, delay }) => {
             </div>
         </Fade>
     );
-};
+}
 
-const SearchShortcut = () => {
+function SearchShortcut() {
     const { os } = useOS();
 
     return <> {os === "mac" ? "⌥" : "ALT"}+Space </>;
-};
+}

@@ -48,13 +48,13 @@ export default function Home() {
                 />
             </Head>
             <Navigation />
-            {/* <HomeJumbo /> */}
-            {/* <div className={styles["dark-area"]}>
+            <HomeJumbo />
+            <div className={styles["dark-area"]}>
                 <Fade bottom>
                     <HomeHowItWorks />
                 </Fade>
                 <HomeTestimonials />
-            </div> */}
+            </div>
             {/* <HomeFeatures /> */}
             <HomeKnowMore />
             <DonateSection />
