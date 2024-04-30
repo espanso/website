@@ -323,7 +323,7 @@ on constraints. The default constraints are:
 -   If variable A depends on variable B (because variable B has been injected
     inside A's `params`), then B **must** be evaluated before A.
 
-Following on our previous example, we don't have any constrait between the
+Following on our previous example, we don't have any constraint between the
 global variable `three` and the two local variables `one` and `two`, so `three`
 is evaluated in whatever order Espanso prefers.
 
