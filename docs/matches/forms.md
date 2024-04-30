@@ -257,9 +257,8 @@ By default, the Tab key can only be used to change focus between Text fields on
 macOS. To make forms completely navigable using the Tab key (including Lists,
 Selects and Buttons), you have to follow these steps:
 
-1. Open _System Preferences_
+1. Open _System Settings_
 2. Navigate to the Keyboard panel
-3. Open the _Keyboard Shortcuts_ tab
-4. Near the bottom of the dialog, select "All controls".
+3. Set the _Keyboard navigation_ toggle switch to "on".
 
 Then you should be able to use the Tab key to navigate between form controls.
