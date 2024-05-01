@@ -261,4 +261,6 @@ Selects and Buttons), you have to follow these steps:
 2. Navigate to the Keyboard panel
 3. Set the _Keyboard navigation_ toggle switch to "on".
 
+![Screenshot of Keyboard navigation UI](/img/docs/keyboard-navigation.png)
+
 Then you should be able to use the Tab key to navigate between form controls.
