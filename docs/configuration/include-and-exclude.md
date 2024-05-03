@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Include and Exclude rules
 ---
 
-In the [App-specific configurations](../app-specific-configurations) section, we
+In the [App-specific configurations](app-specific-configurations.md) section, we
 discussed a way to create configurations that change depending on the active
 application. These configurations let you tune the way Espanso interacts with
 specific applications by providing a series of parameters.
@@ -41,7 +41,7 @@ matches:
 :::caution Make sure to include the underscore!
 
 In the previous example, we prefixed the filename with an `_` underscore. As
-explained in the [Organizing matches](../../matches/organizing-matches) section,
+explained in the [Organizing matches](../matches/organizing-matches) section,
 Espanso automatically loads all YAML files located in the `match` directory,
 **except the ones starting with an `_` underscore.**
 
@@ -74,7 +74,7 @@ Let's discuss it step-by-step:
 1. Firstly, we specify the `filter_exec` option to enable this configuration
    **only** when using Chrome. Note that this filter might not be working on
    your platform, check out the
-   [App-specific configurations](../app-specific-configurations) section for
+   [App-specific configurations](app-specific-configurations.md) section for
    more information and instructions on finding the right filter.
 2. Then, we specify the `extra_includes` rule, passing the relative path to the
    snippet file we defined earlier.
@@ -101,7 +101,7 @@ Firefox!
 In the previous examples, we used some filters to detect Chrome and Firefox.
 These have only been tested on Windows, and might not be working on other
 platforms. Make sure to read the
-[Finding the right filters](../app-specific-configurations/#finding-the-right-filters)
+[Finding the right filters](app-specific-configurations.md#finding-the-right-filters)
 section to find suitable ones.
 
 :::

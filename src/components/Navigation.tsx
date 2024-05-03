@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Navigation.module.css";
 import Link from "@docusaurus/Link";
-import { HeartIcon, MenuIcon } from "@heroicons/react/solid";
-import { useScreenSize } from "../hooks/useScreenSize";
+import { Bars4Icon, HeartIcon } from "@heroicons/react/24/solid";
 
 export default function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +11,7 @@ export default function Navigation() {
             <div className={styles["navigation-container"]}>
                 <Link className={styles.logo} to="/" />
 
-                <Buttons />
+                <Buttons mobile={false} />
             </div>
             <div className={styles["navigation-container-mobile"]}>
                 <div className={styles["mobile-top-bar"]}>
@@ -22,7 +21,7 @@ export default function Navigation() {
                             setMobileMenuOpen(!mobileMenuOpen);
                         }}
                     >
-                        <MenuIcon className={styles["menu-icon"]} />
+                        <Bars4Icon className={styles["menu-icon"]} />
                     </Link>
                 </div>
 
@@ -69,11 +68,11 @@ const NavbarLink = ({ to, text }) => {
     );
 };
 
-const ButtonLink = ({ to, text, icon }) => {
+function ButtonLink({ to, text, icon }) {
     return (
         <Link className={`${styles["button-link"]} ${styles.link}`} to={to}>
             {icon}
             {text}
         </Link>
     );
-};
+}

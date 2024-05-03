@@ -45,7 +45,7 @@ while using Telegram and the default one while using other applications.
 
 Inside the app-specific configuration you can define most of the options you
 would customize in your `config/default.yml` file, with a few exceptions. You'll
-find a list of customizable options in the [Options section](../options).
+find a list of customizable options in the [Options section](options).
 
 ### Enable or disable some matches while using a specific application
 
@@ -55,7 +55,7 @@ might want to enable some code snippets while using Visual Studio Code or
 IntelliJ Idea, but not inside other apps.
 
 This use-case is described in the
-[Include and Exclude rules](../include-and-exclude) section.
+[Include and Exclude rules](include-and-exclude) section.
 
 ## Understanding configuration inheritance
 
@@ -101,11 +101,11 @@ These are the currently available filters:
 
 Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`,
 and may be usefully combined with
-[`extra_includes`](../include-and-exclude#difference-between-includes-and-extra_includes)
+[`extra_includes`](include-and-exclude#difference-between-includes-and-extra_includes)
 to separate OS-specific
-[global variables](../../matches/variables/#injecting-global-variables) and
+[global variables](/docs/matches/variables#injecting-global-variables) and
 local shell expansions etc., when the Espanso configuration files are
-[shared](../../sync) between different operating systems.
+[shared](/docs/sync.md) between different operating systems.
 
 The `filter_title`, `filter_exec` and `filter_class` filters accept a **regex**
 as parameter, so make sure to escape the special characters properly.

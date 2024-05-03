@@ -7,7 +7,7 @@ TODO: this section is under construction
 
 In this document, we are going to discuss the format specification for Espanso
 packages and repositories. If you are trying to create your first package, we
-suggest reading the [Creating a Package](../creating-a-package) section first,
+suggest reading the [Creating a Package](creating-a-package.md) section first,
 as that contains the basic information you'll need for most use-cases.
 
 In the first part, we'll go through the structure of an Espanso package,
@@ -17,7 +17,7 @@ repository.
 
 ## Packages format
 
-As we first introduced in the [Creating a package](../creating-a-package)
+As we first introduced in the [Creating a package](creating-a-package.md)
 section, **a package is a combination of YAML match files with some metadata.**
 
 The most basic package _MUST_ contain these 3 files:
@@ -59,7 +59,7 @@ While these are NOT valid names:
 
 The `package.yml` file is the entry-point of the package. It contains the main
 matches (aka _snippets_) for the current package, and its format is equivalent
-to the `$CONFIG/match/base.yml` file, as explained [here](../../matches/basics).
+to the `$CONFIG/match/base.yml` file, as explained [here](basics.md).
 
 As with regular match files, it can contain matches, global variables and import
 rules. A typical `package.yml` file might look like the following:

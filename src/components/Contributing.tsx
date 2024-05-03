@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Contributing.module.css";
 import Link from "@docusaurus/Link";
-import { BeakerIcon } from "@heroicons/react/outline";
+import { BeakerIcon } from "@heroicons/react/24/outline";
 
 export default function Contributing() {
     useEffect(() => {

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HomeJumbo.module.css";
 import TypeIt from "typeit-react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import InstallButton from "./InstallButton";
-import Particles from "react-particles-js";
+import Particles from "@tsparticles/react";
 import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function HomeJumbo() {
@@ -44,7 +44,7 @@ export default function HomeJumbo() {
             />
             <div className={styles["content"]}>
                 <div className={styles.headline}>
-                    <TypeIt
+                    {/* <TypeIt
                         getBeforeInit={(instance) => {
                             instance
                                 .options({ speed: 100 })
@@ -86,7 +86,7 @@ export default function HomeJumbo() {
 
                             return instance;
                         }}
-                    />
+                    /> */}
                 </div>
                 <Fade bottom delay={2500}>
                     <p className={styles.subtitle}>

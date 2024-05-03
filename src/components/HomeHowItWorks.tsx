@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./HomeHowItWorks.module.css";
 import TypeIt from "typeit-react";
-import Fade from "react-reveal/Fade";
-import { LightBulbIcon } from "@heroicons/react/outline";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function HomeHowItWorks() {
     return (
@@ -17,7 +16,11 @@ export default function HomeHowItWorks() {
             </p>
 
             <div className={styles.input}>
-                <TypeIt
+                {/* <TypeIt >
+                    today is :date
+                </TypeIt> */}
+
+                {/*                 <TypeIt
                     options={{
                         loop: true,
                         waitUntilVisible: true,
@@ -39,7 +42,7 @@ export default function HomeHowItWorks() {
                         // Remember to return it!
                         return instance;
                     }}
-                />
+                /> */}
             </div>
 
             <p>

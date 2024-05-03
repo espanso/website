@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
 import HomeJumbo from "../components/HomeJumbo";
 import HomeHowItWorks from "../components/HomeHowItWorks";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import HomeTestimonials from "../components/HomeTestimonials";
 import HomeFeatures from "../components/HomeFeatures";
 import HomeKnowMore from "../components/HomeKnowMore";
@@ -58,7 +55,7 @@ export default function Home() {
                 </Fade>
                 <HomeTestimonials />
             </div>
-            <HomeFeatures />
+            {/* <HomeFeatures /> */}
             <HomeKnowMore />
             <DonateSection />
             <Contributing />
@@ -70,6 +67,6 @@ function getStoredTheme() {
     var theme = null;
     try {
         theme = localStorage.getItem("theme");
-    } catch (err) {}
+    } catch (err) { }
     return theme;
 }

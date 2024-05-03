@@ -34,7 +34,7 @@ wish to install private packages instead, please skip to the next section.
 ### GitHub or GitLab repositories
 
 As long as the repository follows the
-[Package Specification](../package-specification/) format, you can install a
+[Package Specification](package-specification.md) format, you can install a
 package from any GitHub and GitLab repository by specifying the `--git` option.
 
 For example, to install the `dummy-package` from our test
@@ -48,7 +48,7 @@ espanso install dummy-package --git https://github.com/espanso/dummy-repository 
 ### Git repositories
 
 As long as the repository follows the
-[Package Specification](../package-specification/) format, you can install a
+[Package Specification](package-specification.md) format, you can install a
 package from any git repository by specifying the `--git` option.
 
 :::caution `git` command must be installed!
@@ -81,7 +81,7 @@ publishing them on the Hub.
 ### Git repositories
 
 As long as the repository follows the
-[Package Specification](../package-specification/) format, you can install a
+[Package Specification](package-specification.md) format, you can install a
 package from any git repository by specifying the `--git` option.
 
 :::caution Setting up `git`

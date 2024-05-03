@@ -1,20 +1,20 @@
 import React from "react";
 import styles from "./HomeFeatures.module.css";
 import TypeIt from "typeit-react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 import {
     LightBulbIcon,
-    SearchIcon,
+    MagnifyingGlassIcon,
     CalendarIcon,
     ShareIcon,
-    ChipIcon,
-    TerminalIcon,
-    TemplateIcon,
-    DesktopComputerIcon,
+    CpuChipIcon,
+    CommandLineIcon,
+    RectangleGroupIcon,
+    ComputerDesktopIcon,
     DocumentDuplicateIcon,
-    CodeIcon,
-    ViewGridIcon,
-} from "@heroicons/react/outline";
+    CodeBracketIcon,
+    Squares2X2Icon,
+} from "@heroicons/react/24/outline";
 import Link from "@docusaurus/Link";
 import { useOS } from "../hooks/useOS";
 import BrowserOnly from "@docusaurus/BrowserOnly";
@@ -116,7 +116,7 @@ export default function HomeFeatures() {
                 description={
                     <FeatureDescription
                         title="Every sentence, one search away"
-                        icon={<SearchIcon className={styles.icon} />}
+                        icon={<MagnifyingGlassIcon className={styles.icon} />}
                     >
                         <p>
                             Don’t remember a shortcut? No worries.
@@ -170,8 +170,8 @@ export default function HomeFeatures() {
                                     })
                                     .type(
                                         "Are you available at " +
-                                            twoHours +
-                                            "?",
+                                        twoHours +
+                                        "?",
                                     )
                                     .pause(2000)
                                     .type(
@@ -234,7 +234,7 @@ export default function HomeFeatures() {
                         icon={<ShareIcon className={styles.icon} />}
                     >
                         <p>
-                            Extend Espanso’s capabilities with{" "}
+                            Extend Espanso's capabilities with{" "}
                             <span className={styles.highlight}>packages</span>,
                             or create your owns and share them with the
                             community on the{" "}
@@ -253,7 +253,7 @@ export default function HomeFeatures() {
                 }
             />
             <div className={styles.heading}>
-                <ChipIcon className={styles.icon} />
+                <CpuChipIcon className={styles.icon} />
                 <h2>Advanced features</h2>
             </div>
             <Feature
@@ -304,7 +304,7 @@ export default function HomeFeatures() {
                 description={
                     <FeatureDescription
                         title="Shell and Script support"
-                        icon={<TerminalIcon className={styles.icon} />}
+                        icon={<CommandLineIcon className={styles.icon} />}
                     >
                         <p>
                             For advanced use-cases, you can extend Espanso’s
@@ -329,7 +329,7 @@ export default function HomeFeatures() {
                 description={
                     <FeatureDescription
                         title="Form support"
-                        icon={<TemplateIcon className={styles.icon} />}
+                        icon={<RectangleGroupIcon className={styles.icon} />}
                     >
                         <p>
                             Use <span className={styles.highlight}>forms</span>{" "}
@@ -349,7 +349,7 @@ export default function HomeFeatures() {
                 <SmallFeature
                     title="System-wide integration"
                     icon={
-                        <DesktopComputerIcon
+                        <ComputerDesktopIcon
                             className={styles["small-feature-icon"]}
                         />
                     }
@@ -376,7 +376,7 @@ export default function HomeFeatures() {
                 </SmallFeature>
                 <SmallFeature
                     title="Open-source license"
-                    icon={<CodeIcon className={styles["small-feature-icon"]} />}
+                    icon={<CodeBracketIcon className={styles["small-feature-icon"]} />}
                     delay={200}
                 >
                     <p>
@@ -387,7 +387,7 @@ export default function HomeFeatures() {
                 <SmallFeature
                     title="Cross-platform support"
                     icon={
-                        <ViewGridIcon
+                        <Squares2X2Icon
                             className={styles["small-feature-icon"]}
                         />
                     }
@@ -412,7 +412,13 @@ const FeatureDescription = ({ title, icon, children }) => {
     );
 };
 
-const Feature = ({ main, description, reversed }) => {
+interface FeatureProps {
+    main: any,
+    description: any,
+    reversed?: boolean
+}
+
+function Feature({ main, description, reversed }: FeatureProps) {
     const { isLargeScreen } = useScreenSize();
     const shouldReverse = isLargeScreen && reversed;
 
@@ -428,9 +434,16 @@ const Feature = ({ main, description, reversed }) => {
             </Fade>
         </div>
     );
-};
+}
 
-const SmallFeature = ({ title, icon, children, delay }) => {
+interface SmallFeatureProps {
+    title: string,
+    icon: any,
+    children: any
+    delay?: number
+}
+
+function SmallFeature({ title, icon, children, delay }: SmallFeatureProps) {
     return (
         <Fade bottom delay={delay ?? 0}>
             <div className={styles["small-feature"]}>
@@ -440,10 +453,10 @@ const SmallFeature = ({ title, icon, children, delay }) => {
             </div>
         </Fade>
     );
-};
+}
 
-const SearchShortcut = () => {
+function SearchShortcut() {
     const { os } = useOS();
 
     return <> {os === "mac" ? "⌥" : "ALT"}+Space </>;
-};
+}

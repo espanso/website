@@ -46,7 +46,7 @@ to having all matches defined in the `$CONFIG/match/base.yml` file.
 The previous statement has one important exception: **all files starting with an
 underscore \_ are NOT loaded automatically**. This rule is necessary to support
 some advanced use-cases, such as
-[App-specific configurations](../../configuration/app-specific-configurations).
+[App-specific configurations](configuration/app-specific-configurations.md).
 
 :::
 
@@ -76,14 +76,14 @@ directory.
 Another less common use-case would be to use `imports` to group some private
 match sets (aka match sets that start with an underscore, and thus are not
 loaded automatically). This becomes particularly useful for
-[App-specific configurations](../../configuration/app-specific-configurations),
+[App-specific configurations](configuration/app-specific-configurations.md),
 where we might want to split matches over multiple files, while making it easy
 to _include_ in some apps.
 
 :::tip
 
 This section assumes you already know what
-[App-specific configurations](../../configuration/app-specific-configurations)
+[App-specific configurations](configuration/app-specific-configurations.md)
 are. If you don't, you might want to read that section first.
 
 :::

@@ -85,7 +85,7 @@ export default function Install() {
                                     ),
                                 );
                                 window.location =
-                                    "/docs/install/mac/#problems-you-may-experience";
+                                    "/docs/install/mac#problems-you-may-experience";
                                 window.focus();
                             }}
                         >
@@ -102,7 +102,7 @@ export default function Install() {
                                     ),
                                 );
                                 window.location =
-                                    "/docs/install/mac/#problems-you-may-experience";
+                                    "/docs/install/mac#problems-you-may-experience";
                                 window.focus();
                             }}
                         >
@@ -115,17 +115,17 @@ export default function Install() {
                         <h3>Linux</h3>
                         <Link
                             className={styles.button}
-                            to="/docs/install/linux/#choosing-the-right-install-method"
+                            to="/docs/install/linux#choosing-the-right-install-method"
                         >
                             X11
                         </Link>
                         <Link
                             className={styles.button}
-                            to="/docs/install/linux/#choosing-the-right-install-method"
+                            to="/docs/install/linux#choosing-the-right-install-method"
                         >
                             Wayland
                         </Link>
-                        <Link to="/docs/install/linux/#find-the-right-version">
+                        <Link to="/docs/install/linux#find-the-right-version">
                             Which version should you choose?
                         </Link>
                         <span>Version {getStableVersion()}</span>
