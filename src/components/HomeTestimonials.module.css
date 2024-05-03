@@ -1,55 +1,55 @@
 .container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 60px;
-    color: var(--content-light);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--content-light);
 }
 
 .container h3 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
 .container p {
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .icon {
-    width: 28px;
-    height: 28px;
-    color: var(--secondary-accent);
-    margin-right: 12px;
-    display: inline-block;
+  width: 28px;
+  height: 28px;
+  color: var(--secondary-accent);
+  margin-right: 12px;
+  display: inline-block;
 }
 
 .testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .testimonial {
-    text-align: left;
-    max-width: 450px;
-    padding: 20px;
+  text-align: left;
+  max-width: 450px;
+  padding: 20px;
 }
 
 .testimonial h4 {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin-bottom: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
 }
 
 .testimonial p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .testimonial span {
-    font-size: 12px;
+  font-size: 12px;
 }

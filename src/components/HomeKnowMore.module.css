@@ -1,36 +1,36 @@
 .container {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
-    background-image: url("/img/know-more-decorations.svg");
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("/img/know-more-decorations.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .container h4 {
-    font-size: 20px;
-    font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .button {
-    background-color: var(--accent);
-    border-radius: var(--border-radius-large);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 29px;
-    padding: 15px 30px 15px 30px;
-    margin-top: 10px;
-    filter: var(--small-shadow);
+  background-color: var(--accent);
+  border-radius: var(--border-radius-large);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 29px;
+  padding: 15px 30px 15px 30px;
+  margin-top: 10px;
+  filter: var(--small-shadow);
 }
 
 .button:hover {
-    background-color: var(--accent-light);
-    text-decoration: none;
+  background-color: var(--accent-light);
+  text-decoration: none;
 }

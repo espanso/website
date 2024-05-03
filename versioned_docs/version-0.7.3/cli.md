@@ -1,15 +1,12 @@
 ---
-title: CLI
+title: CLI 
 sidebar_position: 9
 ---
-
-Espanso ships with a few useful terminal commands that can be used to interact
-with it.
+Espanso ships with a few useful terminal commands that can be used to interact with it.
 
 ### Enable or Disable
 
-Other than using the `toggle_key` shortcut, you can also enable/disable espanso
-with the following commands:
+Other than using the `toggle_key` shortcut, you can also enable/disable espanso with the following commands:
 
 ```bash
 # Enable espanso
@@ -22,13 +19,11 @@ espanso cmd disable
 espanso cmd toggle
 ```
 
-These makes it a breeze to control espanso from your desktop environment or
-other scripts.
+These makes it a breeze to control espanso from your desktop environment or other scripts.
 
 ### Listing Matches
 
-When integrating espanso with a script, it might be useful to list the available
-matches. You can do so with the following command:
+When integrating espanso with a script, it might be useful to list the available matches. You can do so with the following command:
 
 ```
 espanso match list
@@ -38,8 +33,7 @@ Run `espanso match list --help` to find out other interesting options.
 
 ### Trigger an injection
 
-Another interesting possibility is injecting a given match from the command
-line. You can do so with:
+Another interesting possibility is injecting a given match from the command line. You can do so with:
 
 ```
 espanso match exec <trigger>

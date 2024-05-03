@@ -3,66 +3,55 @@ title: Install on Linux
 layout: docs
 ---
 
-import siteConfig from "/docusaurus.config.js";
-import { getStableDownloadLink } from "/src/utils/versionUtils.js";
-import CodeBlock from "@theme/CodeBlock";
+import siteConfig from '/docusaurus.config.js';
+import {getStableDownloadLink} from '/src/utils/versionUtils.js';
+import CodeBlock from '@theme/CodeBlock';
 import X11AfterInstall from "./linux/_x11-after-install.mdx";
 import WaylandFinalSteps from "./linux/_wayland-final-steps.mdx";
 
 ## Find the right version
 
-To use Espanso on Linux, you first need to determine whether your system is
-running a X11 or Wayland desktop environment. If you are unsure, please open a
-terminal and run the following command:
+To use Espanso on Linux, you first need to determine whether your system is running a X11 or Wayland desktop environment.
+If you are unsure, please open a terminal and run the following command:
 
 ```bash
 echo $XDG_SESSION_TYPE
 ```
 
-> If the above command doesn't output anything, please try
-> [with this method](https://unix.stackexchange.com/a/325972).
+> If the above command doesn't output anything, please try [with this method](https://unix.stackexchange.com/a/325972).
 
-Now that you know your desktop environment, you're ready to choose the right
-method in the following section.
+Now that you know your desktop environment, you're ready to choose the right method in the following section.
 
 ## Choosing the right install method
 
-There are multiple installation methods on Linux. This table summarizes them
-based on distribution and desktop environment:
+There are multiple installation methods on Linux.
+This table summarizes them based on distribution and desktop environment:
 
-| Distribution  | X11                                                                                                                                 | Wayland                                                                               |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Distribution | X11 | Wayland |
+|---|---|---|
 | Ubuntu/Debian | **[DEB package](#deb-x11) (recommended)**, [AppImage](#appimage-x11), [Snap package](#snap-x11), [Manual compilation](#x11-compile) | **[DEB package](#deb-wayland) (recommended)**, [Manual compilation](#wayland-compile) |
-| Fedora        | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile)                                                     | [Manual compilation](#wayland-compile)                                                |
-| Arch/Manjaro  | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile)                                                     | [Manual compilation](#wayland-compile)                                                |
-| Other distros | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile)                                                     | [Manual compilation](#wayland-compile)                                                |
+| Fedora | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Arch/Manjaro | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Other distros | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
 
-We are continously improving the installation process, so expect more
-user-friendly methods soon.
+We are continously improving the installation process, so expect more user-friendly methods soon.
 
 ## Install on X11
 
 ### Installing with DEB package (Ubuntu/Debian) {#deb-x11}
 
-Espanso ships with a `.deb` package, making the installation convenient on
-Debian-based systems.
+Espanso ships with a `.deb` package, making the installation convenient on Debian-based systems.
 
-Start by downloading the package by running the following command inside a
-terminal:
+Start by downloading the package by running the following command inside a terminal:
 
-export const DebX11CodeLink = () => (
-    <CodeBlock>
-        wget {getStableDownloadLink("LINUX_X11_DEB_DOWNLOAD_URL")}
-    </CodeBlock>
-);
+export const DebX11CodeLink = () => <CodeBlock>wget {getStableDownloadLink("LINUX_X11_DEB_DOWNLOAD_URL")}</CodeBlock>;
 
 <DebX11CodeLink />
 
 :::info Verifying package checksum
 
-If you want to verify the correctness of the archive, in the Github Releases
-page you will find the SHA256 hash in the file
-`espanso-debian-x11-amd64-sha256.txt`
+If you want to verify the correctness of the archive, in the Github Releases page you will find the SHA256 hash 
+in the file `espanso-debian-x11-amd64-sha256.txt`
 
 :::
 
@@ -76,9 +65,8 @@ sudo apt install ./espanso-debian-x11-amd64.deb
 
 ### Installing with AppImage (all distros) {#appimage-x11}
 
-export const AppImageCodeLink = () => (
-    <CodeBlock className="language-bash">
-        {`# Create the $HOME/opt destination folder
+export const AppImageCodeLink= () => <CodeBlock className="language-bash">
+{`# Create the $HOME/opt destination folder
 mkdir -p ~/opt
 # Download the AppImage inside it
 wget -O ~/opt/Espanso.AppImage '${getStableDownloadLink("LINUX_X11_APP_IMAGE_DOWNLOAD_URL")}'
@@ -86,20 +74,17 @@ wget -O ~/opt/Espanso.AppImage '${getStableDownloadLink("LINUX_X11_APP_IMAGE_DOW
 chmod u+x ~/opt/Espanso.AppImage
 # Create the "espanso" command alias
 sudo ~/opt/Espanso.AppImage env-path register
-`}
-    </CodeBlock>
-);
+`}</CodeBlock>;
 
 To install the Espanso's AppImage, open a terminal and follow these steps:
 
-<AppImageCodeLink />
+<AppImageCodeLink/>
 
 <X11AfterInstall />
 
 ### Installing with Snap {#snap-x11}
 
-If you are using Ubuntu, you can also install Espanso by simply running this
-command:
+If you are using Ubuntu, you can also install Espanso by simply running this command:
 
 ```bash
 sudo snap install espanso --classic --channel=latest/edge
@@ -113,18 +98,14 @@ sudo snap install espanso --classic --channel=latest/edge
 
 These are the basic tools required to build espanso:
 
--   A recent Rust compiler. You can install it following these instructions:
-    https://www.rust-lang.org/tools/install
--   A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's
-    usually GCC). If you run the command specified in the next step, this will
-    be included automatically.
+* A recent Rust compiler. You can install it following these instructions: https://www.rust-lang.org/tools/install
+* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). 
+If you run the command specified in the next step, this will be included automatically.
 
--   Install the required linux packages:
-    -   On **Ubuntu/Debian** run
-        `sudo apt update && sudo apt install build-essential git libx11-dev libxtst-dev libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
--   Espanso heavily relies on
-    [cargo make](https://github.com/sagiegurari/cargo-make) for the various
-    packaging steps. You can install it by running:
+* Install the required linux packages:
+  * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git libx11-dev libxtst-dev libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
+* Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
+steps. You can install it by running:
 
 ```
 cargo install --force cargo-make --version 0.34.0
@@ -142,16 +123,14 @@ cd espanso
 
 # Compile espanso in release mode
 # NOTE: this will take a while (~5/15 minutes)
-cargo make --profile release build-binary
+cargo make --profile release build-binary 
 ```
 
-At this point, you should have the `espanso` binary available in the
-`target/release/` directory.
+At this point, you should have the `espanso` binary available in the `target/release/` directory.
 
 #### Installing Espanso
 
-Once you've compiled Espanso, you can move it into the final location. A good
-option would be the `/usr/local/bin` folder:
+Once you've compiled Espanso, you can move it into the final location. A good option would be the `/usr/local/bin` folder:
 
 ```
 sudo mv target/release/espanso /usr/local/bin/espanso
@@ -161,44 +140,35 @@ sudo mv target/release/espanso /usr/local/bin/espanso
 
 ## Install on Wayland
 
-> Wayland support is currently experimental, therefore some features might be
-> missing or not working well yet. Known limitations include:
+> Wayland support is currently experimental, therefore some features might be missing or not working well yet. 
+> Known limitations include:
 >
-> -   If you are using a non-us keyboard layout, you'll need to explicitly
->     specify it in the settings (more on this below).
-> -   There is currently no support for App-specific configurations, which means
->     we can't use patches (which are often necessary to support some
->     terminals).
-> -   If you are using Gnome, Espanso causes a small "flicker" when using the
->     clipboard backend. This does not happen on Sway.
-> -   If you connect a new keyboard, you will need to manually restart Espanso
->     with `espanso restart`, otherwise Espanso won't detect it.
+> * If you are using a non-us keyboard layout, you'll need to explicitly specify it in the settings (more on this below).
+> * There is currently no support for App-specific configurations, which means we can't use patches
+> (which are often necessary to support some terminals).
+> * If you are using Gnome, Espanso causes a small "flicker" when using the clipboard backend. This does not happen
+> on Sway.
+> * If you connect a new keyboard, you will need to manually restart Espanso with `espanso restart`, otherwise
+> Espanso won't detect it.
 >
-> If you encounter a bug, please
-> [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues),
+> If you encounter a bug, please [open an issue on GitHub](https://github.com/federico-terzi/espanso/issues),
 > any help is greatly appreciated! :)
+
 
 ### Installing with DEB package (Ubuntu/Debian) {#deb-wayland}
 
-Espanso ships with a `.deb` package, making the installation convenient on
-Debian-based systems.
+Espanso ships with a `.deb` package, making the installation convenient on Debian-based systems.
 
-Start by downloading the package by running the following command inside a
-terminal:
+Start by downloading the package by running the following command inside a terminal:
 
-export const DebWaylandCodeLink = () => (
-    <CodeBlock>
-        wget {getStableDownloadLink("LINUX_WAYLAND_DEB_DOWNLOAD_URL")}
-    </CodeBlock>
-);
+export const DebWaylandCodeLink = () => <CodeBlock>wget {getStableDownloadLink("LINUX_WAYLAND_DEB_DOWNLOAD_URL")}</CodeBlock>;
 
 <DebWaylandCodeLink />
 
 :::info Verifying package checksum
 
-If you want to verify the correctness of the archive, in the Github Releases
-page you will find the SHA256 hash in the file
-`espanso-debian-wayland-amd64-sha256.txt`
+If you want to verify the correctness of the archive, in the Github Releases page you will find the SHA256 hash 
+in the file `espanso-debian-wayland-amd64-sha256.txt`
 
 :::
 
@@ -208,8 +178,7 @@ You can now install the package using:
 sudo apt install ./espanso-debian-wayland-amd64.deb
 ```
 
-The process is almost complete, you just need to grant the required
-capabilities.
+The process is almost complete, you just need to grant the required capabilities.
 
 <WaylandFinalSteps />
 
@@ -219,20 +188,15 @@ capabilities.
 
 These are the basic tools required to build espanso:
 
--   A recent Rust compiler. You can install it following these instructions:
-    https://www.rust-lang.org/tools/install
--   A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's
-    usually GCC). If you run the command specified in the next step, this will
-    be included automatically.
+* A recent Rust compiler. You can install it following these instructions: https://www.rust-lang.org/tools/install
+* A C/C++ compiler. On Linux, you should use the default C/C++ compiler (it's usually GCC). 
+If you run the command specified in the next step, this will be included automatically.
 
--   Install the required linux packages:
-    -   On **Ubuntu/Debian** run
-        `sudo apt update && sudo apt install build-essential git wl-clipboard libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
-    -   On **Fedora** run
-        `sudo dnf install @development-tools gcc-c++ wl-clipboard libxkbcommon-devel dbus-devel wxGTK-devel.x86_64`
--   Espanso heavily relies on
-    [cargo make](https://github.com/sagiegurari/cargo-make) for the various
-    packaging steps. You can install it by running:
+* Install the required linux packages:
+  * On **Ubuntu/Debian** run `sudo apt update && sudo apt install build-essential git wl-clipboard libxkbcommon-dev libdbus-1-dev libwxgtk3.0-gtk3-dev libssl-dev`
+  * On **Fedora** run `sudo dnf install @development-tools gcc-c++ wl-clipboard libxkbcommon-devel dbus-devel wxGTK-devel.x86_64`
+* Espanso heavily relies on [cargo make](https://github.com/sagiegurari/cargo-make) for the various packaging
+steps. You can install it by running:
 
 ```
 cargo install --force cargo-make --version 0.34.0
@@ -250,22 +214,20 @@ cd espanso
 
 # Compile espanso in release mode
 # NOTE: this will take a while (~5/15 minutes)
-cargo make --profile release --env NO_X11=true build-binary
+cargo make --profile release --env NO_X11=true build-binary 
 ```
 
-At this point, you should have the `espanso` binary available in the
-`target/release/` directory.
+At this point, you should have the `espanso` binary available in the `target/release/` directory.
 
 #### Installing Espanso
 
-Once you've compiled Espanso, you can move it into the final location. A good
-option would be the `/usr/local/bin` folder:
+Once you've compiled Espanso, you can move it into the final location. 
+A good option would be the `/usr/local/bin` folder:
 
 ```
 sudo mv target/release/espanso /usr/local/bin/espanso
 ```
 
-The process is almost complete, you just need to grant the required
-capabilities.
+The process is almost complete, you just need to grant the required capabilities.
 
 <WaylandFinalSteps />

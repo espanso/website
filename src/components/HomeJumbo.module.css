@@ -1,60 +1,60 @@
 .container {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .content {
-    padding-top: 15vh;
+  padding-top: 15vh;
 }
 
 .headline {
-    font-weight: bold;
-    font-size: 72px;
-    line-height: 87px;
-    min-height: 30vh;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 87px;
+  min-height: 30vh;
 }
 
 .highlight {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .get-started-button {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .subtitle {
-    font-size: 24px;
-    line-height: 29px;
-    font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 400;
 }
 
 .particles {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
 }
 
 @media only screen and (max-width: 1224px) {
-    .headline {
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 48px;
-        text-align: center;
-    }
+  .headline {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
 
-    .subtitle {
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: 400;
-        margin-top: 10px;
-    }
-    .get-started-button {
-        margin-top: 20px;
-    }
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  .get-started-button {
+    margin-top: 20px;
+  }
 }
