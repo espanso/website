@@ -21,6 +21,7 @@ If you use double-quotes, most things will work. However, you will need to escap
   - trigger: :test
     replace: something
 ``` 
+
 Again, most things will work, but you will need to remember the two situations when quotes **are** required. These are when using escape sequences (e.g. `\n`, `\t`, `\u` etc.), and when strings *begin* with YAML reserved indicators (``' "  [] {} > | * & ! % # ` @``). The latter includes the many situations when using an expression like `replace: "{{variable}}"`.
 
 ### Single quotes
@@ -28,6 +29,7 @@ Again, most things will work, but you will need to remember the two situations w
   - trigger: ':test'
     replace: 'something'
 ```
+
 This is possibly the most flexible, as it allows reserved characters and doesn't interfere with regex values. You will have to double-up (`''`) single quotes appearing inside values, and still need to use double-quotes (`"`) around strings containing escape sequences, however.
 
 ### Conclusion
