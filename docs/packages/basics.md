@@ -10,7 +10,7 @@ Packages make it easy to **reuse snippets** created by other people, or **share*
 
 Packages can be installed from multiple sources. For most users, **we recommend installing them from the [Espanso Hub](https://hub.espanso.org/)**, as those packages have been manually verified by the Espanso team.
 
-For advanced use-cases, you can also install packages from [external sources](../external-packages/). gThis section assumes you'll install packages from the Hub, as that's the most common behavior.
+For advanced use-cases, you can also install packages from [external sources](../external-packages/). This section assumes you'll install packages from the Hub, as that's the most common behavior.
 
 After choosing your package of choice on the [Hub](https://hub.espanso.org/), you can install it by opening a terminal
 and running:
