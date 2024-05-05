@@ -40,9 +40,9 @@ espanso start
 
 > If you don't want to use espanso as a Systemd service, you can also start it in unmanaged mode with `espanso start --unmanaged`. Keep in mind that Espanso will not start automatically when running in unmanaged mode, so you will need to do so manually.
 
-:::caution A note for non-US users
+:::caution Keyboards
 
-If you are using a non-US keyboard layout, you'll need to specify its "code" into
+If you are using a non-US keyboard layout (and some US variants), you'll need to specify its "code" into
 the `$CONFIG/config/default.yml` file as follows:
 
 ```yaml
@@ -50,6 +50,9 @@ the `$CONFIG/config/default.yml` file as follows:
 keyboard_layout:
   layout: "it"
 ```
+ The [`keyboard_layout:`](../../configuration/options.md/#options-reference) object accepts `rules:`, `model:`, `layout:`, `variant:` and `options:` fields. 
+
+ Your current system settings can be displayed with the command `setxkbmap -query`.
 
 :::
 

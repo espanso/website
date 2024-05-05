@@ -4,29 +4,13 @@ title: Packages Basics
 sidebar_label: Basics
 ---
 
-Packages make it easy to **reuse snippets** created by other people, 
-or **share** yours with the world.
-Thanks to the official package repository, [Espanso Hub](https://hub.espanso.org),
-and the built-in package manager, using them is a breeze.
-
-:::info A new Hub is coming in 2022
-
-We are working hard to build a new and improved [Espanso Hub](https://github.com/espanso/hub)
-that will replace the current one.
-
-If you want to stay updated, follow me on [Twitter](https://twitter.com/terzi_federico)
-or join the [Subreddit](https://www.reddit.com/r/espanso/).
-
-:::
+Packages make it easy to **reuse snippets** created by other people, or **share** yours with the world. Thanks to the official package repository, [Espanso Hub](https://hub.espanso.org), and the built-in package manager, using them is a breeze.
 
 ## Installing a package
 
-Packages can be installed from multiple sources.
-For most users, **we recommend installing them from the [Espanso Hub](https://hub.espanso.org/)**,
-as those packages have been manually verified by the Espanso team.
+Packages can be installed from multiple sources. For most users, **we recommend installing them from the [Espanso Hub](https://hub.espanso.org/)**, as those packages have been manually verified by the Espanso team.
 
-For advanced use-cases, you can also install packages from [external sources](../external-packages/).
-This section assumes you'll install packages from the Hub, as that's the most common behavior.
+For advanced use-cases, you can also install packages from [external sources](../external-packages/). This section assumes you'll install packages from the Hub, as that's the most common behavior.
 
 After choosing your package of choice on the [Hub](https://hub.espanso.org/), you can install it by opening a terminal
 and running:
