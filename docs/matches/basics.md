@@ -13,8 +13,8 @@ In their most basic form, **Matches are pairs that associate a *trigger* with a 
 For example, we can define a match that will expand every occurrence of `hello` with `world` while we are typing. Using the [YAML](https://en.wikipedia.org/wiki/YAML) syntax, it can be expressed as:
 
 ```yml
-  - trigger: "hello"
-    replace: "world"
+  - trigger: hello
+    replace: world
 ```
 
 These kind of expansions are simple text replacements and can be considered *static*. [Quote-marks](../quotes) are not necessary for `trigger` or `replace` in simple cases, but some people prefer to use them for consistency.
@@ -24,7 +24,7 @@ These kind of expansions are simple text replacements and can be considered *sta
 To replace the original text with a multi-line expansion, we can either use the `\n` line terminator character, such as:
 
 ```yml
-  - trigger: "hello"
+  - trigger: hello
     replace: "line1\nline2"
 ```
 > Note that strings using `\n` as the line terminator character, or `\t` for tab-spacing, or beginning with a YAML special character (``' "  [] {} > | * & ! % # ` @ ``), *must* be quoted.
