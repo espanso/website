@@ -102,11 +102,17 @@ the default system editor (Notepad on Windows and Nano on Unix systems) will be 
 ### Customizing the editor
 
 If you want to use another editor, you can change the `EDITOR` (or `VISUAL`)
-environment variable to the path of your desired editor, such as:
+environment variable to the path of your desired editor.
 
+Linux/macOS example:
 ```
 EDITOR=/usr/bin/vim
 ```
+
+Windows example:
+
+![SystemPropertiesAdvanced_2024-05-16_02-08-15](https://github.com/espanso/website/assets/4579891/09e0c67e-a22e-4da0-a764-c9077db32aa9)
+
 
 ### Editing other configuration files 
 
