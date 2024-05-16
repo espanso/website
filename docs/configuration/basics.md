@@ -111,7 +111,7 @@ EDITOR=/usr/bin/vim
 
 Windows example:
 
-![And example of environment variable being displayed in "Edit User Variable" window for Windows users](/img/docs/windows-editor-env-variable-example.png)
+![An example for Windows users of environment variable being displayed in "Edit User Variable" window](/img/docs/windows-editor-env-variable-example.png)
 
 ### Editing other configuration files 
 
