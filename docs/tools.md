@@ -16,7 +16,7 @@ As these projects aren't created, endorsed, or supported by the Espanso team, us
 ## Editing
 
 ### EspansoEdit
-A freeware Windows editor and utility for Espanso - ideal if you are looking for a quick and easy GUI to edit and manage match files. For more information and to download, visit EspansoEdit's [website](https://ee.qqv.com.au/).
+A freeware Windows editor and utility for Espanso which can be installed or run fully portable from any location - ideal if you are looking for a quick and easy GUI to edit and manage match files. For more information and to download, visit EspansoEdit's [website](https://ee.qqv.com.au/).
 
 Many new and improved [features](https://ee.qqv.com.au/usage/features/) now include:
 - Dedicated YML file handling
@@ -26,6 +26,7 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 - Clickable list of matches in the current folder
 - Menu for match creation
 - Easy navigation between key Espanso folders, and a Favorites menu for files and folders
+- Browsing and editing of installed Espanso packages
 - Handy find function to search for text across match files
 - Backup match files to ZIP file
 - Dark and light themes, with a choice of 16 palettes
