@@ -1,6 +1,6 @@
 ---
 title: Command-line list
-sidebar_label: Command Line
+sidebar_label: Command-line list
 sidebar_position: 2
 ---
 The
@@ -126,7 +126,7 @@ USAGE:
 
 OPTIONS:
         --arg <arg>...         Specify also an argument for the expansion, following the --arg 'name=value' format. 
-                               You can specify multiple ones.
+                               You can specify multiple args.
     -t, --trigger <trigger>    The trigger of the match to be expanded
 ```
 ### list
@@ -161,7 +161,8 @@ SUBCOMMANDS:
     install      Install a package
     list         List all installed packages
     uninstall    Remove a package
-    update       Update a package. If 'all' is passed as package name, attempts to update all packages.
+    update       Update a package. 
+                 If 'all' is passed as package name, attempts to update all packages.
 ```
 ### install
 ```

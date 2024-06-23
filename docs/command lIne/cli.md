@@ -1,6 +1,6 @@
 ---
 title: Basics
-sidebar_label: Command Line
+sidebar_label: Basics
 sidebar_position: 1
 ---
 Espanso ships with a few useful terminal commands that can be used to interact with it.
