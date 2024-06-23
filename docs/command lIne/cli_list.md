@@ -1,4 +1,8 @@
-# Espanso command-line list
+---
+title: Command-line list
+sidebar_label: Command Line
+sidebar_position: 2
+---
 The
 ```
 FLAGS:
@@ -30,11 +34,13 @@ SUBCOMMANDS:
     install       Install a package
     log           Print the daemon logs.
     match         List and execute matches from the CLI
-    migrate       Automatically migrate legacy config files to the new v2 format, without asking for confirmation
+    migrate       Automatically migrate legacy config files to the new v2 format, 
+                  without asking for confirmation
     package       package-management commands
     path          Prints all the espanso directory paths to easily locate configuration and matches.
     restart       Restart the espanso service
-    service       A collection of commands to manage the Espanso service (for example, enabling auto-start on system boot).
+    service       A collection of commands to manage the Espanso service (for example, 
+                  enabling auto-start on system boot).
     start         Start espanso as a service
     status        Check if the espanso daemon is running or not.
     stop          Stop espanso service
@@ -62,8 +68,9 @@ USAGE:
     espanso edit [target_file]
 
 ARGS:
-    <target_file>   Defaults to "match/base.yml", it contains the relative path of the file you want to edit, such as 'config/default.yml' or 'match/base.yml'. 
-    For convenience, you can also specify the name directly and Espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
+    <target_file>   Defaults to "match/base.yml". 
+        It contains the relative path of the file you want to edit, such as 'config/default.yml' or 'match/base.yml'. 
+        For convenience, you can also specify the name directly and Espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
 ```
 ## env-path
 ```
@@ -118,7 +125,8 @@ USAGE:
     espanso match exec [OPTIONS]
 
 OPTIONS:
-        --arg <arg>...         Specify also an argument for the expansion, following the --arg 'name=value' format. You can specify multiple ones.
+        --arg <arg>...         Specify also an argument for the expansion, following the --arg 'name=value' format. 
+                               You can specify multiple ones.
     -t, --trigger <trigger>    The trigger of the match to be expanded
 ```
 ### list
@@ -139,7 +147,8 @@ OPTIONS:
         --class <class>
         --exec <exec>
         --title <title>   
-        Only return matches that would be active with the given class, exec or title. This is relevant if you want to list matches only active inside an app-specific config.
+        Only return matches that would be active with the given class, exec or title. 
+        This is relevant if you want to list matches only active inside an app-specific config.
 ```
 ## package
 ```

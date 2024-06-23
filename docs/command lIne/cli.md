@@ -1,5 +1,5 @@
 ---
-title: Command Line
+title: Basics
 sidebar_label: Command Line
 sidebar_position: 1
 ---
