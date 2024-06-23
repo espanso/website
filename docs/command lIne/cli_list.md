@@ -48,9 +48,8 @@ SUBCOMMANDS:
     workaround    A collection of workarounds to solve some common problems.
 ```
 ## cmd
-```
 Send a command to the espanso daemon.
-
+```
 USAGE:
     espanso cmd [SUBCOMMAND]
 
@@ -61,9 +60,8 @@ SUBCOMMANDS:
     toggle     Enable/Disable expansions.
 ```
 ## edit
-```
 Shortcut to open the default text editor to edit config files
-
+```
 USAGE:
     espanso edit [target_file]
 
@@ -73,9 +71,8 @@ ARGS:
         For convenience, you can also specify the name directly and Espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
 ```
 ## env-path
-```
 Add or remove the 'espanso' command from the PATH
-
+```
 USAGE:
     espanso env-path [FLAGS] [SUBCOMMAND]
 
@@ -87,6 +84,7 @@ SUBCOMMANDS:
     unregister    Remove 'espanso' command from PATH
 ```
 ## install
+Install a package
 ```
 USAGE:
     espanso install [FLAGS] [OPTIONS] [package_name]
@@ -107,9 +105,8 @@ ARGS:
     <package_name>    Package name
 ```
 ## match
-```
 List and execute matches from the CLI
-
+```
 USAGE:
     espanso match [SUBCOMMAND]
 
@@ -118,9 +115,8 @@ SUBCOMMANDS:
     list    Print matches to standard output
 ```
 ### exec
-```
 Triggers the expansion of a match
-
+```
 USAGE:
     espanso match exec [OPTIONS]
 
@@ -130,9 +126,8 @@ OPTIONS:
     -t, --trigger <trigger>    The trigger of the match to be expanded
 ```
 ### list
-```
 Print matches to standard output
-
+```
 USAGE:
     espanso match list [FLAGS] [OPTIONS]
 
@@ -151,9 +146,8 @@ OPTIONS:
         This is relevant if you want to list matches only active inside an app-specific config.
 ```
 ## package
+Package-management commands
 ```
-package-management commands
-
 USAGE:
     espanso package [SUBCOMMAND]
 
@@ -165,9 +159,8 @@ SUBCOMMANDS:
                  If 'all' is passed as package name, attempts to update all packages.
 ```
 ### install
-```
 Install a package
-
+```
 USAGE:
     espanso package install [FLAGS] [OPTIONS] [package_name]
 
@@ -187,9 +180,8 @@ ARGS:
     <package_name>    Package name
 ```
 ### uninstall
-```
 Remove a package
-
+```
 USAGE:
     espanso package uninstall [package_name]
 
@@ -197,10 +189,8 @@ ARGS:
     <package_name>    Package name
 ```
 ### update
-```
-espanso-package-update 
 Update a package. If 'all' is passed as package name, attempts to update all packages.
-
+```
 USAGE:
     espanso package update [package_name]
 
@@ -208,9 +198,8 @@ ARGS:
     <package_name>    Package name or 'all'
 ```
 ## path
-```
 Prints all the espanso directory paths to easily locate configuration and matches.
-
+```
 USAGE:
     espanso path [SUBCOMMAND]
 
@@ -222,9 +211,8 @@ SUBCOMMANDS:
     runtime     Print the current runtime folder path.
 ```
 ## restart
-```
 Restart the espanso service
-
+```
 USAGE:
     espanso restart [FLAGS]
 
@@ -232,9 +220,8 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ## service
-```
 A collection of commands to manage the Espanso service (for example, enabling auto-start on system boot).
-
+```
 USAGE:
     espanso service [SUBCOMMAND]
 
@@ -248,9 +235,8 @@ SUBCOMMANDS:
     unregister    Unregister espanso from system services
 ```
 ### restart
-```
 Restart the espanso service
-
+```
 USAGE:
     espanso service restart [FLAGS]
 
@@ -258,9 +244,8 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ### start
-```
 Start espanso as a service
-
+```
 USAGE:
     espanso service start [FLAGS]
 
@@ -268,9 +253,8 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ## start
-```
 Start espanso as a service
-
+```
 USAGE:
     espanso start [FLAGS]
 
@@ -278,9 +262,8 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ## uninstall
-```
 Remove a package
-
+```
 USAGE:
     espanso uninstall [package_name]
 
@@ -288,9 +271,8 @@ ARGS:
     <package_name>    Package name
 ```
 ## workaround
-```
 A collection of workarounds to solve some common problems.
-
+```
 USAGE:
     espanso workaround [SUBCOMMAND]
 
