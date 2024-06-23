@@ -1,4 +1,4 @@
-# Espanso command-line list```
+# Espanso command-line list
 The
 ```
 FLAGS:

@@ -1,6 +1,7 @@
 ---
-title: CLI 
-sidebar_position: 12
+title: Command Line
+sidebar_label: Command Line
+sidebar_position: 1
 ---
 Espanso ships with a few useful terminal commands that can be used to interact with it.
 
