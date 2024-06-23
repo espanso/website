@@ -96,7 +96,6 @@ USAGE:
 FLAGS:
     -e, --external          Allow installing packages from non-verified repositories.
         --force             Overwrite the package if already installed
-    -h, --help              Prints help information
         --refresh-index     Request a fresh copy of the Espanso Hub package index instead of using the cached version.
         --use-native-git    If specified, espanso will use the 'git' command instead of trying direct methods.
 
@@ -136,11 +135,9 @@ USAGE:
     espanso match list [FLAGS] [OPTIONS]
 
 FLAGS:
-    -h, --help                 Prints help information
     -j, --json                 Output matches to the JSON format
     -t, --only-triggers        Print only triggers without replacement
     -n, --preserve-newlines    Preserve newlines when printing replacements. Does nothing when using JSON format.
-    -V, --version              Prints version information
 
 OPTIONS:
         --class <class>
@@ -171,7 +168,6 @@ USAGE:
 FLAGS:
     -e, --external          Allow installing packages from non-verified repositories.
         --force             Overwrite the package if already installed
-    -h, --help              Prints help information
         --refresh-index     Request a fresh copy of the Espanso Hub package index instead of using the cached version.
         --use-native-git    If specified, espanso will use the 'git' command instead of trying direct methods.
 
