@@ -3,6 +3,8 @@ title: Command-line list
 sidebar_label: Command-line list
 sidebar_position: 2
 ---
+:::tip Note:
+
 The
 ```
 FLAGS:
@@ -16,6 +18,8 @@ SUBCOMMAND:
     help          Prints this message or the help of the given subcommand(s)
 ```
 work at any level and have been largely omitted below.
+
+:::
 # espanso
 ```
 USAGE:
