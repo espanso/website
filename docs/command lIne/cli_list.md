@@ -1,6 +1,6 @@
 ---
-title: Command-line list
-sidebar_label: Command-line list
+title: Command-line reference
+sidebar_label: Command-line reference
 sidebar_position: 2
 ---
 
@@ -44,7 +44,7 @@ SUBCOMMANDS:
     package       package-management commands
     path          Prints all the espanso directory paths to easily locate configuration and matches.
     restart       Restart the espanso service
-    service       A collection of commands to manage the Espanso service (for example, 
+    service       A collection of commands to manage the espanso service (for example, 
                   enabling auto-start on system boot).
     start         Start espanso as a service
     status        Check if the espanso daemon is running or not.
@@ -61,7 +61,7 @@ USAGE:
 SUBCOMMANDS:
     disable    Disable expansions.
     enable     Enable expansions.
-    search     Open the Espanso's search bar.
+    search     Open the espanso search bar.
     toggle     Enable/Disable expansions.
 ```
 ## edit
@@ -73,10 +73,10 @@ USAGE:
 ARGS:
     <target_file>   Defaults to "match/base.yml". 
         It contains the relative path of the file you want to edit, such as 'config/default.yml' or 'match/base.yml'. 
-        For convenience, you can also specify the name directly and Espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
+        For convenience, you can also specify the name directly and espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
 ```
 ## env-path
-Add or remove the 'espanso' command from the PATH
+Add or remove the `espanso` command from the PATH
 ```
 USAGE:
     espanso env-path [FLAGS] [SUBCOMMAND]
@@ -221,7 +221,7 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ## service
-A collection of commands to manage the Espanso service (for example, enabling auto-start on system boot).
+A collection of commands to manage the espanso service (for example, enabling auto-start on system boot).
 ```
 USAGE:
     espanso service [SUBCOMMAND]
