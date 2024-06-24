@@ -1,6 +1,6 @@
 ---
 title: Community Tools & Plugins
-sidebar_position: 12
+sidebar_position: 15
 ---
 
 Looking to make your Espanso experience better? Here you'll find just some of the neat stuff our community have made to enhanso your Espanso.
