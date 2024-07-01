@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
+import React from "react";
 // import clsx from "clsx";
 // import Link from "@docusaurus/Link";
 // import { useThemeConfig } from "@docusaurus/theme-common";
@@ -13,8 +13,8 @@ import React from 'react';
 // import styles from "./styles.module.css";
 // import ThemedImage from "@theme/ThemedImage";
 // import IconExternalLink from "@theme/IconExternalLink";
-import DonateSection from '../../components/DonateSection';
-import Contributing from '../../components/Contributing';
+import DonateSection from "../../components/DonateSection";
+import Contributing from "../../components/Contributing";
 
 // function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
 //   const toUrl = useBaseUrl(to);

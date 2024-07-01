@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './HomeFeatures.module.css';
-import TypeIt from 'typeit-react';
-import Fade from 'react-reveal/Fade';
+import React from "react";
+import styles from "./HomeFeatures.module.css";
+import TypeIt from "typeit-react";
+import Fade from "react-reveal/Fade";
 import {
   LightBulbIcon,
   SearchIcon,
@@ -14,23 +14,23 @@ import {
   DocumentDuplicateIcon,
   CodeIcon,
   ViewGridIcon,
-} from '@heroicons/react/outline';
-import Link from '@docusaurus/Link';
-import { useOS } from '../hooks/useOS';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import { useScreenSize } from '../hooks/useScreenSize';
+} from "@heroicons/react/outline";
+import Link from "@docusaurus/Link";
+import { useOS } from "../hooks/useOS";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function HomeFeatures() {
   const today = new Date().toLocaleDateString();
   const twoHours = new Date(
     new Date().getTime() + 1000 * 60 * 60 * 2,
-  ).toLocaleTimeString(undefined, { timeStyle: 'short' });
+  ).toLocaleTimeString(undefined, { timeStyle: "short" });
 
   return (
     <div className={styles.container}>
       <Feature
         main={
-          <div className={styles['feature-card']}>
+          <div className={styles["feature-card"]}>
             <TypeIt
               options={{ loop: true, waitUntilVisible: true, startDelay: 900 }}
               getBeforeInit={(instance) => {
@@ -38,7 +38,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 50,
                   })
-                  .type('<b>email</b>')
+                  .type("<b>email</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -47,7 +47,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 1,
                   })
-                  .type('Hey ,<br/><br/><br/><br/>Best regards,<br/>Federico')
+                  .type("Hey ,<br/><br/><br/><br/>Best regards,<br/>Federico")
                   .options({
                     speed: 1,
                   })
@@ -56,10 +56,10 @@ export default function HomeFeatures() {
                   .options({
                     speed: 50,
                   })
-                  .type('John')
+                  .type("John")
                   .pause(400)
                   .move(3)
-                  .type('<b>ty</b>')
+                  .type("<b>ty</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -68,9 +68,9 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('Thank you for reaching out!<br/>')
+                  .type("Thank you for reaching out!<br/>")
                   .pause(1000)
-                  .type('<b>tom</b>')
+                  .type("<b>tom</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -79,7 +79,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('Are you available tomorrow?')
+                  .type("Are you available tomorrow?")
                   .pause(3000);
 
                 return instance;
@@ -93,7 +93,7 @@ export default function HomeFeatures() {
             icon={<LightBulbIcon className={styles.icon} />}
           >
             <p>
-              No more copy and pasting, create{' '}
+              No more copy and pasting, create{" "}
               <span className={styles.highlight}>templates</span> once and let
               Espanso do the rest for you.
               <br />
@@ -106,7 +106,7 @@ export default function HomeFeatures() {
       />
       <Feature
         reversed
-        main={<div className={styles['search-bar-image']} />}
+        main={<div className={styles["search-bar-image"]} />}
         description={
           <FeatureDescription
             title="Every sentence, one search away"
@@ -115,11 +115,11 @@ export default function HomeFeatures() {
             <p>
               Don’t remember a shortcut? No worries.
               <br />
-              <br /> Just press{' '}
+              <br /> Just press{" "}
               <BrowserOnly fallback={<>ALT+Space</>}>
                 {() => <SearchShortcut />}
-              </BrowserOnly>{' '}
-              and Espanso’s <span className={styles.highlight}>search bar</span>{' '}
+              </BrowserOnly>{" "}
+              and Espanso’s <span className={styles.highlight}>search bar</span>{" "}
               will open, letting you search for the perfect snippet.
             </p>
           </FeatureDescription>
@@ -127,16 +127,16 @@ export default function HomeFeatures() {
       />
       <Feature
         main={
-          <div className={styles['feature-card']}>
+          <div className={styles["feature-card"]}>
             <TypeIt
               options={{ loop: true, waitUntilVisible: true, startDelay: 900 }}
               getBeforeInit={(instance) => {
                 instance
-                  .type('Today is ')
+                  .type("Today is ")
                   .options({
                     speed: 50,
                   })
-                  .type('<b>tod</b>')
+                  .type("<b>tod</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -147,7 +147,7 @@ export default function HomeFeatures() {
                   })
                   .type(today)
                   .pause(2000)
-                  .type('<br/><br/><b>meet2h</b>')
+                  .type("<br/><br/><b>meet2h</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -156,9 +156,9 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('Are you available at ' + twoHours + '?')
+                  .type("Are you available at " + twoHours + "?")
                   .pause(2000)
-                  .type('<br/><br/>This is so funny <b>:joy</b>')
+                  .type("<br/><br/>This is so funny <b>:joy</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -167,10 +167,10 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('😂')
+                  .type("😂")
                   .pause(2000)
                   .type(
-                    '<br/><br/>The big launch is happening tomorrow <b>:rocket</b>',
+                    "<br/><br/>The big launch is happening tomorrow <b>:rocket</b>",
                   )
                   .pause(400)
                   .options({
@@ -180,7 +180,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('🚀')
+                  .type("🚀")
                   .pause(3000);
 
                 return instance;
@@ -194,7 +194,7 @@ export default function HomeFeatures() {
             icon={<CalendarIcon className={styles.icon} />}
           >
             <p>
-              Don’t wrap your head around{' '}
+              Don’t wrap your head around{" "}
               <span className={styles.highlight}>dates</span>. Espanso makes it
               easy to use them, both past and future ones.
               <br />
@@ -207,16 +207,16 @@ export default function HomeFeatures() {
       />
       <Feature
         reversed
-        main={<div className={styles['packages-image']} />}
+        main={<div className={styles["packages-image"]} />}
         description={
           <FeatureDescription
             title="Endless extensibility"
             icon={<ShareIcon className={styles.icon} />}
           >
             <p>
-              Extend Espanso’s capabilities with{' '}
+              Extend Espanso’s capabilities with{" "}
               <span className={styles.highlight}>packages</span>, or create your
-              owns and share them with the community on the{' '}
+              owns and share them with the community on the{" "}
               <Link to="https://hub.espanso.org">Espanso Hub</Link>.
               <br />
               <br />
@@ -234,16 +234,16 @@ export default function HomeFeatures() {
       </div>
       <Feature
         main={
-          <div className={styles['feature-card']}>
+          <div className={styles["feature-card"]}>
             <TypeIt
               options={{ loop: true, waitUntilVisible: true, startDelay: 900 }}
               getBeforeInit={(instance) => {
                 instance
-                  .type('My IP is ')
+                  .type("My IP is ")
                   .options({
                     speed: 50,
                   })
-                  .type('<b>:ip</b>')
+                  .type("<b>:ip</b>")
                   .pause(400)
                   .options({
                     deleteSpeed: 5,
@@ -252,10 +252,10 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('192.168.1.123')
+                  .type("192.168.1.123")
                   .pause(2000)
                   .type(
-                    '<br/><br/>Or you can execute a script: <br/><b>pyscript</b>',
+                    "<br/><br/>Or you can execute a script: <br/><b>pyscript</b>",
                   )
                   .pause(400)
                   .options({
@@ -265,7 +265,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type('Hello from Python')
+                  .type("Hello from Python")
                   .pause(3000);
 
                 return instance;
@@ -279,8 +279,8 @@ export default function HomeFeatures() {
             icon={<TerminalIcon className={styles.icon} />}
           >
             <p>
-              For advanced use-cases, you can extend Espanso’s snippets with{' '}
-              <span className={styles.highlight}>shell</span> commands or{' '}
+              For advanced use-cases, you can extend Espanso’s snippets with{" "}
+              <span className={styles.highlight}>shell</span> commands or{" "}
               <span className={styles.highlight}>custom scripts</span>.
               <br />
               <br />
@@ -292,7 +292,7 @@ export default function HomeFeatures() {
       />
       <Feature
         reversed
-        main={<div className={styles['form-image']} />}
+        main={<div className={styles["form-image"]} />}
         description={
           <FeatureDescription
             title="Form support"
@@ -312,11 +312,11 @@ export default function HomeFeatures() {
       />
       <h3>And also</h3>
 
-      <div className={styles['more-features-container']}>
+      <div className={styles["more-features-container"]}>
         <SmallFeature
           title="System-wide integration"
           icon={
-            <DesktopComputerIcon className={styles['small-feature-icon']} />
+            <DesktopComputerIcon className={styles["small-feature-icon"]} />
           }
         >
           <p>
@@ -327,7 +327,7 @@ export default function HomeFeatures() {
         <SmallFeature
           title="File-based configuration"
           icon={
-            <DocumentDuplicateIcon className={styles['small-feature-icon']} />
+            <DocumentDuplicateIcon className={styles["small-feature-icon"]} />
           }
           delay={100}
         >
@@ -338,14 +338,14 @@ export default function HomeFeatures() {
         </SmallFeature>
         <SmallFeature
           title="Open-source license"
-          icon={<CodeIcon className={styles['small-feature-icon']} />}
+          icon={<CodeIcon className={styles["small-feature-icon"]} />}
           delay={200}
         >
           <p>Espanso is open-source, licensed under the GPL-3 license.</p>
         </SmallFeature>
         <SmallFeature
           title="Cross-platform support"
-          icon={<ViewGridIcon className={styles['small-feature-icon']} />}
+          icon={<ViewGridIcon className={styles["small-feature-icon"]} />}
           delay={300}
         >
           <p>Espanso supports Windows, Linux and macOS.</p>
@@ -373,7 +373,7 @@ const Feature = ({ main, description, reversed }) => {
 
   return (
     <div
-      className={`${styles.feature} ${shouldReverse ? styles.reversed : ''}`}
+      className={`${styles.feature} ${shouldReverse ? styles.reversed : ""}`}
     >
       <Fade left={!shouldReverse} right={shouldReverse}>
         <div className={styles.entry}>{main}</div>
@@ -388,7 +388,7 @@ const Feature = ({ main, description, reversed }) => {
 const SmallFeature = ({ title, icon, children, delay }) => {
   return (
     <Fade bottom delay={delay ?? 0}>
-      <div className={styles['small-feature']}>
+      <div className={styles["small-feature"]}>
         {icon}
         <h4>{title}</h4>
         {children}
@@ -400,5 +400,5 @@ const SmallFeature = ({ title, icon, children, delay }) => {
 const SearchShortcut = () => {
   const { os } = useOS();
 
-  return <> {os === 'mac' ? '⌥' : 'ALT'}+Space </>;
+  return <> {os === "mac" ? "⌥" : "ALT"}+Space </>;
 };

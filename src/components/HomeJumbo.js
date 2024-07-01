@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './HomeJumbo.module.css';
-import TypeIt from 'typeit-react';
-import Fade from 'react-reveal/Fade';
-import InstallButton from './InstallButton';
-import Particles from 'react-particles-js';
-import { useScreenSize } from '../hooks/useScreenSize';
+import React from "react";
+import styles from "./HomeJumbo.module.css";
+import TypeIt from "typeit-react";
+import Fade from "react-reveal/Fade";
+import InstallButton from "./InstallButton";
+import Particles from "react-particles-js";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function HomeJumbo() {
   const { isLargeScreen } = useScreenSize();
@@ -22,11 +22,11 @@ export default function HomeJumbo() {
               value: 4,
             },
             color: {
-              value: '#00a595',
+              value: "#00a595",
             },
             links: {
               color: {
-                value: '#00a595',
+                value: "#00a595",
               },
               opacity: 0.3,
             },
@@ -42,13 +42,13 @@ export default function HomeJumbo() {
           },
         }}
       />
-      <div className={styles['content']}>
+      <div className={styles["content"]}>
         <div className={styles.headline}>
           <TypeIt
             getBeforeInit={(instance) => {
               instance
                 .options({ speed: 100 })
-                .type('espanso')
+                .type("espanso")
                 .pause(500)
                 .options({ speed: 2, lifeLike: false })
                 .delete(7)
@@ -85,7 +85,7 @@ export default function HomeJumbo() {
           </p>
         </Fade>
         <Fade bottom delay={3500}>
-          <div className={styles['get-started-button']}>
+          <div className={styles["get-started-button"]}>
             <InstallButton />
           </div>
         </Fade>

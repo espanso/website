@@ -1,31 +1,31 @@
-import React, { useEffect } from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
-import Navigation from '../components/Navigation';
-import DonateSection from '../components/DonateSection';
-import Contributing from '../components/Contributing';
-import Head from '@docusaurus/Head';
+import React, { useEffect } from "react";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import styles from "./index.module.css";
+import Navigation from "../components/Navigation";
+import DonateSection from "../components/DonateSection";
+import Contributing from "../components/Contributing";
+import Head from "@docusaurus/Head";
 
 export default function Donate() {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
-      '(prefers-color-scheme: dark)',
+      "(prefers-color-scheme: dark)",
     );
     const listener = (e) => {
       // Override the theme only if the user didn't specify a preference
       if (getStoredTheme() === null) {
         const darkModeOn = e.matches;
         document.documentElement.setAttribute(
-          'data-theme',
-          darkModeOn ? 'dark' : 'light',
+          "data-theme",
+          darkModeOn ? "dark" : "light",
         );
       }
     };
-    darkModeMediaQuery.addEventListener('change', listener);
+    darkModeMediaQuery.addEventListener("change", listener);
     return () => {
-      darkModeMediaQuery.removeEventListener('change', listener);
+      darkModeMediaQuery.removeEventListener("change", listener);
     };
   }, []);
 
@@ -47,7 +47,7 @@ export default function Donate() {
 function getStoredTheme() {
   var theme = null;
   try {
-    theme = localStorage.getItem('theme');
+    theme = localStorage.getItem("theme");
   } catch (err) {}
   return theme;
 }

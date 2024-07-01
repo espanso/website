@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './HomeHowItWorks.module.css';
-import TypeIt from 'typeit-react';
-import Fade from 'react-reveal/Fade';
-import { LightBulbIcon } from '@heroicons/react/outline';
+import React from "react";
+import styles from "./HomeHowItWorks.module.css";
+import TypeIt from "typeit-react";
+import Fade from "react-reveal/Fade";
+import { LightBulbIcon } from "@heroicons/react/outline";
 
 export default function HomeHowItWorks() {
   return (
@@ -12,7 +12,7 @@ export default function HomeHowItWorks() {
         <h2>How it works</h2>
       </div>
       <p>
-        Espanso detects when you type a{' '}
+        Espanso detects when you type a{" "}
         <span className={styles.highlight}>keyword</span>
       </p>
 
@@ -24,7 +24,7 @@ export default function HomeHowItWorks() {
               .options({
                 speed: 50,
               })
-              .type('Today is <b>:date</b>')
+              .type("Today is <b>:date</b>")
               .pause(400)
               .options({ speed: 1, deleteSpeed: 7 })
               .delete(5)

@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import styles from './Navigation.module.css';
-import Link from '@docusaurus/Link';
-import { HeartIcon, MenuIcon } from '@heroicons/react/solid';
-import { useScreenSize } from '../hooks/useScreenSize';
+import React, { useState } from "react";
+import styles from "./Navigation.module.css";
+import Link from "@docusaurus/Link";
+import { HeartIcon, MenuIcon } from "@heroicons/react/solid";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      <div className={styles['navigation-container']}>
+      <div className={styles["navigation-container"]}>
         <Link className={styles.logo} to="/" />
 
         <Buttons />
       </div>
-      <div className={styles['navigation-container-mobile']}>
-        <div className={styles['mobile-top-bar']}>
+      <div className={styles["navigation-container-mobile"]}>
+        <div className={styles["mobile-top-bar"]}>
           <Link className={styles.logo} to="/" />
           <Link
             onClick={() => {
               setMobileMenuOpen(!mobileMenuOpen);
             }}
           >
-            <MenuIcon className={styles['menu-icon']} />
+            <MenuIcon className={styles["menu-icon"]} />
           </Link>
         </div>
 
@@ -36,7 +36,7 @@ const Buttons = ({ mobile }) => {
   return (
     <div
       className={
-        mobile ? styles['button-section-mobile'] : styles['button-section']
+        mobile ? styles["button-section-mobile"] : styles["button-section"]
       }
     >
       <NavbarLink to="/install" text="Installation" />
@@ -50,7 +50,7 @@ const Buttons = ({ mobile }) => {
       <ButtonLink
         to="/donate"
         text="Donate"
-        icon={<HeartIcon className={styles['button-icon']} />}
+        icon={<HeartIcon className={styles["button-icon"]} />}
       />
     </div>
   );
@@ -66,7 +66,7 @@ const NavbarLink = ({ to, text }) => {
 
 const ButtonLink = ({ to, text, icon }) => {
   return (
-    <Link className={`${styles['button-link']} ${styles.link}`} to={to}>
+    <Link className={`${styles["button-link"]} ${styles.link}`} to={to}>
       {icon}
       {text}
     </Link>

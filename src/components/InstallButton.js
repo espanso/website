@@ -1,37 +1,37 @@
-import React, { useMemo } from 'react';
-import styles from './InstallButton.module.css';
-import Link from '@docusaurus/Link';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import { useOS } from '../hooks/useOS';
+import React, { useMemo } from "react";
+import styles from "./InstallButton.module.css";
+import Link from "@docusaurus/Link";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { useOS } from "../hooks/useOS";
 
 function InstallButton() {
   const { os } = useOS();
 
   const { link, text, subtitle } = useMemo(() => {
     switch (os) {
-      case 'linux':
+      case "linux":
         return {
-          link: '/docs/install/linux',
-          text: 'Get Started on Linux',
-          subtitle: 'Also available on macOS and Windows',
+          link: "/docs/install/linux",
+          text: "Get Started on Linux",
+          subtitle: "Also available on macOS and Windows",
         };
-      case 'mac':
+      case "mac":
         return {
-          link: '/docs/install/mac',
-          text: 'Get Started on macOS',
-          subtitle: 'Also available on Windows and Linux',
+          link: "/docs/install/mac",
+          text: "Get Started on macOS",
+          subtitle: "Also available on Windows and Linux",
         };
-      case 'win':
+      case "win":
         return {
-          link: '/docs/install/win',
-          text: 'Get Started on Windows',
-          subtitle: 'Also available on macOS and Linux',
+          link: "/docs/install/win",
+          text: "Get Started on Windows",
+          subtitle: "Also available on macOS and Linux",
         };
       default:
         return {
-          link: '/install',
-          text: 'Get Started',
-          subtitle: 'Available on macOS, Windows and Linux',
+          link: "/install",
+          text: "Get Started",
+          subtitle: "Available on macOS, Windows and Linux",
         };
     }
   }, [os]);

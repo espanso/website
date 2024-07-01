@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './DonateSection.module.css';
-import Fade from 'react-reveal/Fade';
-import Link from '@docusaurus/Link';
-import { HeartIcon } from '@heroicons/react/solid';
+import React from "react";
+import styles from "./DonateSection.module.css";
+import Fade from "react-reveal/Fade";
+import Link from "@docusaurus/Link";
+import { HeartIcon } from "@heroicons/react/solid";
 
 export default function DonateSection() {
   return (
@@ -21,12 +21,12 @@ export default function DonateSection() {
             useful to many people.
           </p>
 
-          <p className={styles['call-to-action']}>
+          <p className={styles["call-to-action"]}>
             If you liked the project, please consider making a small donation,
             it really helps :)
           </p>
 
-          <div className={styles['button-section']}>
+          <div className={styles["button-section"]}>
             <Link to="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FHNLR5DRS267E&source=url">
               <div className={`${styles.button} ${styles.paypal}`}>
                 <span>Donate with PayPal </span>

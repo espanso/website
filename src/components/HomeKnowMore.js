@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './HomeKnowMore.module.css';
-import Fade from 'react-reveal/Fade';
-import Link from '@docusaurus/Link';
+import React from "react";
+import styles from "./HomeKnowMore.module.css";
+import Fade from "react-reveal/Fade";
+import Link from "@docusaurus/Link";
 
 export default function HomeKnowMore() {
   return (
