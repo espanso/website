@@ -45,7 +45,7 @@ export default function Donate() {
 }
 
 function getStoredTheme() {
-  var theme = null;
+  let theme = null;
   try {
     theme = localStorage.getItem("theme");
   } catch (err) {}

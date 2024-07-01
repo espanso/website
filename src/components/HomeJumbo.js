@@ -42,7 +42,7 @@ export default function HomeJumbo() {
           },
         }}
       />
-      <div className={styles["content"]}>
+      <div className={styles.content}>
         <div className={styles.headline}>
           <TypeIt
             getBeforeInit={(instance) => {

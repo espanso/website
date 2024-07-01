@@ -156,7 +156,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type("Are you available at " + twoHours + "?")
+                  .type(`Are you available at ${twoHours}?`)
                   .pause(2000)
                   .type("<br/><br/>This is so funny <b>:joy</b>")
                   .pause(400)
