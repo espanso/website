@@ -1,39 +1,39 @@
 {
-  "redirects": [
-    { 
-      "source": "/install/win/",
-      "destination": "/docs/install/win/", 
-      "permanent": true
-    },
-    { 
-      "source": "/install/mac/",
-      "destination": "/docs/install/mac/", 
-      "permanent": true
-    },
-    { 
-      "source": "/install/linux/",
-      "destination": "/docs/install/linux/", 
-      "permanent": true
-    },
-    { 
-      "source": "/docs/",
-      "destination": "/docs/get-started/", 
-      "permanent": true
-    },
-    { 
-      "source": "/legacy/uninstall",
-      "destination": "/docs/migration/uninstalling_legacy/", 
-      "permanent": false 
-    },
-    { 
-      "source": "/migration",
-      "destination": "/docs/migration/overview/", 
-      "permanent": false 
-    },
-    {
-      "source": "/docs/next/:path(.*)",
-      "destination": "/docs/:path*",
-      "permanent": true
-    }
-  ]
+	"redirects": [
+		{
+			"source": "/install/win/",
+			"destination": "/docs/install/win/",
+			"permanent": true
+		},
+		{
+			"source": "/install/mac/",
+			"destination": "/docs/install/mac/",
+			"permanent": true
+		},
+		{
+			"source": "/install/linux/",
+			"destination": "/docs/install/linux/",
+			"permanent": true
+		},
+		{
+			"source": "/docs/",
+			"destination": "/docs/get-started/",
+			"permanent": true
+		},
+		{
+			"source": "/legacy/uninstall",
+			"destination": "/docs/migration/uninstalling_legacy/",
+			"permanent": false
+		},
+		{
+			"source": "/migration",
+			"destination": "/docs/migration/overview/",
+			"permanent": false
+		},
+		{
+			"source": "/docs/next/:path(.*)",
+			"destination": "/docs/:path*",
+			"permanent": true
+		}
+	]
 }
