@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import Navigation from "../components/Navigation";
@@ -20,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     );
     const listener = (e) => {
       // Override the theme only if the user didn't specify a preference
@@ -28,7 +25,7 @@ export default function Home() {
         const darkModeOn = e.matches;
         document.documentElement.setAttribute(
           "data-theme",
-          darkModeOn ? "dark" : "light"
+          darkModeOn ? "dark" : "light",
         );
       }
     };
@@ -61,7 +58,7 @@ export default function Home() {
 }
 
 function getStoredTheme() {
-  var theme = null;
+  let theme = null;
   try {
     theme = localStorage.getItem("theme");
   } catch (err) {}

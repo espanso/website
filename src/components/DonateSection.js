@@ -12,7 +12,7 @@ export default function DonateSection() {
         <h2>Donate</h2>
       </div>
       <div className={styles.content}>
-        <img src="/img/federico.png" className={styles.picture} />
+        <img src="/img/federico.png" className={styles.picture} alt="The author of the project"/>
         <div className={styles.text}>
           <p>
             Hi! I'm <Link to="https://federicoterzi.com">Federico</Link>, the

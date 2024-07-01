@@ -23,7 +23,7 @@ import { useScreenSize } from "../hooks/useScreenSize";
 export default function HomeFeatures() {
   const today = new Date().toLocaleDateString();
   const twoHours = new Date(
-    new Date().getTime() + 1000 * 60 * 60 * 2
+    new Date().getTime() + 1000 * 60 * 60 * 2,
   ).toLocaleTimeString(undefined, { timeStyle: "short" });
 
   return (
@@ -156,7 +156,7 @@ export default function HomeFeatures() {
                   .options({
                     speed: 5,
                   })
-                  .type("Are you available at " + twoHours + "?")
+                  .type(`Are you available at ${twoHours}?`)
                   .pause(2000)
                   .type("<br/><br/>This is so funny <b>:joy</b>")
                   .pause(400)
@@ -170,7 +170,7 @@ export default function HomeFeatures() {
                   .type("😂")
                   .pause(2000)
                   .type(
-                    "<br/><br/>The big launch is happening tomorrow <b>:rocket</b>"
+                    "<br/><br/>The big launch is happening tomorrow <b>:rocket</b>",
                   )
                   .pause(400)
                   .options({
@@ -255,7 +255,7 @@ export default function HomeFeatures() {
                   .type("192.168.1.123")
                   .pause(2000)
                   .type(
-                    "<br/><br/>Or you can execute a script: <br/><b>pyscript</b>"
+                    "<br/><br/>Or you can execute a script: <br/><b>pyscript</b>",
                   )
                   .pause(400)
                   .options({

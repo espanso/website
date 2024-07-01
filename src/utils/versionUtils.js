@@ -7,6 +7,6 @@ export const getStableVersion = () => {
 export const getStableDownloadLink = (name) => {
   return siteConfig.customFields[name].replace(
     "{{{VERSION}}}",
-    getStableVersion()
+    getStableVersion(),
   );
 };
