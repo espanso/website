@@ -24,7 +24,7 @@ If you've used Homebrew to install espanso, you can open a terminal and run the 
 
 ```bash
 espanso stop
-espanso unregister
+espanso service unregister
 brew remove espanso
 ```
 
