@@ -42,7 +42,7 @@ export default function HomeJumbo() {
           },
         }}
       />
-      <div className={styles["content"]}>
+      <div className={styles.content}>
         <div className={styles.headline}>
           <TypeIt
             getBeforeInit={(instance) => {
@@ -54,7 +54,7 @@ export default function HomeJumbo() {
                 .delete(7)
                 .options({ speed: 2, lifeLike: false })
                 .type(
-                  `Supercharge your <br><span class="${styles.highlight}">typing</span> experience.`
+                  `Supercharge your <br><span class="${styles.highlight}">typing</span> experience.`,
                 )
                 .pause(1000)
                 .move(-12)
