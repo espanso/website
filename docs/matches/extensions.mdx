@@ -337,7 +337,7 @@ Because of the execution time, you should limit yourself to fast-running scripts
 :::
 
 ### Inline scripts
-Scripts can be included inline within an expansion by changing the `args:`, e.g.:
+Scripts can be included inline within an expansion by changing the `args:` in the above trigger, e.g.:
 ```py
           args:
             - python
@@ -363,7 +363,7 @@ global_vars:
           print(x) 
 
 matches:
-  - trigger: ":test"
+  - trigger: :test
     replace: "{{output}}"
     vars:
       - name: output
@@ -382,7 +382,7 @@ anchors:
         print(x) 
 
 matches:
-  - trigger: ":testt"
+  - trigger: :testt
     replace: "{{output}}"
     vars:
       - name: output
@@ -390,14 +390,21 @@ matches:
         params:
           args: [python, -c, *script1]        
 ```
-It is also possible to embed anchors in trigger scripts with something like:
+It is also possible to embed anchors inside trigger scripts. E.g.:
 ```yml
   - trigger: :test
     replace: '{{output}}'
     anchor: &script1 |
-      print("Something")
+      fruits = ["apple", "banana", "cherry"]
+      for x in fruits:
+        print(x) 
+    vars:
+      - name: output
+        type: script
+        params:
+          args: [python, -c, *script1]
 ```
-with the `vars:` section being the same as before. The anchor will also be available for use in any other triggers that *follow*.
+The anchor will also be available for use in any other triggers that *follow*.
 
 
 ### Useful Environment Variables
