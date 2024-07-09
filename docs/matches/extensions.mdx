@@ -347,7 +347,7 @@ Scripts can be included inline within an expansion by changing the `args:` in th
               for x in fruits:
                 print(x)
 ```
-This avoids the need to keep track of the script's location, but they're less easy to debug, and  Windows has an 8191 character limit on them.
+These avoid the need to keep track of the scripts' locations, and can use Espanso `{{variables}}` directly in the code, without having to pass them as arguments or Environment Variables. However, they're less easy to debug, and Windows has an 8191 character limit on them.
 
 #### Global variables
 
@@ -373,7 +373,7 @@ matches:
 ```          
 #### Anchors and Aliases
 
-An alternative is to use the YAML Anchor/Alias facility. This requires a named section which can contain several anchors but, unlike `global_vars:`, Espanso requires it *precede* the `matches:` section of the same file. The section name can be anything, but I suggest something like `anchors:`. The *anchor* names themselves have a `&` prefix but when used in the trigger their *alias* exchanges this for a `*`. Otherwise the layout is very similar to that above, but more compact:
+An alternative is to use the YAML Anchor/Alias facility. This requires a named section which can contain several anchors but, unlike `global_vars:`, Espanso requires it *precede* the `matches:` section of the *same file*. The section name can be anything, so use something like `anchors:`. The *anchor* names themselves have a `&` prefix but when used in the trigger their *alias* exchanges this for a `*`. Otherwise the layout is very similar to that above, but more compact:
 ```yml
 anchors:      
   - &script1 |
