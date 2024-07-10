@@ -301,7 +301,7 @@ or
 
 If you now try to type `:pyscript` anywhere, you should see `Hello from python` appear.
 
-You can do the same thing with any programming language, just change the `args` array accordingly.
+You can do the same thing with any programming language - just change the `args` array accordingly.
 
 :::tip script location
 
@@ -330,7 +330,14 @@ This makes it easier to create matches that work across many machines.
 
 :::
 
-Additionally, scripts can be included inline within the expansion by changing the `args:`, e.g.:
+:::caution a note about performance
+
+Because of the execution time, you should limit yourself to fast-running scripts to avoid any lag.
+
+:::
+
+### Inline scripts
+Scripts can be included inline within an expansion by changing the `args:` in the above trigger, e.g.:
 ```py
           args:
             - python
@@ -340,12 +347,65 @@ Additionally, scripts can be included inline within the expansion by changing th
               for x in fruits:
                 print(x)
 ```
-but be aware that Windows has an 8191 character limit on these.
+These avoid the need to keep track of the scripts' locations, and can use Espanso `{{variables}}` directly in the code, without having to pass them as arguments or Environment Variables. However, they're less easy to debug, and Windows has an 8191 character limit on them.
 
-:::caution a note about performance
+#### Global variables
 
-Because of the execution time, you should limit yourself to fast-running scripts to avoid any lag.
-:::
+If you're going to share such a script with several triggers it can be useful to put it into a variable. One method is to use the `echo` extension to assign a global variable, e.g.:
+```yml
+global_vars:
+  - name: pscript
+    type: echo
+    params:
+      echo: |
+        fruits = ["apple", "banana", "cherry"]
+        for x in fruits:
+          print(x) 
+
+matches:
+  - trigger: :test
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args: [python, -c, "{{pscript}}"]
+```          
+#### Anchors and Aliases
+
+An alternative is to use the YAML Anchor/Alias facility. This requires a named section which can contain several anchors but, unlike `global_vars:`, Espanso requires it *precede* the `matches:` section of the *same file*. The section name can be anything, so use something like `anchors:`. The *anchor* names themselves have a `&` prefix but when used in the trigger their *alias* exchanges this for a `*`. Otherwise the layout is very similar to that above, but more compact:
+```yml
+anchors:      
+  - &script1 |
+      fruits = ["apple", "banana", "cherry"]
+      for x in fruits:
+        print(x) 
+
+matches:
+  - trigger: :testt
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args: [python, -c, *script1]        
+```
+It is also possible to embed anchors inside trigger scripts. E.g.:
+```yml
+  - trigger: :test
+    replace: '{{output}}'
+    anchor: &script1 |
+      fruits = ["apple", "banana", "cherry"]
+      for x in fruits:
+        print(x) 
+    vars:
+      - name: output
+        type: script
+        params:
+          args: [python, -c, *script1]
+```
+The anchor will also be available for use in any other triggers that *follow*.
+
 
 ### Useful Environment Variables
 
