@@ -46,6 +46,14 @@ If we type `:now`, Espanso will expand it to something like `It's 11:23`.
 In this example, we defined the variable `mytime` and then inserted its value
 inside the replacement text. This action is known as _variable injection_.
 
+
+:::caution Variable names
+
+Variable names can only include letters, numbers, and the underscore character. Special characters will prevent them from working.
+
+:::
+
+
 ### Injecting variables inside variables
 
 In the previous section, we showed how to use variable injection inside
@@ -309,8 +317,9 @@ constraints. The default constraints are:
 * If variable A depends on variable B (because variable B has been injected inside A's `params`),
 then B **must** be evaluated before A.
 
-Following on our previous example, we don't have any constrait between the global variable `three` and
-the two local variables `one` and `two`, so `three` is evaluated in whatever order Espanso prefers.
+Following on our previous example, we don't have any constraint between the
+global variable `three` and the two local variables `one` and `two`, so `three`
+is evaluated in whatever order Espanso prefers.
 
 If you want to _force_ a global variable to be evaluated in a certain order, you'll need to re-define
 it as a local variable with `global` type, such as:

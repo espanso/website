@@ -11,7 +11,7 @@ export default function Donate() {
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     );
     const listener = (e) => {
       // Override the theme only if the user didn't specify a preference
@@ -19,7 +19,7 @@ export default function Donate() {
         const darkModeOn = e.matches;
         document.documentElement.setAttribute(
           "data-theme",
-          darkModeOn ? "dark" : "light"
+          darkModeOn ? "dark" : "light",
         );
       }
     };
@@ -45,7 +45,7 @@ export default function Donate() {
 }
 
 function getStoredTheme() {
-  var theme = null;
+  let theme = null;
   try {
     theme = localStorage.getItem("theme");
   } catch (err) {}

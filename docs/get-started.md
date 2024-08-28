@@ -229,7 +229,7 @@ espanso edit
 
 which spawns an instance of the system-default text editor.
 
-By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Quick Editing](../configuration/basics/#quick-editing) for more information.
+By default it uses Nano on Unix and Notepad on Windows, but you can customize it as you like. Take a look at [Editing CLI shortcut](../configuration/basics/#editing-cli-shortcut) for more information.
 
 :::
 

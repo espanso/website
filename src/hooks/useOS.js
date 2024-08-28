@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 
 function getOS() {
-  var userAgent = window.navigator.userAgent,
-    platform = window.navigator.platform,
-    macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
-    windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
-    iosPlatforms = ["iPhone", "iPad", "iPod"],
-    os = null;
+  const userAgent = window.navigator.userAgent;
+  const platform = window.navigator.platform;
+  const macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"];
+  const windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"];
+  const iosPlatforms = ["iPhone", "iPad", "iPod"];
+  let os = null;
 
   if (macosPlatforms.indexOf(platform) !== -1) {
     os = "mac";
@@ -19,10 +19,10 @@ function getOS() {
   return os;
 }
 
-export const useOS = () => {
+export function useOS() {
   const os = useMemo(() => getOS(), []);
 
   return {
     os,
   };
-};
+}

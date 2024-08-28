@@ -31,7 +31,7 @@ export default function Install() {
               onClick={(e) => {
                 e.preventDefault();
                 window.open(
-                  getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL")
+                  getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL"),
                 );
                 window.location =
                   "/docs/install/win#problems-you-may-experience";

@@ -78,6 +78,13 @@ this schema:
 The key concept to remember is that **the app-specific configuration will be equivalent
 to the default one, except for the options it changes directly**.
 
+:::tip
+
+Espanso's currently active configuration for a program can be shown in a popup window by typing `#acfg#` from within it. Similarly, `#pacfg#` will paste the details into the program so use with care!
+
+:::
+
+
 ## Filters
 
 As said earlier, one of the key ingredients for app-specific configurations are
@@ -117,11 +124,12 @@ the current application, as that's what Espanso will use in the matching phase.
 
 1. Open the desired application (in this example, I've opened the macOS's TextEdit app).
 2. Inside the application, type `#detect#`
-   * In alternative, you can also open the Search bar, type `>` and then select `Show active application information (detect)`
-
+    * As an alternative, you can also open the Search bar, type `>` and then select `Show active application information (detect)`
 3. A window should open, displaying the information about the active application:
 
 ![Detecting the active app](/img/docs/detectwindow.png)
+
+`#pdetect#` can be used to paste the information directly into your application.
 
 These are the values of `title`, `exec` and `class` detected for the active application.
 
@@ -180,4 +188,4 @@ For example, here's a configuration that would disable Espanso when the active p
 filter_title: YouTube
 enable: false
 ```
-> Note that in situations where more than one filter applies to the same program (e.g. a browser filter, and a tab filter) they are applied in alphabetical order. Name the filter files accordingly so that, for example, a `filter_title` file precedes a `filter_exec` file.
+> Note that, in addition to `default.yml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphabetically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.

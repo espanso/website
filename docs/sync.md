@@ -30,6 +30,8 @@ espanso path config
 The command's output is the configuration path, make sure to note it somewhere as you'll need it later.
 From now on, **we'll refer to this path as `$CONFIG`**.
 
+> Note: you do not need the final 'espanso' folder when entering the path. For example if the path returned by `espanso path config` is `/Users/myname/Library/Application Support/espanso` your `$CONFIG` value should be `/Users/myname/Library/Application Support/`
+
 The specific commands are explained in the following sections, depending on your OS.
 
 :::caution Make sure to replace `$CONFIG`!
@@ -40,13 +42,13 @@ Make sure to replace it with the actual path, determined in the previous section
 For example, if you see this command:
 
 ```
-mklink /J "C:\Users\user\Dropbox\espanso" "$CONFIG"
+mklink /J "$CONFIG" "C:\Users\user\Dropbox\espanso"
 ```
 
 You should run something like:
 
 ```
-mklink /J "C:\Users\user\Dropbox\espanso" "C:\Users\user\AppData\Roaming\espanso"
+mklink /J "C:\Users\user\AppData\Roaming\espanso" "C:\Users\user\Dropbox\espanso"
 ```
 
 :::
@@ -76,7 +78,7 @@ C:\Users\user\Dropbox\espanso
 Now you need to create a **symbolic link**. Open the Command Prompt and type the following command, making sure you specify the correct paths:
 
 ```
-mklink /J "C:\Users\user\Dropbox\espanso" "$CONFIG"
+mklink /J "$CONFIG" "C:\Users\user\Dropbox\espanso"
 ```
 
 Now restart Espanso and you should be ready to go!

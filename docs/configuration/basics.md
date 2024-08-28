@@ -33,9 +33,9 @@ espanso path
 If you can't run the previous command for whatever reason, these are the default directories in 
 which Espanso creates its configuration, based on the operating system:
 
-* **Linux**: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/user/.config/espanso`)
-* **macOS**: `$HOME/Library/Application Support/espanso` (e.g. `/Users/user/Library/Application Support/espanso`)
-* **Windows**: `{FOLDERID_RoamingAppData}\espanso` (e.g. `C:\Users\user\AppData\Roaming\espanso`)
+* **Linux**: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/$USER/.config/espanso`)
+* **macOS**: `$HOME/Library/Application Support/espanso` (e.g. `/Users/$USER/Library/Application Support/espanso`)
+* **Windows**: `%AppData%\espanso` (e.g. `C:\Users\%username%\AppData\Roaming\espanso`)
 
 Keep in mind that these locations might be different in your case, especially if you are coming from a legacy version.
 
@@ -102,11 +102,16 @@ the default system editor (Notepad on Windows and Nano on Unix systems) will be 
 ### Customizing the editor
 
 If you want to use another editor, you can change the `EDITOR` (or `VISUAL`)
-environment variable to the path of your desired editor, such as:
+environment variable to the path of your desired editor.
 
+Linux/macOS example:
 ```
 EDITOR=/usr/bin/vim
 ```
+
+Windows example:
+
+![An example for Windows users of environment variable being displayed in "Edit User Variable" window](/img/docs/windows-editor-env-variable-example.png)
 
 ### Editing other configuration files 
 
