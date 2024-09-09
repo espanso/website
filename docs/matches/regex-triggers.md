@@ -148,7 +148,7 @@ match that calculates and expands the sum between two numbers dynamically.
 
 
 ```yaml
-  - regex: "=sum\\((?P<num1>.*?),(?P<num2>.*?)\\)"
+  - regex: =sum\((?P<num1>\d+),(?P<num2>\d+)\)
     replace: "{{result}}"
     vars:
       - name: result
@@ -156,14 +156,13 @@ match that calculates and expands the sum between two numbers dynamically.
         params:
           cmd: "expr $ESPANSO_NUM1 + $ESPANSO_NUM2"
 ```
-
+Or, the last line could be:
+```yaml
+          cmd: "expr {{num1}} + {{num2}}"
+```
 If you now type `=sum(3,4)`, Espanso will expand it to `7`!
 
-In a nutshell, the two numbers are captured inside the `num1` and `num2` named groups,
-which in turn are converted to Espanso variables.
-As with all variables, you can use them inside the `shell` extension by reading
-the appropriate environment variables. In this case we are passing them
-to the `expr` command.
+In a nutshell, the two numbers are captured inside the `num1` and `num2` named groups, which in turn are converted to Espanso variables. As with all variables, you can use them inside the `shell` extension by reading the appropriate environment variables, or by passing the values directly. In this case we are passing them to the `expr` command.
 
 If you want to know more about the variable injection logic, please read the [Variables](../variables) section.
 
