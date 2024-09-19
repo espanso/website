@@ -125,11 +125,11 @@ In the remaining lines we declared the **parameters** used by the extension, in 
 
 ## Injection mechanism
 
-Normally Espanso follows the `backend` settings specified in `default.yml`, the default for which (`Auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
+Espanso follows the `backend` value specified in `default.yml`, the default for which (`auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
 
-When that doesn't work, the `force_mode: clipboard` or `force_mode: keys` properties override it for an individual match, and are useful for testing the mechanisms within particular programs.
+If expansions aren't working (e.g. no replacements, missing characters, or just "v" appearing), adding the `force_mode: clipboard` or `force_mode: keys` properties to a trigger will override the backend in order to test the two mechanisms.
 
-If you find yourself needing them, however, an [app-specific configuration](../../configuration/app-specific-configurations), or a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml` is likely to be required.
+Once triggers are working, remove the `force_mode:` lines, in favour of a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml`, and/or in [app-specific configurations](../../configuration/app-specific-configurations) for individual programs, so that all triggers work in each environment.
 
 ## Global Variables
 
