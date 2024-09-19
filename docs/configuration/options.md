@@ -82,7 +82,7 @@ These are the supported keys:
 `ALT`, `CTRL`, `CMD`, `SHIFT`, `ENTER`, `TAB`, `SPACE`, `META`, `OPTION`, `INSERT`, `DOWN`, `LEFT`, `RIGHT`, `UP`, `END`, `HOME`, `PAGEDOWN`, `PAGEUP`, `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12`, `F13`, `F14`, `F15`, `F16`, `F17`, `F18`, `F19`, `F20`, `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `NUMPAD0`, `NUMPAD1`, `NUMPAD2`, `NUMPAD3`, `NUMPAD4`, `NUMPAD5`, `NUMPAD6`, `NUMPAD7`, `NUMPAD8`, `NUMPAD9`
 
 > Not all keyboard combinations have been tested. If you find a combination that's not working, please open
-> a bug report on [GitHub](https://github.com/federico-terzi/espanso/issues). Thanks!
+> a bug report on [GitHub](https://github.com/espanso/espanso/issues). Thanks!
 
 You can also disable this shortcut entirely by adding the following line:
 
@@ -162,4 +162,3 @@ Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific
 `restore_clipboard_`<br></br>`delay` 	 | 	 The number of milliseconds to wait before restoring the previous clipboard content after an expansion. This is needed as without this delay, sometimes the target application detects the previous clipboard content instead of the expansion content. 	 | 	 `number` of milliseconds 	 | 	300	 | 	 Yes
 `x11_use_xclip_backend` 	 | 	 If true, use the `xclip` command to implement the clipboard instead of the built-in native module on X11. You'll need to install the `xclip` command. Enable if the clipboard "get stuck" for some applications on Linux. 	 | 	 `true`/`false` 	 | 	 `false` 	 | 	 Yes
 `x11_use_xdotool_`<br></br>`backend` 	 | 	 If true, use the `xdotool` command to implement the clipboard. 	 | 	 `true`/`false` 	 | 	`false`	 | 	 Yes
-
