@@ -52,7 +52,7 @@ keyboard_layout:
 ```
  The [`keyboard_layout:`](../../configuration/options.md/#options-reference) object accepts `rules:`, `model:`, `layout:`, `variant:` and `options:` fields. 
 
- Your current system settings can be displayed with the command `setxkbmap -query`.
+ Your current system settings may be displayed with one of the following commands: `setxkbmap -query`, `localectl status`, `swaymsg -t get_inputs`, `gsettings get org.gnome.desktop.input-sources sources` or `echo $XKB_DEFAULT_LAYOUT`, depending on your desktop environment.
 
 :::
 
