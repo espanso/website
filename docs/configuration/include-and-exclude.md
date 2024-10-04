@@ -56,14 +56,14 @@ all applications. Instead, we want to enable it only on Chrome and Firefox.
 
 At this point, we can create an app-specific configuration for Chrome:
 
-```yaml title="$CONFIG/config/chrome.yml"
+```yaml title="$CONFIG/match/chrome.yml"
 filter_exec: "chrome"
 
 extra_includes:
   - "../match/_email.yml"
 ```
 or
-```yaml title="$CONFIG/config/chrome.yml"
+```yaml title="$CONFIG/match/chrome.yml"
 filter_exec: chrome
 
 extra_includes: [../match/_email.yml]
@@ -83,7 +83,7 @@ The previous configuration should be interpreted as:
 
 Then, we can do the same for Firefox:
 
-```yaml title="$CONFIG/config/firefox.yml"
+```yaml title="$CONFIG/match/firefox.yml"
 filter_exec: "firefox"
 
 extra_includes:
@@ -108,7 +108,7 @@ For example, let's say we want to disable the `all-emojis` package when using Te
 
 You can create an app-specific configuration `config/telegram.yml` as follows:
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/match/telegram.yml"
 filter_exec: Telegram
 
 extra_excludes:
@@ -120,7 +120,7 @@ With this rule, Espanso will **exclude all files defined inside the `all-emojis`
 
 Keep in mind that you are not limited to packages, you can use the `excludes` rules with all match files:
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/match/telegram.yml"
 filter_exec: Telegram
 
 extra_excludes:
@@ -152,7 +152,7 @@ includes without extending them. To do that, you'll need to use the `includes` r
 For example, the following app-specific configuration will only load the `match/jokes.yml` snippets
 when using Telegram, **ignoring the default definitions**.
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/match/telegram.yml"
 filter_exec: Telegram
 
 includes:
