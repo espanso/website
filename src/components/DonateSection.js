@@ -16,14 +16,13 @@ export default function DonateSection() {
         <div className={styles.text}>
           <p>
             Hi! I'm <Link to="https://federicoterzi.com">Federico</Link>, the
-            creator of espanso. I develop espanso in my (little) spare time and
-            I decided to make it open source because I thought it could be
-            useful to many people.
+            creator of espanso. If you liked the project, please consider making a small donation,
+            it really helps :)
           </p>
 
-          <p className={styles["call-to-action"]}>
-            If you liked the project, please consider making a small donation,
-            it really helps :)
+          <p>
+            Also, if you are looking to create educational videos such as tutorials, courses, 
+            and product demos, you might enjoy my latest project, <Link to="https://borumi.com">Borumi</Link>.
           </p>
 
           <div className={styles["button-section"]}>
