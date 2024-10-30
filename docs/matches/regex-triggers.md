@@ -168,8 +168,7 @@ If you want to know more about the variable injection logic, please read the [Va
 
 :::caution windows users
 
-The `expr` command is not available by default on Windows, so the previous example might not
-work on that platform. You can still apply the concepts to other commands/scripts.
+The `expr` command is not available by default on Windows, so the previous example won't work on that platform (`cmd: set /a result={{num1}} + {{num2}}` should work, if `cmd.exe` is your default shell). You can apply the concepts to other commands/scripts.
 
 :::
 

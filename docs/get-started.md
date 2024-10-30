@@ -278,11 +278,12 @@ the **search-bar shortcut**, the **backspace undo** and the **toggle shortcut**.
 ### Search-bar
 
 Espanso comes with a powerful _Search-bar_ to quickly find and insert your matches.
-You can open the search bar in two ways:
-* By pressing `ALT+SPACE` (Option+Space on macOS).
-* By clicking on the status icon and then selecting "Open Search bar" (currently not available on Linux).
+You can open the search bar in several ways:
+* Press `ALT+SPACE` (Option+Space on macOS).
+* Click on the taskbar status icon and select "Open Search bar" (not available on Linux).
+* [Customize the search trigger](../configuration/options/#customizing-the-search-trigger) and type it anywhere.
 
-If you want to customize the shortcut, please check out the [customizing the Search bar](../configuration/options/#customizing-the-search-bar) section.
+Several Espanso control and report commands may be displayed by typing ">" at the beginning of the Search Bar.
 
 ### Backspace Undo
 
@@ -304,3 +305,20 @@ This can be accomplished in many ways, including the icon menu:
 ![Icon Menu](/img/docs/icon-menu.png)
 
 If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize the Toggle Key](../configuration/options/#customizing-the-toggle-key).
+
+## Editors
+
+Espanso's configuration and match files can be revised in any editor, but a couple warrant particular mention.
+
+[EspansoEdit](../tools/#espansoedit) is a dedicated freeware editor and utility for Espanso with many useful features.
+
+Microsoft’s [VSCode](https://code.visualstudio.com/) and the open-source version, [VSCodium](https://vscodium.com/), are sohisticated editors with a steep learning curve for new users, but both can implement _schemas_. These additions efficiently highlight coding errors during typing, avoiding the wait for Espanso to fail when an incorrectly written file is saved.  
+To use schemas, install the Red Hat YAML [extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml), and add the following line at the top of all your `espanso/config`:  
+```
+# yaml-language-server: https://github.com/espanso/espanso/blob/dev/schemas/config.schema.json
+```
+and `espanso/match`:      
+```
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+```
+files.
