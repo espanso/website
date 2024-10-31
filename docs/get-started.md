@@ -308,17 +308,25 @@ If you want a quicker way to toggle Espanso ON and OFF, you can also [Customize 
 
 ## Editors
 
-Espanso's configuration and match files can be revised in any editor, but a couple warrant particular mention.
+Espanso's configuration and match files can be revised in any text editor, but a few warrant particular mention.
 
+### EspansoEdit
 [EspansoEdit](../tools/#espansoedit) is a dedicated freeware editor and utility for Espanso with many useful features.
 
-Microsoft’s [VSCode](https://code.visualstudio.com/) and the open-source version, [VSCodium](https://vscodium.com/), are sohisticated editors with a steep learning curve for new users, but both can implement _schemas_. These additions efficiently highlight coding errors during typing, avoiding the wait for Espanso to fail when an incorrectly written file is saved.  
+### VSCode (VSCodium)
+Microsoft’s [VSCode](https://code.visualstudio.com/) and the open-source version, [VSCodium](https://vscodium.com/), are sohisticated editors with a steep learning curve for new users, but both can implement _schemas_. Schemas efficiently highlight coding errors during typing, avoiding the wait for Espanso to fail when an incorrectly written file is saved:
+
+![Schema output](/img/docs/schema.png)
+
 To use schemas, install the Red Hat YAML [extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml), and add the following line at the top of all your `espanso/config`:  
 ```
-# yaml-language-server: https://github.com/espanso/espanso/blob/dev/schemas/config.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/config.schema.json
 ```
 and `espanso/match`:      
 ```
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 ```
 files.
+
+### Neovim
+[Neovim](https://neovim.io/) can also be configured to use the schemas.
