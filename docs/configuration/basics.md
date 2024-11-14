@@ -130,3 +130,9 @@ or if you want to edit the `config/default.yml` file, you can run:
 ```
 espanso edit config/default.yml
 ```
+
+For convenience, you can also specify the file-name only, without the path or `.yml` extension, and Espanso will figure it out. So: 
+```
+espanso edit emails
+```
+is likely to open `match/emails.yml`.

@@ -31,5 +31,8 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 - Backup match files to ZIP file
 - Dark and light themes, with a choice of 16 palettes
 
+#### Linux + Wine
+EspansoEdit is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux).
+
 ## SnippetShare
 The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has tonnes of useful snippets to check out for inspiration.
