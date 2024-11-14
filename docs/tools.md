@@ -32,7 +32,7 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 - Dark and light themes, with a choice of 16 palettes
 
 #### Linux + Wine
-[EspansoEdit](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux) is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/).
+EspansoEdit is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux).
 
 ## SnippetShare
 The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has tonnes of useful snippets to check out for inspiration.
