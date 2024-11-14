@@ -32,19 +32,7 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 - Dark and light themes, with a choice of 16 palettes
 
 #### Linux + Wine
-[EspansoEdit](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux) is very usable in Linux, using Wine, but requires a little manual configuration:
-
-- Download the ZIP file and extract `EspansoEdit.exe` somewhere convenient, like your Espanso base directory
-- Open EspansoEdit, which will show an error, but create an `EspansoEdit.ini` file in the same directory. Close `EspansoEdit`.
-- Start `winecfg` and open the "Drives" tab. A<u>d</u>d a drive (e.g. `E:`) and set its <u>P</u>ath to `/home/yourname/.config/espanso/`, replacing `yourname` with your Linux login-name. You'll need to type/paste the line as "<u>B</u>rowse" won't navigate to the `.config` folder
-- Edit `EspansoEdit.ini`, adding/amending:
-```
-    ActiveFolder=E:\match
-    PkgFolder=E:\match\packages
-```
-- Restart `EspansoEdit.exe`
-- You can adjust the font size for the code and file-lists using the "Screen resolution" slider in `winecfg` "Graphics" tab, and the menu fonts in the "Desktop Integration" tab "Menu Text" It<u>e</u>m
-
+[EspansoEdit](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux) is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/).
 
 ## SnippetShare
 The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has tonnes of useful snippets to check out for inspiration.
