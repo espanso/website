@@ -101,18 +101,25 @@ Filter | Description | Windows Support | MacOS Support | Linux Support
 
 Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`, and may be usefully combined with [`extra_includes`](../include-and-exclude#difference-between-includes-and-extra_includes) to separate OS-specific [global variables](../../matches/variables/#injecting-global-variables) and local shell expansions etc., when the Espanso configuration files are [shared](../../sync) between different operating systems.
 
-The `filter_title`, `filter_exec` and `filter_class` filters accept a **regex** as parameter, so make sure to escape the special characters properly.
+> Note that, in addition to `default.yml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphanumerically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.
+
+Filter values match by **regex**, so ensure that character case is consistent and special characters are properly escaped.
 
 For example, if the current app title is `Google Chrome`:
 * `filter_title: Chrome` will match, as the string `Google Chrome` matches the regex `Chrome`
 * `filter_title: "^Chrome$"` will NOT match, as that regex matches only an app with the title _equal_ to `Chrome`.
-* `filter_title: "^Google Chrome$"` will match, as the string `Google Chrome` matches exactly the regex `Google Chrome`.
+* `filter_title: "^Google Chrome$"` will match, as the string `Google Chrome` exactly matches the regex `Google Chrome`.
 
+Use of the **regex** alternation operator (`|`) makes it possible to share configurations between programs, e.g.:
+```yml
+filter_class: libreoffice-writer|VSCodium
+backend: clipboard
+```
 ### Finding the right filters
 
 :::tip 
 
-The method described below requires Espanso v2.1.1 or above, so make sure to have an up-to-date version.
+The method described below requires Espanso v2.1.1 or above, so make sure you have an up-to-date version.
 
 :::
 
@@ -188,4 +195,3 @@ For example, here's a configuration that would disable Espanso when the active p
 filter_title: YouTube
 enable: false
 ```
-> Note that, in addition to `default.yml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphabetically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.
