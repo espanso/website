@@ -69,8 +69,6 @@ A `_manifest.yml` _MUST_ contain these fields:
 * `version:` contains the version of your package. We suggest to start at `0.1.0` for new packages. This *must* match the version number in the package path.
 * `author:` contains the author name.
 * `tags:` followed by a sequence of keywords to help users find your work - see [Espanso Hub](https://hub.espanso.org/) for examples.
-
-Optionally, the manifest can also contain:
 * `homepage:` a link to your package's homepage. This could be a website, a documentation page or a Git repository.
 
 :::info Note about package versions
