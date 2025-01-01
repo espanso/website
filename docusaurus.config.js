@@ -102,10 +102,6 @@ module.exports = {
             current: {
               label: CURRENT_STABLE_VERSION,
             },
-            "0.7.3": {
-              label: "v0.7.3 (Legacy)",
-              path: "legacy",
-            },
           },
         },
         theme: {
