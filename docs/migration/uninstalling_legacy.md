@@ -8,9 +8,16 @@ This tutorial will guide through the process, depending on your operating system
 
 :::info
 
-If you don't have the legacy version installed, feel free to skip to the next section.
+If you don't have the legacy version installed, feel free to skip to the Installation section.
 
 :::
+
+:::caution Keep copies of settings?
+
+If you have Legacy configurations **you don't wish to lose** (triggers, settings, app-specific configurations etc.), **keep a copy of the files** somewhere safe prior to uninstallation, so that you can copy and paste the settings into the new installation files later.
+
+:::
+
 
 ### Uninstalling on Windows
 
