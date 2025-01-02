@@ -7,7 +7,7 @@ Make sure to [install Espanso](/install) before diving into the next sections.
 
 :::info For legacy users
 
-If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](../migration/overview) section
+If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](../migration/uninstalling_legacy) section
 first.
 
 :::
