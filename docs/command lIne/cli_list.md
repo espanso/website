@@ -39,8 +39,6 @@ SUBCOMMANDS:
     install       Install a package
     log           Print the daemon logs.
     match         List and execute matches from the CLI
-    migrate       Automatically migrate legacy config files to the new v2 format, 
-                  without asking for confirmation
     package       package-management commands
     path          Prints all the espanso directory paths to easily locate configuration and matches.
     restart       Restart the espanso service

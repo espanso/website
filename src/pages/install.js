@@ -108,38 +108,6 @@ export default function Install() {
         </div>
       </div>
 
-      <div className={styles["install-section"]}>
-        <h1>Installation (Legacy)</h1>
-        <p>
-          This is the legacy edition of Espanso. Given that this version is no
-          longer in active development, we recommend users to choose the new
-          version instead, which comes with many new improvements and features.
-        </p>
-        <div className={styles.targets}>
-          <div className={styles.target}>
-            <div className={styles.windows} />
-            <a className={styles.button} href="/docs/install/win">
-              Install on Windows
-            </a>
-            <span>Version v0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.macos} />
-            <a className={styles.button} href="/docs/install/mac">
-              Install on macOS
-            </a>
-            <span>Version v0.7.3</span>
-          </div>
-          <div className={styles.target}>
-            <div className={styles.linux} />
-            <a className={styles.button} href="/docs/install/linux">
-              Install on Linux
-            </a>
-            <span>Version v0.7.3</span>
-          </div>
-        </div>
-      </div>
-
       <p className={styles.attribution}>
         Images attribution:
         <br />
