@@ -5,13 +5,6 @@ title: Getting Started
 In this section, we will cover the basics of Espanso to quickly get you started.
 Make sure to [install Espanso](/install) before diving into the next sections.
 
-:::info For legacy users
-
-If you are coming from a previous Espanso version (≤ 0.7.3), please read the [Migration](../migration/uninstalling_legacy) section
-first.
-
-:::
-
 If you followed the installation correctly, Espanso should be running on your computer.
 For macOS and Windows users, you should now see the Espanso icon on the status bar:
 
