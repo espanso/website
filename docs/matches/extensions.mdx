@@ -418,7 +418,9 @@ When triggering the shell command, Espanso also injects a few useful Environment
 For more information, check out the [Variables](../variables) section.
 
 ### UTF-8 characters
-By default, some scripts and shell expansions don't return UTF-8 characters, which can interfere with those generating foreign-language letters. A solution for Python scripts is to include the following in the script:
+By default, some scripts and shell expansions don't return UTF-8 characters, which can interfere with those generating foreign-language letters. 
+
+A solution for Python scripts is to include the following in the script:
 ```py
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -427,6 +429,17 @@ For PowerShell:
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 ```
+For HTML:
+```html
+html: |
+  <meta charset="UTF-8">
+```
+For Bash:
+```bash
+cmd: |
+  export LANG='cs_CZ.UTF-8'
+```      
+using your `locale` language setting.
 
 ## Shell Extension
 
