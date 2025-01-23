@@ -111,9 +111,6 @@ For example, if the current app title is `Google Chrome`:
 * `filter_title: "^Google Chrome$"` will match, as the string `Google Chrome` exactly matches the regex `Google Chrome`.
 
 Use of the **regex** alternation operator (`|`) makes it possible to share configurations between programs, e.g.:
-
-[# bookmark]: #
-
 ```yml
 filter_class: libreoffice-writer|VSCodium
 backend: clipboard

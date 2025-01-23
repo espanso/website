@@ -319,8 +319,6 @@ and `espanso/match`:
 ```
 files.
 
-User experience suggests that the `clipboard` backend works best in VSCode/VSCodium. There's an app-specific configuration example at the end of [this](../configuration/app-specific-configurations/#bookmark) section.
-
 ### Neovim
 [Neovim](https://neovim.io/) can also be configured to use the schemas:
 
