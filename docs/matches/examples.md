@@ -13,6 +13,10 @@ If you have an example that would benefit others, feel free to suggest the addit
 
 :::
 
+### EspansoEdit
+
+A comprehensive collection of example snippets is included with  the [EspansoEdit](../../tools/#espansoedit) editor, and can also be seen online at its [website](https://ee.qqv.com.au/usage/cookbook).
+
 ### Populating a Form's choice control with the result of a shell command
 
 The following example shows how you could use the output of a shell command

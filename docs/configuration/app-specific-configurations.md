@@ -176,7 +176,7 @@ such as `config/telegram_win.yml` and `config/telegram_linux.yml`.
 
 As mentioned in the previous section, `filter_title` is trickier to use than
 `filter_class` and `filter_exec`, as its value is not stable over time.
-The value often reflect the _content_ being displayed in the active application:
+The value often reflects the _content_ being displayed in the active application:
 
 * Inside a browser, the `title` might be the _webpage title_.
 For example, if you are visiting YouTube inside Chrome, the `title` is either `YouTube`
