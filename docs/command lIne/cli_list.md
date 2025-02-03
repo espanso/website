@@ -219,7 +219,7 @@ ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
 ## service
-A collection of commands to manage the espanso service (for example, enabling auto-start on system boot).
+A collection of commands to manage the Linux espanso service (for example, enabling auto-start on system boot).
 ```
 USAGE:
     espanso service [SUBCOMMAND]

@@ -145,7 +145,7 @@ Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific
 `word_separators` 	 | 	 Chars that when pressed mark the start and end of a word. Examples of this are . or , 	 | 	 A sequence of strings 	 | 	 `[" ", ",", ".", "?", "!", "\r", "\n", "\t", "'", "\"", "\x0c", "(", ")", "[", "]", "{", "}", "<", ">", ":", ";"]` 	 | 	 No
 `undo_backspace` 	 | 	  When enabled, espanso automatically "reverts" an expansion if the user presses the Backspace key afterwards. This is not available on some platform/configurations. 	 | 	 `true`/`false` 	 | 	 `true` 	 | 	 No 
 ||||
-`apply_patch` 	 | 	 If false, avoid applying the built-in patches to the current config. 	 | 	 `true`/`false` 	 | 	 `true` 	 | 	 Yes
+`apply_patch` 	 | 	 If false, avoid applying the built-in [patches](#patches) to the current config. 	 | 	 `true`/`false` 	 | 	 `true` 	 | 	 Yes
 `backend` 	 | 	  The mechanism used to perform the injection. Espanso can either inject text by simulating keypresses (`Inject` backend) or by using the clipboard (`Clipboard` backend). Both of them have pros and cons, so the `Auto` backend is used by default to automatically choose the most appropriate one based on the situation. If for whatever reason the `Auto` backend is not appropriate, you can change this option to override it. 	 | 	 `clipboard`, `inject` or `auto` 	 | 	 `auto` 	 | 	 Yes
 `clipboard_threshold` 	 | 	 Number of chars after which a match is injected with the clipboard backend instead of the default one. This is done for efficiency reasons, as injecting a long match through separate events becomes slow for long strings. This is only relevant if the backend is set to `Auto`. 	 | 	 `number` 	 | 	100	 | 	 Yes
 `disable_x11_fast_`<br></br>`inject` 	 | 	 NOTE: This is only relevant on Linux under X11 environments. Switch to a slower (but sometimes more supported) way of injecting key events based on XTestFakeKeyEvent instead of XSendEvent. From my experiements, disabling fast inject becomes particularly slow when using the Gnome desktop environment. 	 | 	 `true`/`false` 	 | 	`false`	 | 	 Yes
@@ -162,3 +162,13 @@ Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific
 `restore_clipboard_`<br></br>`delay` 	 | 	 The number of milliseconds to wait before restoring the previous clipboard content after an expansion. This is needed as without this delay, sometimes the target application detects the previous clipboard content instead of the expansion content. 	 | 	 `number` of milliseconds 	 | 	300	 | 	 Yes
 `x11_use_xclip_backend` 	 | 	 If true, use the `xclip` command to implement the clipboard instead of the built-in native module on X11. You'll need to install the `xclip` command. Enable if the clipboard "get stuck" for some applications on Linux. 	 | 	 `true`/`false` 	 | 	 `false` 	 | 	 Yes
 `x11_use_xdotool_`<br></br>`backend` 	 | 	 If true, use the `xdotool` command to implement the clipboard. 	 | 	 `true`/`false` 	 | 	`false`	 | 	 Yes
+
+### Patches
+
+Espanso has a number of hard-coded [patches](https://github.com/espanso/espanso/tree/5d5d0d4d59abac07e3cab52b851aeaf570f5253c/espanso/src/patch/patches) built-in for various programs (particularly terminals) in Linux and Windows, mostly introducing expansion delays or changing paste shortcuts. They are indicated by a `(PATCHED: ...)` entry at the end of the first line of the program's `#acfg#` or `#pacfg#` output. The patches *override* your Options, but can be disabled with `apply_patch: false`, usually in an [app-specific configuration](../app-specific-configurations).
+
+For example, you may prefer to use **\<Ctrl>+v** to paste into your generic Linux terminal rather than the usual **\<Ctrl>+\<Shift>+v** shortcut, but the latter is hard-coded in a patch, is preventing long expansions, and *can't* be overridden with a `paste_shortcut: CTRL+V` option. This can be resolved with the following app-specific configuration:
+```yml
+filter_class: terminal
+apply_patch: false
+```
