@@ -142,12 +142,11 @@ For this reason, Espanso offers two ways to disable this behavior:
 
 #### Disabling variable injection by escaping brackets
 
-You can use backslashes to escape the curly brackets.
-For example, the following match outputs `hello {{var}}` when expanded:
+You can use backslashes to escape the opening curly brackets. For example, the following match outputs `hello {{var}}` when expanded:
 
 ```yaml
   - trigger: ":hello"
-    replace: "hello \\{\\{var\\}\\}"
+    replace: "hello \\{\\{var}}"
     vars:
       - name: var
         type: echo
@@ -157,31 +156,28 @@ For example, the following match outputs `hello {{var}}` when expanded:
 
 :::caution How many backslashes to use?
 
-In the previous example, we escaped `{{var}}` with 4 backslashes `\\{\\{var\\}\\}`,
+In the previous example, we escaped `{{var}}` with 4 backslashes `\\{\\{var}}`,
 but that's only because the replace value was surrounded by double quotes `"`.
 In those cases, you need to **escape the backslashes** as well.
 
-That's not the case with [plain scalars](https://yaml-multiline.info/),
-where escaping the backslashes is not needed. For example, the following
-match is valid:
+That's not needed with [plain or single-qoted scalars](https://yaml-multiline.info/). For example, the following match is valid:
 
 ```yaml
-  - trigger: ":hello"
-    replace: |
-      hello \{\{var\}\}
+  - trigger: :hello
+    replace: hello \{\{var}}
     vars:
       - name: var
         type: echo
         params:
           echo: world
 ```
+but if you want to include *actual* variables as well, you'll have to single-quote the replace value.
 
 :::
 
 #### Disabling variable injection with the inject_vars option
 
-When using variable injection inside a variable's params, you can also
-specify the `inject_vars: false` option to disable the injection.
+When using variable injection inside a variable's params you can specify the `inject_vars: false` option to output the variable's *name* instead.
 
 For example, the following match will expand to `hello {{var}}` when triggered:
 
