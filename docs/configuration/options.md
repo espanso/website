@@ -167,7 +167,7 @@ Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific
 
 Espanso has a number of hard-coded [patches](https://github.com/espanso/espanso/tree/5d5d0d4d59abac07e3cab52b851aeaf570f5253c/espanso/src/patch/patches) built-in for various programs (particularly terminals) in Linux and Windows, mostly introducing expansion delays or changing paste shortcuts. They are indicated by a `(PATCHED: ...)` entry at the end of the first line of the program's `#acfg#` or `#pacfg#` output. The patches *override* your Options, but can be disabled with `apply_patch: false`, usually in an [app-specific configuration](../app-specific-configurations).
 
-For example, you may prefer to use **<Ctrl>+v** to paste into your generic Linux terminal rather than the usual **<Ctrl>+<Shift>+v** shortcut, but the latter is hard-coded in a patch, is preventing long expansions, and *can't* be overridden with a `paste_shortcut: CTRL+V` option. This can be resolved with the following app-specific configuration:
+For example, you may prefer to use **CTRL+v** to paste into your generic Linux terminal rather than the usual **CTRL+SHIFT+v** shortcut, but the latter is hard-coded in a patch, is preventing long expansions, and *can't* be overridden with a `paste_shortcut: CTRL+V` option. This can be resolved with the following app-specific configuration:
 ```yml
 filter_class: terminal
 apply_patch: false
