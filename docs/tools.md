@@ -30,9 +30,15 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 - Handy find function to search for text across match files
 - Backup match files to ZIP file
 - Dark and light themes, with a choice of 16 palettes
+- [Conversion](https://ee.qqv.com.au/usage/convert/) of triggers imported from other popular text expander programs
 
 #### Linux + Wine
 EspansoEdit is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux).
 
+## Trigger Conversion
+As well as EspansoEdit's conversion facilities mentioned above, [Alicia Sykes](https://www.aliciasykes.com/) has an [online](https://www.aliciasykes.com/) AutoHotkey to Espanso converter.
+
 ## SnippetShare
-The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has tonnes of useful snippets to check out for inspiration.
+The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has many useful snippets to check out for inspiration.
+
+A selection of Espanso scripts and techniques can also be found in these [Gists](https://gist.github.com/search?o=desc&q=espanso+user%3Asmeech&s=updated).
