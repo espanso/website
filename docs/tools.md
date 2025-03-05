@@ -36,7 +36,7 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 EspansoEdit is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux).
 
 ## Trigger Conversion
-As well as EspansoEdit's conversion facilities mentioned above, [Alicia Sykes](https://www.aliciasykes.com/) has an [online](https://www.aliciasykes.com/) AutoHotkey to Espanso converter.
+As well as EspansoEdit's conversion facilities mentioned above, [Alicia Sykes](https://www.aliciasykes.com/) has an [online](https://ahk-to-espanso.as93.net/) AutoHotkey to Espanso converter.
 
 ## SnippetShare
 The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has many useful snippets to check out for inspiration.
