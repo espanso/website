@@ -35,16 +35,16 @@ or values can span multiple lines using `|` or `>`. Spanning multiple lines usin
 ```yml
   - trigger: include newlines
     replace: |
-              exactly as you see
-              will appear these three
-              lines of poetry
+      exactly as you see
+      will appear these three
+      lines of poetry
 ```
 ```yml
   - trigger: fold newlines
     replace: >
-              this is really a
-              single line of text
-              despite appearances
+      this is really a
+      single line of text
+      despite appearances
 ```
 
 > As you can see, no quotes are needed in these cases.
