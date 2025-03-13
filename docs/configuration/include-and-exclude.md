@@ -26,7 +26,7 @@ These use-cases are solved by the `include` and `exclude` rules.
 
 
 Let's start with a simple example. We want to create a set of email replies
-and only enable when when inside Chrome or Firefox.
+and only enable them when inside Chrome or Firefox.
 
 We start by defining the snippets inside the `match/_email.yml` file:
 
