@@ -174,7 +174,12 @@ use_standard_includes: true|false
 
 ### "External" match files
 Match files _outside_ the Espanso folder tree can also be referenced by:
-- `includes:` items in `espanso/config/`  files, or 
+- `includes:` items in `espanso/config/`  files, and 
 - `imports:` items in `espanso/match/` files.
 
-These can be helpful for accessing shared network locations or mapped cloud storage etc.. However, do note that Espanso doesn't monitor such locations for changes, and therefore _won't_ reload automatically. An `espanso restart` command will be required after editing.
+These are the easiest ways to access shared network locations, or mapped cloud storage etc.. 
+
+Espanso doesn't use shell tilde-expansion (`~/`) or system environment variables. File-paths, therefore, have to be specified either absolutely, or relative to the `espanso/config` (for `includes:`) or `espanso/match` (for `imports:`) directories, as shown in the `../` path examples above.
+
+External files aren't *monitored*, so Espanso won't reload automatically after their edits. An `espanso restart` command is required to implement changes.
+
