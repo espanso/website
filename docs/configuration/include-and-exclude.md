@@ -26,7 +26,7 @@ These use-cases are solved by the `include` and `exclude` rules.
 
 
 Let's start with a simple example. We want to create a set of email replies
-and only enable when when inside Chrome or Firefox.
+and only enable them when inside Chrome or Firefox.
 
 We start by defining the snippets inside the `match/_email.yml` file:
 
@@ -182,3 +182,4 @@ These are the easiest ways to access shared network locations, or mapped cloud s
 Espanso doesn't use shell tilde-expansion (`~/`) or system environment variables. File-paths, therefore, have to be specified either absolutely, or relative to the `espanso/config` (for `includes:`) or `espanso/match` (for `imports:`) directories, as shown in the `../` path examples above.
 
 External files aren't *monitored*, so Espanso won't reload automatically after their edits. An `espanso restart` command is required to implement changes.
+
