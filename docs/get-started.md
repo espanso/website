@@ -87,7 +87,7 @@ Espanso uses a **file-based configuration** approach, following the Unix philoso
 reside in the `espanso` directory, whose location depends on the current OS:
 
 * Linux: `$XDG_CONFIG_HOME/espanso` (e.g. `/home/user/.config/espanso`)
-* Windows: `{FOLDERID_RoamingAppData}\espanso` (e.g. `C:\Users\user\AppData\Roaming\espanso`)
+* Windows: `%APPDATA%\espanso` (e.g. `C:\Users\user\AppData\Roaming\espanso`)
 * macOS: `$HOME/Library/Application Support/espanso` (e.g. `/Users/user/Library/Application Support/espanso`). You can use `$HOME/.config/espanso` instead, but you'll need to move the folders there yourself, while Espanso is stopped.
 
 A quick way to find the path of your configuration folder is by using the following command:
