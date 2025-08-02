@@ -59,29 +59,16 @@ export default function Install() {
             <h3>macOS</h3>
             <a
               className={styles.button}
-              href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")}
+              href={getStableDownloadLink("MAC_UNIVERSAL_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL"));
+                window.open(getStableDownloadLink("MAC_UNIVERSAL_DOWNLOAD_URL"));
                 window.location =
                   "/docs/install/mac/#problems-you-may-experience";
                 window.focus();
               }}
             >
-              Intel
-            </a>
-            <a
-              className={styles.button}
-              href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")}
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(getStableDownloadLink("MAC_M1_DOWNLOAD_URL"));
-                window.location =
-                  "/docs/install/mac/#problems-you-may-experience";
-                window.focus();
-              }}
-            >
-              M1 (Apple Silicon)
+              Universal binary
             </a>
             <span>Version {getStableVersion()}</span>
           </div>
