@@ -5,7 +5,7 @@ import DonateSection from "../components/DonateSection";
 import Contributing from "../components/Contributing";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
-import { getStableVersion, getStableDownloadLink } from "../utils/versionUtils";
+import { getStableDownloadLink } from "../utils/versionUtils";
 
 export default function Install() {
   return (
@@ -19,7 +19,7 @@ export default function Install() {
       <Navigation />
 
       <div className={styles["install-section"]}>
-        <h1>Installation (Beta)</h1>
+        <h1>Installation</h1>
         <p>Select your operating system:</p>
         <div className={styles.targets}>
           <div className={styles.target}>
@@ -52,38 +52,23 @@ export default function Install() {
             >
               Portable zip (64-bit)
             </a>
-            <span>Version {getStableVersion()}</span>
           </div>
           <div className={styles.target}>
             <div className={styles.macos} />
             <h3>macOS</h3>
             <a
               className={styles.button}
-              href={getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL")}
+              href={getStableDownloadLink("MAC_UNIVERSAL_DOWNLOAD_URL")}
               onClick={(e) => {
                 e.preventDefault();
-                window.open(getStableDownloadLink("MAC_INTEL_DOWNLOAD_URL"));
+                window.open(getStableDownloadLink("MAC_UNIVERSAL_DOWNLOAD_URL"));
                 window.location =
                   "/docs/install/mac/#problems-you-may-experience";
                 window.focus();
               }}
             >
-              Intel
+              Universal binary
             </a>
-            <a
-              className={styles.button}
-              href={getStableDownloadLink("MAC_M1_DOWNLOAD_URL")}
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(getStableDownloadLink("MAC_M1_DOWNLOAD_URL"));
-                window.location =
-                  "/docs/install/mac/#problems-you-may-experience";
-                window.focus();
-              }}
-            >
-              M1 (Apple Silicon)
-            </a>
-            <span>Version {getStableVersion()}</span>
           </div>
           <div className={styles.target}>
             <div className={styles.linux} />
@@ -103,7 +88,6 @@ export default function Install() {
             <Link to="/docs/install/linux/#find-the-right-version">
               Which version should you choose?
             </Link>
-            <span>Version {getStableVersion()}</span>
           </div>
         </div>
       </div>
