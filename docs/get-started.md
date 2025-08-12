@@ -305,7 +305,7 @@ Espanso's configuration and match files can be written in any text editor and mo
 [EspansoEdit](../tools/#espansoedit) is a dedicated freeware editor and utility for Espanso with many useful features.
 
 ### VSCode (VSCodium)
-Microsoft’s [VSCode](https://code.visualstudio.com/) and the open-source version, [VSCodium](https://vscodium.com/), are sohisticated editors with a steep learning curve for new users, but both can use **schemas**. Schemas efficiently highlight coding errors during typing, avoiding the wait for Espanso to fail with errors when an incorrectly written file is saved!
+Microsoft’s [VSCode](https://code.visualstudio.com/) and the open-source version, [VSCodium](https://vscodium.com/), are sophisticated editors with a steep learning curve for new users, but both can use **schemas**. Schemas efficiently highlight coding errors during typing, avoiding the wait for Espanso to fail with errors when an incorrectly written file is saved!
 
 ![Schema output](/img/docs/schema.png)
 
