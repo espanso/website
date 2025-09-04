@@ -160,7 +160,7 @@ In the previous example, we escaped `{{var}}` with 4 backslashes `\\{\\{var}}`,
 but that's only because the replace value was surrounded by double quotes `"`.
 In those cases, you need to **escape the backslashes** as well.
 
-That's not needed with [plain or single-qoted scalars](https://yaml-multiline.info/). For example, the following match is valid:
+That's not needed with [plain or single-quoted scalars](https://yaml-multiline.info/). For example, the following match is valid:
 
 ```yaml
   - trigger: :hello
