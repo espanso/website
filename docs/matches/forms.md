@@ -159,7 +159,7 @@ Which produces:
 
 Input fields are 100 pixels wide, but if their line contains no other text they expand to fit the width of the longest line of text plus input-boxes, in the form layout.
 
-Espanso versions from 2.2.2 add two [configuration options](../../configuration/options), `max_form_width:` and `max_form_height:` to constrain the width of forms which would stretch across the screen because of the text they contain. Long text is wrapped, or ends with an ellipsis.
+Espanso versions from 2.2.2 add two [configuration options](../../configuration/options/#options-reference), `max_form_width:` and `max_form_height:` to constrain the width of forms which would stretch across the screen because of the text they contain. Long text is wrapped, or ends with an ellipsis.
 
 ## Using Forms with Script and Shell extensions
 
