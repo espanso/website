@@ -452,7 +452,6 @@ IP from [ipify](https://www.ipify.org/).
 
 > Note: this example uses the `curl` command, usually preinstalled on most Unix systems.
 
-
 ```yml
   - trigger: ":ip"
     replace: "{{output}}"
@@ -462,7 +461,6 @@ IP from [ipify](https://www.ipify.org/).
         params:
           cmd: "curl 'https://api.ipify.org'"
 ```
-
 
 Now every time you type `:ip`, it gets expanded to your public
 IP address!
@@ -475,10 +473,9 @@ The shell extension supports many different shells out of the box. By default it
 
 * `Powershell` on Windows
 * `bash` on Linux
-* `sh` on macOS
+* In macOS Espanso detects the user's configured shell
 
 You can also specify different shells by using the `shell` param. For example, let's say we want to use bash on Windows through the `Windows Subsystem for Linux`. We would use:
-
 
 ```yml
   - trigger: ":ip"
@@ -491,12 +488,11 @@ You can also specify different shells by using the `shell` param. For example, l
           shell: wsl
 ```
 
-
 Possible values for the `shell` parameter are:
 
-* Windows: `cmd`, `powershell`, `pwsh`, `wsl`
-* macOS: `sh`, `bash`, `pwsh`
-* Linux: `sh`, `bash`, `pwsh`
+* Windows: `cmd`, `powershell`, `pwsh`, `wsl`, `nu`
+* macOS: `sh`, `bash`, `pwsh`, `nu`
+* Linux: `sh`, `bash`, `pwsh`, `nu`
 
 > Note that Windows `cmd` doesn't work with multiline inline code.
 
