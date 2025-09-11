@@ -15,7 +15,7 @@ ESPANSO_CONFIG_DIR
 ESPANSO_PACKAGE_DIR
 ESPANSO_RUNTIME_DIR
 ```
-for its Configuration (config & matches), Packages, and Runtime (logs, icons & lock-files etc.) folders.
+for its Configuration (config & matches), Packages, and Runtime (logs, icons & lock-files etc.) directories.
 
 Alternatively use the associated command-line parameters:
 ```
@@ -24,20 +24,24 @@ Alternatively use the associated command-line parameters:
 --runtime_dir
 ```
 
-E.g. 
+For example: 
 ```bash
 espanso --config_dir /path/to/your/files start --unmanaged
 ```
+For Windows it may be necessary to use an `espanso launcher` command instead.
 
 :::caution
 If you're already running Espanso as a service, stop it first with `espanso stop` and `espanso service unregister`.
 
-N.B. The command `espanso path` _won't_ reflect the new paths.
+N.B. The command `espanso path` _won't_ show the new paths.
 
-This method is somewhat experimental so we would welcome reports as to whether this works on your system, and any problems you encounter. It may render the following section redundant, however.
+This method is somewhat experimental so we would welcome discussion on [Discord](https://discord.gg/4QARseMS6k) or [Reddit](https://www.reddit.com/r/espanso/) as to whether this works on your system, and any problems you encounter. It may represent an easier alternative to the following section, however.
 :::
 
 ## Symlinks
+
+The established method of sharing configurations is documented here, but is more complex.
+
 :::tip
 
 From now on, we'll only mention "Dropbox folder" for brevity, but you can apply the same process for every service.
