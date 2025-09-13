@@ -121,7 +121,7 @@ module.exports = {
     MAC_INTEL_DOWNLOAD_URL:
       "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-Intel.zip",
     MAC_M1_DOWNLOAD_URL:
-      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.zip",
+      "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Mac-M1.dmg",
     WIN_INSTALLER_DOWNLOAD_URL:
       "https://github.com/espanso/espanso/releases/download/{{{VERSION}}}/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:

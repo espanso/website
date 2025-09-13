@@ -28,7 +28,7 @@ For example:
 ```bash
 espanso --config_dir /path/to/your/files start --unmanaged
 ```
-For Windows it may be necessary to use an `espanso launcher` command instead.
+For Windows it may be necessary to use an `espanso ... launcher` command instead.
 
 :::caution
 If you're already running Espanso as a service, stop it first with `espanso stop` and `espanso service unregister`.
