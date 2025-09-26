@@ -1,0 +1,10 @@
+# Add AucaCoyan to review any Pull Request related to logic and frontend files
+*.md @smeech
+*.mdx @smeech
+static/* @smeech
+
+*.js @AucaCoyan
+*.css @AucaCoyan
+
+# CODE OWNERS Documentation
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
