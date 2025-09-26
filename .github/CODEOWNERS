@@ -1,4 +1,4 @@
-# Add AucaCoyan to review any open Pull Request related to the logic and frontend files
+# Add AucaCoyan to review any Pull Request related to logic and frontend files
 *.md @smeech
 *.mdx @smeech
 static/* @smeech
