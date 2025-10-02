@@ -3,28 +3,19 @@ sidebar_position: 4
 title: Options
 ---
 
-In this guide, we are going to discuss the available options to customize Espanso.
-The first few sections are about the common parameters you might want to change,
-but you'll also find a complete reference at the bottom for the advanced ones.
+In this guide, we are going to discuss the available options to customize Espanso. The first few sections are about the common parameters you might want to change, but you'll also find a complete reference at the bottom for the advanced ones.
 
 ## Customizing the Toggle Key
 
-If you often need to **quickly enable and disable Espanso** during regular use, you might want to customize
-the _Toggle Key_.
-When double pressed, the Toggle Key disables Espanso, preventing any expansion.
-Double-pressing Alt again will re-enable it. 
+If you often need to **quickly enable and disable Espanso** during regular use, you might want to customize the _Toggle Key_. When double pressed, the Toggle Key disables Espanso, preventing any expansion. Double-pressing Alt again will re-enable it. 
 
 :::info Changes in version 2.1.2
 
-Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key` by default.
-That was a major source of confusion, as many users accidentally pressed it during
-normal use.
-For this reason, Espanso now ships with the `toggle_key` _disabled_ by default.
+Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key` by default. That was a major source of confusion, as many users accidentally pressed it during normal use. For this reason, Espanso now ships with the `toggle_key` _disabled_ by default.
 
 :::
 
-If you'd like to customize the key, simply add the `toggle_key` parameter to your
-`$CONFIG/config/default.yml` configuration and set it to one of the available options:
+If you'd like to customize the key, simply add the `toggle_key` parameter to your `$CONFIG/config/default.yml` configuration and set it to one of the available options:
 
 |              |             |               |              |
 |--------------|-------------|---------------|--------------|------|
@@ -32,8 +23,7 @@ If you'd like to customize the key, simply add the `toggle_key` parameter to you
 | `LEFT_CTRL`  | `LEFT_ALT`  | `LEFT_SHIFT`  | `LEFT_META`  |
 | `RIGHT_CTRL` | `RIGHT_ALT` | `RIGHT_SHIFT` | `RIGHT_META` |
 
-For example, if you want to use the Right Control key to toggle Espanso, you can add the
-following to your configuration:
+For example, if you want to use the Right Control key to toggle Espanso, you can add the following to your configuration:
 
 ```yaml title="$CONFIG/config/default.yml"
 toggle_key: RIGHT_CTRL
@@ -41,12 +31,9 @@ toggle_key: RIGHT_CTRL
 
 :::tip About the META key
 
-The `META` option refers to different keys depending on the platform.
-For example, on macOS the `META` refers to Command (or CMD),
-while on Windows refers to the "Win" key.
+The `META` option refers to different keys depending on the platform. For example, on macOS the `META` refers to Command (or CMD), while on Windows refers to the "Win" key.
 
-In other words, if you'd like to use the CMD key on macOS, you should
-specify `META`.
+In other words, if you'd like to use the CMD key on macOS, you should specify `META`.
 
 :::
 
@@ -58,8 +45,7 @@ toggle_key: OFF
 
 ## Customizing the Search bar
 
-The Search bar is one of the most useful features, letting you choose the right snippet 
-without having to remember the trigger.
+The Search bar is one of the most useful features, letting you choose the right snippet without having to remember the trigger.
 
 By default, the search bar can be opened in two ways:
 * By pressing ALT+Space (Option + Space on macOS)
@@ -69,22 +55,19 @@ If for whatever reason you don't like the default shortcuts, you can customize t
 
 ### Customizing the search shortcut
 
-If you don't like the default Alt+Space shortcut, you can change it by adding the following line
-to your `$CONFIG/config/default.yml` file:
+If you don't like the default Alt+Space shortcut, you can change it by adding the following line to your `$CONFIG/config/default.yml` file:
 
 ```yaml title="$CONFIG/config/default.yml"
 search_shortcut: ALT+SHIFT+SPACE
 ```
 
-As you can see, the shortcut is defined by specifying all keys separated by a plus sign.
-These are the supported keys:
+As you can see, the shortcut is defined by specifying all keys separated by a plus sign. These are the supported keys:
 
 `ALT`, `CTRL`, `CMD`, `SHIFT`, `ENTER`, `TAB`, `SPACE`, `META`, `OPTION`, `INSERT`, `DOWN`, `LEFT`, `RIGHT`, `UP`, `END`, `HOME`, `PAGEDOWN`, `PAGEUP`, `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12`, `F13`, `F14`, `F15`, `F16`, `F17`, `F18`, `F19`, `F20`, `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `NUMPAD0`, `NUMPAD1`, `NUMPAD2`, `NUMPAD3`, `NUMPAD4`, `NUMPAD5`, `NUMPAD6`, `NUMPAD7`, `NUMPAD8`, `NUMPAD9`
 
-> Not all keyboard combinations have been tested. If you find a combination that's not working, please open
-> a bug report on [GitHub](https://github.com/espanso/espanso/issues). Thanks!
+> Not all keyboard combinations have been tested. If you find a combination that's not working, please open a bug report on [GitHub](https://github.com/espanso/espanso/issues). Thanks!
 
-You can also disable this shortcut entirely by adding the following line:
+You can also disable the keybinding by adding the following line:
 
 ```yaml title="$CONFIG/config/default.yml"
 search_shortcut: off
@@ -92,15 +75,13 @@ search_shortcut: off
 
 ### Customizing the search trigger
 
-The search bar can also be configured to be shown after typing a trigger.
-For example, you might tune it to be displayed after typing `.search` by
-adding this option:
+The search bar can also be configured to be shown after typing a trigger. For example, you might set it to be displayed after typing `.search` by adding this option:
 
 ```yaml title="$CONFIG/config/default.yml"
 search_trigger: ".search"
 ```
 
-Or disable it entirely with:
+Disable the trigger by omitting the entry, or replacing it with:
 
 ```yaml title="$CONFIG/config/default.yml"
 search_trigger: off
@@ -108,8 +89,7 @@ search_trigger: off
 
 ## Hiding the Icon
 
-You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to 
-your `$CONFIG/config/default.yml` file:
+You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to your `$CONFIG/config/default.yml` file:
 
 ```yaml title="$CONFIG/config/default.yml"
 show_icon: false
@@ -125,8 +105,7 @@ show_notifications: false
 
 ## Options reference
 
-Here's a list of all the available options. If the value of the `App-specific` column is `Yes`, then the option
-can be used inside an [App-specific configuration](../app-specific-configurations).
+Here's a list of all the available options. If the value of the `App-specific` column is `Yes`, then the option can be used inside an [App-specific configuration](../app-specific-configurations).
 Otherwise, the option can only be defined inside the `$CONFIG/config/default.yml` file.
 
 Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific 
