@@ -13,8 +13,25 @@ import {getStableDownloadLink} from '/src/utils/versionUtils.js';
 <div className="">
 <a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("WIN_INSTALLER_DOWNLOAD_URL")} role="button">Download the Installer (x64)</a>
 <a className="btn btn-lg mybtn mb-4" href={getStableDownloadLink("WIN_PORTABLE_DOWNLOAD_URL")} role="button">Download Portable zip (x64)</a>
-</div>
+</div><br />
 
+Alternatively, use one of the following Windows package managers from the command line or PowerShell:
+
+#### Microsoft
+```cmd
+winget install --id=Espanso.Espanso -e
+```
+
+#### Chocolatey
+```cmd
+choco install espanso
+```
+
+#### Scoop
+```cmd
+scoop bucket add main
+scoop install main/espanso
+```
 If you completed the installation procedure, you should have espanso running. At this point, you are ready to read the [Getting Started](/docs/get-started/) tutorial.
 
 ### Problems you may experience
