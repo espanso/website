@@ -30,7 +30,7 @@ This table summarizes them based on distribution and desktop environment:
 | Distribution | X11 | Wayland |
 |---|---|---|
 | Ubuntu/Debian | **[DEB package](#deb-x11) (recommended)**, [AppImage](#appimage-x11), [Manual compilation](#x11-compile) | **[DEB package](#deb-wayland) (recommended)**, [Manual compilation](#wayland-compile) |
-| Fedora | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
+| Fedora | **[AppImage](#appimage-x11) (recommended)**, [Terra RPM package](#terra-x11), [Manual compilation](#x11-compile) | [Terra RPM package](#terra-wayland), [Manual compilation](#wayland-compile) |
 | Arch/Manjaro | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
 | Other distros | **[AppImage](#appimage-x11) (recommended)**, [Manual compilation](#x11-compile) | [Manual compilation](#wayland-compile) |
 
@@ -62,6 +62,34 @@ sudo apt install ./espanso-debian-x11-amd64.deb
 ```
 
 You can safely ignore any `N: Download is performed unsandboxed as root` note from `apt`.
+
+<X11AfterInstall />
+
+### Installing with Terra RPM package (Fedora-based) {#terra-x11}
+
+The third party repository [Terra](https://terra.fyralabs.com/) automatically builds an `.rpm` package for the latest Espanso release, making installation on Fedora-based systems easier.
+
+Start by following Terra's instructions on installing their main repository here: https://developer.fyralabs.com/terra/installing
+
+:::info Automatically verified builds
+
+Terra builds all packages automatically using GitHub Actions and signs them before distribution, so installation and upgrades via DNF are always checked for integrity.
+
+You can view the RPM spec files and resulting build artifacts for the packages installed via DNF on their [GitHub repository](https://github.com/terrapkg/packages/blob/frawhide/anda/tools/espanso-x11/espanso-x11.spec) (select the correct branch corresponding to your system version).
+
+:::
+
+After installing the repository, you can install the Espanso using:
+
+```
+sudo dnf install espanso-x11
+```
+
+:::caution Beta releases
+
+Terra always builds the latest tagged release from Espanso's GitHub, including pre-releases, meaning that beta versions may be included with updates.
+
+:::
 
 <X11AfterInstall />
 
@@ -167,6 +195,34 @@ sudo apt install ./espanso-debian-wayland-amd64.deb
 You can safely ignore any `N: Download is performed unsandboxed as root` note from `apt`.
 
 The process is almost complete, you just need to grant the required capabilities.
+
+<WaylandFinalSteps />
+
+### Installing with Terra RPM package (Fedora-based) {#terra-wayland}
+
+The third party repository [Terra](https://terra.fyralabs.com/) automatically builds an `.rpm` package for the latest Espanso release, making installation on Fedora-based systems easier.
+
+Start by following Terra's instructions on installing their main repository here: https://developer.fyralabs.com/terra/installing
+
+:::info Automatically verified builds
+
+Terra builds all packages automatically using GitHub Actions and signs them before distribution, so installation and upgrades via DNF are always checked for integrity.
+
+You can view the RPM spec files and resulting build artifacts for the packages installed via DNF on their [GitHub repository](https://github.com/terrapkg/packages/blob/frawhide/anda/tools/espanso-wayland/espanso-wayland.spec) (select the correct branch corresponding to your system version).
+
+:::
+
+After installing the repository, you can install the Espanso using:
+
+```
+sudo dnf install espanso-wayland
+```
+
+:::caution Beta releases
+
+Terra always builds the latest tagged release from Espanso's GitHub, including pre-releases, meaning that beta versions may be included with updates.
+
+:::
 
 <WaylandFinalSteps />
 
