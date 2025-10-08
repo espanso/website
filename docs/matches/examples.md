@@ -55,7 +55,7 @@ As an example let's say you want to structure your matches as:
   - Name
   - Email
 
-So in your base.yml file you can do:
+So in your base.yaml file you can do:
 
 ```yaml
   - regex: "(code|cd) (all|py) (all|pr)" # Code Category - Python Subcategory - Print

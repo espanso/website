@@ -55,16 +55,16 @@ Espanso ships with very few built-in matches to give you the maximum flexibility
 but you can expand its capabilities in two ways: **creating your own custom matches** or **installing packages**. 
 Both of these options allow you to _include_ all your code snippets in an app-specific configuration:
 
-```yaml title=$CONFIG/config/vscode.yml
+```yaml title=$CONFIG/config/vscode.yaml
 filter_title: "Visual Studio Code"
 
 extra_includes:
-  - "../match/_code_snippets.yml"
+  - "../match/_code_snippets.yaml"
 ```
 
-Because the `$CONFIG/match/_code_snippets.yml` file imports both JS and CSS snippets, you will be
-able to use both of them in VSCode, even though you haven't included the `$CONFIG/match/_js_snippets.yml`
-and `$CONFIG/match/_css_snippets.yml` directly.
+Because the `$CONFIG/match/_code_snippets.yaml` file imports both JS and CSS snippets, you will be
+able to use both of them in VSCode, even though you haven't included the `$CONFIG/match/_js_snippets.yaml`
+and `$CONFIG/match/_css_snippets.yaml` directly.
 
 :::tip
 
@@ -111,28 +111,34 @@ After a fresh installation, the `$CONFIG` directory should be structured as foll
 ```
 $CONFIG/
   config/
-    default.yml
+    default.yaml
   match/
-    base.yml
+    base.yaml
 ```
 
+:::note File extensions
+
+Espanso uses the `.yaml` extension (the official YAML extension as per yaml.org) for configuration and match files. However, the `.yml` extension is also supported for backwards compatibility. Both extensions are automatically detected and loaded.
+
+:::
+
 As you can see, there are two sub-folders, `config` and `match`, which in turn contain two files,
-`default.yml` and `base.yml` respectively. 
+`default.yaml` and `base.yaml` respectively. 
 Each of them serves a specific purpose:
 * **The files contained in the `match` directory define _WHAT_ Espanso should do.**
 In other words, this is where you should specify all the custom snippets and actions (aka Matches).
-The `match/base.yml` file is where you might want to start adding your matches, as shown in the
+The `match/base.yaml` file is where you might want to start adding your matches, as shown in the
 following sections. As the number of snippets grows, you might want to _split_ your matches
-over multiple files to make it easier to manage. For example, you might create the `match/emails.yml`
+over multiple files to make it easier to manage. For example, you might create the `match/emails.yaml`
 file with the snippets you use while writing emails. You can learn all about matches in the
 [Matches section](../matches/basics).
 
 * **The files contained in the `config` directory define _HOW_ Espanso should perform its expansions.**
 In other words, this is were you should specify all Espanso's parameters and options.
-The `config/default.yml` file defines the options that will be applied to _all applications by default_,
+The `config/default.yaml` file defines the options that will be applied to _all applications by default_,
 unless an _app-specific configuration_ is present for the current app. 
-For example, you might want to enable emoji snippets for all apps in the `config/default.yml` file,
-but disable them when using Slack in the `config/slack.yml` file.
+For example, you might want to enable emoji snippets for all apps in the `config/default.yaml` file,
+but disable them when using Slack in the `config/slack.yaml` file.
 You can learn all about configurations in the [Configuration section](../configuration/basics).
 
 All these files are defined using the widely popular [YAML](https://en.wikipedia.org/wiki/YAML) format.
@@ -151,10 +157,10 @@ Jon Snow
 
 By now you should know that we need to **define a Match**.
 
-With your favourite text editor, open the `$CONFIG/match/base.yml` file, introduced previously in the 
+With your favourite text editor, open the `$CONFIG/match/base.yaml` file, introduced previously in the 
 [Configuration](#configuration) section. You should see something like:
 
-```yml title="$CONFIG/match/base.yml"
+```yml title="$CONFIG/match/base.yaml"
 # espanso match file
 
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
@@ -186,7 +192,7 @@ We need to define a new Match, so in the `matches:` section, add the following c
 
 You should get something like:
 
-```yml title="$CONFIG/match/base.yml"
+```yml title="$CONFIG/match/base.yaml"
 # espanso match file
 
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
@@ -280,7 +286,7 @@ Several Espanso control and report commands may be displayed by typing ">" at th
 
 Sometimes you might accidentally trigger an expansion. If you immediately press the `BACKSPACE` key after the expansion, the action is reverted and the trigger recovered.
 
-You can also disable this behavior by adding the following line on your `config/default.yml` file:
+You can also disable this behavior by adding the following line on your `config/default.yaml` file:
 
 ```yaml
 undo_backspace: false

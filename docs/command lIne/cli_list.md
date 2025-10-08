@@ -69,9 +69,9 @@ USAGE:
     espanso edit [target_file]
 
 ARGS:
-    <target_file>   Defaults to "match/base.yml". 
-        It contains the relative path of the file you want to edit, such as 'config/default.yml' or 'match/base.yml'. 
-        For convenience, you can also specify the name directly and espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yml'.
+    <target_file>   Defaults to "match/base.yaml". 
+        It contains the relative path of the file you want to edit, such as 'config/default.yaml' or 'match/base.yaml'. 
+        For convenience, you can also specify the name directly and espanso will figure out the path. For example, specifying 'email' is equivalent to 'match/email.yaml'.
 ```
 ## env-path
 Add or remove the `espanso` command from the PATH

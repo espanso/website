@@ -15,7 +15,7 @@ Prior to version 2.1.2, Espanso was configured to use the ALT key as `toggle_key
 
 :::
 
-If you'd like to customize the key, simply add the `toggle_key` parameter to your `$CONFIG/config/default.yml` configuration and set it to one of the available options:
+If you'd like to customize the key, simply add the `toggle_key` parameter to your `$CONFIG/config/default.yaml` configuration and set it to one of the available options:
 
 |              |             |               |              |
 |--------------|-------------|---------------|--------------|------|
@@ -25,7 +25,7 @@ If you'd like to customize the key, simply add the `toggle_key` parameter to you
 
 For example, if you want to use the Right Control key to toggle Espanso, you can add the following to your configuration:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 toggle_key: RIGHT_CTRL
 ```
 
@@ -39,7 +39,7 @@ In other words, if you'd like to use the CMD key on macOS, you should specify `M
 
 And if you'd rather turn it off, you can do so with:
 
-```yml title="$CONFIG/config/default.yml"
+```yml title="$CONFIG/config/default.yaml"
 toggle_key: OFF
 ```
 
@@ -55,9 +55,9 @@ If for whatever reason you don't like the default shortcuts, you can customize t
 
 ### Customizing the search shortcut
 
-If you don't like the default Alt+Space shortcut, you can change it by adding the following line to your `$CONFIG/config/default.yml` file:
+If you don't like the default Alt+Space shortcut, you can change it by adding the following line to your `$CONFIG/config/default.yaml` file:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 search_shortcut: ALT+SHIFT+SPACE
 ```
 
@@ -69,7 +69,7 @@ As you can see, the shortcut is defined by specifying all keys separated by a pl
 
 You can also disable the keybinding by adding the following line:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 search_shortcut: off
 ```
 
@@ -77,36 +77,36 @@ search_shortcut: off
 
 The search bar can also be configured to be shown after typing a trigger. For example, you might set it to be displayed after typing `.search` by adding this option:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 search_trigger: ".search"
 ```
 
 Disable the trigger by omitting the entry, or replacing it with:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 search_trigger: off
 ```
 
 ## Hiding the Icon
 
-You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to your `$CONFIG/config/default.yml` file:
+You can hide the Espanso status icon on the macOS menu bar or the Windows system tray by adding the following option to your `$CONFIG/config/default.yaml` file:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 show_icon: false
 ```
 
 ## Hiding the Notifications
 
-You can hide the notifications by adding the following option to your `$CONFIG/config/default.yml` config:
+You can hide the notifications by adding the following option to your `$CONFIG/config/default.yaml` config:
 
-```yaml title="$CONFIG/config/default.yml"
+```yaml title="$CONFIG/config/default.yaml"
 show_notifications: false
 ```
 
 ## Options reference
 
 Here's a list of all the available options. If the value of the `App-specific` column is `Yes`, then the option can be used inside an [App-specific configuration](../app-specific-configurations).
-Otherwise, the option can only be defined inside the `$CONFIG/config/default.yml` file.
+Otherwise, the option can only be defined inside the `$CONFIG/config/default.yaml` file.
 
 Option 	 | 	 Description 	 | 	 Possible Values 	 | 	 Default 	 | 	 App-Specific 
 --- 	 | 	 --- 	 | 	 --- 	 | 	 --- 	 | 	 ---

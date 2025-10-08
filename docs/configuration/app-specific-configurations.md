@@ -3,7 +3,7 @@ sidebar_position: 1
 title: App-specific configurations
 ---
 
-For simple use-cases, tuning Espanso's options in the `config/default.yml` file works well,
+For simple use-cases, tuning Espanso's options in the `config/default.yaml` file works well,
 but as your needs become more complex, that mechanism might prove limited.
 For example, you might want to customize the way Espanso behaves while using a certain 
 app, or disabling it entirely when using another.
@@ -24,9 +24,9 @@ App-specific configurations are _not_ yet supported in Wayland.
 Let's start with a simple example. 
 Let's say we would like to disable Espanso while using Telegram. 
 To do so, we'll create an app-specific configuration.
-Start by creating the `config/telegram.yml` file, with the following content:
+Start by creating the `config/telegram.yaml` file, with the following content:
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/config/telegram.yaml"
 filter_exec: Telegram
 enable: false
 ```
@@ -41,11 +41,11 @@ You'll learn all about available filters in the [Filters section](#filters).
 
 * We then set `enable: false`, disabling Espanso.
 
-Espanso will now use the configuration defined in the `config/telegram.yml` file
+Espanso will now use the configuration defined in the `config/telegram.yaml` file
 while using Telegram and the default one while using other applications.
 
 Inside the app-specific configuration you can define most of the options you would customize
-in your `config/default.yml` file, with a few exceptions. You'll find a list of
+in your `config/default.yaml` file, with a few exceptions. You'll find a list of
 customizable options in the [Options section](../options).
 
 ### Enable or disable some matches while using a specific application
@@ -61,8 +61,8 @@ section.
 ## Understanding configuration inheritance
 
 App-specific configurations extend the default one.
-For example, if your `config/default.yml` file defines `option_A: 10` and
-`option_B: 20`, and your app-specific configuration `config/specific.yml` defines
+For example, if your `config/default.yaml` file defines `option_A: 10` and
+`option_B: 20`, and your app-specific configuration `config/specific.yaml` defines
 `option_B: 30`, the latter will be equivalent to:
 
 ```yaml
@@ -101,7 +101,7 @@ Filter | Description | Windows Support | MacOS Support | Linux Support
 
 Additionally, `filter_os`, accepts as a parameter `linux`, `macos` or `windows`, and may be usefully combined with [`extra_includes`](../include-and-exclude#difference-between-includes-and-extra_includes) to separate OS-specific [global variables](../../matches/variables/#injecting-global-variables) and local shell expansions etc., when the Espanso configuration files are [shared](../../sync) between different operating systems.
 
-> Note that, in addition to `default.yml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphanumerically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.
+> Note that, in addition to `default.yaml`, only **one** app-specific configuration can apply at any time. In situations where more than one filter *could* apply to the same program (e.g. a browser filter, and a tab filter) the first one alphanumerically by file-name will be active. Name the filter files accordingly so that, in the example, a `filter_title` file overrides a more general `filter_exec` file.
 
 Filter values match by **regex**, so ensure that character case is consistent and special characters are properly escaped.
 
@@ -168,7 +168,7 @@ To solve the problem, you can either create filters that match all the possible
 app locations/classes (filters are regexes, so you can also use 
 [alternation](https://www.regular-expressions.info/alternation.html))
 or you can create different app-specific configurations based on the platform,
-such as `config/telegram_win.yml` and `config/telegram_linux.yml`.
+such as `config/telegram_win.yaml` and `config/telegram_linux.yaml`.
 
 :::
 
@@ -191,7 +191,7 @@ or one that would only activate while editing a specific project/document.
 
 For example, here's a configuration that would disable Espanso when the active page is YouTube:
 
-```yaml title="config/disable_on_youtube.yml"
+```yaml title="config/disable_on_youtube.yaml"
 filter_title: YouTube
 enable: false
 ```

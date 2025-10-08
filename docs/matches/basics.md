@@ -68,10 +68,10 @@ We want to create a match that every time we type `:now` gets expanded to includ
 It's 11:29
 ```
 
-Let's add the following match to your configuration, such as the `match/base.yml` file
+Let's add the following match to your configuration, such as the `match/base.yaml` file
 
 
-```yaml title=$CONFIG/match/base.yml
+```yaml title=$CONFIG/match/base.yaml
   - trigger: :now
     replace: It's {{mytime}}
     vars:
@@ -125,11 +125,11 @@ In the remaining lines we declared the **parameters** used by the extension, in 
 
 ## Injection mechanism
 
-Espanso follows the `backend` value specified in `default.yml`, the default for which (`auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
+Espanso follows the `backend` value specified in `default.yaml`, the default for which (`auto`) is to use the Inject mechanism for short replacements, and Clipboard for longer ones. 
 
 If expansions aren't working (e.g. no replacements, missing characters, or just "v" appearing), adding the `force_mode: clipboard` or `force_mode: keys` properties to a trigger will override the backend in order to test the two mechanisms.
 
-Once triggers are working, remove the `force_mode:` lines, in favour of a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yml`, and/or in [app-specific configurations](../../configuration/app-specific-configurations) for individual programs, so that all triggers work in each environment.
+Once triggers are working, remove the `force_mode:` lines, in favour of a global [configuration](../../configuration/options/#options-reference) change to the `backend` value in `default.yaml`, and/or in [app-specific configurations](../../configuration/app-specific-configurations) for individual programs, so that all triggers work in each environment.
 
 ## Global Variables
 
@@ -137,7 +137,7 @@ Once triggers are working, remove the `force_mode:` lines, in favour of a global
 You can define them above your matches, and they will be available across all 
 matches defined in that file and it's children.
 
-For example, if you add the following into your `match/base.yml` file:
+For example, if you add the following into your `match/base.yaml` file:
 
 ```yaml
 global_vars:

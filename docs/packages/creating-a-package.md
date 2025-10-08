@@ -29,8 +29,8 @@ section.
 
 The simplest possible package is made of 3 files:
 
-* A `package.yml` file, containing the snippets you want to share.
-* A `_manifest.yml` file, containing the metadata of the package.
+* A `package.yaml` file, containing the snippets you want to share.
+* A `_manifest.yaml` file, containing the metadata of the package.
 This includes the package's name, author and version, among other things.
 * A `README.md` file, containing a description of the package, written using the [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax.
 
@@ -70,12 +70,12 @@ Here are the first steps:
 3. Now enter the `packages/` directory and copy the contents of the `dummy-package` directory in a new one, called `simple-package` (this should be equal to your package name).
 At this point, you should have the `packages/simple-package` folder.
 4. Then, enter the `packages/simple-package/0.1.0` folder, you should find three files there:
-`package.yml`, `_manifest.yml` and `README.md`.
+`package.yaml`, `_manifest.yaml` and `README.md`.
 5. You are now ready to actually customize your package, as explained below:
 
 ### Customizing the manifest 
 
-Edit the `_manifest.yml` file to customize the package metadata:
+Edit the `_manifest.yaml` file to customize the package metadata:
   * `name` should be the name of your package. It must be equal to the directory name created earlier.
   * `title` is the "read-friendly" version of your package name. 
   This can contain all string characters, but it should be relatively short.
@@ -87,9 +87,9 @@ Edit the `_manifest.yml` file to customize the package metadata:
 There are also other possible fields, please visit the [Package Specification](../package-specification)
 if you are interested.
 
-At this point, we should have a `_manifest.yml` similar to this:
+At this point, we should have a `_manifest.yaml` similar to this:
 
-```yaml title="_manifest.yml"
+```yaml title="_manifest.yaml"
 name: "simple-package"
 title: "Simple Package"
 description: A simple package to show how to create your own one!
@@ -100,12 +100,12 @@ tags: ["sample". "words"]
 
 ### Customizing the snippets
 
-Once the metadata is ready, you can move to the `package.yml` file.
+Once the metadata is ready, you can move to the `package.yaml` file.
 That file contains the package snippets, and follow the same  format used for [regular match files](../../matches/basics).
 
 For example, in our case it could be:
 
-```yaml title="package.yml"
+```yaml title="package.yaml"
 matches:
   - trigger: ":hello"
     replace: "Hello from the Simple Package!"

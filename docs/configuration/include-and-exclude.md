@@ -28,9 +28,9 @@ These use-cases are solved by the `include` and `exclude` rules.
 Let's start with a simple example. We want to create a set of email replies
 and only enable them when inside Chrome or Firefox.
 
-We start by defining the snippets inside the `match/_email.yml` file:
+We start by defining the snippets inside the `match/_email.yaml` file:
 
-```yaml title="$CONFIG/match/_email.yml"
+```yaml title="$CONFIG/match/_email.yaml"
 matches:
   - trigger: ":contact"
     replace: |
@@ -47,26 +47,26 @@ As explained in the [Organizing matches](../../matches/organizing-matches)
 section, Espanso automatically loads all YAML files located in the `match` directory,
 **except the ones starting with an `_` underscore.**
 
-Therefore, we prefix the `_email.yml` filename with an underscore to
+Therefore, we prefix the `_email.yaml` filename with an underscore to
 prevent Espanso from loading that YAML file automatically.
-If we hadn't done so, Espanso would enable the `email.yml` file for
+If we hadn't done so, Espanso would enable the `email.yaml` file for
 all applications. Instead, we want to enable it only on Chrome and Firefox.
 
 :::
 
 At this point, we can create an app-specific configuration for Chrome:
 
-```yaml title="$CONFIG/config/chrome.yml"
+```yaml title="$CONFIG/config/chrome.yaml"
 filter_exec: "chrome"
 
 extra_includes:
-  - "../match/_email.yml"
+  - "../match/_email.yaml"
 ```
 or
-```yaml title="$CONFIG/config/chrome.yml"
+```yaml title="$CONFIG/config/chrome.yaml"
 filter_exec: chrome
 
-extra_includes: [../match/_email.yml]
+extra_includes: [../match/_email.yaml]
 ```
 
 Let's discuss it step-by-step:
@@ -79,15 +79,15 @@ snippet file we defined earlier.
 
 The previous configuration should be interpreted as:
 
-> _**Also** include the snippets defined in the `match/_email.yml` file when using Chrome_.
+> _**Also** include the snippets defined in the `match/_email.yaml` file when using Chrome_.
 
 Then, we can do the same for Firefox:
 
-```yaml title="$CONFIG/config/firefox.yml"
+```yaml title="$CONFIG/config/firefox.yaml"
 filter_exec: "firefox"
 
 extra_includes:
-  - "../match/_email.yml"
+  - "../match/_email.yaml"
 ```
 
 At this point, we'll have the `:contact` snippet ready to be used on Chrome and Firefox!
@@ -106,9 +106,9 @@ section to find suitable ones.
 Another common use-case is to disable a package when using a specific application.
 For example, let's say we want to disable the `all-emojis` package when using Telegram.
 
-You can create an app-specific configuration `config/telegram.yml` as follows:
+You can create an app-specific configuration `config/telegram.yaml` as follows:
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/config/telegram.yaml"
 filter_exec: Telegram
 
 extra_excludes:
@@ -120,11 +120,11 @@ With this rule, Espanso will **exclude all files defined inside the `all-emojis`
 
 Keep in mind that you are not limited to packages, you can use the `excludes` rules with all match files:
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/config/telegram.yaml"
 filter_exec: Telegram
 
 extra_excludes:
-  - "../match/code_snippets.yml"
+  - "../match/code_snippets.yaml"
 ```
 
 ### Difference between `includes` and `extra_includes`
@@ -134,29 +134,30 @@ built-in include and exclude definitions. For example, specifying the following 
 
 ```yaml
 extra_includes:
-  - "../match/_custom.yml"
+  - "../match/_custom.yaml"
 ```
 
 will cause this configuration to _extend_ the default include rules, resulting in the following includes:
 
 ```
+../match/**/[!_]*.yaml
 ../match/**/[!_]*.yml
-../match/_custom.yml
+../match/_custom.yaml
 ```
 
-In other words, by specifying `extra_includes` you extend the default includes (`../match/**/[!_]*.yml`).
+In other words, by specifying `extra_includes` you extend the default includes (`../match/**/[!_]*.yaml` and `../match/**/[!_]*.yml`).
 
 For many use-cases, this behavior is desirable, but there are times when you might want to redefine
 includes without extending them. To do that, you'll need to use the `includes` rule instead of `extra_includes`.
 
-For example, the following app-specific configuration will only load the `match/jokes.yml` snippets
+For example, the following app-specific configuration will only load the `match/jokes.yaml` snippets
 when using Telegram, **ignoring the default definitions**.
 
-```yaml title="$CONFIG/config/telegram.yml"
+```yaml title="$CONFIG/config/telegram.yaml"
 filter_exec: Telegram
 
 includes:
-  - "../match/jokes.yml"
+  - "../match/jokes.yaml"
 ```
 
 The same considerations apply to the `excludes` and `extra_excludes` rules as well.

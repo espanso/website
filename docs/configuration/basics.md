@@ -45,9 +45,9 @@ By default, the `espanso` directory contains a few files and directories, struct
 
 ```
 config/
-  default.yml
+  default.yaml
 match/
-  base.yml
+  base.yaml
 ```
 
 As you can see, we have two folders at the top level, `config` and `match`, each containing some YAML files.
@@ -63,7 +63,7 @@ You can think of these YAML files as _profiles_. Each of these files defines
 a configuration, as well as the conditions that must be satisfied for the configuration to be active.
 Only one configuration can be active at any given time.
 
-The most important configuration contained in the `config` directory is the `default.yml` file,
+The most important configuration contained in the `config` directory is the `default.yaml` file,
 which **defines the _default_ configuration that should be used when none of the others is active**,
 as well as acting as the "base" profile from which the others derive.
 
@@ -73,7 +73,7 @@ slow it down when inside Chrome.
 For more information, please check out the [App-specific configurations](../app-specific-configurations)
 section.
 
-**If you only need Espanso for basic use-cases, the `default.yml` file is where you should tune
+**If you only need Espanso for basic use-cases, the `default.yaml` file is where you should tune
 the various options**.
 
 ### The `match` directory
@@ -81,7 +81,7 @@ the various options**.
 The `match` directory defines _WHAT_ Espanso should do. 
 It contains all the snippet definitions (aka. _matches_), as well as global variables.
 
-**If you only need Espanso for basic use-cases, the `base.yml` file is where you should
+**If you only need Espanso for basic use-cases, the `base.yaml` file is where you should
 put all your snippets**.
 
 If you are interested, the `match` folder is explained in-depth in the [Organizing matches](../../matches/organizing-matches)
@@ -97,7 +97,7 @@ If you open a terminal and type:
 espanso edit
 ```
 
-the default system editor (Notepad on Windows and Nano on Unix systems) will be spawned to edit the `match/base.yml` file.
+the default system editor (Notepad on Windows and Nano on Unix systems) will be spawned to edit the `match/base.yaml` file.
 
 ### Customizing the editor
 
@@ -115,24 +115,24 @@ Windows example:
 
 ### Editing other configuration files 
 
-If you invoke `espanso edit` without further arguments, it will open the `match/base.yml` file. 
+If you invoke `espanso edit` without further arguments, it will open the `match/base.yaml` file. 
 But what if you want to edit other files located in the `match` or `config` directories,
 you can do so by specifying the relative path.
 
-For example, if you want to edit the `match/emails.yml` file, you can run:
+For example, if you want to edit the `match/emails.yaml` file, you can run:
 
 ```
-espanso edit match/emails.yml 
+espanso edit match/emails.yaml 
 ```
 
-or if you want to edit the `config/default.yml` file, you can run:
+or if you want to edit the `config/default.yaml` file, you can run:
 
 ```
-espanso edit config/default.yml
+espanso edit config/default.yaml
 ```
 
-For convenience, you can also specify the file-name only, without the path or `.yml` extension, and Espanso will figure it out. So: 
+For convenience, you can also specify the file-name only, without the path or `.yaml` extension, and Espanso will figure it out. So: 
 ```
 espanso edit emails
 ```
-is likely to open `match/emails.yml`.
+is likely to open `match/emails.yaml`.
