@@ -119,7 +119,7 @@ module.exports = {
     LINUX_WAYLAND_DEB_DOWNLOAD_URL:
       "https://github.com/espanso/espanso/releases/latest/download/espanso-debian-wayland-amd64.deb",
     MAC_UNIVERSAL_DOWNLOAD_URL:
-      "https://github.com/espanso/espanso/releases/latest/download/Espanso-Mac-Universal.zip",
+      "https://github.com/espanso/espanso/releases/latest/download/Espanso-Mac-Universal.dmg",
     WIN_INSTALLER_DOWNLOAD_URL:
       "https://github.com/espanso/espanso/releases/latest/download/Espanso-Win-Installer-x86_64.exe",
     WIN_PORTABLE_DOWNLOAD_URL:
