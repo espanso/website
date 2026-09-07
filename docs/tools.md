@@ -38,6 +38,19 @@ EspansoEdit is very usable in Linux, using Wine, but requires a little [manual c
 ## Trigger Conversion
 As well as EspansoEdit's conversion facilities mentioned above, [Alicia Sykes](https://www.aliciasykes.com/) has an [online](https://ahk-to-espanso.as93.net/) AutoHotkey to Espanso converter.
 
+## Mouse Triggers
+
+### LinguaX
+[LinguaX](https://linguax.app) is a native macOS utility that maps mouse buttons (side buttons, middle click, and more) to keyboard shortcuts. Espanso users on macOS can use it to open the [Search bar](https://espanso.org/docs/configuration/options/#customizing-the-search-bar) with a thumb button instead of reaching for the keyboard:
+
+1. Pick your search shortcut in Espanso (`ALT+SPACE` by default, or set a custom `search_shortcut` in `$CONFIG/config/default.yml`).
+2. In LinguaX, record that shortcut onto a mouse button.
+3. Pressing the mouse button now opens the Espanso Search bar from anywhere.
+
+:::note
+Quit Espanso before recording the shortcut in LinguaX. Espanso's keyboard listener may capture the keystrokes during recording, preventing the shortcut from registering. Start Espanso again once the mapping is saved.
+:::
+
 ## SnippetShare
 The [SnippetShare](https://discord.com/channels/884163483409731584/1013914627886817372) Discord channel has many useful snippets to check out for inspiration.
 
