@@ -61,7 +61,7 @@ If you don't like the default Alt+Space shortcut, you can change it by adding th
 search_shortcut: ALT+SHIFT+SPACE
 ```
 
-As you can see, the shortcut is defined by specifying all keys separated by a plus sign. These are the supported keys:
+As you can see, the shortcut is defined by specifying all keys separated by a plus sign. At least one modifier is required, plus a main key. These are the supported keys:
 
 `ALT`, `CTRL`, `CMD`, `SHIFT`, `ENTER`, `TAB`, `SPACE`, `META`, `OPTION`, `INSERT`, `DOWN`, `LEFT`, `RIGHT`, `UP`, `END`, `HOME`, `PAGEDOWN`, `PAGEUP`, `F1`, `F2`, `F3`, `F4`, `F5`, `F6`, `F7`, `F8`, `F9`, `F10`, `F11`, `F12`, `F13`, `F14`, `F15`, `F16`, `F17`, `F18`, `F19`, `F20`, `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`, `N`, `O`, `P`, `Q`, `R`, `S`, `T`, `U`, `V`, `W`, `X`, `Y`, `Z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `NUMPAD0`, `NUMPAD1`, `NUMPAD2`, `NUMPAD3`, `NUMPAD4`, `NUMPAD5`, `NUMPAD6`, `NUMPAD7`, `NUMPAD8`, `NUMPAD9`
 
