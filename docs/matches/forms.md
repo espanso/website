@@ -135,8 +135,10 @@ command or script, as described in the [Variables](../variables) section.
 
 ### List Box
 
-List boxes are equivalent to Choice Boxes, with the only difference being the appearance.
+List Boxes are similar to Choice Boxes.
 To use them, you will need to specify `type: list` rather than `type: choice`.
+
+From v2.4.0, _multiple_ choices in the form list can be selected by holding `CTRL` or `SHIFT`. By default, the selected items in the result will be joined by a comma and a space (`", "`), but this can be overridden in the YAML.
 
 ```yaml
   - trigger: ":form"
@@ -148,9 +150,8 @@ To use them, you will need to specify `type: list` rather than `type: choice`.
         values:
           - First choice
           - Second choice
+        separator: "-"
 ```
-
-
 Which produces:
 
 ![Form example](/img/docs/form4.png)

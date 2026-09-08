@@ -180,7 +180,7 @@ We need to define a new Match, so in the `matches:` section, add the following c
 
 :::warning Important
 
-**Make sure to include the indentation**, otherwise it won't be valid YAML syntax. Also, prefer spaces to tabs if possible.
+**Ensure you include the indentation**, otherwise it won't be valid YAML syntax and the trigger won't work. Prefer spaces to tabs if possible.
 
 :::
 

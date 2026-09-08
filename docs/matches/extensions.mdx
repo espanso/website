@@ -304,14 +304,13 @@ You can also specify different shells by using the `shell` param. For example, l
         type: shell
         params:
           cmd: "curl 'https://api.ipify.org'"
-          shell: wsl
+          shell: wsl # or shell: bash       
 ```
 
-Possible values for the `shell` parameter are:
-
-* Windows: `cmd`, `powershell`, `pwsh`, `wsl`, `nu`
-* macOS: `sh`, `bash`, `pwsh`, `nu`
-* Linux: `sh`, `bash`, `pwsh`, `nu`
+Possible values for the `shell` parameter are: `bash`, `cmd`, `fish`, `nu`, `powershell`, `pwsh`, `sh`, `wsl`, `wsl2`, or `zsh`.  
+  
+- `cmd`, `powershell`, `wsl`, `wsl2` are Windows-specific (they invoke Windows/WSL binaries).  
+- `bash`, `fish`, `nu`, `pwsh`, `sh`, `zsh` are not restricted by espanso to any OS — they will be attempted on any platform, but require the corresponding binary to be installed and available in PATH.  
 
 > Note that Windows `cmd` doesn't work with _multiline_ inline code.
 

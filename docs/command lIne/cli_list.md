@@ -1,7 +1,7 @@
 ---
 title: Command-line reference
 sidebar_label: Command-line reference
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 :::tip Note:
@@ -45,6 +45,7 @@ SUBCOMMANDS:
     service       A collection of commands to manage the espanso service (for example, 
                   enabling auto-start on system boot).
     start         Start espanso as a service
+    stats         Show expansion statistics
     status        Check if the espanso daemon is running or not.
     stop          Stop espanso service
     uninstall     Remove a package
@@ -260,6 +261,24 @@ USAGE:
 ADDITIONAL FLAGS:
         --unmanaged    Run espanso as an unmanaged service (avoid system manager)
 ```
+## stats
+Show expansion statistics
+```
+USAGE:
+    espanso stats [OPTIONS] [SUBCOMMAND]
+
+OPTIONS:
+        --count <count>      Top N triggers to show (default 10)
+        --grep <grep>        Filter triggers by SQL LIKE pattern, e.g., :td%
+    -h, --help               Print help information
+        --json               Output as JSON
+        --period <period>    Limit to period: today|week|month|year|all (default all)
+
+SUBCOMMANDS:
+    clear    Clear the stats database
+    help     Print this message or the help of the given subcommand(s)
+    prune    Delete records older than N days
+```    
 ## uninstall
 Remove a package
 ```
