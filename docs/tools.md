@@ -35,6 +35,9 @@ Many new and improved [features](https://ee.qqv.com.au/usage/features/) now incl
 #### Linux + Wine
 EspansoEdit is very usable in Linux, using Wine, but requires a little [manual configuration](https://ee.qqv.com.au/usage/agnostic/#wine-on-linux).
 
+### EspansoUI
+A free and open-source (MIT) Windows window for adding shortcuts without editing YAML: one box for the trigger, one for the full text, then **Add**. It writes `match/base.yml` safely, makes a backup before every save, warns about duplicate or very short triggers, and opens read-only if the file contains syntax it doesn't handle, so it never breaks your config. English and Arabic interface, no dependencies beyond Python. For more information and to download, visit the [GitHub repository](https://github.com/alimwork85-web/EspansoUI).
+
 ## Trigger Conversion
 As well as EspansoEdit's conversion facilities mentioned above, [Alicia Sykes](https://www.aliciasykes.com/) has an [online](https://ahk-to-espanso.as93.net/) AutoHotkey to Espanso converter.
 
