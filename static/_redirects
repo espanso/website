@@ -1,0 +1,15 @@
+/install/win /docs/install/win/ 308
+/install/win/ /docs/install/win/ 308
+/install/mac /docs/install/mac/ 308
+/install/mac/ /docs/install/mac/ 308
+/install/linux /docs/install/linux/ 308
+/install/linux/ /docs/install/linux/ 308
+/docs /docs/get-started/ 308
+/docs/ /docs/get-started/ 308
+/legacy/uninstall /docs/migration/uninstalling_legacy/ 307
+/legacy/uninstall/ /docs/migration/uninstalling_legacy/ 307
+/migration /docs/migration/overview/ 307
+/migration/ /docs/migration/overview/ 307
+/docs/next /docs/ 308
+/docs/next/ /docs/ 308
+/docs/next/* /docs/:splat 308
