@@ -50,7 +50,7 @@ export default function Contributing() {
 
       <p className={styles.footer}>
         Created by <Link to="https://federicoterzi.com">Federico Terzi</Link>.
-        Copyright © Federico Terzi 2019-2021
+        Copyright © Federico Terzi 2019-2026
       </p>
     </div>
   );
